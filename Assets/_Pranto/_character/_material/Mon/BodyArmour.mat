@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!28 &-1242911345466623468
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.10377359390258789,"g":0.1013261005282402,"b":0.1013261005282402,"a":1.0},"time":0.00588998245075345},{"color":{"r":0.0675952285528183,"g":0.33902254700660708,"b":0.46226418018341067,"a":1.0},"time":0.3499961793422699},{"color":{"r":0.06007475405931473,"g":0.3763662278652191,"b":0.5094339847564697,"a":1.0},"time":0.658823549747467},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.34117648005485537},{"alpha":1.0,"time":0.6617684960365295},{"alpha":1.0,"time":1.0}]}
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 1024
+  m_MipsStripped: 0
+  m_TextureFormat: 5
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 1024
+  _typelessdata: ff1a1a1aff1a1a1aff1a1a1aff1a1b1bff1a1c1cff1a1c1eff1a1d1fff1a1e20ff1a1e21ff1a1f22ff1a2023ff192024ff192125ff192226ff192227ff192328ff192429ff19252aff19252bff19262cff19272dff18272eff18282fff182930ff182931ff182a32ff182b34ff182b35ff182c36ff182d37ff172e38ff172e39ff172f3aff17303bff17303cff17313dff17323eff17323fff173340ff173441ff163442ff163543ff163644ff163745ff163746ff163847ff163949ff16394aff163a4bff153b4cff153b4dff153c4eff153d4fff153d50ff153e51ff153f52ff153f53ff154054ff154155ff144256ff144257ff144358ff144459ff14445aff14455bff14465cff14465dff14475fff134860ff134861ff134962ff134a63ff134b64ff134b65ff134c66ff134d67ff134d68ff134e69ff124f6aff124f6bff12506cff12516dff12516eff12526fff125370ff125471ff125472ff115574ff115675ff115676ff115776ff115776ff115776ff115776ff115777ff115777ff115777ff115777ff115877ff115877ff115878ff115878ff115878ff115878ff115878ff115878ff115878ff115979ff115979ff115979ff115979ff115979ff115979ff11597aff11597aff115a7aff115a7aff115a7aff115a7aff115a7aff105a7bff105a7bff105a7bff105b7bff105b7bff105b7bff105b7bff105b7cff105b7cff105b7cff105b7cff105b7cff105c7cff105c7dff105c7dff105c7dff105c7dff105c7dff105c7dff105c7dff105d7eff105d7eff105d7eff105d7eff105d7eff105d7eff105d7fff105d7fff105e7fff105e7fff105e7fff105e7fff105e7fff105e80ff105e80ff105e80ff105f80ff105f80ff105f80ff105f81ff105f81ff0f5f81ff0f5f81ff0f5f81ff0f5f81ff0f6081ff0f6082ff0f6082ff0f6082ff126283ff156485ff186586ff1a6788ff1d6989ff206b8bff236d8cff256f8dff28708fff2b7290ff2e7492ff307693ff337895ff367a96ff397b97ff3b7d99ff3e7f9aff41819cff44839dff46859fff4986a0ff4c88a2ff4f8aa3ff518ca4ff548ea6ff578fa7ff5a91a9ff5c93aaff5f95acff6297adff6599aeff679ab0ff6a9cb1ff6d9eb3ff70a0b4ff72a2b6ff75a4b7ff78a5b9ff7ba7baff7ea9bbff80abbdff83adbeff86afc0ff89b0c1ff8bb2c3ff8eb4c4ff91b6c5ff94b8c7ff96bac8ff99bbcaff9cbdcbff9fbfcdffa1c1ceffa4c3d0ffa7c5d1ffaac6d2ffacc8d4ffafcad5ffb2ccd7ffb5ced8ffb7cfdaffbad1dbffbdd3dcffc0d5deffc2d7dfffc5d9e1ffc8dae2ffcbdce4ffcddee5ffd0e0e7ffd3e2e8ffd6e4e9ffd8e5ebffdbe7ecffdee9eeffe1ebefffe3edf1ffe6eff2ffe9f0f3ffecf2f5ffeef4f6fff1f6f8fff4f8f9fff7fafbfff9fbfcfffcfdfeffffffff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BodyArmour
+  m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - DR_LIGHT_ATTENUATION
+  - DR_OUTLINE_ON
+  - DR_RIM_ON
+  - DR_SPECULAR_ON
+  - _DETAILMAPBLENDINGMODE_MULTIPLY
+  - _TEXTUREBLENDINGMODE_MULTIPLY
+  - _UNITYSHADOW_OCCLUSION
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BakedGIRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: e0300f1765b4d2e43a5675706b588b0a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap:
+        m_Texture: {fileID: 2800000, guid: e9b81d5b719305a4d9e425685b3fe740, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientRamp:
+        m_Texture: {fileID: -1242911345466623468}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _CameraDistanceImpact: 0.5
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailMapBlendingMode: 0
+    - _DetailMapImpact: 0.8
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _EnvironmentReflections: 1
+    - _FlatRimEdgeSmoothness: 0.889
+    - _FlatRimLightAlign: 0.587
+    - _FlatRimSize: 0.36
+    - _FlatSpecularEdgeSmoothness: 1
+    - _FlatSpecularSize: 0.821
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _GradientAngle: 0
+    - _GradientCenterX: 0
+    - _GradientCenterY: 0
+    - _GradientEnabled: 0
+    - _GradientSize: 10
+    - _LightContribution: 1
+    - _LightmapDirectionPitch: 0
+    - _LightmapDirectionYaw: 0
+    - _Metallic: 0
+    - _OcclusionStrength: 1
+    - _OutlineDepthOffset: 0
+    - _OutlineEnabled: 1
+    - _OutlineScale: 1
+    - _OutlineWidth: 1
+    - _OverrideBakedGi: 0
+    - _OverrideLightAttenuation: 1
+    - _OverrideLightmapDir: 0
+    - _Parallax: 0.005
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _RimEnabled: 1
+    - _SelfShadingSize: 0.074
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularEnabled: 1
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _TextureBlendingMode: 0
+    - _TextureImpact: 0.185
+    - _UnityShadowOcclusion: 1
+    - _VertexColorsEnabled: 0
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _DetailMapColor: {r: 0.24705882, g: 0.023529412, b: 0.043137256, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlatRimColor: {r: 0.11974903, g: 0.60327995, b: 0.6509434, a: 1}
+    - _FlatSpecularColor: {r: 0.14431292, g: 0.30320093, b: 0.4433962, a: 0.972549}
+    - _LightAttenuation: {r: 0.032467533, g: 1, b: 0, a: 0}
+    - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
+--- !u!114 &8698104506856305680
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 8e6a7f32d633ed841ac2595886bb2140
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Serling Galleria PERSONAL USE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 95819353903b5314384199daaca83934, type: 3}
+  - {fileID: 12800000, guid: 8c9b0d1c15497fc438d47ad34c64c9ce, type: 3}
+  - {fileID: 12800000, guid: ddc737577f8288648af5d0424f053ee9, type: 3}
+  - {fileID: 12800000, guid: 2a70b9f466c7268449fa1c36ed2eded1, type: 3}
+  - {fileID: 12800000, guid: 5391760f63acd21428e296ecd67b5271, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

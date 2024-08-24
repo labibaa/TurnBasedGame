@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/V1/Spaniard/Turn/PlayerTurnInput.cs.meta
+guid: 7f6f82265d9678b4c92189043f1f3d6d
+========
+guid: cfffa7379cefc38489f913828ae641bd
+>>>>>>>> origin/SHK-42-HUD-Prototype:Assets/V1/Common/Scripts/PlayerHUD.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
