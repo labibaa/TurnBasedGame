@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/_Pranto/_Scenes/_LEVEL_1.unity
+    guid: 2dfd744931004874ab0de6cf31c630d6
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/DungenMapforMultiplayer 1.unity
+    guid: f2454e20e342ce5448aefac410c83f2a
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/MapforMultiplayer.unity
+    guid: ab63b08a6245d544d96c7dcbd40db04a
+  - enabled: 0
+    path: Assets/PersistantScene.unity
+    guid: ca92796a21272874dabc5b30465a176c
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/DungenMapforMultiplayer 2.unity
+    guid: f8e3328e82acbe040804cb3f05255b02
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/DungenMapforMultiplayer 3.unity
+    guid: c4a989037e953a7478bb7478640aa585
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/DungenMapforMultiplayer 4.unity
+    guid: bb6ff9fbb97903249b442963964cd063
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/Wave01_Scene.unity
+    guid: f9d8b735c4f96a0469b1f504faa033f4
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/Dungeon 3 copy Scene.unity
+    guid: 0ad93de2e1379e445b7f88683eb5fefb
+  - enabled: 0
+    path: Assets/_Mother Project/Scenes/Nushrat/DungenMapforMultiplayer 3_NEW Main
+      Menu.unity
+    guid: 79fb33651175e654485311f0b96b9a65
+  - enabled: 1
+    path: Assets/_Mother Project/Scenes/Nushrat/NEW DungenMapforMultiplayer 6.unity
+    guid: 314252483c3047d4e98e4b489d0a3e27
+  - enabled: 1
+    path: Assets/_Mother Project/Scenes/Nushrat/characters_scene.unity
+    guid: 81493a40ae67a664aaf5aeea370fdb14
+  - enabled: 1
+    path: Assets/_Mother Project/Scenes/Nushrat/dungeon map 01.unity
+    guid: cfd3b1a4f668af54697df9a5e6bde9df
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
+      type: 2}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65997b2d10b74c04e9ac0a65ce4ccdd5, type: 3}
+  m_Name: Heal
+  m_EditorClassIdentifier: 
+  RangeMappings:
+  - MinRangeValue: 1
+    MaxRangeValue: 4
+    MappedValue: 2
+  - MinRangeValue: 5
+    MaxRangeValue: 8
+    MappedValue: 3
+  - MinRangeValue: 9
+    MaxRangeValue: 15
+    MappedValue: 4
+  - MinRangeValue: 16
+    MaxRangeValue: 18
+    MappedValue: 5
+  - MinRangeValue: 19
+    MaxRangeValue: 20
+    MappedValue: 10
+  ActionRange: 2
+  ActionAccuracy: 100
+  ActionName: Heal
+  Description: 
+  PriorityValue: 20
+  FirstPercentage: 30
+  SecondPercentage: 60
+  LastPercentage: 10
+  APCost: 7
+  ParticleSystem: {fileID: 4569046032541823318, guid: 448ffbcf71db27749b98c4ed68e15143,
+    type: 3}
+  HurtParticleSystem: {fileID: 6470636275999735813, guid: 40e10e19fe5afca48bfd2152799198f6,
+    type: 3}
+  HitParticleSystem: {fileID: 753459498911867237, guid: 9cb342d2a29deac4da49d68695e298fb,
+    type: 3}
+  actionSound: {fileID: 8300000, guid: 2e1bcdc92258b504892eb9f8116e3a99, type: 3}
+  actionIcon: {fileID: 195040, guid: 3c2a3d88d35107f489385c76888b484f, type: 3}
+  actionButton: {fileID: 3148980940342823002, guid: 5b1cd7a063e2f654581806a102ce379e,
+    type: 3}
+  SoundReferences:
+  - player: {fileID: 0}
+    sound: {fileID: 0}
+  PlayerActionVFX: {fileID: 3590069231454849163, guid: 7f6205a75b814c2439ffa6bbb311ef5a,
+    type: 3}
+  TargetHitVFX: {fileID: 0}
+  particle: {fileID: 19858566, guid: 5128d0fb523fca6439fa131a1063c074, type: 3}
+  CharacterBodyLocation: 
+  TargetCharacterBodyLocation: 
+  TargetHurtAnimation: 

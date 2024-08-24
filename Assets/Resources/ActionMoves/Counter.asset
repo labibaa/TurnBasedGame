@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65997b2d10b74c04e9ac0a65ce4ccdd5, type: 3}
+  m_Name: Counter
+  m_EditorClassIdentifier: 
+  RangeMappings:
+  - MinRangeValue: 1
+    MaxRangeValue: 4
+    MappedValue: 1
+  - MinRangeValue: 5
+    MaxRangeValue: 8
+    MappedValue: 1
+  - MinRangeValue: 9
+    MaxRangeValue: 15
+    MappedValue: 1
+  - MinRangeValue: 16
+    MaxRangeValue: 18
+    MappedValue: 2
+  - MinRangeValue: 19
+    MaxRangeValue: 20
+    MappedValue: 2
+  ActionRange: 5
+  ActionAccuracy: 100
+  ActionName: Counter
+  Description: 
+  PriorityValue: 20
+  FirstPercentage: 30
+  SecondPercentage: 60
+  LastPercentage: 10
+  APCost: 4
+  ParticleSystem: {fileID: 7696858449922251739, guid: 8339e78cfaf0e014c89c2e9bb164cbd0,
+    type: 3}
+  HurtParticleSystem: {fileID: 0}
+  HitParticleSystem: {fileID: 0}
+  actionSound: {fileID: 8300000, guid: 8018aed00a6e3ce4c8042614857bc13d, type: 3}
+  actionIcon: {fileID: 195040, guid: 3c2a3d88d35107f489385c76888b484f, type: 3}
+  actionButton: {fileID: 3148980940342823002, guid: 54492005c87fe7f43aedced489e5f76d,
+    type: 3}
+  SoundReferences: []
+  PlayerActionVFX: {fileID: 5630015881727199186, guid: 75f5908e63702b7468760bf1434e9829,
+    type: 3}
+  TargetHitVFX: {fileID: 0}
+  particle: {fileID: 0}
+  CharacterBodyLocation: LowerBody
+  TargetCharacterBodyLocation: MidBody
+  TargetHurtAnimation: Hurt
+  actionStance: 0
+  actionType: 0
