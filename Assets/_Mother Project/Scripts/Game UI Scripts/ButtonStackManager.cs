@@ -147,10 +147,10 @@ public class ButtonStackManager : MonoBehaviour
             //NumpadHotkeys.instance.actionButtons.Add(button);
         }
         //
-            
-             //GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
-             //moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
-             //ActionActivator.instance.AddToActionButtons(moveButton);
+        /*GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
+        moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+        ActionActivator.instance.AddToActionButtons(moveButton);*/
+
         if (player.GetWarpAction())
         {
             GameObject warpButton = Instantiate(player.GetWarpAction().actionButton, playerPanel.transform);

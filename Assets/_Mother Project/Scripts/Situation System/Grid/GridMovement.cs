@@ -544,10 +544,9 @@ public class GridMovement : MonoBehaviour
                 {
                     agent.gameObject.GetComponent<Animator>().SetBool("dash", true);
                 }
-                else
-                {
+            
                     gridPlayerAnim.SetMoveAnimation(10, 1);
-                }
+                
                
             }
             else
