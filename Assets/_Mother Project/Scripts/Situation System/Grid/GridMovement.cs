@@ -12,6 +12,15 @@ using System.Drawing;
 using Color = UnityEngine.Color;
 using UnityEngine.Experimental.GlobalIllumination;
 
+
+
+/// <summary>
+/// atttached with GameManager
+/// you can increase the number of grid size from grid system
+/// 
+/// </summary>
+
+
 public class GridMovement : MonoBehaviour
 {
 
@@ -25,19 +34,23 @@ public class GridMovement : MonoBehaviour
 
     public static GridMovement instance;
 
-    
- 
+
+
     [SerializeField]
-    GameObject gridNavigatorPrefab;
+    GameObject gridNavigatorPrefab;   /// <summary>
+                                      ///   current curson grid position
+                                      /// </summary>
     GameObject gridNavigator;
     Vector2 navigationCoordinates;
     [SerializeField]
-    public bool inPathSelection = false;
+    public bool inPathSelection = false; /// <summary>
+                                         ///  during move if path will be selected or not
+                                         /// </summary>
     [SerializeField]
-    public List<GameObject> path = new List<GameObject>();
-    public List<GameObject> highlightedPath = new List<GameObject>();
-    public List<GameObject> BorderAreaTemp = new List<GameObject>();
-    [SerializeField] Vector3 defaultSpeedAttribute;
+    public List<GameObject> path = new List<GameObject>(); // the path that one will go for move
+    public List<GameObject> highlightedPath = new List<GameObject>();  //the path that will be saved for temp basis for color
+    public List<GameObject> BorderAreaTemp = new List<GameObject>(); // outline 
+    [SerializeField] Vector3 defaultSpeedAttribute; // 
     Dictionary<Direction, int> directionValue;
     [Header("Move Visual Settings")]
     [Space]
@@ -61,7 +74,7 @@ public class GridMovement : MonoBehaviour
 
 
 
-    #region
+    #region  Navmesh
     [SerializeField]
     public NavMeshAgent agent;
     [SerializeField]
@@ -72,7 +85,7 @@ public class GridMovement : MonoBehaviour
 
     #endregion
 
-    #region
+    #region Directional WASD
     [SerializeField] Direction storePreviousDirection = Direction.none;
     bool oppositeDirection;
 
@@ -182,12 +195,12 @@ public class GridMovement : MonoBehaviour
 
         if (Input.GetMouseButton(1) && inPathSelection)
         {
-          
+
 
             PlayerStatUI.instance.GetPlayerStatSummary(agent.gameObject.GetComponent<CharacterBaseClasses>());
             PlayerStatUI.instance.GetPlayerStatDetails(agent.gameObject.GetComponent<CharacterBaseClasses>());
             ButtonStackManager.instance.UndoStackEntry();
-              TempManager.instance.ChangeGameState(GameStates.MidTurn);
+            TempManager.instance.ChangeGameState(GameStates.MidTurn);
             ResetPathSelection();
             ResetHighlightedPath();
             player.gameObject.GetComponent<GridInput>().enabled = false;
@@ -208,19 +221,19 @@ public class GridMovement : MonoBehaviour
         {
             // Cast a ray from the mouse cursor into the scene with the specified layer mask
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            
+
 
             // Check if the ray hits an object on the specified layer
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask))
             {
                 // Check if the object hit is in your grid array
                 GameObject clickedGridCell = hitInfo.collider.gameObject;
-                if ((clickedGridCell.GetComponent<GridStat>().IsOccupied && agent.gameObject != clickedGridCell.GetComponent<GridStat>().OccupiedGameObject) || Vector3.Distance(clickedGridCell.transform.position,agent.GetComponent<TemporaryStats>().currentPlayerGridPosition)<0.1f)
+                if ((clickedGridCell.GetComponent<GridStat>().IsOccupied && agent.gameObject != clickedGridCell.GetComponent<GridStat>().OccupiedGameObject) || Vector3.Distance(clickedGridCell.transform.position, agent.GetComponent<TemporaryStats>().currentPlayerGridPosition) < 0.1f)
                 {
                     UI.instance.SendNotification("Already Occupied");
                     return;
                 }
-                if (!InAdjacentMatrix(agent.GetComponent<TemporaryStats>().currentPlayerGridPosition,clickedGridCell.transform.position,playerAP))
+                if (!InAdjacentMatrix(agent.GetComponent<TemporaryStats>().currentPlayerGridPosition, clickedGridCell.transform.position, playerAP))
                 {
                     UI.instance.SendNotification("Out Of Range");
                     return;
@@ -234,13 +247,13 @@ public class GridMovement : MonoBehaviour
                 // Perform selection logic here
                 // For example, change the color or perform an action on the clicked grid cell
                 ChangeColor(clickedGridCell, UnityEngine.Color.red);
-                
+
                 path.Add(clickedGridCell);
 
                 AssignMovement();
                 clickIcon.gameObject.SetActive(true);
                 clickIcon.transform.position = clickedGridCell.transform.position + new Vector3(0f, 0.08f, 0f);
-                clickIcon.material.SetFloat(CLICK_TIME_PROPERTY,Time.time);
+                clickIcon.material.SetFloat(CLICK_TIME_PROPERTY, Time.time);
                 Invoke("DisableRenderer", 0.5f);
 
 
@@ -260,13 +273,13 @@ public class GridMovement : MonoBehaviour
     void AssignMovement()
     {
         ICommand MovementConrete;
-        if (moveScriptable.moveName=="WarpSurge")
+        if (moveScriptable.moveName == "WarpSurge")
         {
             MovementConrete = new WarpSurge(path, agent, false, "Move");
         }
         else if (moveScriptable.moveName == "GroundBlast")
         {
-            MovementConrete = new GroundBlast(path, agent, false, "Move",moveScriptable);
+            MovementConrete = new GroundBlast(path, agent, false, "Move", moveScriptable);
         }
         else if (moveScriptable.moveName == "Dash")
         {
@@ -274,11 +287,11 @@ public class GridMovement : MonoBehaviour
         }
         else
         {
-             MovementConrete = new Move(path, agent, false, "Move");
+            MovementConrete = new Move(path, agent, false, "Move");
         }
-        
 
-       // agent.GetComponent<GhostTrail>().SpawnGhost(agent.transform, path[path.Count - 1].transform);
+
+        // agent.GetComponent<GhostTrail>().SpawnGhost(agent.transform, path[path.Count - 1].transform);
 
 
         currentGridPositionPlayer = path[path.Count - 1].transform.position;
@@ -301,7 +314,7 @@ public class GridMovement : MonoBehaviour
         selectedPlayer = null;
 
         inPathSelection = false;
-        
+
         UnityEngine.Cursor.lockState = CursorLockMode.None;
 
         PlayerStatUI.instance.GetPlayerStatSummary(agent.gameObject.GetComponent<CharacterBaseClasses>());
@@ -418,7 +431,7 @@ public class GridMovement : MonoBehaviour
     async void Selection()
     {
 
-        if (!inPathSelection)
+        if (!inPathSelection)   //// for wasd path selection
         {
             Vector2 tempGridCoordinate = GridSystem.instance.WorldToGrid(gridNavigator.transform.position);
             if (GridSystem.instance._gridArray[(int)tempGridCoordinate.x, (int)tempGridCoordinate.y].GetComponent<GridStat>().OccupiedObject == StringData.PlayerTag)
@@ -460,7 +473,7 @@ public class GridMovement : MonoBehaviour
             obj.GetComponent<GridStat>().Visited = -1;//
             obj.GetComponent<GridStat>().PressedKeyDirection = Direction.none;//
             obj.GetComponent<SpriteRenderer>().color = defaultPathColor;
-           // obj.GetComponent<Renderer>().material.color = defaultPathColor;
+            // obj.GetComponent<Renderer>().material.color = defaultPathColor;
 
 
 
@@ -482,14 +495,14 @@ public class GridMovement : MonoBehaviour
 
     public async UniTask MoveCharacterGrid(List<GameObject> path, NavMeshAgent agent, Vector3 speedAttributes, string actionName)
     {
-        
-        
 
-       
+
+
+
 
         for (int i = 1; i < path.Count; i++)
         {
-            
+
             //agent.GetComponent<TemporaryStats>().lastPosition = path[i - 1];
 
             if (path[i].GetComponent<GridStat>().IsOccupied && path[i].GetComponent<GridStat>().OccupiedGameObject.CompareTag("Player"))
@@ -517,7 +530,7 @@ public class GridMovement : MonoBehaviour
             }
             else
             {
-              
+
                 if (path[i].GetComponent<GridStat>().Height != -1)
                 {
                     Vector3 pathToGo = new Vector3(path[i].transform.position.x, path[i].GetComponent<GridStat>().Height, path[i].transform.position.z);
@@ -540,14 +553,15 @@ public class GridMovement : MonoBehaviour
 
             if (agent.gameObject.name == "PlayerArmature")//have to change the hardcode later
             {
-                if(actionName == "Dash")
+                if (actionName == "Dash")
                 {
                     agent.gameObject.GetComponent<Animator>().SetBool("dash", true);
                 }
-            
+                else
+                {
                     gridPlayerAnim.SetMoveAnimation(10, 1);
-                
-               
+                }
+
             }
             else
             {
@@ -586,7 +600,7 @@ public class GridMovement : MonoBehaviour
         agent.speed = defaultSpeedAttribute.x;
         agent.angularSpeed = defaultSpeedAttribute.y;
         agent.acceleration = defaultSpeedAttribute.z;
-        
+
         ResetPathSelection();
         if (agent.gameObject.name == "PlayerArmature")
         {
@@ -594,10 +608,10 @@ public class GridMovement : MonoBehaviour
             {
                 agent.gameObject.GetComponent<Animator>().SetBool("dash", false);
             }
-           
-                gridPlayerAnim.SetMoveAnimation(0, 1);//setting the idle animation
-           
-           
+
+            gridPlayerAnim.SetMoveAnimation(0, 1);//setting the idle animation
+
+
         }
         else
         {
@@ -718,7 +732,8 @@ public class GridMovement : MonoBehaviour
         Vector2 targetCoordinates = GridSystem.instance.WorldToGrid(targetPosition);
 
 
-        if(GetAdjacentNeighbors(attackerCoordinates, range).Contains(targetCoordinates)){
+        if (GetAdjacentNeighbors(attackerCoordinates, range).Contains(targetCoordinates))
+        {
             return true;
         }
         else
@@ -726,7 +741,7 @@ public class GridMovement : MonoBehaviour
             return false;
         }
 
-      
+
 
 
     }
@@ -734,26 +749,26 @@ public class GridMovement : MonoBehaviour
     public List<CharacterBaseClasses> InAdjacentMatrix(Vector3 attackPosition, TeamName teamName, int range, UnityEngine.Color gridColor) //this returns the available list of characters
     {
         Vector2 attackerCoordinate = GridSystem.instance.WorldToGrid(attackPosition);
-        
+
         List<CharacterBaseClasses> adjacencyList = new List<CharacterBaseClasses>();
         List<Vector2> neighborListCoordinates;
-        neighborListCoordinates = GetAdjacentNeighbors(attackerCoordinate,range);
+        neighborListCoordinates = GetAdjacentNeighbors(attackerCoordinate, range);
         neighborListGameobjects.Clear();
 
         int gridSizeX = GridSystem.instance._gridArray.GetLength(0);
         int gridSizeY = GridSystem.instance._gridArray.GetLength(1);
 
 
-        for (int i=0;i<neighborListCoordinates.Count;i++)
+        for (int i = 0; i < neighborListCoordinates.Count; i++)
         {
-            if ((neighborListCoordinates[i].x>=0 && neighborListCoordinates[i].x<gridSizeX)&&(neighborListCoordinates[i].y >= 0 && neighborListCoordinates[i].y < gridSizeY))
+            if ((neighborListCoordinates[i].x >= 0 && neighborListCoordinates[i].x < gridSizeX) && (neighborListCoordinates[i].y >= 0 && neighborListCoordinates[i].y < gridSizeY))
             {
 
                 neighborListGameobjects.Add(GridSystem.instance._gridArray[(int)neighborListCoordinates[i].x, (int)neighborListCoordinates[i].y]);
-                
+
                 CharacterBaseClasses character;
 
-           
+
                 ChangeColor(GridSystem.instance._gridArray[(int)neighborListCoordinates[i].x, (int)neighborListCoordinates[i].y], gridColor);
 
                 //ChangeColor(GridSystem.instance._gridArray[tempX, tempY], Color.red);
@@ -775,15 +790,15 @@ public class GridMovement : MonoBehaviour
             }
         }
 
-       
+
         List<GameObject> BorderArea = new List<GameObject>();
         foreach (GameObject gm in neighborListGameobjects)
         {
             var neighbors = gm.GetComponent<GridStat>().neighborCoordinates;
-            bool notContains=false;
-            for (int i =0;i<neighbors.Count;i++)
+            bool notContains = false;
+            for (int i = 0; i < neighbors.Count; i++)
             {
-                if (!neighborListCoordinates.Contains(neighbors[i]) || neighbors[i].x<0|| neighbors[i].x>=gridSizeX || neighbors[i].y < 0 || neighbors[i].y >= gridSizeY)
+                if (!neighborListCoordinates.Contains(neighbors[i]) || neighbors[i].x < 0 || neighbors[i].x >= gridSizeX || neighbors[i].y < 0 || neighbors[i].y >= gridSizeY)
                 {
                     notContains = true;
                     break;
@@ -794,13 +809,13 @@ public class GridMovement : MonoBehaviour
                 BorderArea.Add(gm);
             }
         }
-       
-      
-       // foreach(GameObject gm in BorderArea)
-       // {
-       //     ChangeColor(gm,Color.blue);
-       // }
-       //DrawBorder(attackPosition,BorderArea);
+
+
+        // foreach(GameObject gm in BorderArea)
+        // {
+        //     ChangeColor(gm,Color.blue);
+        // }
+        //DrawBorder(attackPosition,BorderArea);
         return adjacencyList;
     }
 
@@ -816,13 +831,13 @@ public class GridMovement : MonoBehaviour
             ChangeColor(highlightedPath[i], defaultPathColor);
         }
         highlightedPath.Clear();
-        for(int i = 0; i < currentLineRenderer.Count; i++)
+        for (int i = 0; i < currentLineRenderer.Count; i++)
         {
             Destroy(currentLineRenderer[i]);
         }
         currentLineRenderer.Clear();
     }
-    
+
 
 
     #region GridMouse
@@ -836,64 +851,64 @@ public class GridMovement : MonoBehaviour
     {
         if (agent.enabled)
         {
-            if(agent.isOnOffMeshLink)
+            if (agent.isOnOffMeshLink)
             {
                 var meshLink = agent.currentOffMeshLinkData;
 
-                if(meshLink.offMeshLink.area == NavMesh.GetAreaFromName("Jump"))
+                if (meshLink.offMeshLink.area == NavMesh.GetAreaFromName("Jump"))
                 {
                     //CutsceneManager.instance.PlayJumpAnimation(agent.gameObject, "BoxJump");
                 }
             }
         }
     }
-     public void SetDefaultPathColor(UnityEngine.Color color)
+    public void SetDefaultPathColor(UnityEngine.Color color)
     {
         defaultPathColor = color;
     }
 
 
-    public List<Vector2> GetAdjacentNeighbors(Vector2 nodePosition, int range)
+    public List<Vector2> GetAdjacentNeighbors(Vector2 nodePosition, int range)    //// 
     {
-        List<Vector2> finalAdjacentNeighbors = new List<Vector2>();       
-            for (int i = -range; i <= range; i++)
+        List<Vector2> finalAdjacentNeighbors = new List<Vector2>();
+        for (int i = -range; i <= range; i++)
+        {
+            int elementPerRow = ((2 * range + 1) - Mathf.Abs(i)) / 2;
+            if (Mathf.Abs(i) % 2 == 0)
             {
-                int elementPerRow = ((2 * range + 1) - Mathf.Abs(i)) / 2;
-                if (Mathf.Abs(i) % 2 == 0)
+                for (int j = -elementPerRow; j <= elementPerRow; j++)
                 {
-                    for (int j = -elementPerRow; j <= elementPerRow; j++)
-                    {                     
+                    finalAdjacentNeighbors.Add(new Vector2(nodePosition.x + j, nodePosition.y + i));
+                }
+            }
+            else
+            {
+                if (nodePosition.y % 2 == 0)
+                {
+                    for (int j = -elementPerRow + 1; j <= elementPerRow; j++)
+                    {
                         finalAdjacentNeighbors.Add(new Vector2(nodePosition.x + j, nodePosition.y + i));
                     }
                 }
                 else
                 {
-                    if (nodePosition.y % 2 == 0)
+                    for (int j = -elementPerRow; j < elementPerRow; j++)
                     {
-                        for (int j = -elementPerRow + 1; j <= elementPerRow; j++)
-                        {
-                            finalAdjacentNeighbors.Add(new Vector2(nodePosition.x + j, nodePosition.y + i));
-                        }
+                        finalAdjacentNeighbors.Add(new Vector2(nodePosition.x + j, nodePosition.y + i));
                     }
-                    else
-                    {
-                        for (int j = -elementPerRow; j < elementPerRow; j++)
-                        {
-                            finalAdjacentNeighbors.Add(new Vector2(nodePosition.x + j, nodePosition.y + i));
-                        }
-                    }                  
                 }
             }
-            
+        }
+
         return finalAdjacentNeighbors;
     }
-    void DrawBorder(Vector3 center, List<GameObject>BorderGameObjects)
+    void DrawBorder(Vector3 center, List<GameObject> BorderGameObjects)
     {
         var topRightCell = neighborListGameobjects.OrderByDescending(t => t.transform.position.z).ThenByDescending(t => t.transform.position.x).FirstOrDefault();
         var topLeftCell = neighborListGameobjects.OrderByDescending(t => t.transform.position.z).ThenBy(t => t.transform.position.x).FirstOrDefault();
         var midLeftCell = neighborListGameobjects.OrderBy(t => t.transform.position.x).ThenByDescending(t => t.transform.position.z).FirstOrDefault();
         var midRightCell = neighborListGameobjects.OrderByDescending(t => t.transform.position.x).ThenBy(t => t.transform.position.z).FirstOrDefault();
-        var leftBottomCell = neighborListGameobjects.OrderBy(t => t.transform.position.z).ThenBy(t => t.transform.position.x).FirstOrDefault();       
+        var leftBottomCell = neighborListGameobjects.OrderBy(t => t.transform.position.z).ThenBy(t => t.transform.position.x).FirstOrDefault();
         var rightBottomCell = neighborListGameobjects.OrderBy(t => t.transform.position.z).ThenByDescending(t => t.transform.position.x).FirstOrDefault();
 
         List<Transform> lineRendererTransform = new List<Transform>();
@@ -913,11 +928,11 @@ public class GridMovement : MonoBehaviour
         topRightGameobjects.Reverse();
         foreach (var cell in topRightGameobjects)
         {
-         
+
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Down]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownLeft]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpLeft]);
-          
+
         }
 
         //middle right cell 
@@ -936,8 +951,8 @@ public class GridMovement : MonoBehaviour
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownLeft]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpLeft]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Up]);
-        
-            
+
+
         }
         //bottom right cell 
         lineRendererTransform.Add(rightBottomCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownLeft]);
@@ -976,49 +991,49 @@ public class GridMovement : MonoBehaviour
         //bottom left cell to middle left cell  -------imp
 
         List<GameObject> bottomLeftGameobjects = BorderGameObjects
-   .Where(obj => obj.transform.position.z < center.z && obj.transform.position.x < center.x && obj.transform.position.x<leftBottomCell.transform.position.x && obj != leftBottomCell && obj != midLeftCell)
+   .Where(obj => obj.transform.position.z < center.z && obj.transform.position.x < center.x && obj.transform.position.x < leftBottomCell.transform.position.x && obj != leftBottomCell && obj != midLeftCell)
    .ToList();
 
-       
+
         //bottomLeftGameobjects.RemoveAt(0);
         foreach (var cell in bottomLeftGameobjects)
 
         {
-           
+
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Up]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpRight]);
             //lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownRight]);
-            
+
         }
 
 
         //middle left cell
 
-       lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Up]);
-       lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpRight]);
-       lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownRight]);
-       lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Down]);
+        lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Up]);
+        lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpRight]);
+        lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownRight]);
+        lineRendererTransform.Add(midLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Down]);
 
 
 
         //middle left cell to top left
 
         List<GameObject> topLeftGameobjects = BorderGameObjects
-    .Where(obj => obj.transform.position.z > center.z && obj.transform.position.x < center.x && obj.transform.position.x<topLeftCell.transform.position.x && obj != topLeftCell && obj != midLeftCell)
+    .Where(obj => obj.transform.position.z > center.z && obj.transform.position.x < center.x && obj.transform.position.x < topLeftCell.transform.position.x && obj != topLeftCell && obj != midLeftCell)
     .ToList();
-        
+
         //topLeftGameobjects.RemoveAt(topLeftGameobjects.Count-1);
         foreach (var cell in topLeftGameobjects)
         {
-            
+
             //lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpRight]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownRight]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Down]);
-           
-            
+
+
         }
 
-        
+
 
         //top left
         lineRendererTransform.Add(topLeftCell.GetComponent<GridStat>().directionTransformMap[HexOrientation.UpRight]);
@@ -1037,13 +1052,13 @@ public class GridMovement : MonoBehaviour
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownRight]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.Down]);
             lineRendererTransform.Add(cell.GetComponent<GridStat>().directionTransformMap[HexOrientation.DownLeft]);
-            
+
         }
 
 
 
 
-      
+
 
         //lineRendererPrefab.positionCount = lineRendererTransform.Count;
         //for(int i = 0; i < lineRendererTransform.Count; i++)
@@ -1051,9 +1066,9 @@ public class GridMovement : MonoBehaviour
         //    lineRendererPrefab.SetPosition(i, lineRendererTransform[i].transform.position);
         //}
 
-        for (int i = 0; i < lineRendererTransform.Count-1 ; i++)
+        for (int i = 0; i < lineRendererTransform.Count - 1; i++)
         {
-            
+
             //Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), lineRendererTransform[i]);
             //yield return new WaitForSeconds(0.5f);
             CreateLine(lineRendererTransform[i].position, lineRendererTransform[i + 1].position, i);
@@ -1063,16 +1078,16 @@ public class GridMovement : MonoBehaviour
     }
 
 
-    void CreateLine(Vector3 startPos, Vector3 endPos,int count)
+    void CreateLine(Vector3 startPos, Vector3 endPos, int count)
     {
         // Instantiate a new LineRenderer prefab
         LineRenderer lineRenderer = Instantiate(lineRendererPrefab, Vector3.zero, Quaternion.identity);
         currentLineRenderer.Add(lineRenderer);
         lineRenderer.name = count.ToString();
         // Set the material and color for the line renderer
-       // lineRenderer.material = lineMaterial;
+        // lineRenderer.material = lineMaterial;
         //lineRenderer.startColor = lineColor;
-       // lineRenderer.endColor = lineColor;
+        // lineRenderer.endColor = lineColor;
 
         // Set the positions of the line renderer
         lineRenderer.positionCount = 2;
@@ -1086,7 +1101,7 @@ public class GridMovement : MonoBehaviour
         return (coord.x >= 0 && coord.x < GridSystem.instance._gridArray.GetLength(0)) && (coord.y >= 0 && coord.y < GridSystem.instance._gridArray.GetLength(1));
     }
 
-    public  bool RemoveElementIfExists<T>(Queue<T> queue, T element)
+    public bool RemoveElementIfExists<T>(Queue<T> queue, T element)
     {
         bool found = false;
         int originalCount = queue.Count;

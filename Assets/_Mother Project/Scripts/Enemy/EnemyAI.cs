@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System;
 using TMPro;
@@ -12,7 +13,7 @@ public class EnemyAI : MonoBehaviour
         Defense,
         Normal
     }
-    
+
     public float health;
     public EnemyTrait trait;
 
@@ -28,13 +29,14 @@ public class EnemyAI : MonoBehaviour
     private List<ImprovedActionStat> enemyAvailableActions = new List<ImprovedActionStat>();
     private List<ImprovedActionStat> enemyAffordableActions = new List<ImprovedActionStat>();
     private List<ImprovedActionStat> enemyAffordableAttackActions = new List<ImprovedActionStat>();
+    private List<ImprovedActionStat> enemyAffordableAttackActionsForaTarget = new List<ImprovedActionStat>();
     private List<ImprovedActionStat> enemyAffordableDefenseActions = new List<ImprovedActionStat>();
 
     private void Start()
     {
         enemyCanvas.SetActive(false);
         // Example usage:
-       // health = UnityEngine.Random.Range(0.1f, 1f); // Random health between 10% to 100%
+        // health = UnityEngine.Random.Range(0.1f, 1f); // Random health between 10% to 100%
         //trait = (EnemyTrait)UnityEngine.Random.Range(0, Enum.GetValues(typeof(EnemyTrait)).Length); // Random trait
         //SelectAction();
     }
@@ -58,9 +60,9 @@ public class EnemyAI : MonoBehaviour
             {
                 if (target.GetComponent<TemporaryStats>().CurrentHealth <= action.RangeMappings[0].MappedValue)
                 {
-                    EnemyAIAttackMove();
+                    EnemyAIAttackMove(true);
                     PerformEnemyAction(action);
-                    
+
                 }
             }
 
@@ -85,11 +87,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (health > minHealthToAttack)
         {
-            if(enemyAffordableActions.Count != 0)
+            if (enemyAffordableActions.Count != 0)
             {
-                if (enemyAffordableAttackActions.Count > 0)
+                if (enemyAffordableAttackActionsForaTarget.Count > 0)
                 {
-                    PerformAttackAction(enemyAffordableAttackActions[UnityEngine.Random.Range(0, enemyAffordableAttackActions.Count)]);
+                    PerformAttackAction(enemyAffordableAttackActionsForaTarget[UnityEngine.Random.Range(0, enemyAffordableAttackActionsForaTarget.Count)]);
                     Debug.Log("Enemy is attacking");
 
                 }
@@ -98,7 +100,7 @@ public class EnemyAI : MonoBehaviour
                     PerformDefenseAction(enemyAffordableDefenseActions[UnityEngine.Random.Range(0, enemyAffordableDefenseActions.Count)]);
                 }
             }
-           
+
             // Perform attack action
             //
         }
@@ -115,10 +117,10 @@ public class EnemyAI : MonoBehaviour
                 }
                 else
                 {
-                    PerformAttackAction(enemyAffordableAttackActions[UnityEngine.Random.Range(0, enemyAffordableAttackActions.Count)]);
+                    EnemyAIAttackMove(false);
                 }
             }
-         
+
         }
 
 
@@ -126,9 +128,9 @@ public class EnemyAI : MonoBehaviour
 
     private void PerformAttackAction(ImprovedActionStat actionToPerform)
     {
-        EnemyAIAttackMove();
+        EnemyAIAttackMove(true);
         PerformEnemyAction(actionToPerform);
-       // EnemyAIDefensiveMove();
+        EnemyAIDefensiveMove();
 
     }
 
@@ -140,7 +142,7 @@ public class EnemyAI : MonoBehaviour
             // 60% chance to defend
             if (UnityEngine.Random.value < 0.6f)
             {
-                
+
                 if (enemyAffordableActions.Count != 0)
                 {
                     Debug.Log("Enemy is defending");
@@ -151,10 +153,13 @@ public class EnemyAI : MonoBehaviour
                     }
                     else
                     {
-                        PerformAttackAction(enemyAffordableAttackActions[UnityEngine.Random.Range(0, enemyAffordableAttackActions.Count)]);
+                        if (enemyAffordableAttackActionsForaTarget.Count > 0)
+                            PerformAttackAction(enemyAffordableAttackActionsForaTarget[UnityEngine.Random.Range(0, enemyAffordableAttackActionsForaTarget.Count)]);
+                        else
+                            EnemyAIAttackMove(false);
                     }
                 }
-               
+
                 // Perform defense action
             }
             else
@@ -168,7 +173,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         if (enemyAffordableAttackActions.Count > 0)
                         {
-                            PerformAttackAction(enemyAffordableAttackActions[UnityEngine.Random.Range(0, enemyAffordableAttackActions.Count)]);
+                            PerformAttackAction(enemyAffordableAttackActionsForaTarget[UnityEngine.Random.Range(0, enemyAffordableAttackActionsForaTarget.Count)]);
                             Debug.Log("Enemy is attacking");
 
                         }
@@ -181,6 +186,7 @@ public class EnemyAI : MonoBehaviour
                 }
 
                 // Perform attack action
+                EnemyAIDefensiveMove();
             }
         }
         else
@@ -189,18 +195,20 @@ public class EnemyAI : MonoBehaviour
             {
                 if (enemyAffordableAttackActions.Count > 0)
                 {
-                    PerformAttackAction(enemyAffordableAttackActions[UnityEngine.Random.Range(0, enemyAffordableAttackActions.Count)]);
+                    PerformAttackAction(enemyAffordableAttackActionsForaTarget[UnityEngine.Random.Range(0, enemyAffordableAttackActionsForaTarget.Count)]);
                     Debug.Log("Enemy is attacking");
 
                 }
                 else
                 {
-                    PerformEnemyAction(enemyAffordableActions[UnityEngine.Random.Range(0, enemyAffordableActions.Count)]);
+                    //PerformEnemyAction(enemyAffordableActions[UnityEngine.Random.Range(0, enemyAffordableActions.Count)]);
+                    EnemyAIDefensiveMove();
                 }
             }
 
-          
+
             // Perform move action
+            EnemyAIDefensiveMove();
         }
 
 
@@ -247,7 +255,7 @@ public class EnemyAI : MonoBehaviour
         {
             ActionArchive.instance.SwordSlash();
         }
-        else if(actionToPerform.ActionName == "Push Back")
+        else if (actionToPerform.ActionName == "Push Back")
         {
             ActionArchive.instance.PushBack();
         }
@@ -275,7 +283,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    public void EnemyAIAttackMove()
+    public void EnemyAIAttackMove(bool willAttack)
     {
         List<GameObject> targetGrid = new List<GameObject>();
         List<GameObject> tempTargetGrid = new List<GameObject>();
@@ -283,12 +291,15 @@ public class EnemyAI : MonoBehaviour
         Vector2 myGridCoordinate;
         targetGridCoordinate = AutoGridMovement.instance.CheckClosestAdjacent(transform.position, target.transform.position);
         myGridCoordinate = GridSystem.instance.WorldToGrid(transform.position);
-        targetGrid = AutoGridMovement.instance.FindPath(myGridCoordinate, targetGridCoordinate);
+        if (willAttack)
+            targetGrid = AutoGridMovement.instance.FindPath(myGridCoordinate, targetGridCoordinate);
+        else
+            targetGrid.Add(AutoGridMovement.instance.GetClosesttGridToTargetWithinMoveRange(GetComponent<CharacterBaseClasses>(), target.GetComponent<CharacterBaseClasses>()));
         tempTargetGrid.Add(targetGrid[0]);
         tempTargetGrid.Add(targetGrid[targetGrid.Count - 1]);
         ICommand AttackingMove = new Move(tempTargetGrid, GetComponent<NavMeshAgent>(), true, "MeleeMove");
         Turn turn = new Turn(GetComponent<CharacterBaseClasses>(), AttackingMove, 20);
-        
+
         HandleTurnNew.instance.AddTurn(turn);
     }
 
@@ -298,7 +309,7 @@ public class EnemyAI : MonoBehaviour
         Vector2 myGridCoordinate;
         myGridCoordinate = GridSystem.instance.WorldToGrid(transform.position);
         targetGrid.Add(GridSystem.instance._gridArray[(int)myGridCoordinate.x, (int)myGridCoordinate.y]);
-        targetGrid.Add(AutoGridMovement.instance.GetFarthestGridFromTarget(target.GetComponent<CharacterBaseClasses>()));
+        targetGrid.Add(AutoGridMovement.instance.GetFarthestGridFromTargetWithinMoveRange(GetComponent<CharacterBaseClasses>(), target.GetComponent<CharacterBaseClasses>()));
 
         ICommand AttackingMove = new Move(targetGrid, GetComponent<NavMeshAgent>(), true, "MeleeMove");
         Turn turn = new Turn(GetComponent<CharacterBaseClasses>(), AttackingMove, 20);
@@ -311,7 +322,13 @@ public class EnemyAI : MonoBehaviour
         enemyAvailableActions = GetComponent<PerformerClass>().GetAvailableActions();
         enemyAffordableActions = ActionArchive.instance.GetActionsWithinAP(enemyAvailableActions, GetComponent<TemporaryStats>());
         enemyAffordableAttackActions = ActionArchive.instance.GetOffenseActions(enemyAffordableActions);
+        foreach (ImprovedActionStat affordableAction in enemyAffordableAttackActions)
+        {
+            if (GridMovement.instance.InAdjacentMatrix(transform.position, target.transform.position, affordableAction.ActionRange))
+            {
+                enemyAffordableAttackActionsForaTarget.Add(affordableAction);
+            }
+        }
         enemyAffordableDefenseActions = ActionArchive.instance.GetDefenceActions(enemyAffordableActions);
     }
 }
-

@@ -8,7 +8,7 @@ public class ActionArchive : MonoBehaviour
 
 
     public static ActionArchive instance;
-    
+
     TemporaryStats playerInfo;
     TemporaryStats targetInfo;
     [SerializeField] GridInput gridInput;
@@ -102,8 +102,8 @@ public class ActionArchive : MonoBehaviour
     {
         GetPlayerStats();
         ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "MeleeAttack");
-       
-        bool isMoveAdded =MeleeMoveTemplate(meleeScriptable);
+
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
         if (isMoveAdded)
         {
             ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
@@ -111,10 +111,10 @@ public class ActionArchive : MonoBehaviour
         }
         else
         {
-            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable,"SingleMelee");
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
             ActionTemplate(meleeScriptable, meleeAction);
         }
-       
+
     }
 
 
@@ -176,7 +176,7 @@ public class ActionArchive : MonoBehaviour
 
     public async void AstralAnnihilation()
     {
-        
+
         GetPlayerStats();
         ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "AstralAnnihilation");
         bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
@@ -275,14 +275,15 @@ public class ActionArchive : MonoBehaviour
 
     public bool MeleeMoveTemplate(ImprovedActionStat actionScriptable)
     {
-        if (ActionResolver.instance.APResolver(currentStatPlayer.CurrentAP, actionScriptable.APCost) < 0) {
+        if (ActionResolver.instance.APResolver(currentStatPlayer.CurrentAP, actionScriptable.APCost) < 0)
+        {
             return false;
         }
         Vector2 playerPosition = GridSystem.instance.WorldToGrid(playerAttacker.GetComponent<TemporaryStats>().currentPlayerGridPosition);
         List<GameObject> path = new List<GameObject>();
         List<GameObject> pathToGo = new List<GameObject>();
         Vector2 targetPosition;
-       
+
         if (!GridMovement.instance.InAdjacentMatrix(playerAttacker.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, targetDefender.transform.position, 1))
         {
 
@@ -300,7 +301,7 @@ public class ActionArchive : MonoBehaviour
             playerAttacker.GetComponent<TemporaryStats>().AutoMove = true;
             playerAttacker.GetComponent<TemporaryStats>().currentPlayerGridPosition = path[path.Count - 1].transform.position;
 
-            ICommand MovementConrete = new Move(pathToGo, playerAttacker.GetComponent<NavMeshAgent>(), true,"MeleeMove");
+            ICommand MovementConrete = new Move(pathToGo, playerAttacker.GetComponent<NavMeshAgent>(), true, "MeleeMove");
             //await GameManager.instance.AddCommand(MovementConrete);
             Turn turn = new Turn(playerAttacker.gameObject.GetComponent<CharacterBaseClasses>(), MovementConrete, 20);
             HandleTurnNew.instance.AddTurn(turn);
@@ -320,7 +321,7 @@ public class ActionArchive : MonoBehaviour
     {
         GetPlayerStats();
         ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "RangedAttack");
-        
+
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
         ActionTemplate(rangedScriptable, rangedAction);
     }
@@ -345,12 +346,12 @@ public class ActionArchive : MonoBehaviour
 
     public async void MirrorMayhem()
     {
-        
+
         GetPlayerStats();
         ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "MirrorMayhem");
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
         ActionTemplate(rangedScriptable, rangedAction);
-        
+
     }
     public async void DaggerThrow()
     {
@@ -524,8 +525,8 @@ public class ActionArchive : MonoBehaviour
             ButtonStackManager.instance.OnButtonPressed(actionScriptable.actionIcon);
 
             playerInfo.CurrentAP = ActionResolver.instance.APResolver(playerInfo.CurrentAP, actionScriptable.APCost);
-            int previousPV =25;
-           
+            int previousPV = 25;
+
 
             Turn turn = new Turn(playerAttacker, tobePerformedAction, previousPV + actionScriptable.PriorityValue);
             int rpOfCurrentPlayer;
@@ -545,14 +546,14 @@ public class ActionArchive : MonoBehaviour
                     HandleTurnNew.instance.AddTurn(turn);
                     Debug.Log("else 1");
                     isTurnAdded = true;
-                   
+
                 }
             }
             else
             {
                 HandleTurnNew.instance.AddTurn(turn);
-                isTurnAdded  = true;
-        
+                isTurnAdded = true;
+
             }
 
             //actionNotification.gameObject.SetActive(true);
@@ -580,7 +581,7 @@ public class ActionArchive : MonoBehaviour
     public void AddTurnToAllTurns()
     {
         HandleTurnNew.instance.AddTurn(TurnManager.currentTurn);
-        
+
     }
 
 
@@ -592,31 +593,31 @@ public class ActionArchive : MonoBehaviour
     public async void Ultimate()
     {
         GetPlayerStats();
-        UltimateSystem._instance.useUltimate(playerAttacker,currentStatPlayer);
+        UltimateSystem._instance.useUltimate(playerAttacker, currentStatPlayer);
     }
 
     public async void Move()
     {
         Debug.Log("ASE");
-        TurnManager.instance.ResetTargetHIghlightVisual();
-        GridMovement.instance.ResetHighlightedPath();
+        TurnManager.instance.ResetTargetHIghlightVisual();  //// //// reset color of grid
+        GridMovement.instance.ResetHighlightedPath();   // for reseting highlighted path
         TurnManager.instance.targetsInRange.Clear();
         TurnManager.instance.nonCharacterTargetsInRange.Clear();
-        UI.instance.ClearTargetList();
+        UI.instance.ClearTargetList(); /// ui clear
         GetPlayerStats();
-        if (currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn == true)
+        if (currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn == true)  /// as move cant be performed 2ice
         {
 
-            currentStatPlayer.gameObject.GetComponent<TemporaryStats>().AutoMove = false;
+            currentStatPlayer.gameObject.GetComponent<TemporaryStats>().AutoMove = false;   //as this is not a meele attack
             currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn = false;
             Cursor.lockState = CursorLockMode.Locked;
 
             ActionStat moveScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, "Move");
-            ButtonStackManager.instance.OnButtonPressed(moveScriptable.actionIcon);
+            ButtonStackManager.instance.OnButtonPressed(moveScriptable.actionIcon);  /// for click to animate
             gridInput.enabled = true;
-           // GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex,Color.green);
-            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, moveScriptable.ActionRange,Color.green);
-            GridMovement.instance.setMoveParam(moveScriptable, moveScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
+            // GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex,Color.green);
+            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, moveScriptable.ActionRange, Color.green);
+            GridMovement.instance.setMoveParam(moveScriptable, moveScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());   /// necessary info for sending command to Handle Turn
            // GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
             TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
@@ -649,8 +650,8 @@ public class ActionArchive : MonoBehaviour
                 currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn = false;
                 Cursor.lockState = CursorLockMode.Locked;
 
-              
-          
+
+
                 currentStatPlayer.CurrentAP = ActionResolver.instance.APResolver(currentStatPlayer.CurrentAP, dashScriptable.APCost);//ap cost
                 ButtonStackManager.instance.OnButtonPressed(dashScriptable.actionIcon);
                 gridInput.enabled = true;
@@ -663,8 +664,8 @@ public class ActionArchive : MonoBehaviour
             {
                 UI.instance.SendNotification("No AP!!Can't Dash Now");
             }
-               
-          
+
+
         }
         else
         {

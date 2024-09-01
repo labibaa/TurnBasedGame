@@ -9,7 +9,7 @@ using UnityEngine.AI;
 
 public class TurnManager : MonoBehaviour
 {
-    
+
     public static TurnManager instance;
     [SerializeField] public int currentPlayerIndex = 0;
     public List<PlayerTurn> players;
@@ -17,7 +17,7 @@ public class TurnManager : MonoBehaviour
     public HashSet<PlayerTurn> TargetHashset;
 
     private TemporaryStats currentPlayer;
-    
+
     [SerializeField]
     GameType gameMode;//this denotes the mode
     bool firstTurn = true;//this boolean is used to denote if it is the firstTurn of the situatui==ion. This helps to track for 1221 mode.
@@ -26,14 +26,14 @@ public class TurnManager : MonoBehaviour
     TMP_Text roundNumber;
     [SerializeField]
     TMP_Text roundText;
-    int round=1;
+    int round = 1;
     //public GameObject ActionUI;
     //public TMP_Text playerTxt;
     public List<CharacterBaseClasses> targetsInRange;
     public List<GameObject> AvailableNonCharacterTargets;
     public List<INonCharacterTarget> nonCharacterTargetsInRange = new List<INonCharacterTarget>();
     [SerializeField] InputHandlerForSaving inputHandlerForSaving;
-   
+
     public static Turn currentTurn;
     [SerializeField] GridHover _gridHover;
     private void Awake()
@@ -47,28 +47,36 @@ public class TurnManager : MonoBehaviour
     }
     private void Start()
     {
-        
+
         //ActionUI.SetActive(false);
         //StartTurn();
         // Initialize the array of players
         //players = FindObjectsOfType<CharacterBaseClasses>();
-       
+
     }
 
     private void Update()
     {
-       
+
 
         // Check for player input
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            // End the player's turn when the spacebar is pressed
-            EndTurn();
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    // End the player's turn when the spacebar is pressed
+        //    EndTurn();
 
-        }
+        //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            EnemyAIAttack();
+            if (currentPlayer.CompareTag("Player"))
+            {
+                EndTurn();
+            }
+            else
+            {
+                EnemyAIAttack();
+            }
+
         }
 
         //if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -95,7 +103,7 @@ public class TurnManager : MonoBehaviour
 
     public async void EndTurn()
     {
-        
+
 
         TurnTimer.Instance.StopTImer();
         _gridHover.RestoreColor();
@@ -115,14 +123,14 @@ public class TurnManager : MonoBehaviour
             ResetTargetHIghlightVisual();
             GridMovement.instance.ResetHighlightedPath();
             targetsInRange.Clear();
-           nonCharacterTargetsInRange.Clear();
+            nonCharacterTargetsInRange.Clear();
             TempManager.instance.ChangeGameState(GameStates.Simulation);
             await HandleTurnNew.instance.PerformTurns();
             TextFadeInOut.instance.ClearText();
             inputHandlerForSaving.SaveTurnToJson();
             inputHandlerForSaving.LoadDataFromJson();
 
-            
+
 
 
         }
@@ -136,7 +144,7 @@ public class TurnManager : MonoBehaviour
         TeamManager.instance.PrintDictionary();
 
         roundNumber.text = "Round: " + round.ToString();
-        if (currentPlayerIndex >=  players.Count )
+        if (currentPlayerIndex >= players.Count)
         {
             // Increment the current player index
 
@@ -144,13 +152,13 @@ public class TurnManager : MonoBehaviour
             // Start the next player's turn
             Debug.Log("not performing turns");
             UI.instance.actionPanel = null; //because kill, survive, deal movelists overwrite fix
-            
+
             ResetTurn();
         }
 
 
         UpdateTurnUI();//enabling current Turn Ui
-        
+
 
         //   TempManager.instance.attacker = players[currentPlayerIndex].GetComponent<CharacterBaseClasses>().gameObject;
         // Turn On Action UI
@@ -164,7 +172,7 @@ public class TurnManager : MonoBehaviour
         //players[currentPlayerIndex].StartTurn();
         TempManager.instance.attacker = players[currentPlayerIndex].gameObject;
         TempManager.instance.ChangeGameState(GameStates.StartTurn);
-        currentPlayer  = players[currentPlayerIndex].GetComponent<TemporaryStats>();
+        currentPlayer = players[currentPlayerIndex].GetComponent<TemporaryStats>();
         CharacterBaseClasses currentPlayerBaseClass = currentPlayer.GetComponent<CharacterBaseClasses>();
         players[currentPlayerIndex].GetComponent<NavMeshAgent>().enabled = true;
         currentPlayer.SelectionParticle.SetActive(true);
@@ -180,9 +188,9 @@ public class TurnManager : MonoBehaviour
         //currentPlayer.playerActionListPanel.SetActive(true);
 
         //players[currentPlayerIndex].GetComponent<NavMeshObstacle>().enabled = false;
-       
-        ActionActivator.instance.UpdateAvailableAction(currentPlayerBaseClass,currentPlayer);
-        
+
+        ActionActivator.instance.UpdateAvailableAction(currentPlayerBaseClass, currentPlayer);
+
         UI.instance.GetPlayerStats(players[currentPlayerIndex].GetComponent<CharacterBaseClasses>());
 
         TargetList();
@@ -193,32 +201,32 @@ public class TurnManager : MonoBehaviour
         //    AutoRandomAttack();
 
         //}
-       
+
 
     }
 
 
-   
+
     public void PopulateTargetList(string actionName)
     {
 
         ActionStat temporaryScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, actionName);
         ImprovedActionStat temporaryImprovedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, actionName);
 
-        
+
         if (temporaryImprovedScriptable)
         {
-            targetsInRange = GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition, players[currentPlayerIndex].GetComponent<TemporaryStats>().CharacterTeam, temporaryImprovedScriptable.ActionRange* players[currentPlayerIndex].GetComponent<TemporaryStats>().playerVisiblity, Color.red);
+            targetsInRange = GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition, players[currentPlayerIndex].GetComponent<TemporaryStats>().CharacterTeam, temporaryImprovedScriptable.ActionRange * players[currentPlayerIndex].GetComponent<TemporaryStats>().playerVisiblity, Color.red);
 
             foreach (GameObject target in AvailableNonCharacterTargets)
             {
-                if (GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition,new Vector3(target.transform.position.x,0f,target.transform.position.z),temporaryImprovedScriptable.ActionRange))
+                if (GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition, new Vector3(target.transform.position.x, 0f, target.transform.position.z), temporaryImprovedScriptable.ActionRange))
                 {
                     nonCharacterTargetsInRange.Add(target.GetComponent<INonCharacterTarget>());
                 }
             }
-            
-           
+
+
 
 
             if (actionName == "Heal")
@@ -243,9 +251,9 @@ public class TurnManager : MonoBehaviour
 
         if (targetsInRange.Count <= 0)
         {
-            
+
             StartCoroutine(NoTargetFound(2f));// this is starting a coroutine, which shows there is no target available. then gives a time delay and rests the range
-            
+
         }
         else
         {
@@ -284,10 +292,10 @@ public class TurnManager : MonoBehaviour
         {
             TargetHashset.Add(pt);
         }
-        
-        foreach(PlayerTurn playerTurn in TargetHashset)
+
+        foreach (PlayerTurn playerTurn in TargetHashset)
         {
-            if (playerTurn != players[ currentPlayerIndex])
+            if (playerTurn != players[currentPlayerIndex])
             {
                 target.Add(playerTurn);
                 playerTurn.GetComponent<NavMeshAgent>().enabled = false;
@@ -357,7 +365,7 @@ public class TurnManager : MonoBehaviour
 
             //DictionaryManager.instance.action = DictionaryManager.instance.GiveRandomAction();
             //Debug.Log (DictionaryManager.instance.action);
-            
+
             Invoke("EndEnemyAction", 2f);
         }
     }
@@ -365,7 +373,7 @@ public class TurnManager : MonoBehaviour
     {
         // DictionaryManager.instance.action();
         currentPlayer.GetComponent<EnemyAI>().EndEnemyAction();
-        
+
         TempManager.instance.ChangeGameState(GameStates.MidTurn);
 
 
@@ -386,7 +394,7 @@ public class TurnManager : MonoBehaviour
     {
         TurnTimer.Instance.StopTImer();
         round++;
-        roundNumber.text ="Round: "+round.ToString();
+        roundNumber.text = "Round: " + round.ToString();
         roundText.text = roundNumber.text = "Round: " + round.ToString();
 
 
@@ -396,7 +404,7 @@ public class TurnManager : MonoBehaviour
         //GetComponent<TimelineManager>().enabled = false;
         currentPlayerIndex = 0;
 
-       
+
 
 
         for (int i = 0; i < players.Count; i++)
@@ -408,13 +416,13 @@ public class TurnManager : MonoBehaviour
             playerTempStat.IsCounterActive = false;
             if (playerTempStat.CompareTag("Player"))
             {
-                playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP,2);
+                playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP, 2);
             }
             else
             {
-                playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP,6);
+                playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP, 6);
             }
-            
+
             players[i].GetComponent<PlayerTurn>().isMoveOn = true;
             PlayerStatUI.instance.GetPlayerStatSummary(players[i].GetComponent<CharacterBaseClasses>());
             PlayerStatUI.instance.GetPlayerStatDetails(players[i].GetComponent<CharacterBaseClasses>());
@@ -429,7 +437,7 @@ public class TurnManager : MonoBehaviour
         StartTurn();
         await UI.instance.AnimatePanelAsync();
         //StartTurn();
-     
+
 
     }
 
@@ -495,14 +503,14 @@ public class TurnManager : MonoBehaviour
     }
 
 
-    public void ResetTargetHIghlightVisual()
+    public void ResetTargetHIghlightVisual()   // to Reset the visual of target if it is not selected 
     {
         foreach (CharacterBaseClasses targets in targetsInRange)
         {
             targets.GetComponent<TemporaryStats>().EnemyTargetSelectionParticle.SetActive(false);
 
         }
-        if (nonCharacterTargetsInRange.Count>0)
+        if (nonCharacterTargetsInRange.Count > 0)
         {
 
 

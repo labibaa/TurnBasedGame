@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AutoGridMovement : MonoBehaviour
@@ -12,6 +13,10 @@ public class AutoGridMovement : MonoBehaviour
     [SerializeField]
     int gridLengthX;
     int gridLengthY;
+
+
+    List<Vector2> adjacentGridsWithinRange = new List<Vector2>();
+    List<Vector2> adjacentBorderGridsWithinRange = new List<Vector2>();
 
     Vector2[] neighborOffsets = new Vector2[]
           {
@@ -197,7 +202,7 @@ public class AutoGridMovement : MonoBehaviour
 
     }
 
-    public GameObject GetFarthestGridFromTarget(CharacterBaseClasses target)
+    public GameObject GetFarthestGridFromTarget(CharacterBaseClasses target)  /// DONT CALL THIS ANYMORE
     {
         List<Vector2> cornerHexGrids = new List<Vector2>();
         cornerHexGrids.Add(new Vector2(0, 0));
@@ -218,6 +223,96 @@ public class AutoGridMovement : MonoBehaviour
             }
         }
         return tempGrid;
+    }
+
+    public GameObject GetFarthestGridFromTargetWithinMoveRange(CharacterBaseClasses attacker, CharacterBaseClasses target)  /// DURING FLY AWAY
+    {
+        GameObject farthestGridfromTargetWithinRange = null;
+
+        Vector2 currentGridPos = GridSystem.instance.WorldToGrid(transform.position);
+        adjacentGridsWithinRange = GridMovement.instance.GetAdjacentNeighbors(currentGridPos, (int)attacker.Dexterity);
+        List<GameObject> adjacentGridsWithinRangeGO = new List<GameObject>();
+
+        int gridSizeX = GridSystem.instance._gridArray.GetLength(0);
+        int gridSizeY = GridSystem.instance._gridArray.GetLength(1);
+
+        foreach (Vector2 adjacentGridCor in adjacentGridsWithinRange)
+        {
+            if ((adjacentGridCor.x >= 0 && adjacentGridCor.x < gridSizeX) && (adjacentGridCor.y >= 0 && adjacentGridCor.y < gridSizeY))
+            {
+
+                adjacentGridsWithinRangeGO.Add(GridSystem.instance._gridArray[(int)adjacentGridCor.x, (int)adjacentGridCor.y]);
+            }
+        }
+        List<GameObject> BorderArea = new List<GameObject>();
+        foreach (GameObject gm in adjacentGridsWithinRangeGO)
+        {
+            var neighbors = gm.GetComponent<GridStat>().neighborCoordinates;
+            bool notContains = false;
+            for (int i = 0; i < neighbors.Count; i++)
+            {
+                if (!adjacentGridsWithinRange.Contains(neighbors[i]) || neighbors[i].x < 0 || neighbors[i].x >= gridSizeX || neighbors[i].y < 0 || neighbors[i].y >= gridSizeY)
+                {
+                    notContains = true;
+                    break;
+                }
+            }
+            if (notContains)
+            {
+                BorderArea.Add(gm);
+            }
+        }
+
+        foreach (GameObject borderTile in BorderArea)
+        {
+            float tempDist = 0;
+
+            float distanceFromTarget = Vector3.Distance(borderTile.transform.position, target.transform.position);
+            if (tempDist > distanceFromTarget)
+            {
+                tempDist = distanceFromTarget;
+                farthestGridfromTargetWithinRange = borderTile;
+            }
+        }
+
+        return farthestGridfromTargetWithinRange;
+
+    }
+
+    public GameObject GetClosesttGridToTargetWithinMoveRange(CharacterBaseClasses attacker, CharacterBaseClasses target)  /// DURING GETTING CLOSE TO TARGET PLAYER
+    {
+        GameObject farthestGridfromTargetWithinRange = null;
+
+        Vector2 currentGridPos = GridSystem.instance.WorldToGrid(transform.position);
+        adjacentGridsWithinRange = GridMovement.instance.GetAdjacentNeighbors(currentGridPos, (int)attacker.Dexterity);
+        List<GameObject> adjacentGridsWithinRangeGO = new List<GameObject>();
+
+        int gridSizeX = GridSystem.instance._gridArray.GetLength(0);
+        int gridSizeY = GridSystem.instance._gridArray.GetLength(1);
+
+        foreach (Vector2 adjacentGridCor in adjacentGridsWithinRange)
+        {
+            if ((adjacentGridCor.x >= 0 && adjacentGridCor.x < gridSizeX) && (adjacentGridCor.y >= 0 && adjacentGridCor.y < gridSizeY))
+            {
+
+                adjacentGridsWithinRangeGO.Add(GridSystem.instance._gridArray[(int)adjacentGridCor.x, (int)adjacentGridCor.y]);
+            }
+        }
+
+
+        foreach (GameObject borderTile in adjacentGridsWithinRangeGO)
+        {
+            float tempDist = 100f;
+
+            float distanceFromTarget = Vector3.Distance(borderTile.transform.position, target.transform.position);
+            if (tempDist < distanceFromTarget)
+            {
+                tempDist = distanceFromTarget;
+                farthestGridfromTargetWithinRange = borderTile;
+            }
+        }
+
+        return farthestGridfromTargetWithinRange;
     }
 
 
