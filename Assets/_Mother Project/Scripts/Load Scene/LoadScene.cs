@@ -21,4 +21,9 @@ public class LoadScene : MonoBehaviour
         PlayerPrefs.SetString("LastPosition", LastPosition);
         LoadSceneManager.instance.LoadScene(SceneName);
     }
+
+     public void LoadNextScene()
+    {
+        LoadSceneManager.instance.LoadScene(SceneName);
+    }
 }
