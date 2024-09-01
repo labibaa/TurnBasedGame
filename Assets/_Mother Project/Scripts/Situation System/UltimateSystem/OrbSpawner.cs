@@ -40,7 +40,7 @@ public class OrbSpawner : MonoBehaviour
         readyPlayer++;
         if (readyPlayer>=TurnManager.instance.players.Count)
         {
-            SpawnObject();
+           // SpawnObject();
             Debug.Log("Y");
         }
     }

@@ -392,7 +392,7 @@ public class TurnManager : MonoBehaviour
 
 
 
-        OrbSpawner.instance.SpawnObject();
+        //OrbSpawner.instance.SpawnObject();
         //GetComponent<TimelineManager>().enabled = false;
         currentPlayerIndex = 0;
 

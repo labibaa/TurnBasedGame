@@ -135,7 +135,7 @@ public class TempManager : MonoBehaviour
             target.transform.rotation = Quaternion.Lerp(target.transform.rotation, targetRotation, t);
             player.transform.rotation = Quaternion.Lerp(player.transform.rotation, playerRotation, t);
             //TempManager.instance.RotateCharactersOnGrid();
-            await UniTask.Yield();
+            //await UniTask.Yield();
 
         }
 
