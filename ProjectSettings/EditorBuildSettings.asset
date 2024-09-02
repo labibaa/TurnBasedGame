@@ -45,6 +45,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Mother Project/Scenes/Nushrat/dungeon map 01.unity
     guid: cfd3b1a4f668af54697df9a5e6bde9df
+  - enabled: 1
+    path: Assets/_Mother Project/Scenes/Nushrat/Dual DungenMapforMultiplayer 7.unity
+    guid: 181aa231c43cb9849adc264d68277044
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
