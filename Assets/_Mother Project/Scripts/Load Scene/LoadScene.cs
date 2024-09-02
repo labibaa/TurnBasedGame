@@ -16,13 +16,22 @@ public class LoadScene : MonoBehaviour
             LoadSceneManager.instance.LoadScene(SceneName);
         }*/
     }
+    /* private void OnTriggerEnter(Collider other)
+     {
+         PlayerPrefs.SetString("LastPosition", LastPosition);
+         LoadSceneManager.instance.LoadScene(SceneName);
+     }*/
+
     private void OnTriggerEnter(Collider other)
     {
-        PlayerPrefs.SetString("LastPosition", LastPosition);
-        LoadSceneManager.instance.LoadScene(SceneName);
+        if (other.CompareTag("Player"))
+        {
+            LoadSceneManager.instance.LoadScene(SceneName);
+        }
+        
     }
 
-     public void LoadNextScene()
+    public void LoadNextScene()
     {
         LoadSceneManager.instance.LoadScene(SceneName);
     }
