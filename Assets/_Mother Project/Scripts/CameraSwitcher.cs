@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+
 public class CameraSwitcher : MonoBehaviour
 {
+    private BoxCollider boxCollider;
     [SerializeField]
     private List<CinemachineVirtualCamera> cameras; // List of all cameras
     [SerializeField]
     private int activeCameraIndex = 0; // Index of the active camera
+    private void Start()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -60,6 +66,19 @@ public class CameraSwitcher : MonoBehaviour
         foreach (var cam in cameras)
         {
             cam.Priority = 10; // Reset all cameras to their lower priority
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (boxCollider != null)
+            {
+                boxCollider.enabled = !boxCollider.enabled;
+            }
+
+
         }
     }
 }

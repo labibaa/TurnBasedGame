@@ -230,7 +230,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Dash
 
-    Ap: 7
+    Ap: 2
+
 
 '
   m_isRightToLeft: 0

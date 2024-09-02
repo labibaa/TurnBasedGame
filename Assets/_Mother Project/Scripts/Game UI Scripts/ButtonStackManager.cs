@@ -24,7 +24,7 @@ public class ButtonStackManager : MonoBehaviour
     [SerializeField]
     GameObject undoButtonPrefab;
 
-    List<GameObject> commonButtons= new List<GameObject>();
+    List<GameObject> commonButtons = new List<GameObject>();
     private void Start()
     {
         // Ensure the stackPanel has a Vertical Layout Group component
@@ -36,9 +36,9 @@ public class ButtonStackManager : MonoBehaviour
     }
     private void Awake()
     {
-        
-            instance = this;
-        
+
+        instance = this;
+
     }
 
     public void OnButtonPressed(GameObject imagePrefa)
@@ -66,7 +66,7 @@ public class ButtonStackManager : MonoBehaviour
     }
     public void UndoStackEntry()
     {
-        
+
         UI.instance.ResetPanels();
         TurnManager.instance.ResetTargetHIghlightVisual();
         GridMovement.instance.ResetHighlightedPath();
@@ -84,9 +84,9 @@ public class ButtonStackManager : MonoBehaviour
 
     public GameObject PopulateUltimateBar(CharacterBaseClasses player)
     {
-        GameObject ultimateBarSpawned = Instantiate(ultimateBar,UltimateRectPanel.position,Quaternion.identity);
+        GameObject ultimateBarSpawned = Instantiate(ultimateBar, UltimateRectPanel.position, Quaternion.identity);
         ultimateBarSpawned.transform.SetParent(UltimateRectPanel, false);
-        ultimateBarSpawned.name = player.name+"ultimate";
+        ultimateBarSpawned.name = player.name + "ultimate";
         ultimateBarSpawned.GetComponent<UltimateUI>().maxProgress = player.GetPlayerUltimate().GetultimateThreshold();
         ultimateBarSpawned.GetComponent<UltimateUI>().ultimateBarProgress = 0;
         return ultimateBarSpawned;
@@ -95,14 +95,14 @@ public class ButtonStackManager : MonoBehaviour
     {
         GameObject playerPanel = new GameObject("PlayerPanel");
         playerPanel.transform.SetParent(parentPanel, false);
-        playerPanel.name= player.name;
+        playerPanel.name = player.name;
         RectTransform panelRectTransform = playerPanel.AddComponent<RectTransform>();
         panelRectTransform.sizeDelta = new Vector2(800, 70); // Set panel size as needed
         HorizontalLayoutGroup horizontalLayoutGroup = playerPanel.AddComponent<HorizontalLayoutGroup>();
         horizontalLayoutGroup.childControlHeight = false;
         horizontalLayoutGroup.childControlWidth = false;
-        horizontalLayoutGroup.childForceExpandHeight= false;
-        horizontalLayoutGroup.childForceExpandWidth= false;
+        horizontalLayoutGroup.childForceExpandHeight = false;
+        horizontalLayoutGroup.childForceExpandWidth = false;
         horizontalLayoutGroup.spacing = 40;
 
 
@@ -118,9 +118,9 @@ public class ButtonStackManager : MonoBehaviour
         foreach (ImprovedActionStat scriptable in playerAvailableAction)
         {
             GameObject button = Instantiate(scriptable.actionButton, playerPanel.transform);
-            
 
-            if (scriptable.actionButton.name=="Block")
+
+            if (scriptable.actionButton.name == "Block")
             {
                 button.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Block());
             }
@@ -138,19 +138,19 @@ public class ButtonStackManager : MonoBehaviour
             }
             else
             {
-               
+
                 button.GetComponent<Button>().onClick.AddListener(() => TempManager.instance.ShowTargetList(scriptable.actionButton.name));
             }
 
-            
+
             ActionActivator.instance.AddToActionButtons(button);
             //NumpadHotkeys.instance.actionButtons.Add(button);
         }
         //
-        /*GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
-        moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
-        ActionActivator.instance.AddToActionButtons(moveButton);*/
 
+        //GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
+        //moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+        //ActionActivator.instance.AddToActionButtons(moveButton);
         if (player.GetWarpAction())
         {
             GameObject warpButton = Instantiate(player.GetWarpAction().actionButton, playerPanel.transform);
@@ -170,17 +170,19 @@ public class ButtonStackManager : MonoBehaviour
             ActionActivator.instance.AddToActionButtons(groundBlastButton);
         }
         GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
-             undoButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.UndoStackEntry());
-             ActionActivator.instance.AddToActionButtons(undoButton);
-             GameObject endTurnButton = Instantiate(endTurnButtonPrefab, playerPanel.transform);
-             //endTurnButton.GetComponent<Button>().onClick.AddListener(() => TurnManager.instance.EndTurn());
-             //endTurnButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.ClearStack());
-             ActionActivator.instance.AddToActionButtons(endTurnButton);
-             GameObject ultimateBUtton = Instantiate(player.GetUltimateScripitable().ultimateButton,playerPanel.transform);
-             ultimateBUtton.GetComponent<Button>().onClick.AddListener(()=> ActionArchive.instance.Ultimate());
-             ActionActivator.instance.AddToActionButtons(ultimateBUtton);
+        undoButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.UndoStackEntry());
+        ActionActivator.instance.AddToActionButtons(undoButton);
 
-             //ActionActivator.instance.UpdateAvailableAction(TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<CharacterBaseClasses>(), TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<TemporaryStats>());
+        //endTurnButton.GetComponent<Button>().onClick.AddListener(() => TurnManager.instance.EndTurn());
+        //endTurnButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.ClearStack());
+
+        //GameObject endTurnButton = Instantiate(endTurnButtonPrefab, playerPanel.transform);
+        //ActionActivator.instance.AddToActionButtons(endTurnButton);
+        GameObject ultimateBUtton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
+        ultimateBUtton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
+        ActionActivator.instance.AddToActionButtons(ultimateBUtton);
+
+        //ActionActivator.instance.UpdateAvailableAction(TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<CharacterBaseClasses>(), TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<TemporaryStats>());
 
 
 

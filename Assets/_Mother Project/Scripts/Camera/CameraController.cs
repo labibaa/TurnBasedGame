@@ -27,9 +27,9 @@ public class CameraController : MonoBehaviour
     {
         if (GridSystem.instance.IsGridOn)
         {
-            //HandleMovement();
-            //HandleRotation();
-            //HandleZoom();
+            HandleMovement();
+            HandleRotation();
+            HandleZoom();
         }
     }
 
