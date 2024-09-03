@@ -1295,7 +1295,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7703293576881389124, guid: e3e2ad3d65461ab4f9464a4b106a693e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2175,6 +2176,7 @@ MonoBehaviour:
   - {fileID: 2345765645214710217, guid: 221f3b56ca5633d4f802d2727c86920e, type: 3}
   - {fileID: 5699596300779192415, guid: fca09c5596150194d94090c80790f961, type: 3}
   - {fileID: 2345765645214710217, guid: 221f3b56ca5633d4f802d2727c86920e, type: 3}
+  TrailVisual: {fileID: 0}
   speed: 15
   charAnimator: {fileID: 834773400}
   targetAnimator: {fileID: 1247462821}
@@ -25262,6 +25264,7 @@ MonoBehaviour:
   - {fileID: 5699596300779192415, guid: fca09c5596150194d94090c80790f961, type: 3}
   - {fileID: 2345765645214710217, guid: 221f3b56ca5633d4f802d2727c86920e, type: 3}
   - {fileID: 19872524, guid: 4889039938a567444827eafcfbc2b267, type: 3}
+  TrailVisual: {fileID: 0}
   speed: 15
   charAnimator: {fileID: 1055506058}
   targetAnimator: {fileID: 1247462821}
@@ -26073,6 +26076,7 @@ MonoBehaviour:
   - {fileID: 229928264}
   - {fileID: 229928264}
   particles: []
+  TrailVisual: {fileID: 0}
   speed: 15
   charAnimator: {fileID: 4425428724322648875}
   targetAnimator: {fileID: 1247462821}
@@ -73103,6 +73107,7 @@ MonoBehaviour:
   - {fileID: 2345765645214710217, guid: 221f3b56ca5633d4f802d2727c86920e, type: 3}
   - {fileID: 5699596300779192415, guid: fca09c5596150194d94090c80790f961, type: 3}
   - {fileID: 2345765645214710217, guid: 221f3b56ca5633d4f802d2727c86920e, type: 3}
+  TrailVisual: {fileID: 0}
   speed: 15
   charAnimator: {fileID: 4177323282150455986}
   targetAnimator: {fileID: 1247462821}
