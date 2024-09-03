@@ -5,7 +5,8 @@ using UnityEngine.Analytics;
 
 public class RandomSceneLoad : MonoBehaviour
 {
-    public List<SceneField> sceneFields = new List<SceneField>();
+    [SerializeField] List<SceneField> sceneFields = new List<SceneField>();
+    [SerializeField] SceneField FinalScene;
 
     private void Update()
     {
@@ -17,7 +18,17 @@ public class RandomSceneLoad : MonoBehaviour
 
     public void LoadRandomScene()
     {
-        int r = Random.Range(0, sceneFields.Count);
-        LoadSceneManager.instance.LoadScene(sceneFields[r]);
+         
+        if(sceneFields.Count <= 0)
+        {
+            LoadSceneManager.instance.LoadScene(FinalScene);
+        }
+        else
+        {
+            int r = Random.Range(0, sceneFields.Count);
+            LoadSceneManager.instance.LoadScene(sceneFields[r]);
+            sceneFields.Remove(sceneFields[r]);
+        }
+        
     }
 }
