@@ -49,8 +49,8 @@ public class Counter : ICommand
         player.GetComponent<PlayParticle>().actionSound = counter.actionSound;
         player.GetComponent<PlayParticle>().particlePrefab = counter.ParticleSystem;
         player.GetComponent<PlayParticle>().particlePrefabHit = counter.HitParticleSystem;
-        CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
-        CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
+        //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
+        //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.Priority = 15;
 
 
