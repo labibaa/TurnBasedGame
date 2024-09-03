@@ -93,7 +93,7 @@ public class CutsceneManager : MonoBehaviour
         //await UniTask.WaitWhile(() => !particleFinishedPlaying);
         //particleFinishedPlaying = false;
 
-        virtualCamera.Priority = 9;
+        //virtualCamera.Priority = 9;
         // Animation has finished playing
 
         
