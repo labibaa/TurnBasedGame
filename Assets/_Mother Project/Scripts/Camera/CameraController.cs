@@ -44,14 +44,14 @@ public class CameraController : MonoBehaviour
         {
             inputMoveDir.z = -1f;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputMoveDir.x = +1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputMoveDir.x = -1f;
-        }
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    inputMoveDir.x = +1f;
+        //}
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    inputMoveDir.x = -1f;
+        //}
 
         Vector3 moveVector = transform.forward * inputMoveDir.z + transform.right * inputMoveDir.x;
 
