@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class GridCamera : MonoBehaviour
+public class 
+    era : MonoBehaviour
 {
 
     [SerializeField]
@@ -41,7 +42,7 @@ public class GridCamera : MonoBehaviour
         }
         else
         {
-            gridCam.Priority = 9;
+            gridCam.Priority = 11;
             isGridCamera = false;
         }
        

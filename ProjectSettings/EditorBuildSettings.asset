@@ -10,21 +10,21 @@ EditorBuildSettings:
       Menu.unity
     guid: 79fb33651175e654485311f0b96b9a65
   - enabled: 1
-    path: Assets/_Mother Project/Scenes/Nushrat/NEW DungenMapforMultiplayer 6.unity
+    path: Assets/_Mother Project/Scenes/DungenIntro.unity
     guid: 314252483c3047d4e98e4b489d0a3e27
   - enabled: 1
-    path: Assets/_Mother Project/Scenes/Nushrat/characters_scene.unity
+    path: Assets/_Mother Project/Scenes/characters_scene.unity
     guid: 81493a40ae67a664aaf5aeea370fdb14
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Mother Project/Scenes/Nushrat/dungeon map 01.unity
     guid: 9f7fb4975cb0ae742b4488663ff91cac
   - enabled: 1
-    path: Assets/_Mother Project/Scenes/Nushrat/Dual DungenMap.unity
+    path: Assets/_Mother Project/Scenes/LongHallWay.unity
     guid: 181aa231c43cb9849adc264d68277044
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Mother Project/Scenes/Nushrat/BlankScene.unity
     guid: 49ab6bd7b9b04ed4abee9a95282dceea
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Mother Project/Scenes/Nushrat/Vfx.unity
     guid: c9761e8f86b437744aa368ab8e1ca4a4
   m_configObjects:
