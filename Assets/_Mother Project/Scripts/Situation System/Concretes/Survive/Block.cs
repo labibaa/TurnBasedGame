@@ -43,8 +43,8 @@ public class Block : ICommand
         player.GetComponent<PlayParticle>().actionSound = block.actionSound;   
         player.GetComponent<PlayParticle>().particlePrefab = block.ParticleSystem;
         player.GetComponent<PlayParticle>().particlePrefabHit = block.HitParticleSystem;
-        CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
-        CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
+        //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
+        //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
 
         
         player.GetComponent<SpawnVFX>().SetOwnVFXPosition(player.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[block.CharacterBodyLocation]);

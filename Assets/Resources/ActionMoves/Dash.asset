@@ -40,7 +40,8 @@ MonoBehaviour:
   actionButton: {fileID: 1799909427367868529, guid: 5d609375dfe5e594392c69c472400d40,
     type: 3}
   moveName: Dash
-  PlayerActionVFX: {fileID: 0}
+  PlayerActionVFX: {fileID: 8190572488139902522, guid: 157bd6cd6d9546e4e816dcaa8685fce1,
+    type: 3}
   TargetHitVFX: {fileID: 0}
   particle: {fileID: 19884158, guid: 59dfc041ed5cba6478601ebd148429fb, type: 3}
   CharacterBodyLocation: LowerBody

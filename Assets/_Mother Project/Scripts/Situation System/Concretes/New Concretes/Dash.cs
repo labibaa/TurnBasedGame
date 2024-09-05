@@ -36,9 +36,13 @@ public class Dash : ICommand
 
     public async UniTask Execute()
     {
-        Agent.GetComponent<SpawnVFX>().SetParticle(dashScriptable.particle);
+       /* Agent.GetComponent<SpawnVFX>().SetParticle(dashScriptable.particle);
         Agent.GetComponent<SpawnVFX>().SetTargetVFXPosition(Agent.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[dashScriptable.CharacterBodyLocation]);
-        Agent.GetComponent<SpawnVFX>().PlayParticles();
+        Agent.GetComponent<SpawnVFX>().PlayParticles();*/
+
+        Agent.GetComponent<SpawnVFX>().SetVFXPrefab(dashScriptable.PlayerActionVFX);
+        Agent.GetComponent<SpawnVFX>().SetOwnVFXPosition(Agent.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[dashScriptable.CharacterBodyLocation]);
+        Agent.GetComponent<SpawnVFX>().PlayerVFX();
         Agent.gameObject.GetComponent<TemporaryStats>().AutoMove = Automove;
 
        // await CutsceneManager.instance.PlayAnimationForCharacter(Agent.gameObject,"Dash");
