@@ -332,6 +332,7 @@ public class ActionArchive : MonoBehaviour
 
         ICommand venomAction = new VenomCloud(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, venomScriptable);
         ActionTemplate(venomScriptable, venomAction);
+        GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, venomScriptable.ActionRange, Color.red);
     }
     public async void SmokeCloud()
     {
@@ -340,6 +341,7 @@ public class ActionArchive : MonoBehaviour
 
         ICommand smokeAction = new SmokeCloud(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, smokeScriptable);
         ActionTemplate(smokeScriptable, smokeAction);
+        GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, smokeScriptable.ActionRange, Color.red);
     }
 
 
