@@ -93,32 +93,28 @@ public class ButtonStackManager : MonoBehaviour
     }
     public GameObject PopulateActionPanel(CharacterBaseClasses player)
     {
+        // Create a new player panel
         GameObject playerPanel = new GameObject("PlayerPanel");
         playerPanel.transform.SetParent(parentPanel, false);
         playerPanel.name = player.name;
+
+        // Add RectTransform component and set its size
         RectTransform panelRectTransform = playerPanel.AddComponent<RectTransform>();
-        panelRectTransform.sizeDelta = new Vector2(800, 70); // Set panel size as needed
-        HorizontalLayoutGroup horizontalLayoutGroup = playerPanel.AddComponent<HorizontalLayoutGroup>();
-        horizontalLayoutGroup.childControlHeight = false;
-        horizontalLayoutGroup.childControlWidth = false;
-        horizontalLayoutGroup.childForceExpandHeight = false;
-        horizontalLayoutGroup.childForceExpandWidth = false;
-        horizontalLayoutGroup.spacing = 40;
+        panelRectTransform.sizeDelta = new Vector2(200, 70); // Set panel size as needed
 
+        // Replace HorizontalLayoutGroup with GridLayoutGroup for button grid layout
+        GridLayoutGroup gridLayoutGroup = playerPanel.AddComponent<GridLayoutGroup>();
+        gridLayoutGroup.cellSize = new Vector2(70, 70);   // Size of each button
+        gridLayoutGroup.spacing = new Vector2(40, 40);     // Spacing between buttons
+        gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        gridLayoutGroup.constraintCount = 3;               // Limit to 3 buttons per row
 
-
-        //horizontalLayoutGroup.childAlignment = TextAnchor.MiddleCenter;
-
-
-
-
-
-        List<ImprovedActionStat> playerAvailableAction;
-        playerAvailableAction = player.GetAvailableActions();
+        // Get the available actions from the player
+        List<ImprovedActionStat> playerAvailableAction = player.GetAvailableActions();
         foreach (ImprovedActionStat scriptable in playerAvailableAction)
         {
+            // Instantiate each action button and set its function based on its name
             GameObject button = Instantiate(scriptable.actionButton, playerPanel.transform);
-
 
             if (scriptable.actionButton.name == "Block")
             {
@@ -138,60 +134,48 @@ public class ButtonStackManager : MonoBehaviour
             }
             else
             {
-
                 button.GetComponent<Button>().onClick.AddListener(() => TempManager.instance.ShowTargetList(scriptable.actionButton.name));
             }
 
-
+            // Add button to ActionActivator
             ActionActivator.instance.AddToActionButtons(button);
-            //NumpadHotkeys.instance.actionButtons.Add(button);
         }
-        //
 
-        //GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
-        //moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
-        //ActionActivator.instance.AddToActionButtons(moveButton);
+        // Add additional buttons for special actions like Warp, Dash, GroundBlast
         if (player.GetWarpAction())
         {
             GameObject warpButton = Instantiate(player.GetWarpAction().actionButton, playerPanel.transform);
             warpButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.WarpSurge());
             ActionActivator.instance.AddToActionButtons(warpButton);
         }
+
         if (player.GetDashAction())
         {
             GameObject dashButton = Instantiate(player.GetDashAction().actionButton, playerPanel.transform);
             dashButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Dash());
             ActionActivator.instance.AddToActionButtons(dashButton);
         }
+
         if (player.GetGroundBlastAction())
         {
             GameObject groundBlastButton = Instantiate(player.GetGroundBlastAction().actionButton, playerPanel.transform);
             groundBlastButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.GroundBlast());
             ActionActivator.instance.AddToActionButtons(groundBlastButton);
         }
+
+        // Add the undo button
         GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
         undoButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.UndoStackEntry());
         ActionActivator.instance.AddToActionButtons(undoButton);
 
-        //endTurnButton.GetComponent<Button>().onClick.AddListener(() => TurnManager.instance.EndTurn());
-        //endTurnButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.ClearStack());
-
-        //GameObject endTurnButton = Instantiate(endTurnButtonPrefab, playerPanel.transform);
-        //ActionActivator.instance.AddToActionButtons(endTurnButton);
-        GameObject ultimateBUtton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
-        ultimateBUtton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
-        ActionActivator.instance.AddToActionButtons(ultimateBUtton);
-
-        //ActionActivator.instance.UpdateAvailableAction(TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<CharacterBaseClasses>(), TurnManager.instance.players[TurnManager.instance.currentPlayerIndex].GetComponent<TemporaryStats>());
-
-
-
-
-
-
+        // Add the ultimate action button
+        GameObject ultimateButton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
+        ultimateButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
+        ActionActivator.instance.AddToActionButtons(ultimateButton);
 
         return playerPanel;
     }
+
 
     public int getSpacing(int numberOfButtons)
     {
