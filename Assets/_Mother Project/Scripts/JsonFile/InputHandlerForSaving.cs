@@ -43,6 +43,18 @@ public class InputHandlerForSaving : MonoBehaviour
        
     }
 
+    public void LoadDataFromJson2()
+    {
+        SavedData = FileHandler.LoadJsonData<SaveTurnInformation>("C:/Users/BLI2/AppData/LocalLow/DefaultCompany/TurnBasedame/BLI2Save1157.json");
+
+        foreach (var item in SavedData)
+        {
+            savedDataText.text = item.ToString();
+        }
+
+
+    }
+
     public void setUserName()
     {
         fileName = userNameInput.text;

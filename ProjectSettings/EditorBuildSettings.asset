@@ -22,7 +22,7 @@ EditorBuildSettings:
     path: Assets/_Mother Project/Scenes/LongHallWay.unity
     guid: 181aa231c43cb9849adc264d68277044
   - enabled: 0
-    path: Assets/_Mother Project/Scenes/Nushrat/BlankScene.unity
+    path: Assets/_Mother Project/Configure/BlankScene.unity
     guid: 49ab6bd7b9b04ed4abee9a95282dceea
   - enabled: 0
     path: Assets/_Mother Project/Scenes/Nushrat/Vfx.unity
