@@ -7,35 +7,46 @@ using UnityEngine.UI;
 public class PlayableCharacterUI : MonoBehaviour
 {
     //public TMP_Text nameText;
-    public TMP_Text apText;
-    public TMP_Text hpText;
+    //public TMP_Text apText;
+    //public TMP_Text hpText;
     public TMP_Text classText;
     public Image avatarImage;
     public GameObject CurrentPlayerPanel;
+
+    public Image hpBar; // HP bar using fillAmount
+    public Image apBar; // AP bar using fillAmount
 
     public CharacterBaseClasses myCharacter;
 
     private void Start()
     {
-          
+        UpdateHUD();
     }
-
 
     public void UpdateHUD()
     {
         // Update the UI elements with player's stats
         //nameText.text = myCharacter.name;
-        apText.text = "AP: " + myCharacter.GetComponent<TemporaryStats>().CurrentAP.ToString();
-        hpText.text = "HP: " + myCharacter.GetComponent<TemporaryStats>().CurrentHealth.ToString();
-        //classText.text = "Class: " + myCharacter.characterClass;
-        avatarImage.sprite = myCharacter.avatarHead;
-        CurrentPlayerHUD();
 
+        // Update HP bar
+        float currentHP = myCharacter.GetComponent<TemporaryStats>().CurrentHealth;
+        float maxHP = myCharacter.GetComponent<TemporaryStats>().PlayerHealth; // Assuming you have max HP
+        hpBar.fillAmount = currentHP / maxHP; // FillAmount expects a value between 0 and 1
+
+        // Update AP bar
+        float currentAP = myCharacter.GetComponent<TemporaryStats>().CurrentAP;
+        float maxAP = myCharacter.GetComponent<TemporaryStats>().PlayerAP; // Assuming you have max AP
+        apBar.fillAmount = currentAP / maxAP;
+
+        // Update avatar image
+        avatarImage.sprite = myCharacter.avatarHead;
+
+        // Show if it's the current player's turn
+        //CurrentPlayerHUD();
     }
 
     public void CurrentPlayerHUD()
     {
-       // Debug.Log("CUrrent Turn"+ myCharacter.GetComponent<PlayerTurn>().myTurn);
         if (myCharacter.GetComponent<PlayerTurn>().myTurn)
         {
             CurrentPlayerPanel.SetActive(true);

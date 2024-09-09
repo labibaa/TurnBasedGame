@@ -20,7 +20,9 @@ public class PlayerStatUI : MonoBehaviour
     #region new Summary Stat
 
     public Image SummaryStatParent;
+    public Image SummaryStatParentEnemy;
     public Image AvatarSummaryPrefab;
+    public Image AvatarSummaryPrefabEnemy;
     public List<PlayableCharacterUI> CharacterUIList;
 
     #endregion
@@ -77,15 +79,32 @@ public class PlayerStatUI : MonoBehaviour
         
         foreach (PlayerTurn pt in TurnManager.instance.players)
         {
-            uiPlayerHashSet.Add(pt.GetComponent<CharacterBaseClasses>());
+            
+                uiPlayerHashSet.Add(pt.GetComponent<CharacterBaseClasses>());
+            
+            
         }
 
         foreach (CharacterBaseClasses player in uiPlayerHashSet)
         {
-            Transform tempAvatarUI;
-            tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
-            tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
-            CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+            
+                Transform tempAvatarUI;
+            if (player.GetComponent<TemporaryStats>().CharacterTeam == TeamName.TeamA)
+            {
+                tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
+                tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
+                CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+            }
+            else
+            {
+                tempAvatarUI = Instantiate(AvatarSummaryPrefabEnemy.transform, SummaryStatParentEnemy.transform);
+                tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
+                CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+            }
+                
+                
+            
+            
         }
         UpdateSummaryHUDUI();
     }
