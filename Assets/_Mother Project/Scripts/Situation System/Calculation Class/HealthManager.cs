@@ -90,6 +90,7 @@ public class HealthManager : MonoBehaviour
                 //TurnManager.instance.players[0].gameObject.SetActive(false);
                
                 PlayerStatUI.instance.CharacterUIList.Clear();
+                PlayerStatUI.instance.SummaryStatParentEnemy.gameObject.SetActive(false);
                 TempManager.instance.currentState = GameStates.SituationOff;
                 HandleTurnNew.instance.SituationEndCondition = true;
                 TurnManager.instance.currentPlayerIndex = 0;

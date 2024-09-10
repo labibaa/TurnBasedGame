@@ -42,7 +42,7 @@ public class PlayerStatUI : MonoBehaviour
     //[SerializeField] private TMP_Text playerSkillTextDetails;
     //[SerializeField] private TMP_Text playerStrengthTextDetails;
     //[SerializeField] private TMP_Text playerDexterityTextDetails;
-
+    Vector3 positionOffset = new Vector3(0, 2, 0);
     public static PlayerStatUI instance;
 
     private void Awake()
@@ -70,6 +70,10 @@ public class PlayerStatUI : MonoBehaviour
     {
 
         foreach (Transform child in SummaryStatParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in SummaryStatParentEnemy.transform)
         {
             Destroy(child.gameObject);
         }
@@ -101,10 +105,10 @@ public class PlayerStatUI : MonoBehaviour
                 tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
                 CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
             }
-                
-                
-            
-            
+
+
+
+
         }
         UpdateSummaryHUDUI();
     }
@@ -138,4 +142,6 @@ public class PlayerStatUI : MonoBehaviour
         //playerDexterityTextDetails.text = "Dexterity: " + currentPlayer.Dexterity.ToString();
 
     }
+
+
 }
