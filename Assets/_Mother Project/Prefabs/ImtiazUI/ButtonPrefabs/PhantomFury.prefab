@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4392325774871935972}
   - component: {fileID: 2531551913102199068}
   - component: {fileID: 5147573972664098771}
+  - component: {fileID: 2322161974540899302}
   m_Layer: 5
   m_Name: PhantomFury
   m_TagString: Untagged
@@ -148,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverScale: 1.2
-  hoverOffset: 20
   hoverColor: {r: 0.16078432, g: 0.7254902, b: 0.8509804, a: 1}
 --- !u!114 &5147573972664098771
 MonoBehaviour:
@@ -163,6 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionName: PhantomFury
+--- !u!225 &2322161974540899302
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4236195275393407154}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7148680052591272434
 GameObject:
   m_ObjectHideFlags: 0

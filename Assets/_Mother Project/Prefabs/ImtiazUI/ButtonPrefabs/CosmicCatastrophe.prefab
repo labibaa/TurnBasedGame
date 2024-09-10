@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 51299034562229224}
   - component: {fileID: 1998952659726110754}
   - component: {fileID: 6325714080186966994}
+  - component: {fileID: -5493329142899353556}
   m_Layer: 5
   m_Name: CosmicCatastrophe
   m_TagString: Untagged
@@ -148,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverScale: 1.2
-  hoverOffset: 20
   hoverColor: {r: 0.16078432, g: 0.7254902, b: 0.8509804, a: 1}
 --- !u!114 &6325714080186966994
 MonoBehaviour:
@@ -163,6 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionName: CosmicCatastrophe
+--- !u!225 &-5493329142899353556
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782655819700499266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3086733670050828179
 GameObject:
   m_ObjectHideFlags: 0

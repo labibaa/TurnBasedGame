@@ -115,6 +115,7 @@ public class ButtonStackManager : MonoBehaviour
         {
             // Instantiate each action button and set its function based on its name
             GameObject button = Instantiate(scriptable.actionButton, playerPanel.transform);
+            
 
             if (scriptable.actionButton.name == "Block")
             {
@@ -135,6 +136,7 @@ public class ButtonStackManager : MonoBehaviour
             else
             {
                 button.GetComponent<Button>().onClick.AddListener(() => TempManager.instance.ShowTargetList(scriptable.actionButton.name));
+                
             }
 
             // Add button to ActionActivator
@@ -169,9 +171,9 @@ public class ButtonStackManager : MonoBehaviour
         ActionActivator.instance.AddToActionButtons(undoButton);
 
         // Add the ultimate action button
-        GameObject ultimateButton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
-        ultimateButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
-        ActionActivator.instance.AddToActionButtons(ultimateButton);
+        //GameObject ultimateButton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
+        //ultimateButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
+        //ActionActivator.instance.AddToActionButtons(ultimateButton);
 
         return playerPanel;
     }

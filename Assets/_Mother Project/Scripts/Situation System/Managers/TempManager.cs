@@ -37,6 +37,7 @@ public class TempManager : MonoBehaviour
     public GameObject SituationUIPanel;
     public GameObject UlimateUIPanel;
     [SerializeField] GameObject SituationUI_MoveList;
+    [SerializeField] GameObject actionButton;
     [SerializeField] GameObject PressSpace;
     [SerializeField] float rotationSpeed = 0.2f;
 
@@ -68,11 +69,13 @@ public class TempManager : MonoBehaviour
         if (GridSystem.instance.IsGridOn && attacker.tag != "Player")
         {
             SituationUI_MoveList.SetActive(false);
+            actionButton.SetActive(false);
             PressSpace.SetActive(true);
         }
         if (GridSystem.instance.IsGridOn && attacker.tag == "Player")
         {
             SituationUI_MoveList.SetActive(true);
+            actionButton.SetActive(true);
             PressSpace.SetActive(false);
         }
         if(GridSystem.instance.IsGridOn && currentState != GameStates.Simulation)
