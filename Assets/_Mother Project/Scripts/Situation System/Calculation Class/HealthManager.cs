@@ -90,6 +90,17 @@ public class HealthManager : MonoBehaviour
                 //TurnManager.instance.players[0].gameObject.SetActive(false);
                
                 PlayerStatUI.instance.CharacterUIList.Clear();
+                
+
+                for (int i = PlayerStatUI.instance.SummaryStatParentEnemy.gameObject.transform.childCount - 1; i >= 0; i--)
+                {
+                    // Get the child at index 'i'
+                    Transform child = PlayerStatUI.instance.SummaryStatParentEnemy.gameObject.transform.GetChild(i);
+
+                    // Destroy the child GameObject
+                    Destroy(child.gameObject);
+                }
+
                 TempManager.instance.currentState = GameStates.SituationOff;
                 HandleTurnNew.instance.SituationEndCondition = true;
                 TurnManager.instance.currentPlayerIndex = 0;

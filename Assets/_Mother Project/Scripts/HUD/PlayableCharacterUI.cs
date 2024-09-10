@@ -35,7 +35,7 @@ public class PlayableCharacterUI : MonoBehaviour
 
         // Update AP bar
         float currentAP = myCharacter.GetComponent<TemporaryStats>().CurrentAP;
-        float maxAP = myCharacter.GetComponent<TemporaryStats>().PlayerAP; // Assuming you have max AP
+        float maxAP = 12; // Assuming you have max AP
         apBar.fillAmount = currentAP / maxAP;
 
         // Update avatar image
