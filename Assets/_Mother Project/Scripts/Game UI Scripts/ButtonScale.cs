@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using DG.Tweening;  // Import DOTween namespace
 
 public class ButtonScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -7,20 +8,20 @@ public class ButtonScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Vector3 originalScale;
     public float tweenDuration = 0.2f; // Duration of the tween effect
 
-    void Start()
+    private void Start()
     {
-        originalScale = transform.localScale;
+        originalScale = transform.localScale;  // Store the initial scale
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Smoothly scale to the hover scale
-        LeanTween.scale(gameObject, hoverScale, tweenDuration).setEase(LeanTweenType.easeOutQuad);
+        transform.DOScale(hoverScale, tweenDuration).SetEase(Ease.OutQuad);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         // Smoothly scale back to the original scale
-        LeanTween.scale(gameObject, originalScale, tweenDuration).setEase(LeanTweenType.easeOutQuad);
+        transform.DOScale(originalScale, tweenDuration).SetEase(Ease.OutQuad);
     }
 }
