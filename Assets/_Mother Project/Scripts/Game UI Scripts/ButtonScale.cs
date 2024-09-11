@@ -5,6 +5,7 @@ public class ButtonScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public Vector3 hoverScale = new Vector3(1.2f, 1.2f, 1.2f); // Scale when hovered
     private Vector3 originalScale;
+    public float tweenDuration = 0.2f; // Duration of the tween effect
 
     void Start()
     {
@@ -13,11 +14,13 @@ public class ButtonScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.localScale = hoverScale;
+        // Smoothly scale to the hover scale
+        LeanTween.scale(gameObject, hoverScale, tweenDuration).setEase(LeanTweenType.easeOutQuad);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.localScale = originalScale;
+        // Smoothly scale back to the original scale
+        LeanTween.scale(gameObject, originalScale, tweenDuration).setEase(LeanTweenType.easeOutQuad);
     }
 }

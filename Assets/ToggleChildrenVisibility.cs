@@ -62,7 +62,7 @@ public class ToggleChildrenVisibility : MonoBehaviour
         if (GridSystem.instance != null && button != null)
         {
             bool isGridOn = GridSystem.instance.IsGridOn; // Cache the grid state
-            Debug.Log("IsGridOn value: " + isGridOn); // Log the value to check its state
+            
 
             // Set the button's visibility and interactability based on grid state
             if (isGridOn)
