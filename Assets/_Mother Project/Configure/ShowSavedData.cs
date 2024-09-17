@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +15,9 @@ public class ShowSavedData : MonoBehaviour
     [SerializeField] Transform characterPanel;
     [SerializeField] TMP_InputField statInputField_txt;
     [SerializeField] Button charButton;
+    [SerializeField] GameObject dropdown_UI;
    
-    [SerializeField] String fileName;
+    String fileName;
     [SerializeField] List<GameObject> character = new List<GameObject>();
 
     public List<SaveTurnInformation> SavedData = new List<SaveTurnInformation>();
@@ -25,7 +27,7 @@ public class ShowSavedData : MonoBehaviour
 
     private void Start()
     {
-        fileName = fileName + ".json";
+       // fileName = fileName + ".json";
         
     }
 
@@ -40,22 +42,28 @@ public class ShowSavedData : MonoBehaviour
         {
             Button characterbutton = Instantiate(charButton, characterPanel.transform);
             characterbutton.GetComponentInChildren<TextMeshProUGUI>().text = item.ToString();
-            AddCharacterData(item);
-            characterbutton.onClick.AddListener(delegate { PrintCharacterDataFromJson(item); });
+            characterbutton.onClick.AddListener(delegate {AddCharacterData(item); });
             //characterbutton.onClick.AddListener(SaveTemporaryStatToJson);
+           // characterbutton.onClick.AddListener(() => SaveDifferentCharacterData(item));
+            characterbutton.onClick.AddListener(() => PrintCharacterDataFromJson(item));
         }
     }
 
+  
     public void AddCharacterData(GameObject character)
     {
+        SaveCharacterStats.Clear();
         PlayerDataSave playerdtate = new PlayerDataSave(
               character.GetComponent<CharacterBaseClasses>().CharacterName,
               character.GetComponent<TemporaryStats>().CurrentHealth,
               character.GetComponent<TemporaryStats>().PlayerHealth,
               character.GetComponent<TemporaryStats>().CurrentAP,
               character.GetComponent<TemporaryStats>().PlayerAP,
-              character.GetComponent<TemporaryStats>().CurrentDex);
+              character.GetComponent<TemporaryStats>().CurrentDex,
+              character.GetComponent<TemporaryStats>().CharacterTeam);
         SaveCharacterStats.Add(playerdtate);
+        fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
+        SaveTemporaryStatToJson();
 
     }
     public void SaveTemporaryStatToJson() //call function to save data
@@ -66,7 +74,7 @@ public class ShowSavedData : MonoBehaviour
 
     public void PrintCharacterDataFromJson(GameObject character)
     {
-
+        fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
         foreach (Transform child in savedCharacterDataPanel)
         {
@@ -78,21 +86,33 @@ public class ShowSavedData : MonoBehaviour
             TMP_InputField inputField = statInputTxt.GetComponent<TMP_InputField>();
             inputField.text = item.ToString();*/
 
-            /* if(item.Name == character.name)
-             {*/
             CreateInputField(statInputField_txt.gameObject, "Player Name", item.Name, (value) => item.Name = value);
-                CreateInputField(statInputField_txt.gameObject, "Player HP", item.PlayerHealth.ToString(), (value) => item.PlayerHealth = int.Parse(value));
-                CreateInputField(statInputField_txt.gameObject, "Current HP", item.CurrentHealth.ToString(), (value) => item.CurrentHealth = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player HP", item.PlayerHealth.ToString(), (value) => item.PlayerHealth = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Current HP", item.CurrentHealth.ToString(), (value) => item.CurrentHealth = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Current AP", item.CurrentAP.ToString(), (value) => item.CurrentAP = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player AP", item.PlayerAP.ToString(), (value) => item.PlayerAP = int.Parse(value));
-                CreateInputField(statInputField_txt.gameObject, "Player Dexterity", item.CurrentDex.ToString(), (value) => item.CurrentDex = int.Parse(value));
-
-         //   }
-
+            CreateInputField(statInputField_txt.gameObject, "Player Dexterity", item.CurrentDex.ToString(), (value) => item.CurrentDex = int.Parse(value));
+            CreateEnumDropdown(dropdown_UI.gameObject, "Team Name", item.CharacterTeam, (value) => item.CharacterTeam = value);
 
         }
 
 
+    }
+
+    public void LoadJsonToTemporaryStat(GameObject character)
+    {
+        fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
+        ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
+        foreach (var item in ReadCharacterStats)
+        {
+            character.GetComponent<CharacterBaseClasses>().name = item.Name;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
+            character.GetComponent<TemporaryStats>().CurrentHealth = item.CurrentHealth;
+            character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
+            character.GetComponent<TemporaryStats>().CurrentAP = item.CurrentAP;
+            character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+        }
+       
     }
 
     public void PrintTurnDataFromJson()
@@ -124,18 +144,6 @@ public class ShowSavedData : MonoBehaviour
 
     }
 
-    public void EditableDataFromJson()
-    {
-        //fileName = inputHandlerForSaving.GetFileName;
-        SavedData = FileHandler.LoadJsonData<SaveTurnInformation>("zahanSave254.json");
-
-        foreach (var item in SavedData)
-        {
-            
-        }
-
-
-    }
 
     void CreateInputField(GameObject prefab, string label, string defaultValue, System.Action<string> onValueChanged)
     {
@@ -152,7 +160,9 @@ public class ShowSavedData : MonoBehaviour
 
         // Add listener for when the value is changed
         inputField.onValueChanged.AddListener((value) => {
-            onValueChanged(value);
+
+           onValueChanged(value);
+           
             //if (onSaveData)
             //{
                 FileHandler.SaveToJsonData<PlayerDataSave>(ReadCharacterStats, fileName);
@@ -161,6 +171,39 @@ public class ShowSavedData : MonoBehaviour
            
         });
        
+    }
+
+    public void CreateEnumDropdown(GameObject prefab, string label, TeamName defaultValue, Action<TeamName> onValueChanged)
+    {
+        GameObject dropdownGO = Instantiate(prefab, savedCharacterDataPanel);
+        TMP_Dropdown dropdown = dropdownGO.GetComponent<TMP_Dropdown>();
+        TextMeshProUGUI labelComponent = dropdownGO.transform.Find("Label_Text").GetComponent<TextMeshProUGUI>();
+        if (labelComponent != null)
+        {
+            labelComponent.text = label;
+        }
+
+        // Clear existing options
+        dropdown.ClearOptions();
+
+        // Populate dropdown with enum values
+        var enumNames = Enum.GetNames(typeof(TeamName));
+        foreach (var name in enumNames)
+        {
+            dropdown.options.Add(new TMP_Dropdown.OptionData(name));
+        }
+
+        // Set default value
+        dropdown.value = Array.IndexOf(enumNames, defaultValue.ToString());
+        dropdown.RefreshShownValue();
+
+        // Add listener for when a value is selected
+        dropdown.onValueChanged.AddListener((index) => {
+            TeamName selectedEnum = (TeamName)Enum.Parse(typeof(TeamName), enumNames[index]);
+            onValueChanged(selectedEnum);  // Invoke the callback with the selected enum value
+
+            FileHandler.SaveToJsonData<PlayerDataSave>(ReadCharacterStats, fileName);
+        });
     }
 
     public void SaveData()
