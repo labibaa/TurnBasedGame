@@ -100,14 +100,17 @@ public class ButtonStackManager : MonoBehaviour
 
         // Add RectTransform component and set its size
         RectTransform panelRectTransform = playerPanel.AddComponent<RectTransform>();
-        panelRectTransform.sizeDelta = new Vector2(200, 70); // Set panel size as needed
+        playerPanel.AddComponent<UICircularLayoutGroup>();
+        
 
-        // Replace HorizontalLayoutGroup with GridLayoutGroup for button grid layout
-        GridLayoutGroup gridLayoutGroup = playerPanel.AddComponent<GridLayoutGroup>();
-        gridLayoutGroup.cellSize = new Vector2(70, 70);   // Size of each button
-        gridLayoutGroup.spacing = new Vector2(40, 40);     // Spacing between buttons
-        gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        gridLayoutGroup.constraintCount = 3;               // Limit to 3 buttons per row
+        panelRectTransform.sizeDelta = new Vector2(400, 400); // Set panel size as needed
+
+        //// Replace HorizontalLayoutGroup with GridLayoutGroup for button grid layout
+        //GridLayoutGroup gridLayoutGroup = playerPanel.AddComponent<GridLayoutGroup>();
+        //gridLayoutGroup.cellSize = new Vector2(70, 70);   // Size of each button
+        //gridLayoutGroup.spacing = new Vector2(40, 40);     // Spacing between buttons
+        //gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        //gridLayoutGroup.constraintCount = 3;               // Limit to 3 buttons per row
 
         // Get the available actions from the player
         List<ImprovedActionStat> playerAvailableAction = player.GetAvailableActions();
@@ -166,9 +169,9 @@ public class ButtonStackManager : MonoBehaviour
         }
 
         // Add the undo button
-        GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
-        undoButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.UndoStackEntry());
-        ActionActivator.instance.AddToActionButtons(undoButton);
+        //GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
+        //undoButton.GetComponent<Button>().onClick.AddListener(() => ButtonStackManager.instance.UndoStackEntry());
+        //ActionActivator.instance.AddToActionButtons(undoButton);
 
         // Add the ultimate action button
         //GameObject ultimateButton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
@@ -179,10 +182,7 @@ public class ButtonStackManager : MonoBehaviour
     }
 
 
-    public int getSpacing(int numberOfButtons)
-    {
-        return 70 / 6 * numberOfButtons;
-    }
+    
 
     public void AddCommonListeners()
     {
