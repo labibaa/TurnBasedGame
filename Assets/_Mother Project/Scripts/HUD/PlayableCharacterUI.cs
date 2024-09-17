@@ -30,7 +30,7 @@ public class PlayableCharacterUI : MonoBehaviour
 
         // Update HP bar
         float currentHP = myCharacter.GetComponent<TemporaryStats>().CurrentHealth;
-        float maxHP = myCharacter.GetComponent<TemporaryStats>().PlayerHealth; // Assuming you have max HP
+        float maxHP = myCharacter.GetComponent<TemporaryStats>().PlayerHealth * 2; // Assuming you have max HP
         hpBar.fillAmount = currentHP / maxHP; // FillAmount expects a value between 0 and 1
 
         // Update AP bar
