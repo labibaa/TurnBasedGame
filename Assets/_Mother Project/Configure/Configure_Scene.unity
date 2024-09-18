@@ -194,7 +194,9 @@ MonoBehaviour:
     type: 3}
   charButton: {fileID: 7057736497362059564, guid: ebec60ca4b182c8409a6fac90792dac4,
     type: 3}
-  fileName: CharacterData
+  dropdown_UI: {fileID: 5787757877879288587, guid: 4e0dd15d216a75846b43c19ac36cc74c,
+    type: 3}
+  saveButton: {fileID: 1070744305}
   character:
   - {fileID: 2277923472114552738, guid: d8d419c9fdc32f649a523c3c32dd8f09, type: 3}
   - {fileID: 205222781349455172, guid: c7d6c67e3a87b9d4c9d854953325e368, type: 3}
@@ -1126,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1070744304
 RectTransform:
   m_ObjectHideFlags: 0

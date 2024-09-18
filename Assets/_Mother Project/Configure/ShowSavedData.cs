@@ -16,7 +16,8 @@ public class ShowSavedData : MonoBehaviour
     [SerializeField] TMP_InputField statInputField_txt;
     [SerializeField] Button charButton;
     [SerializeField] GameObject dropdown_UI;
-   
+    [SerializeField] Button saveButton;
+
     String fileName;
     [SerializeField] List<GameObject> character = new List<GameObject>();
 
@@ -46,6 +47,8 @@ public class ShowSavedData : MonoBehaviour
             //characterbutton.onClick.AddListener(SaveTemporaryStatToJson);
            // characterbutton.onClick.AddListener(() => SaveDifferentCharacterData(item));
             characterbutton.onClick.AddListener(() => PrintCharacterDataFromJson(item));
+            saveButton.gameObject.SetActive(true);
+            saveButton.onClick.AddListener(delegate { LoadJsonToTemporaryStat(item); });
         }
     }
 
