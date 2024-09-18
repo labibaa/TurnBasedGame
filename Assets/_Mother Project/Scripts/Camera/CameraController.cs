@@ -12,8 +12,8 @@ public class CameraController : MonoBehaviour
     float rotationSpeed = 100f;
     float zoomAmount = 1f;
     float zoomSpeed = 5f;
-    const float MIN_FOLLOW_Y = 2f;
-    const float MAX_FOLLOW_Y = 12f;
+    const float MIN_FOLLOW_Y = 0f;
+    const float MAX_FOLLOW_Y = 6f;
     private Vector3 targetFollowOffset;
     private CinemachineTransposer cinemachineTransposer;
 

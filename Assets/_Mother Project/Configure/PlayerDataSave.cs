@@ -12,8 +12,9 @@ public class PlayerDataSave
     public int CurrentAP;
     public int PlayerAP;
     public int CurrentDex;
+    public TeamName CharacterTeam;
 
-    public PlayerDataSave(string name, int currentHealth,int playerHealth,int currentAP, int playerAP,int currentDex)
+    public PlayerDataSave(string name, int currentHealth,int playerHealth,int currentAP, int playerAP,int currentDex, TeamName teamName)
     {
         Name = name;
         CurrentHealth = currentHealth;
@@ -21,6 +22,7 @@ public class PlayerDataSave
         CurrentAP = currentAP;
         PlayerAP = playerAP;
         CurrentDex = currentDex;
+        CharacterTeam = teamName;
 
     }
 }
