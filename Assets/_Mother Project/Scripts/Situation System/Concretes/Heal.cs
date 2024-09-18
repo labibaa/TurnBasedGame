@@ -76,7 +76,8 @@ public class Heal : ICommand
         target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
         Debug.Log("RangedD");
 
-        
+        //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
+        //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.Priority = 15;
 
         player.GetComponent<SpawnVFX>().SetTargetAnimator(target.gameObject);
