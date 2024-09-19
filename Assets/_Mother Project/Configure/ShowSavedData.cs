@@ -47,8 +47,6 @@ public class ShowSavedData : MonoBehaviour
             //characterbutton.onClick.AddListener(SaveTemporaryStatToJson);
            // characterbutton.onClick.AddListener(() => SaveDifferentCharacterData(item));
             characterbutton.onClick.AddListener(() => PrintCharacterDataFromJson(item));
-            saveButton.gameObject.SetActive(true);
-            saveButton.onClick.AddListener(delegate { LoadJsonToTemporaryStat(item); });
         }
     }
 
@@ -83,6 +81,8 @@ public class ShowSavedData : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        saveButton.gameObject.SetActive(true);
+        saveButton.onClick.AddListener(delegate { LoadJsonToTemporaryStat(character); });
         foreach (var item in ReadCharacterStats)
         {
             /*GameObject statInputTxt = Instantiate(statInputField_txt.gameObject, InputDataPanel.position, Quaternion.identity, InputDataPanel);
@@ -114,7 +114,9 @@ public class ShowSavedData : MonoBehaviour
             character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
             character.GetComponent<TemporaryStats>().CurrentAP = item.CurrentAP;
             character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+            character.GetComponent<TemporaryStats>().CharacterTeam = item.CharacterTeam;
         }
+        saveButton.gameObject.SetActive(false);
        
     }
 
@@ -209,8 +211,13 @@ public class ShowSavedData : MonoBehaviour
         });
     }
 
-    public void SaveData()
+   public void LoadActions()
     {
-        onSaveData = true;
+        ImprovedActionStat[] improvedActionStats = Resources.LoadAll<ImprovedActionStat>("ActionMoves");
+
+        foreach(ImprovedActionStat imp in improvedActionStats)
+        {
+            Debug.Log(imp.name);
+        }
     }
 }
