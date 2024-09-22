@@ -11408,7 +11408,7 @@ MonoBehaviour:
   IsThirdRatePerformanceActive: 0
   IsCounterActive: 0
   CurrentEndurance: 10
-  CurrentDex: 10
+  CurrentDex: 8
   AutoMove: 0
   playerUltimateBarCount: 0
   PlayerUltimateBar: {fileID: 0}
