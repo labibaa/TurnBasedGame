@@ -1,11 +1,12 @@
 using UnityEngine;
-using UnityEngine.EventSystems;  // Needed for the IPointerEnterHandler and IPointerExitHandler
+using UnityEngine.EventSystems;  // Needed for IPointerEnterHandler and IPointerExitHandler
 using TMPro;  // TextMesh Pro namespace
 
 public class HoverDisplayStats : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public CharacterBaseClasses myCharacter;  // Assign your character in the inspector or dynamically
-    public TextMeshProUGUI statText;  // Assign the TextMesh Pro text component in the inspector
+    public GameObject myCharacter;  // Assign your character in the inspector
+    public TextMeshProUGUI hpText;  // Assign the TextMesh Pro text component for HP
+    public TextMeshProUGUI apText;  // Assign the TextMesh Pro text component for AP
 
     private TemporaryStats characterStats;  // To store the stats component
 
@@ -23,15 +24,21 @@ public class HoverDisplayStats : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         if (characterStats != null)
         {
-            // Update the TextMesh Pro text with the character's HP and AP
-            statText.text = "HP: " + characterStats.CurrentHealth.ToString() + "\nAP: " + characterStats.CurrentAP.ToString();
-            statText.gameObject.SetActive(true);  // Show the text when hovering
+            // Update the HP and AP TextMesh Pro components separately
+            hpText.text = characterStats.CurrentHealth.ToString();
+            apText.text = characterStats.CurrentAP.ToString();
+
+            // Make sure both text objects are visible
+            hpText.gameObject.SetActive(true);
+            apText.gameObject.SetActive(true);
         }
     }
 
     // Called when the mouse pointer exits the UI element
     public void OnPointerExit(PointerEventData eventData)
     {
-        statText.gameObject.SetActive(false);  // Hide the text when not hovering
+        // Hide the HP and AP text when not hovering
+        hpText.gameObject.SetActive(false);
+        apText.gameObject.SetActive(false);
     }
 }
