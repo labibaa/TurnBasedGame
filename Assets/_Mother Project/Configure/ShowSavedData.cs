@@ -17,6 +17,7 @@ public class ShowSavedData : MonoBehaviour
     [SerializeField] Button charButton;
     [SerializeField] GameObject dropdown_UI;
     [SerializeField] Button saveButton;
+    [SerializeField] public GameObject playerPanel;
 
     String fileName;
     [SerializeField] List<GameObject> character = new List<GameObject>();
@@ -34,6 +35,7 @@ public class ShowSavedData : MonoBehaviour
 
     public void CharacterList()
     {
+        playerPanel.SetActive(true);
         characterPanel.gameObject.SetActive(true);
         foreach (Transform child in characterPanel)
         {
@@ -42,7 +44,7 @@ public class ShowSavedData : MonoBehaviour
         foreach (var item in character)
         {
             Button characterbutton = Instantiate(charButton, characterPanel.transform);
-            characterbutton.GetComponentInChildren<TextMeshProUGUI>().text = item.ToString();
+            characterbutton.GetComponentInChildren<TextMeshProUGUI>().text = item.name;
             characterbutton.onClick.AddListener(delegate {AddCharacterData(item); });
             //characterbutton.onClick.AddListener(SaveTemporaryStatToJson);
            // characterbutton.onClick.AddListener(() => SaveDifferentCharacterData(item));
@@ -211,13 +213,5 @@ public class ShowSavedData : MonoBehaviour
         });
     }
 
-   public void LoadActions()
-    {
-        ImprovedActionStat[] improvedActionStats = Resources.LoadAll<ImprovedActionStat>("ActionMoves");
 
-        foreach(ImprovedActionStat imp in improvedActionStats)
-        {
-            Debug.Log(imp.name);
-        }
-    }
 }

@@ -25,12 +25,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (GridSystem.instance.IsGridOn)
-        {
-            HandleMovement();
+        //if (GridSystem.instance.IsGridOn)
+        //{
+            //HandleMovement();
             HandleRotation();
             HandleZoom();
-        }
+        //}
     }
 
     private void HandleMovement()
