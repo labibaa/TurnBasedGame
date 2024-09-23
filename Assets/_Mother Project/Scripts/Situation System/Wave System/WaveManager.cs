@@ -15,6 +15,7 @@ public class WaveManager : MonoBehaviour
     public List<WaveWrapperClass> PlayerWaves;
     public List<GameObject> WaveTriggers;
     public List<PlayableDirector> WaveTimelines; // New: List of PlayableDirector for each wave
+    public List<GameObject> gridWaveStartLocation;
 
     int TotalNumberOfWavesThisScene;
     int currentWaveCount = 0;
@@ -22,6 +23,7 @@ public class WaveManager : MonoBehaviour
     private void OnEnable()
     {
         GridSystem.OnGridGenerationSpawn += IncreaseWaveCount;
+        GridSystem.OnGridPositionInitialization += GridWaveStartLocation;
         HealthManager.OnGridDisable += EnableNewTrigger;
         // GridSystem.OnGridGeneration += ActivateWaveCharacters;
     }
@@ -29,6 +31,7 @@ public class WaveManager : MonoBehaviour
     private void OnDisable()
     {
         GridSystem.OnGridGenerationSpawn -= IncreaseWaveCount;
+        GridSystem.OnGridPositionInitialization -= GridWaveStartLocation;
         HealthManager.OnGridDisable -= EnableNewTrigger;
         // GridSystem.OnGridGeneration -= ActivateWaveCharacters;
     }
@@ -49,6 +52,11 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         // No changes needed in Update
+    }
+
+    void GridWaveStartLocation()
+    {
+        GridSystem.instance.gridStartLocation = gridWaveStartLocation[currentWaveCount];
     }
 
     void IncreaseWaveCount()

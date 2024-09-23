@@ -128,11 +128,7 @@ public class TurnManager : MonoBehaviour
             await HandleTurnNew.instance.PerformTurns();
             TextFadeInOut.instance.ClearText();
             inputHandlerForSaving.SaveTurnToJson();
-            inputHandlerForSaving.LoadDataFromJson();
-
-
-
-
+   
         }
 
     }

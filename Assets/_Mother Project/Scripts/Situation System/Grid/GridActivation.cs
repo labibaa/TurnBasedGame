@@ -71,7 +71,7 @@ public class GridActivation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !GridSystem.instance.IsGridOn && count < 2)
+        if (other.CompareTag("Player") && !GridSystem.instance.IsGridOn)
         {
             
             GridSystem.instance.GenerateGridOnButton();

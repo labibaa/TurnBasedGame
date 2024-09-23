@@ -12,6 +12,7 @@ public class GridSystem : MonoBehaviour
 {
     public static event Action OnGridGeneration;
     public static event Action OnGridGenerationSpawn;
+    public static event Action OnGridPositionInitialization;
 
 
     public static GridSystem instance;
@@ -36,7 +37,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField]
     Vector3 leftBottomLocation = Vector3.zero;
     [SerializeField]
-    GameObject gridStartLocation;
+     public GameObject gridStartLocation;
 
     public GameObject[,] _gridArray;
     public Dictionary<Vector3, GameObject> cubeCoordinates = new Dictionary<Vector3, GameObject>();
@@ -133,6 +134,7 @@ public class GridSystem : MonoBehaviour
         }
         //IsGridOn = true;
         //leftBottomLocation = player.transform.position - new Vector3(Mathf.Floor(rows / 2f), 0f, Mathf.Floor(columns / 2f));
+        OnGridPositionInitialization?.Invoke();
         leftBottomLocation = gridStartLocation.transform.position;
         Invoke("InitializeGrid", 0f);
         InputManager.OnInteractionPressed -= GenerateGridOnButton;
