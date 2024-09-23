@@ -14,6 +14,7 @@ public class PlayerStatUI : MonoBehaviour
     [SerializeField] private TMP_Text playerAPTextSummary;
     [SerializeField] private TMP_Text playerHPTextSummary;
     [SerializeField] private TMP_Text playerRPTextSummary;
+    public HoverDisplayStats hoverDisplayStats;
 
     #endregion
 
@@ -131,6 +132,7 @@ public class PlayerStatUI : MonoBehaviour
 
         playerAPTextDetails.text = "AP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentAP.ToString();
         playerHPTextDetails.text = "HP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentHealth.ToString();
+        hoverDisplayStats.SetCharacter(currentPlayer.gameObject);
         //playerRPTextDetails.text = "RP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentResolve.ToString();
 
         //playerArcanaTextDetails.text = "Arcana: " + currentPlayer.Arcana.ToString();
