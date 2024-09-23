@@ -530,7 +530,7 @@ public class ActionArchive : MonoBehaviour
            
 
             Turn turn = new Turn(playerAttacker, tobePerformedAction, previousPV + actionScriptable.PriorityValue);
-            int rpOfCurrentPlayer;
+            int rpOfCurrentPlayer;//rp not in use ===Date 23.09.24===
             rpOfCurrentPlayer = playerInfo.CurrentResolve;
             if (rpOfCurrentPlayer == 0)
             {
@@ -549,7 +549,7 @@ public class ActionArchive : MonoBehaviour
                     isTurnAdded = true;
                    
                 }
-            }
+            } //rp not in use ===Date 23.09.24===
             else
             {
                 HandleTurnNew.instance.AddTurn(turn);
