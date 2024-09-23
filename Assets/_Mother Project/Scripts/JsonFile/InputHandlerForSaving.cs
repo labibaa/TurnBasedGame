@@ -38,8 +38,7 @@ public class InputHandlerForSaving : MonoBehaviour
 
         foreach (var item in SavedData)
         {
-           // savedDataText.text = item.ToString();
-           Debug.Log(item);
+          
         }
 
        
