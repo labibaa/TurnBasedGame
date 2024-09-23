@@ -75,6 +75,10 @@ public class CameraController : MonoBehaviour
 
     private void HandleZoom()
     {
+        Vector3 inputMoveDir = new Vector3(0, 0, 0);
+        float minZoomDistance = -10f; // Set the minimum distance (closer zoom limit)
+        float maxZoomDistance = -5f;  // Set the maximum distance (farther zoom limit)
+
         if (Input.mouseScrollDelta.y > 0)
         {
             // Zoom in: Reduce the y value if above MIN_FOLLOW_Y, otherwise adjust only z
@@ -86,7 +90,7 @@ public class CameraController : MonoBehaviour
             else
             {
                 // Only move along the z-axis once MIN_FOLLOW_Y is reached
-                targetFollowOffset.z += zoomAmount;
+                inputMoveDir.z = +50f;
             }
         }
         if (Input.mouseScrollDelta.y < 0)
@@ -100,16 +104,28 @@ public class CameraController : MonoBehaviour
             else
             {
                 // Only move along the z-axis once MAX_FOLLOW_Y is reached
-                targetFollowOffset.z -= zoomAmount;
+                inputMoveDir.z = -50f;
             }
         }
+
+        // Smoothly interpolate the moveVector to the target direction
+        Vector3 moveVector = transform.forward * inputMoveDir.z;
+        Vector3 smoothMoveVector = Vector3.Lerp(Vector3.zero, moveVector, Time.deltaTime * zoomSpeed);  // Smooth the movement
+
+        // Apply the movement to the camera position
+        transform.position += smoothMoveVector * moveSpeed * Time.deltaTime;
 
         // Clamp the y value to prevent it from exceeding bounds
         targetFollowOffset.y = Mathf.Clamp(targetFollowOffset.y, MIN_FOLLOW_Y, MAX_FOLLOW_Y);
 
+        // Clamp the z-axis for zoom limits
+        targetFollowOffset.z = Mathf.Clamp(targetFollowOffset.z, minZoomDistance, maxZoomDistance);
+
         // Update the camera's follow offset smoothly
         cinemachineTransposer.m_FollowOffset = Vector3.Lerp(cinemachineTransposer.m_FollowOffset, targetFollowOffset, Time.deltaTime * zoomSpeed);
     }
+
+
 
 
 }

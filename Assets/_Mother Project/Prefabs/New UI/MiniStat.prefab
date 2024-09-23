@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6694857897998021882}
   - component: {fileID: 7594500558190780228}
   - component: {fileID: 3083450629438241669}
+  - component: {fileID: 332580381708500970}
   m_Layer: 5
   m_Name: AP
   m_TagString: Untagged
@@ -65,16 +66,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 149d94027ffee0d4fb083e55c00bb40b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f7bdce0a4e45584294367e3f904326a, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.519
+  m_FillAmount: 0.5
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &332580381708500970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503298770356655779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33f6264baad0e4a8b159c5a39234a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 3083450629438241669}
+  hoverText: {fileID: 4834788781531192828}
 --- !u!1 &504264924849188969
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +200,7 @@ GameObject:
   - component: {fileID: 4659504681752113833}
   - component: {fileID: 3403347962024378988}
   - component: {fileID: 2068170088443341689}
+  - component: {fileID: 6035788460068799228}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -249,6 +265,20 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6035788460068799228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526972785523518758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33f6264baad0e4a8b159c5a39234a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 2068170088443341689}
+  hoverText: {fileID: 9009259502580321264}
 --- !u!1 &2232804859142348058
 GameObject:
   m_ObjectHideFlags: 0
