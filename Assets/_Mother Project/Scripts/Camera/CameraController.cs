@@ -77,13 +77,39 @@ public class CameraController : MonoBehaviour
     {
         if (Input.mouseScrollDelta.y > 0)
         {
-            targetFollowOffset.y -= zoomAmount;
+            // Zoom in: Reduce the y value if above MIN_FOLLOW_Y, otherwise adjust only z
+            if (targetFollowOffset.y > MIN_FOLLOW_Y)
+            {
+                targetFollowOffset.y -= zoomAmount;
+                targetFollowOffset.z += zoomAmount;
+            }
+            else
+            {
+                // Only move along the z-axis once MIN_FOLLOW_Y is reached
+                targetFollowOffset.z += zoomAmount;
+            }
         }
         if (Input.mouseScrollDelta.y < 0)
         {
-            targetFollowOffset.y += zoomAmount;
+            // Zoom out: Increase the y value if below MAX_FOLLOW_Y, otherwise adjust only z
+            if (targetFollowOffset.y < MAX_FOLLOW_Y)
+            {
+                targetFollowOffset.y += zoomAmount;
+                targetFollowOffset.z -= zoomAmount;
+            }
+            else
+            {
+                // Only move along the z-axis once MAX_FOLLOW_Y is reached
+                targetFollowOffset.z -= zoomAmount;
+            }
         }
+
+        // Clamp the y value to prevent it from exceeding bounds
         targetFollowOffset.y = Mathf.Clamp(targetFollowOffset.y, MIN_FOLLOW_Y, MAX_FOLLOW_Y);
+
+        // Update the camera's follow offset smoothly
         cinemachineTransposer.m_FollowOffset = Vector3.Lerp(cinemachineTransposer.m_FollowOffset, targetFollowOffset, Time.deltaTime * zoomSpeed);
     }
+
+
 }
