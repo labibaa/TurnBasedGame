@@ -12,7 +12,7 @@ public class HunterClass : CharacterBaseClasses
     }
 
 
-    protected override void LevelUp()
+    public override void LevelUp()
     {
         // Increase the character's level by 1.
         Level++;
@@ -20,12 +20,10 @@ public class HunterClass : CharacterBaseClasses
         // Increase the character's attributes based on a predetermined formula.
         Strength += 2f;
         Dexterity += 3f;
-        Charisma += 0f;
+        Intelligence += 0f;
         Arcana += 1f;
-        Skill += 2f;
         Endurance += 1f;
-        Mind += 1f;
-
+        DamageMultiplier += 0.6f;
         // Increase the character's maximum health based on a predetermined formula.
         //Health += 10f + (Endurance * 2f);
        

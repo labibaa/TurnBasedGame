@@ -60,7 +60,7 @@ public class DictionaryManager : MonoBehaviour
             { OffenseModifier.Dexterity,x => x.Dexterity},
             { OffenseModifier.StrOrArc,x => Mathf.Max(x.Strength,x.Arcana)},
             { OffenseModifier.DexOrStr,x => Mathf.Max(x.Dexterity,x.Strength)},
-            { OffenseModifier.Charisma,x=>x.Charisma}
+            { OffenseModifier.Charisma,x=>x.Intelligence}
 
         };
 

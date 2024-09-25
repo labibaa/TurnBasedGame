@@ -190,7 +190,7 @@ public class PushBack : ICommand
             {
                 int diceValue = DiceNumberGenerator.instance.GetDiceValue(pushBack.FirstPercentage, pushBack.SecondPercentage, pushBack.LastPercentage);
 
-                int damage = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, pushBack) * player.damageMultiplier);
+                int damage = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, pushBack) * player.DamageMultiplier);
                 Debug.Log("Dice: " + diceValue + " Damage: " + damage);
                 
                

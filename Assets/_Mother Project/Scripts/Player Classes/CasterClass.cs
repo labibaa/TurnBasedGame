@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CasterClass : CharacterBaseClasses
 {
-    protected override void LevelUp()
+    public override void LevelUp()
     {
         
     }

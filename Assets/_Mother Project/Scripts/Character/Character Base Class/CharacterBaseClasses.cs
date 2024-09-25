@@ -10,14 +10,14 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     [SerializeField] private int level;
     [SerializeField] private float strength;
     [SerializeField] private float dexterity;
-    [SerializeField] private float charisma;
+    [SerializeField] private float intelligence;
     [SerializeField] private float arcana;
     [SerializeField] private float skill;
     [SerializeField] private float endurance;
     [SerializeField] private float mind;
     [SerializeField] private int healthPoints;
     [SerializeField] private int resolvePoints;
-    public float damageMultiplier;
+    [SerializeField] float damageMultiplier;
     [SerializeField]
     protected List<ImprovedActionStat> characterAvailableActions = new List<ImprovedActionStat>();
     [SerializeField]
@@ -40,7 +40,7 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public int Level { get => level; set => level = value; }
     public float Strength { get => strength; set => strength = value; }
     public float Dexterity { get => dexterity; set => dexterity = value; }
-    public float Charisma { get => charisma; set => charisma = value; }
+    public float Intelligence { get => intelligence; set => intelligence = value; }
     public float Arcana { get => arcana; set => arcana = value; }
     public float Skill { get => skill; set => skill = value; }
     public float Endurance { get => endurance; set => endurance = value; }
@@ -48,7 +48,7 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public int HealthPoints { get => healthPoints; set => healthPoints = value; }
     public int ResolvePoints { get => resolvePoints; set => resolvePoints = value; }
     // public int BaseDamage { get => baseDamage; set => baseDamage = value; }
-
+    public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value; }
 
     //public float BaseDamage;
 
@@ -61,7 +61,7 @@ public abstract class CharacterBaseClasses : MonoBehaviour
             playerUltimate = playerUltimateFactory.CreateUltimate();
         }
     }
-    protected abstract void LevelUp();
+    public abstract void LevelUp();
 
     protected virtual void AddActionToAbility(ImprovedActionStat improvedAction) { 
 
