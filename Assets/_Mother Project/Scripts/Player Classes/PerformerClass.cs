@@ -6,6 +6,6 @@ public class PerformerClass : CharacterBaseClasses
 {
     public override void LevelUp()
     {
-        
+        HealthPoints += 10 + (Endurance * 2);
     }
 }

@@ -19,13 +19,14 @@ public class HunterClass : CharacterBaseClasses
 
         // Increase the character's attributes based on a predetermined formula.
         Strength += 2f;
-        Dexterity += 3f;
-        Intelligence += 0f;
+        Dexterity += 3;
+        Intelligence += 1f;
         Arcana += 1f;
-        Endurance += 1f;
+        Endurance += 2;
         DamageMultiplier += 0.6f;
+        MaxExperiencePoint += 100;
         // Increase the character's maximum health based on a predetermined formula.
-        //Health += 10f + (Endurance * 2f);
+        HealthPoints += 10 + (Endurance * 2);
        
 
         // Add any additional logic or side effects as needed.

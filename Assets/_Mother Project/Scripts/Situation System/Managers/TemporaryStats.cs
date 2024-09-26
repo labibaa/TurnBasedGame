@@ -12,14 +12,18 @@ public class TemporaryStats : MonoBehaviour
     public int PlayerHealth;
     public GameObject Pathmark;
     public int CurrentAP;
-    public int PlayerAP;
+    public int PlayerAP; 
+    public int CurrentDex;
+    public int CurrentEndurance;
+    public float CurrentStrength;
+    public float CurrentArcana;
+    public float CurrentIntelligence;
+    public int CurrentExp;
     public int CurrentResolve;
     public bool IsBlockActive;
     public bool IsDodgeActive; 
     public bool IsThirdRatePerformanceActive;
     public bool IsCounterActive;
-    public float CurrentEndurance;
-    public int CurrentDex;
     public bool AutoMove;
     public int playerUltimateBarCount=0;
     public GameObject PlayerUltimateBar; 
@@ -54,6 +58,7 @@ public class TemporaryStats : MonoBehaviour
 
         //GridSystem.OnGridGenerationSpawn += AssignSpawnPosition;
         HealthManager.OnGridDisable += onEndFunction;
+        ExperienceManager.instance.OnExperienceChanged += HandleExperienceChange;
 
     }
 
@@ -62,18 +67,29 @@ public class TemporaryStats : MonoBehaviour
         
         //GridSystem.OnGridGenerationSpawn -= AssignSpawnPosition;
         HealthManager.OnGridDisable -= onEndFunction;
+        ExperienceManager.instance.OnExperienceChanged -= HandleExperienceChange;
     }
 
 
     private void Start()
     {
         onEndFunction();
-        
+
         //s
         // Call the function MyFunction after one second
         //Invoke("AssignPosition", 1.0f);
+       
     }
+    public void SetCharacterStat()
+    {
+        PlayerHealth = _characterBaseClasses.HealthPoints; 
+        CurrentDex = _characterBaseClasses.Dexterity;
+        CurrentStrength = _characterBaseClasses.Strength;
+        CurrentIntelligence = _characterBaseClasses.Intelligence;
+        CurrentEndurance = _characterBaseClasses.Endurance;
+        CurrentArcana = _characterBaseClasses.Arcana;
 
+    }
 
     void onEndFunction()
     {
@@ -101,11 +117,18 @@ public class TemporaryStats : MonoBehaviour
         CurrentDex = Dex;
     }
    
-
+    private void HandleExperienceChange(int newExp)
+    {
+        CurrentExp += newExp;
+        if(CurrentExp >= _characterBaseClasses.MaxExperiencePoint)
+        {
+            _characterBaseClasses.LevelUp();
+        }
+    }
     public void AssignSpawnPosition()
     {
 
-
+        SetCharacterStat();
 
        // animator.Play(animator.GetCurrentAnimatorStateInfo(0).fullPathHash);
 

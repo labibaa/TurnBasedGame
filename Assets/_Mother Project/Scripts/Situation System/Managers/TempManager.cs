@@ -82,11 +82,6 @@ public class TempManager : MonoBehaviour
         {
             RotateCharactersOnGrid();
         }
-
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            attacker.GetComponent<CharacterBaseClasses>().LevelUp();
-        }
        
     }
 

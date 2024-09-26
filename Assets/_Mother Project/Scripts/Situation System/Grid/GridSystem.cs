@@ -57,7 +57,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField]
     bool GridVisualOn = true;
 
-    
+    int expGain = 0;
 
     private void Awake()
     {
@@ -141,7 +141,8 @@ public class GridSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
      
         player.transform.position =    new Vector3(leftBottomLocation.x, leftBottomLocation.y+0.1f, leftBottomLocation.z);
-        
+        ExperienceManager.instance.AddExperiencePoints(expGain);
+        expGain += 100;
 
     }
 
