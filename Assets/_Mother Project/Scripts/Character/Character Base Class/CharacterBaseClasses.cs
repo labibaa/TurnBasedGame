@@ -19,6 +19,7 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     [SerializeField] private float mind;
     [SerializeField] float damageMultiplier;
     [SerializeField] int MaxExp;
+    public CurrentWeapon EquipedWeapon;
     [SerializeField]
     protected List<ImprovedActionStat> characterAvailableActions = new List<ImprovedActionStat>();
     [SerializeField]
@@ -84,6 +85,11 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public List<ImprovedActionStat> GetAvailableActions()
     {
         return characterAvailableActions;
+    }
+
+    public void SetAvailableActions(List<ImprovedActionStat> weaponActions)
+    {
+         characterAvailableActions = weaponActions;
     }
     public ActionStat GetWarpAction()
     {

@@ -73,12 +73,29 @@ public class TemporaryStats : MonoBehaviour
 
     private void Start()
     {
-        onEndFunction();
 
+        SetWeaponActions();
+        onEndFunction();
         //s
         // Call the function MyFunction after one second
         //Invoke("AssignPosition", 1.0f);
-       
+
+    }
+
+    public void SetWeaponActions()
+    {
+       if(_characterBaseClasses.EquipedWeapon == CurrentWeapon.Dagger)
+        {
+           _characterBaseClasses.SetAvailableActions ( WeaponManager.instance.GetDaggerAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Sword)
+        {
+            _characterBaseClasses.SetAvailableActions( WeaponManager.instance.GetSwordAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.BowAndArrow)
+        {
+           _characterBaseClasses.SetAvailableActions( WeaponManager.instance.GetBowAndArrowAvailableActions());
+        }
     }
     public void SetCharacterStat()
     {
@@ -88,7 +105,7 @@ public class TemporaryStats : MonoBehaviour
         CurrentIntelligence = _characterBaseClasses.Intelligence;
         CurrentEndurance = _characterBaseClasses.Endurance;
         CurrentArcana = _characterBaseClasses.Arcana;
-
+        
     }
 
     void onEndFunction()

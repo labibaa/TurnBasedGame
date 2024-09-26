@@ -273,6 +273,13 @@ public enum TeamName
     NullTeam
 }
 
+public enum CurrentWeapon
+{
+    Dagger,
+    Sword,
+    BowAndArrow
+}
+
 public enum HexOrientation
 {
 
