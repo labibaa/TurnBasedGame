@@ -18,10 +18,10 @@ public class HunterClass : CharacterBaseClasses
         Level++;
 
         // Increase the character's attributes based on a predetermined formula.
-        Strength += 2f;
+        Strength += 2;
         Dexterity += 3;
-        Intelligence += 1f;
-        Arcana += 1f;
+        Intelligence += 1;
+        Arcana += 1;
         Endurance += 2;
         DamageMultiplier += 0.6f;
         MaxExperiencePoint += 100;

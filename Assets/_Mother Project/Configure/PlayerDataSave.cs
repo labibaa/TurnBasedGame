@@ -7,22 +7,28 @@ using UnityEngine;
 public class PlayerDataSave
 {
     public string Name;
-    public int CurrentHealth;
     public int PlayerHealth;
-    public int CurrentAP;
     public int PlayerAP;
     public int CurrentDex;
+    public int CurrentEndurance;
+    public int CurrentStrength;
+    public int CurrentArcana;
+    public int CurrentIntelligence;
+    public int CurrentExp;
     public TeamName CharacterTeam;
 
-    public PlayerDataSave(string name, int currentHealth,int playerHealth,int currentAP, int playerAP,int currentDex, TeamName teamName)
+    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName)
     {
         Name = name;
-        CurrentHealth = currentHealth;
         PlayerHealth = playerHealth;
-        CurrentAP = currentAP;
         PlayerAP = playerAP;
         CurrentDex = currentDex;
+        CurrentEndurance = currentEndurance;
+        CurrentStrength = currentStrength;
+        CurrentArcana = currentArcana;
+        CurrentIntelligence = currentIntelligence;
+        CurrentExp = exp;
         CharacterTeam = teamName;
-
+        
     }
 }
