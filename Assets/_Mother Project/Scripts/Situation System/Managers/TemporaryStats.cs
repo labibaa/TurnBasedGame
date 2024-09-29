@@ -15,9 +15,9 @@ public class TemporaryStats : MonoBehaviour
     public int PlayerAP; 
     public int CurrentDex;
     public int CurrentEndurance;
-    public float CurrentStrength;
-    public float CurrentArcana;
-    public float CurrentIntelligence;
+    public int CurrentStrength;
+    public int CurrentArcana;
+    public int CurrentIntelligence;
     public int CurrentExp;
     public int CurrentResolve;
     public bool IsBlockActive;

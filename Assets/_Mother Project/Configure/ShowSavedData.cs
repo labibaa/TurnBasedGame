@@ -58,11 +58,14 @@ public class ShowSavedData : MonoBehaviour
         SaveCharacterStats.Clear();
         PlayerDataSave playerdtate = new PlayerDataSave(
               character.GetComponent<CharacterBaseClasses>().CharacterName,
-              character.GetComponent<TemporaryStats>().CurrentHealth,
               character.GetComponent<TemporaryStats>().PlayerHealth,
-              character.GetComponent<TemporaryStats>().CurrentAP,
               character.GetComponent<TemporaryStats>().PlayerAP,
               character.GetComponent<TemporaryStats>().CurrentDex,
+              character.GetComponent<TemporaryStats>().CurrentEndurance,
+              character.GetComponent<TemporaryStats>().CurrentStrength,
+              character.GetComponent<TemporaryStats>().CurrentArcana,
+              character.GetComponent<TemporaryStats>().CurrentIntelligence,
+              character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint,
               character.GetComponent<TemporaryStats>().CharacterTeam);
         SaveCharacterStats.Add(playerdtate);
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
@@ -93,10 +96,12 @@ public class ShowSavedData : MonoBehaviour
 
             CreateInputField(statInputField_txt.gameObject, "Player Name", item.Name, (value) => item.Name = value);
             CreateInputField(statInputField_txt.gameObject, "Player HP", item.PlayerHealth.ToString(), (value) => item.PlayerHealth = int.Parse(value));
-            CreateInputField(statInputField_txt.gameObject, "Current HP", item.CurrentHealth.ToString(), (value) => item.CurrentHealth = int.Parse(value));
-            CreateInputField(statInputField_txt.gameObject, "Current AP", item.CurrentAP.ToString(), (value) => item.CurrentAP = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player AP", item.PlayerAP.ToString(), (value) => item.PlayerAP = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player Dexterity", item.CurrentDex.ToString(), (value) => item.CurrentDex = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player Endurance", item.CurrentEndurance.ToString(), (value) => item.CurrentEndurance = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player Strength", item.CurrentStrength.ToString(), (value) => item.CurrentStrength = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player Arcana", item.CurrentArcana.ToString(), (value) => item.CurrentArcana = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player Intelligence", item.CurrentIntelligence.ToString(), (value) => item.CurrentIntelligence = int.Parse(value));
             CreateEnumDropdown(dropdown_UI.gameObject, "Team Name", item.CharacterTeam, (value) => item.CharacterTeam = value);
 
         }
@@ -112,10 +117,13 @@ public class ShowSavedData : MonoBehaviour
         {
             character.GetComponent<CharacterBaseClasses>().name = item.Name;
             character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
-            character.GetComponent<TemporaryStats>().CurrentHealth = item.CurrentHealth;
-            character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
-            character.GetComponent<TemporaryStats>().CurrentAP = item.CurrentAP;
-            character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+              character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
+              character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+              character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;
+              character.GetComponent<TemporaryStats>().CurrentStrength = item.CurrentStrength;
+              character.GetComponent<TemporaryStats>().CurrentArcana = item.CurrentArcana;
+              character.GetComponent<TemporaryStats>().CurrentIntelligence = item.CurrentIntelligence;
+            character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint = item.CurrentExp;
             character.GetComponent<TemporaryStats>().CharacterTeam = item.CharacterTeam;
         }
         saveButton.gameObject.SetActive(false);

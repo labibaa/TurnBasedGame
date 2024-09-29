@@ -8,10 +8,10 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public string characterClass;
     [SerializeField] private string description;
     [SerializeField] private int level;
-    [SerializeField] private float strength;
+    [SerializeField] private int strength;
     [SerializeField] private int dexterity;
-    [SerializeField] private float intelligence;
-    [SerializeField] private float arcana;
+    [SerializeField] private int intelligence;
+    [SerializeField] private int arcana;
     [SerializeField] private int endurance;
     [SerializeField] private int healthPoints;
     [SerializeField] private int resolvePoints;
@@ -40,10 +40,10 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public string Description { get => description; set => description = value; }
 
     public int Level { get => level; set => level = value; }
-    public float Strength { get => strength; set => strength = value; }
+    public int Strength { get => strength; set => strength = value; }
     public int Dexterity { get => dexterity; set => dexterity = value; }
-    public float Intelligence { get => intelligence; set => intelligence = value; }
-    public float Arcana { get => arcana; set => arcana = value; }
+    public int Intelligence { get => intelligence; set => intelligence = value; }
+    public int Arcana { get => arcana; set => arcana = value; }
     public float Skill { get => skill; set => skill = value; }
     public int Endurance { get => endurance; set => endurance = value; }
     public float Mind { get => mind; set => mind = value; }
