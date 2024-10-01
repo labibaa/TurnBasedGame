@@ -137,10 +137,10 @@ public class TemporaryStats : MonoBehaviour
     private void HandleExperienceChange(int newExp)
     {
         CurrentExp += newExp;
-        if(CurrentExp >= _characterBaseClasses.MaxExperiencePoint)
+       /* if(CurrentExp >= _characterBaseClasses.MaxExperiencePoint)
         {
             _characterBaseClasses.LevelUp();
-        }
+        }*/
     }
     public void AssignSpawnPosition()
     {

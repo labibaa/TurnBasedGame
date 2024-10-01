@@ -19,7 +19,6 @@ public class BarHoverDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExit
     // This function is triggered when the pointer enters the bar area
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("_____________________________________");
         hoverText.gameObject.SetActive(true); // Show the text
         UpdateHoverText(); // Update the text with current values
     }
