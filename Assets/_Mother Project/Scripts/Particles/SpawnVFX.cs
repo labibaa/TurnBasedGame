@@ -137,7 +137,7 @@ public class SpawnVFX : MonoBehaviour
 
     public void PlayTargetVFX(VisualEffect hitEffectPrefab, Transform hitEffectPosition, Transform targetHitPosition, GameObject target)
     {
-        hiteffect = Instantiate(hitEffectPrefab, hitEffectPosition.position, Quaternion.identity);
+        hiteffect = Instantiate(hitEffectPrefab, hitEffectPosition.position, hitEffectPrefab.transform.rotation,hitEffectPosition.transform);
         //hiteffect.transform.localPosition = Vector3.zero;
         //hiteffect.transform.localRotation = Quaternion.identity;
         //hiteffect.transform.localScale = Vector3.one;
