@@ -15,6 +15,8 @@ public class CharacterStats_UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI arc_txt;
     [SerializeField] TextMeshProUGUI characterName_txt;
     [SerializeField] TextMeshProUGUI currentXP_txt;
+    [SerializeField] TextMeshProUGUI currentLvl_txt;
+    [SerializeField] TextMeshProUGUI maxXP_txt;
     [SerializeField] GameObject xpNotification;
 
     void Update()
@@ -34,6 +36,8 @@ public class CharacterStats_UI : MonoBehaviour
         str_txt.text = crntPlayer.GetComponent<TemporaryStats>().CurrentStrength.ToString();
         int_txt.text = crntPlayer.GetComponent<TemporaryStats>().CurrentIntelligence.ToString();
         arc_txt.text = crntPlayer.GetComponent<TemporaryStats>().CurrentArcana.ToString();
+        currentLvl_txt.text = crntPlayer.GetComponent<CharacterBaseClasses>().Level.ToString();
+        maxXP_txt.text = crntPlayer.GetComponent<CharacterBaseClasses>().MaxExperiencePoint.ToString();
     }
 
     public void LevelUpCharacter()
