@@ -54,6 +54,6 @@ MonoBehaviour:
     type: 3}
   CharacterBodyLocation: RightHand
   TargetCharacterBodyLocation: MidBody
-  TargetHurtAnimation: KnockDown
+  TargetHurtAnimation: Fall on back
   actionStance: 1
   actionType: 0
