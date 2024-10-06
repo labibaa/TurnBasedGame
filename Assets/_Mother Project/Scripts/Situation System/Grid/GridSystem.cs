@@ -119,10 +119,10 @@ public class GridSystem : MonoBehaviour
                 GridVisualOn= true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
+       /* if (Input.GetKeyDown(KeyCode.F))
         {
             GenerateGridOnButton();
-        }
+        }*/
     }
 
 
