@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class 
-    era : MonoBehaviour
+public class
+    GridCamera : MonoBehaviour
 {
 
     [SerializeField]
