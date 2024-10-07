@@ -5,27 +5,37 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public ItemClass itemToAdd;
-    public ItemClass itemToRemove;
-    public List<ItemClass> InventoryObjects = new List<ItemClass>();
+    public List<InventoryItem> InventoryObjects = new List<InventoryItem>();
     private Dictionary<ItemClass,InventoryItem> itemDictionary = new Dictionary<ItemClass,InventoryItem>();
 
+    private void OnEnable()
+    {
+        CurrencySystem.OnItemAdded += AddItem;
+        CurrencySystem.OnItemRemoved += RemoveItem;
+    }
+    private void OnDisable()
+    {
+        CurrencySystem.OnItemAdded -= AddItem;
+        CurrencySystem.OnItemRemoved -= RemoveItem;
+    }
     private void Start()
     {
-        AddItem(itemToAdd);
+
     }
 
     public void AddItem(ItemClass item)
     {
         if (itemDictionary.TryGetValue(item, out InventoryItem inventoryItem) )
         {
-            inventoryItem.AddToStack();  
+            inventoryItem.AddToStack();
+            Debug.Log(item + "Added to stack");
         }
         else
         {
             InventoryItem newInventoryItem = new InventoryItem(item);
-            InventoryObjects.Add(item);
+            InventoryObjects.Add(newInventoryItem);
             itemDictionary.Add(item,newInventoryItem);
+            Debug.Log(item + "Added to inventory");
         }
        
     }
@@ -36,7 +46,7 @@ public class InventoryManager : MonoBehaviour
             inventoryItem.RemoveFromStack();
             if(inventoryItem.StackSize == 0)
             {
-                InventoryObjects.Remove(item);
+                InventoryObjects.Remove(inventoryItem);
                 itemDictionary.Remove(item);
             }
             
