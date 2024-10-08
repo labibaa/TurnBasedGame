@@ -21,6 +21,7 @@ public class CurrencySystem : MonoBehaviour
 
     public void ItemToAdd(ItemClass item)
     {
+        //add condition to buy the item 
         OnItemAdded?.Invoke(item);
     }
     public void ItemToRemove(ItemClass item)
