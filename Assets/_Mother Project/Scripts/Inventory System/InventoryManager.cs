@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance;
+
     public List<InventoryItem> InventoryObjects = new List<InventoryItem>();
     private Dictionary<ItemClass,InventoryItem> itemDictionary = new Dictionary<ItemClass,InventoryItem>();
 
@@ -20,7 +22,10 @@ public class InventoryManager : MonoBehaviour
     }
     private void Start()
     {
-
+        if(Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     public void AddItem(ItemClass item)
