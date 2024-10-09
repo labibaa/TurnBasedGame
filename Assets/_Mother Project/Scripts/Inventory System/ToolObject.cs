@@ -20,4 +20,9 @@ public class ToolObject : ItemClass
     {
         return this;
     }
+
+    public override void UseObject(TemporaryStats player)
+    {
+       
+    }
 }

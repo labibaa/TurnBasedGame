@@ -38,6 +38,8 @@ public class HealthManager : MonoBehaviour
 
         return health;
     }
+
+    public int HealthCap(int maxHP, int currentHp) => (currentHp) > maxHP ? maxHP : (currentHp);
     public int ResolveCalculation(float damage, int resolve)
     {
         //do some health stuff

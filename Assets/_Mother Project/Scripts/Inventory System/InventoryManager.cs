@@ -7,6 +7,8 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
+    public TemporaryStats playerCharacter;
+
     public List<InventoryItem> InventoryObjects = new List<InventoryItem>();
     private Dictionary<ItemClass,InventoryItem> itemDictionary = new Dictionary<ItemClass,InventoryItem>();
 
@@ -48,6 +50,7 @@ public class InventoryManager : MonoBehaviour
     {
        if(itemDictionary.TryGetValue(item,out InventoryItem inventoryItem) )
         {
+            item.UseObject(playerCharacter);
             inventoryItem.RemoveFromStack();
             if(inventoryItem.StackSize == 0)
             {
@@ -55,6 +58,21 @@ public class InventoryManager : MonoBehaviour
                 itemDictionary.Remove(item);
             }
             
+        }
+    }
+
+    public void UseItem(ItemClass item)
+    {
+        if (itemDictionary.TryGetValue(item, out InventoryItem inventoryItem))
+        {
+            item.UseObject(playerCharacter);
+            inventoryItem.RemoveFromStack();
+            if (inventoryItem.StackSize == 0)
+            {
+                InventoryObjects.Remove(inventoryItem);
+                itemDictionary.Remove(item);
+            }
+
         }
     }
 }

@@ -20,4 +20,9 @@ public class ConsumableObject : ItemClass
     {
         return null;
     }
+    public override void UseObject(TemporaryStats player)
+    {
+        player.CurrentHealth = HealthManager.instance.HealthCap(player.PlayerHealth, HealthManager.instance.HealthCalculation(-ObjectBuff, player.CurrentHealth));
+        Debug.Log(ObjectBuff + " is Healed");
+    }
 }

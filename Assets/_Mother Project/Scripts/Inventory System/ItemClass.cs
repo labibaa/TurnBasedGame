@@ -10,4 +10,5 @@ public abstract class ItemClass : ScriptableObject
     public abstract ItemClass GetItem();
     public abstract ToolObject GetToolObject();
     public abstract ConsumableObject GetConsumableObject();
+    public abstract void UseObject(TemporaryStats player);
 }

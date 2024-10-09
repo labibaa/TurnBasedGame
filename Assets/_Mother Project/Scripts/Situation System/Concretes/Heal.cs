@@ -51,7 +51,7 @@ public class Heal : ICommand
 
             
             
-                targetTempStats.CurrentHealth = HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth);
+                targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
 
                 await HandleAnimation();
                 UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
