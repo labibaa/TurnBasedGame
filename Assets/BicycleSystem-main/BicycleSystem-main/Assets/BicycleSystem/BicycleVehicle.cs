@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BicycleVehicle : MonoBehaviour
 {
+	public Animator characterAnimator;  // Reference to the Animator component
+
+
 	float horizontalInput;
 	float verticalInput;
 
@@ -70,6 +73,16 @@ void Start()
 		currentBrakeForce = braking ? brakeForce : 0f;
 		//If we are not braking, ApplyBreaking applies a brakeForce of 0, so no conditional is needed
 		ApplyBraking();
+
+		if (verticalInput > 0 || horizontalInput > 0)
+		{
+			characterAnimator.Play("Cycling");
+		}
+		else
+		{
+			
+		}
+
 	}
 
 	//Applies downforce, to keep the bike from bouncing off the ground over small bumps.
