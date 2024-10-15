@@ -709,7 +709,7 @@ public class ActionArchive : MonoBehaviour
 
     public async void GroundBlast()
     {
-        Debug.Log("Ap lagbe");
+        Debug.Log("Grpund Blast in");
         TurnManager.instance.ResetTargetHIghlightVisual();
         GridMovement.instance.ResetHighlightedPath();
         TurnManager.instance.targetsInRange.Clear();
@@ -718,7 +718,7 @@ public class ActionArchive : MonoBehaviour
         GetPlayerStats();
         if (currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn == true)
         {
-
+            Debug.Log("Ground Ap lagbe");
             currentStatPlayer.gameObject.GetComponent<TemporaryStats>().AutoMove = false;
             currentStatPlayer.gameObject.GetComponent<PlayerTurn>().isMoveOn = false;
             Cursor.lockState = CursorLockMode.Locked;

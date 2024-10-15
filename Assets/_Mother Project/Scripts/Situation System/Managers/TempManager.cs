@@ -66,7 +66,7 @@ public class TempManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (GridSystem.instance.IsGridOn && attacker.tag != "Player")
+     /*   if (GridSystem.instance.IsGridOn && attacker.tag != "Player")
         {
             SituationUI_MoveList.SetActive(false);
             actionButton.SetActive(false);
@@ -77,7 +77,7 @@ public class TempManager : MonoBehaviour
             SituationUI_MoveList.SetActive(true);
             actionButton.SetActive(true);
             PressSpace.SetActive(false);
-        }
+        }*/
         if(GridSystem.instance.IsGridOn && currentState != GameStates.Simulation)
         {
             RotateCharactersOnGrid();
