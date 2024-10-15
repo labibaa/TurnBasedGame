@@ -80,7 +80,7 @@ void Start()
 		}
 		else
 		{
-			
+			characterAnimator.Play("idle");
 		}
 
 	}
