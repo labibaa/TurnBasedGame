@@ -15,7 +15,7 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] Transform StoreItemDetails_Panel;
     [SerializeField] GameObject storeitemDetailPanel_Prefab;
 
-    public List<InventoryItem> StoreObjects = new List<InventoryItem>();
+    public StoreObjects store;
     public void RefreshInventoryUI()
     {
         foreach (Transform child in inventoryItem_panel)
@@ -46,7 +46,7 @@ public class Inventory_UI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (var item in StoreObjects)
+        foreach (var item in store.storeObjects)
         {
             Button storeButton = Instantiate(inventoryItem_buttonPrefab, StoreItem_panel);
             TextMeshProUGUI SizeComponent = storeButton.transform.Find("StackSize_Text").GetComponent<TextMeshProUGUI>();

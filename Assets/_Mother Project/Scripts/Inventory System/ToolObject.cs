@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory Tool", menuName = "ScriptableObjects/Tool")]
 public class ToolObject : ItemClass
 {
-    public CurrentWeapon weapon;
+    public int toolEffect;
     public override ConsumableObject GetConsumableObject()
     {
         return null;
