@@ -32,7 +32,9 @@ public class PlayerCompanions : MonoBehaviour
     {
         LinkUp();
         FollowPlayer();
-      
+        SwitchPlayer();
+
+
     }
 
     public void LinkUp()
@@ -70,17 +72,29 @@ public class PlayerCompanions : MonoBehaviour
       
     }
 
-    public void CharacterSwitch()
+    public void SwitchPlayer()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if(isMainCharacter)
-            {
-                thirdPersonController.enabled = false;
-                playerInput.enabled = false;
-            }
-           
+            isMainCharacter = !isMainCharacter; // Toggle between characters
+            CharacterSwitch(); // Apply the switch
+
         }
-            
+        
+    }
+    public void CharacterSwitch()
+    {
+        if (isMainCharacter)
+        {
+            thirdPersonController.enabled = true;  // Enable movement
+            playerInput.enabled = true;           // Enable input
+            agentCompanion.enabled = false;       // Disable NavMesh when main character
+        }
+        else
+        {
+            thirdPersonController.enabled = false; // Disable movement
+            playerInput.enabled = false;          // Disable input
+            agentCompanion.enabled = true;        // Enable NavMesh for companion
+        }
     }
 }
