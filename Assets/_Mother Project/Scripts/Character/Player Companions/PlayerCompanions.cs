@@ -12,28 +12,21 @@ public class PlayerCompanions : MonoBehaviour
     public float maxTime = 0.8f;
     float timer = 0f;
     bool linkUp = false;
-    bool isMainCharacter;
 
     NavMeshAgent agentCompanion;
     Animator animator;
-    ThirdPersonController thirdPersonController;
-    PlayerInput playerInput;
  
     private void Start()
     {
         agentCompanion = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         animator.SetFloat("MotionSpeed", 1);
-        thirdPersonController = GetComponent<ThirdPersonController>();
-        playerInput = GetComponent<PlayerInput>();
 
     }
     private void Update()
     {
         LinkUp();
         FollowPlayer();
-        SwitchPlayer();
-
 
     }
 
@@ -72,29 +65,5 @@ public class PlayerCompanions : MonoBehaviour
       
     }
 
-    public void SwitchPlayer()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            isMainCharacter = !isMainCharacter; // Toggle between characters
-            CharacterSwitch(); // Apply the switch
-
-        }
-        
-    }
-    public void CharacterSwitch()
-    {
-        if (isMainCharacter)
-        {
-            thirdPersonController.enabled = true;  // Enable movement
-            playerInput.enabled = true;           // Enable input
-            agentCompanion.enabled = false;       // Disable NavMesh when main character
-        }
-        else
-        {
-            thirdPersonController.enabled = false; // Disable movement
-            playerInput.enabled = false;          // Disable input
-            agentCompanion.enabled = true;        // Enable NavMesh for companion
-        }
-    }
+ 
 }
