@@ -29,7 +29,7 @@ public class QTESys : MonoBehaviour
     {
         PassBox.GetComponent<TextMeshProUGUI>().text = "";
         GenerateRandomSequence();
-        PlayerActivator.ActivatePlayer();
+       // PlayerActivator.ActivatePlayer();
 
 
     }

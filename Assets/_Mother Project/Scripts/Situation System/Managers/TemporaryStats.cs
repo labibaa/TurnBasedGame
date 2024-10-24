@@ -26,8 +26,9 @@ public class TemporaryStats : MonoBehaviour
     public bool IsCounterActive;
     public bool AutoMove;
     public int playerUltimateBarCount=0;
-    public GameObject PlayerUltimateBar; 
-    
+    public GameObject PlayerUltimateBar;
+
+    public bool isMainCharacter;
     public Mortality playerMortality;
     
     public Vector3 currentPlayerGridPosition;

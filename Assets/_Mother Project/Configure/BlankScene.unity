@@ -3095,7 +3095,7 @@ PrefabInstance:
     - target: {fileID: 4922872840233269882, guid: 6ec9c05119b68284bb57b9e3bf654fca,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4922872840233269882, guid: 6ec9c05119b68284bb57b9e3bf654fca,
         type: 3}
@@ -3302,7 +3302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103069664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12324d05b2d979540ba963e58aed9aa9, type: 3}
   m_Name: 
@@ -3533,6 +3533,7 @@ GameObject:
   - component: {fileID: 1400598072}
   - component: {fileID: 1400598073}
   - component: {fileID: 1400598074}
+  - component: {fileID: 1400598075}
   m_Layer: 0
   m_Name: inventory
   m_TagString: Untagged
@@ -3608,6 +3609,21 @@ MonoBehaviour:
   DaggerAvailableActions: []
   SwordAvailableActions: []
   BowAndArrowAvailableActions: []
+--- !u!114 &1400598075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400598069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64760252bebd934cab5f96aeee3858d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 1103069664}
+  - {fileID: 1665555679079009260}
 --- !u!114 &1434694476 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5057502218439783499, guid: fa4d6341ced3fe84ba8015888cab3a74,
@@ -19012,6 +19028,8 @@ GameObject:
   - component: {fileID: 2042081973749666139}
   - component: {fileID: 2042081973749666140}
   - component: {fileID: 2042081973749666138}
+  - component: {fileID: 2042081973749666146}
+  - component: {fileID: 2042081973749666145}
   m_Layer: 8
   m_Name: Roud Rigged
   m_TagString: Untagged
@@ -25361,6 +25379,84 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &2042081973749666145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665555679079009260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2f7550129e6804f9263440288077a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  PlayerHealth: 0
+  Pathmark: {fileID: 0}
+  CurrentAP: 0
+  PlayerAP: 0
+  CurrentDex: 0
+  CurrentEndurance: 0
+  CurrentStrength: 0
+  CurrentArcana: 0
+  CurrentIntelligence: 0
+  CurrentExp: 0
+  CurrentResolve: 0
+  IsBlockActive: 0
+  IsDodgeActive: 0
+  IsThirdRatePerformanceActive: 0
+  IsCounterActive: 0
+  AutoMove: 0
+  playerUltimateBarCount: 0
+  PlayerUltimateBar: {fileID: 0}
+  isMainCharacter: 0
+  playerMortality: 0
+  currentPlayerGridPosition: {x: 0, y: 0, z: 0}
+  _spawnPosition: {x: 0, y: 0, z: 0}
+  gridCoordinateSpawn: {x: 0, y: 0}
+  lastPosition: {fileID: 0}
+  playerStatPanel: {fileID: 0}
+  PlayerActionListPanel: {fileID: 0}
+  FlyingTextParent: {fileID: 0}
+  CharacterTeam: 0
+  SelectionParticle: {fileID: 0}
+  EnemyTargetSelectionParticle: {fileID: 0}
+  playerVisiblity: 1
+--- !u!114 &2042081973749666146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665555679079009260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7b275d72575e14b8aec7fdbed5222e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  avatarHead: {fileID: 0}
+  characterClass: 
+  description: 
+  level: 0
+  strength: 0
+  dexterity: 0
+  intelligence: 0
+  arcana: 0
+  endurance: 0
+  healthPoints: 0
+  resolvePoints: 0
+  skill: 0
+  mind: 0
+  damageMultiplier: 0
+  MaxExp: 0
+  EquipedWeapon: 0
+  characterAvailableActions: []
+  playerUltimateFactory: {fileID: 0}
+  warpSurge: {fileID: 0}
+  groundBlast: {fileID: 0}
+  dash: {fileID: 0}
 --- !u!4 &2044312187524831441
 Transform:
   m_ObjectHideFlags: 0
@@ -41873,7 +41969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 5, z: -9.000001}
+  m_FollowOffset: {x: 0, y: 6, z: -10}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -99046,6 +99142,7 @@ MonoBehaviour:
   AutoMove: 0
   playerUltimateBarCount: 0
   PlayerUltimateBar: {fileID: 0}
+  isMainCharacter: 0
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
@@ -99191,8 +99288,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942301501433384390}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2508413, y: -0.000000018023991, z: 0.000000004670485, w: 0.9680283}
-  m_LocalPosition: {x: 1, y: 6, z: -4.000001}
+  m_LocalRotation: {x: 0.26693365, y: 0.000000015921765, z: -0.0000000044100745, w: 0.96371496}
+  m_LocalPosition: {x: 1, y: 6.999998, z: -4.999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -105699,6 +105796,7 @@ MonoBehaviour:
   AutoMove: 0
   playerUltimateBarCount: 0
   PlayerUltimateBar: {fileID: 0}
+  isMainCharacter: 0
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
