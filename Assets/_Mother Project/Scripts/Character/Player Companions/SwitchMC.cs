@@ -1,6 +1,8 @@
 using StarterAssets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class SwitchMC : MonoBehaviour
@@ -22,7 +24,7 @@ public class SwitchMC : MonoBehaviour
         {
           
             SwitchToNextCharacter();
-            CharacterSwitch(); // Apply the switch
+           
 
         }
 
@@ -35,17 +37,29 @@ public class SwitchMC : MonoBehaviour
             {
                 character.GetComponent<ThirdPersonController>().enabled = true;
                 character.GetComponent<PlayerInput>().enabled = true;
+                character.GetComponent<NavMeshAgent>().enabled = false;
                 character.GetComponent<PlayerCompanions>().enabled = false;
             }
             else
             {
                 character.GetComponent<ThirdPersonController>().enabled = false;
                 character.GetComponent<PlayerInput>().enabled = false;
+                character.GetComponent<NavMeshAgent>().enabled = true;
                 character.GetComponent<PlayerCompanions>().enabled = true;
             }
         }
     }
+    IEnumerator ResetCharacter(int index)
+    {
+        // Deactivate the GameObject
+        characters[index].SetActive(false);
 
+        // Wait for a short delay to ensure full reset
+        yield return new WaitForSeconds(0.1f);
+
+        // Reactivate the GameObject
+        characters[index].SetActive(true);
+    }
     void SwitchToNextCharacter()
     {
         if (currentMainPlayerIndex != -1)
@@ -53,9 +67,12 @@ public class SwitchMC : MonoBehaviour
             characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
         }
 
+        StartCoroutine(ResetCharacter(currentMainPlayerIndex));
         currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
-
+     
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
+
+        SetMainPlayer(currentMainPlayerIndex);
 
         Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
     }
@@ -68,6 +85,7 @@ public class SwitchMC : MonoBehaviour
         }
         currentMainPlayerIndex = index;
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
+        CharacterSwitch(); // Apply the switch
     }
 
 }

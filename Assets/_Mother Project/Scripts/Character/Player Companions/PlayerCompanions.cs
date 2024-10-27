@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerCompanions : MonoBehaviour
 {
@@ -11,16 +12,41 @@ public class PlayerCompanions : MonoBehaviour
     public float maxDistance = 1f;
     public float maxTime = 0.8f;
     float timer = 0f;
-    bool linkUp = false;
+    [SerializeField]bool linkUp = false;
 
     NavMeshAgent agentCompanion;
     Animator animator;
- 
+
+    private void OnDisable()
+    {
+        linkUp = false;
+        timer = maxTime;
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", 0);
+            animator.SetFloat("MotionSpeed", 1);
+        }
+    }
+    private void OnEnable()
+    {
+        // Reset parameters when the component is re-enabled
+        linkUp = false;
+        timer = maxTime;
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", 0);
+            animator.SetFloat("MotionSpeed", 1);
+        }
+    }
     private void Start()
     {
         agentCompanion = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        animator.SetFloat("MotionSpeed", 1);
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", 0);
+            animator.SetFloat("MotionSpeed", 1);
+        }
 
     }
     private void Update()
@@ -29,7 +55,6 @@ public class PlayerCompanions : MonoBehaviour
         FollowPlayer();
 
     }
-
     public void LinkUp()
     {
         if (Input.GetKeyDown(KeyCode.L))
@@ -42,6 +67,7 @@ public class PlayerCompanions : MonoBehaviour
             {
                 linkUp = false;
                 animator.SetFloat("Speed", 0);
+                agentCompanion.ResetPath();
             }
         }
     }
@@ -59,8 +85,13 @@ public class PlayerCompanions : MonoBehaviour
                 }
                 timer = maxTime;
             }
-
+            Debug.Log(agentCompanion.velocity.magnitude);
             animator.SetFloat("Speed", agentCompanion.velocity.magnitude);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
+            agentCompanion.ResetPath();
         }
       
     }
