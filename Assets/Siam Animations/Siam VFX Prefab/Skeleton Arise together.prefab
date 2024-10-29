@@ -1,0 +1,2634 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &695040458004378341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6377283606414180531}
+  m_Layer: 0
+  m_Name: Rage Red Skinned Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6377283606414180531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695040458004378341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 8.580003, y: -0.24, z: -12.909001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1500351846602551551}
+  m_Father: {fileID: 6845757429279757130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1098513052819010656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3299398846090961737}
+  m_Layer: 0
+  m_Name: Eye Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3299398846090961737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098513052819010656}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000007450579, y: -0.0000000055879585, z: -0.7324133,
+    w: 0.6808603}
+  m_LocalPosition: {x: 0, y: 0.006, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 679365057510048201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -94.178}
+--- !u!1 &1915805547208464780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2757248729367056603}
+  - component: {fileID: 8582528771062807079}
+  - component: {fileID: 5369425814844546327}
+  - component: {fileID: 2921421196158008237}
+  - component: {fileID: 1650317305280580278}
+  - component: {fileID: 1463868768963863511}
+  - component: {fileID: 2161409691169787866}
+  m_Layer: 0
+  m_Name: Malediction Toxic VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2757248729367056603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 153421134219639636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &8582528771062807079
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 0c735d65c1e823646a58a3d0560948ec, type: 3}
+  m_InitialEventName: create
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1.8
+        m_Name: VFXHeight
+        m_Overridden: 1
+      - m_Value: 512
+        m_Name: SwarmSpawnRate
+        m_Overridden: 1
+      - m_Value: 1.1
+        m_Name: SwarmLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.35
+        m_Name: EyeGlowSize
+        m_Overridden: 0
+      - m_Value: 1.5
+        m_Name: SwarmDraughtMultiplier
+        m_Overridden: 0
+      - m_Value: 4
+        m_Name: SwarmGravityY
+        m_Overridden: 0
+      - m_Value: 32
+        m_Name: FervorSpawnRate
+        m_Overridden: 0
+      - m_Value: 128
+        m_Name: CreateSpikesSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: CreateSpikesLifetimeMax
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: CreateColumnSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.25
+        m_Name: CreateColumnWidth
+        m_Overridden: 0
+      - m_Value: 0.8
+        m_Name: CreateColumnLifetimeMax
+        m_Overridden: 0
+      - m_Value: 8
+        m_Name: CreateWavesSpawnCount
+        m_Overridden: 0
+      - m_Value: 1.2
+        m_Name: FervorLifetimeMax
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: EndSpikesSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.65
+        m_Name: EndGlowAlphaMax
+        m_Overridden: 0
+      - m_Value: 1.25
+        m_Name: EndGlowLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: EndCircleAlpha
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: CoreSpawnRate
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: SmokeSpawnRate
+        m_Overridden: 1
+      - m_Value: 24
+        m_Name: RaysSpawnRate
+        m_Overridden: 0
+      - m_Value: 1
+        m_Name: CreateShockwaveAlpha
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: CreateRaysSpawnCount
+        m_Overridden: 0
+      - m_Value: 1.2
+        m_Name: CreateSmokeLifetimeMax
+        m_Overridden: 0
+      - m_Value: 128
+        m_Name: CreateSmokeSpawnCount
+        m_Overridden: 1
+      - m_Value: 640
+        m_Name: EndSwarmSpawnCount
+        m_Overridden: 0
+      - m_Value: 6
+        m_Name: EndShockwaveSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.9
+        m_Name: EndSwarmLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: SymbolSize
+        m_Overridden: 0
+      - m_Value: 1.9
+        m_Name: SymbolYOffsetFromGround
+        m_Overridden: 0
+      - m_Value: 0.75
+        m_Name: SymbolAlpha
+        m_Overridden: 0
+      - m_Value: 2
+        m_Name: SymbolLifetime
+        m_Overridden: 0
+      - m_Value: 0.75
+        m_Name: PentagramSizeMultiplier
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: PentagramAlpha
+        m_Overridden: 1
+      - m_Value: 384
+        m_Name: FlamesSpawnCount
+        m_Overridden: 1
+      - m_Value: 192
+        m_Name: EmbersSpawnCount
+        m_Overridden: 1
+      - m_Value: 96
+        m_Name: CoreSpawnCount
+        m_Overridden: 1
+      - m_Value: 384
+        m_Name: CreateDotsSpawnCount
+        m_Overridden: 1
+      - m_Value: 512
+        m_Name: EndDotsSpawnCount
+        m_Overridden: 1
+      - m_Value: 0.75
+        m_Name: EndRingAlpha
+        m_Overridden: 1
+      - m_Value: 0.08
+        m_Name: EndColumnAlpha
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: EndRingSize
+        m_Overridden: 0
+      - m_Value: 0.8
+        m_Name: EndColumnSize
+        m_Overridden: 1
+      - m_Value: 0.4
+        m_Name: SmokeRadius
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: LinesSpawnRate
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array:
+      - m_Value: {x: 0.1, y: 0.2}
+        m_Name: SwarmSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.04, y: 0.08}
+        m_Name: EyeBeamWidthMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.06, y: 0.14}
+        m_Name: FervorAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 0.8}
+        m_Name: FervorSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.15, y: 0.3}
+        m_Name: CreateSpikesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 4, y: 9}
+        m_Name: CreateSpikesGravityMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.8}
+        m_Name: CreateColumnAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 0.8}
+        m_Name: CreateColumnSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.5}
+        m_Name: CreateWavesLifetimeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 1.5}
+        m_Name: CreateWavesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: CreateWavesAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.15, y: 0.25}
+        m_Name: EndSpikesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: EndSpikesAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: SwarmAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.75, y: 1}
+        m_Name: CoreAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: SmokeAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.4, y: 0.8}
+        m_Name: CoreLifetimeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 0.2}
+        m_Name: CoreSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: SmokeSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.05, y: 0.1}
+        m_Name: RaysAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 1, y: 2}
+        m_Name: RaysSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateRaysAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateSmokeAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.5}
+        m_Name: CreateSmokeSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.08, y: 0.22}
+        m_Name: EndSwarmSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.05, y: 0.5}
+        m_Name: EndSwarmAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.08, y: 0.18}
+        m_Name: EndShockwaveAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: FlamesSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: FlamesAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.02, y: 0.06}
+        m_Name: EmbersSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateSmokeLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.6, y: 1.2}
+        m_Name: DotsLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.06, y: 0.12}
+        m_Name: DotsSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.4, y: 0.8}
+        m_Name: SwarmLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: LinesAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 0.8}
+        m_Name: LinesSizeMinMax
+        m_Overridden: 1
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: SkinnedMeshTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 8.580001}
+        m_Name: SkinnedMeshTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: SkinnedMeshTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.1, z: 0}
+        m_Name: VFXCenterOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: LeftEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 6.3102135e-17, y: 1.4188018, z: -0.0022168104}
+        m_Name: LeftEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: LeftEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: RightEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.040001586, y: 1.5107601, z: 0.07351604}
+        m_Name: RightEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: RightEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.088, y: -0.041, z: 0.12}
+        m_Name: LeftEyeOffset
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: HeadTransform_angles
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: HeadTransform_position
+        m_Overridden: 0
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: HeadTransform_scale
+        m_Overridden: 0
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXCenterTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXCenterTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXCenterTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: VFXRotation_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotation_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXRotation_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 90}
+        m_Name: VFXRotationOffset
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.2, z: 0}
+        m_Name: VFXOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.12, y: 0.19, z: 0.16}
+        m_Name: RightEyeBeamEndOffset
+        m_Overridden: 0
+      - m_Value: {x: -0.12, y: -0.19, z: 0.16}
+        m_Name: LeftEyeBeamEndOffset
+        m_Overridden: 0
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: GroundParentTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 8.580001}
+        m_Name: GroundParentTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: GroundParentTransform_scale
+        m_Overridden: 1
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 18.164822, y: 14.265567, z: 7.9887176, w: 1}
+        m_Name: SecondaryColor
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0, w: 1}
+        m_Name: SmokeColor
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 16, b: 12.709576, a: 1}
+          key1: {r: 0, g: 1, b: 0.34541988, a: 1}
+          key2: {r: 0, g: 1, b: 0.34541988, a: 0}
+          key3: {r: 0, g: 1, b: 0.34541988, a: 0}
+          key4: {r: 0.2071797, g: 0.30980393, b: 0, a: 0}
+          key5: {r: 0.31132078, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 65535
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 5.2164755, g: 3.2500553, b: 0.2731139, a: 1}
+          key1: {r: 6.0084367, g: 3.8156726, b: 0.46142435, a: 1}
+          key2: {r: 11.984314, g: 8.083635, b: 1.8823531, a: 0}
+          key3: {r: 1.5529412, g: 1.2707176, b: 0.97566986, a: 0}
+          key4: {r: 0.7490196, g: 0.6431373, b: 0.47058824, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 9830
+          ctime2: 18013
+          ctime3: 43882
+          ctime4: 65535
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: -1
+          m_NumColorKeys: 5
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife 1
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 55.715244, b: 25.677818, a: 1}
+          key1: {r: 0, g: 55.715244, b: 25.677818, a: 1}
+          key2: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 1}
+          key3: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 0}
+          key4: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 0}
+          key5: {r: 1.4980392, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 58982
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 64224
+          atime2: 65535
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 3
+        m_Name: SecondaryGradient
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 6769682452745805099}
+        m_Name: SkinnedMesh
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 04f389ae0ac63ca4784402c348aa4521, type: 3}
+        m_Name: SymbolTexture
+        m_Overridden: 0
+    m_Bool:
+      m_Array:
+      - m_Value: 0
+        m_Name: EnablePentagramInLoopEvent
+        m_Overridden: 1
+--- !u!73398921 &5369425814844546327
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2921421196158008237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 1650317305280580278}
+  - {fileID: 2161409691169787866}
+  m_VisualEffect: {fileID: 8582528771062807079}
+--- !u!114 &1650317305280580278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: SkinnedMeshTransform
+  Target: {fileID: 1391989212084466654}
+--- !u!114 &1463868768963863511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c780b64d7b0c941a7428ec7f33a80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2161409691169787866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915805547208464780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: GroundParentTransform
+  Target: {fileID: 1391989212084466654}
+--- !u!1 &3243651522595023465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6229580251989078340}
+  m_Layer: 0
+  m_Name: Rage Red Skinned Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6229580251989078340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3243651522595023465}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 8.580003, y: -0.24, z: -12.909001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 97064341128221759}
+  m_Father: {fileID: 3176404963345847760}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5176164863348532532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6261386932529448445}
+  - component: {fileID: 5079285644746454111}
+  - component: {fileID: 441033474182053768}
+  - component: {fileID: 361655262850334712}
+  - component: {fileID: 5898268885539006657}
+  - component: {fileID: 3688995380285325217}
+  - component: {fileID: 6109459615131410398}
+  m_Layer: 0
+  m_Name: Malediction Toxic VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6261386932529448445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7318113067601233297}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &5079285644746454111
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 0c735d65c1e823646a58a3d0560948ec, type: 3}
+  m_InitialEventName: create
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1.8
+        m_Name: VFXHeight
+        m_Overridden: 1
+      - m_Value: 512
+        m_Name: SwarmSpawnRate
+        m_Overridden: 1
+      - m_Value: 1.1
+        m_Name: SwarmLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.35
+        m_Name: EyeGlowSize
+        m_Overridden: 0
+      - m_Value: 1.5
+        m_Name: SwarmDraughtMultiplier
+        m_Overridden: 0
+      - m_Value: 4
+        m_Name: SwarmGravityY
+        m_Overridden: 0
+      - m_Value: 32
+        m_Name: FervorSpawnRate
+        m_Overridden: 0
+      - m_Value: 128
+        m_Name: CreateSpikesSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: CreateSpikesLifetimeMax
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: CreateColumnSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.25
+        m_Name: CreateColumnWidth
+        m_Overridden: 0
+      - m_Value: 0.8
+        m_Name: CreateColumnLifetimeMax
+        m_Overridden: 0
+      - m_Value: 8
+        m_Name: CreateWavesSpawnCount
+        m_Overridden: 0
+      - m_Value: 1.2
+        m_Name: FervorLifetimeMax
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: EndSpikesSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.65
+        m_Name: EndGlowAlphaMax
+        m_Overridden: 0
+      - m_Value: 1.25
+        m_Name: EndGlowLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: EndCircleAlpha
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: CoreSpawnRate
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: SmokeSpawnRate
+        m_Overridden: 1
+      - m_Value: 24
+        m_Name: RaysSpawnRate
+        m_Overridden: 0
+      - m_Value: 1
+        m_Name: CreateShockwaveAlpha
+        m_Overridden: 0
+      - m_Value: 48
+        m_Name: CreateRaysSpawnCount
+        m_Overridden: 0
+      - m_Value: 1.2
+        m_Name: CreateSmokeLifetimeMax
+        m_Overridden: 0
+      - m_Value: 128
+        m_Name: CreateSmokeSpawnCount
+        m_Overridden: 1
+      - m_Value: 640
+        m_Name: EndSwarmSpawnCount
+        m_Overridden: 0
+      - m_Value: 6
+        m_Name: EndShockwaveSpawnCount
+        m_Overridden: 0
+      - m_Value: 0.9
+        m_Name: EndSwarmLifetimeMax
+        m_Overridden: 0
+      - m_Value: 0.5
+        m_Name: SymbolSize
+        m_Overridden: 0
+      - m_Value: 1.9
+        m_Name: SymbolYOffsetFromGround
+        m_Overridden: 0
+      - m_Value: 0.75
+        m_Name: SymbolAlpha
+        m_Overridden: 0
+      - m_Value: 2
+        m_Name: SymbolLifetime
+        m_Overridden: 0
+      - m_Value: 0.75
+        m_Name: PentagramSizeMultiplier
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: PentagramAlpha
+        m_Overridden: 1
+      - m_Value: 384
+        m_Name: FlamesSpawnCount
+        m_Overridden: 1
+      - m_Value: 192
+        m_Name: EmbersSpawnCount
+        m_Overridden: 1
+      - m_Value: 96
+        m_Name: CoreSpawnCount
+        m_Overridden: 1
+      - m_Value: 384
+        m_Name: CreateDotsSpawnCount
+        m_Overridden: 1
+      - m_Value: 512
+        m_Name: EndDotsSpawnCount
+        m_Overridden: 1
+      - m_Value: 0.75
+        m_Name: EndRingAlpha
+        m_Overridden: 1
+      - m_Value: 0.08
+        m_Name: EndColumnAlpha
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: EndRingSize
+        m_Overridden: 0
+      - m_Value: 0.8
+        m_Name: EndColumnSize
+        m_Overridden: 1
+      - m_Value: 0.4
+        m_Name: SmokeRadius
+        m_Overridden: 0
+      - m_Value: 64
+        m_Name: LinesSpawnRate
+        m_Overridden: 1
+    m_Vector2f:
+      m_Array:
+      - m_Value: {x: 0.1, y: 0.2}
+        m_Name: SwarmSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.04, y: 0.08}
+        m_Name: EyeBeamWidthMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.06, y: 0.14}
+        m_Name: FervorAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 0.8}
+        m_Name: FervorSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.15, y: 0.3}
+        m_Name: CreateSpikesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 4, y: 9}
+        m_Name: CreateSpikesGravityMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.8}
+        m_Name: CreateColumnAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 0.8}
+        m_Name: CreateColumnSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.5}
+        m_Name: CreateWavesLifetimeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 1.5}
+        m_Name: CreateWavesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: CreateWavesAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.15, y: 0.25}
+        m_Name: EndSpikesSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: EndSpikesAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: SwarmAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.75, y: 1}
+        m_Name: CoreAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: SmokeAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.4, y: 0.8}
+        m_Name: CoreLifetimeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.1, y: 0.2}
+        m_Name: CoreSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: SmokeSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.05, y: 0.1}
+        m_Name: RaysAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 1, y: 2}
+        m_Name: RaysSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateRaysAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateSmokeAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.2, y: 0.5}
+        m_Name: CreateSmokeSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.08, y: 0.22}
+        m_Name: EndSwarmSizeMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.05, y: 0.5}
+        m_Name: EndSwarmAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.08, y: 0.18}
+        m_Name: EndShockwaveAlphaMinMax
+        m_Overridden: 0
+      - m_Value: {x: 0.3, y: 0.6}
+        m_Name: FlamesSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 1}
+        m_Name: FlamesAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.02, y: 0.06}
+        m_Name: EmbersSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: CreateSmokeLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.6, y: 1.2}
+        m_Name: DotsLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.06, y: 0.12}
+        m_Name: DotsSizeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.4, y: 0.8}
+        m_Name: SwarmLifetimeMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.5, y: 1}
+        m_Name: LinesAlphaMinMax
+        m_Overridden: 1
+      - m_Value: {x: 0.1, y: 0.8}
+        m_Name: LinesSizeMinMax
+        m_Overridden: 1
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: SkinnedMeshTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 12.260001}
+        m_Name: SkinnedMeshTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: SkinnedMeshTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.1, z: 0}
+        m_Name: VFXCenterOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: LeftEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 6.3102135e-17, y: 1.4188018, z: -0.0022168104}
+        m_Name: LeftEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: LeftEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: RightEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.040001586, y: 1.5107601, z: 0.07351604}
+        m_Name: RightEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: RightEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.088, y: -0.041, z: 0.12}
+        m_Name: LeftEyeOffset
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: HeadTransform_angles
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: HeadTransform_position
+        m_Overridden: 0
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: HeadTransform_scale
+        m_Overridden: 0
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXCenterTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXCenterTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXCenterTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: VFXRotation_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotation_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXRotation_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 90}
+        m_Name: VFXRotationOffset
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.2, z: 0}
+        m_Name: VFXOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.12, y: 0.19, z: 0.16}
+        m_Name: RightEyeBeamEndOffset
+        m_Overridden: 0
+      - m_Value: {x: -0.12, y: -0.19, z: 0.16}
+        m_Name: LeftEyeBeamEndOffset
+        m_Overridden: 0
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: GroundParentTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 12.260001}
+        m_Name: GroundParentTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: GroundParentTransform_scale
+        m_Overridden: 1
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 18.164822, y: 14.265567, z: 7.9887176, w: 1}
+        m_Name: SecondaryColor
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0, w: 1}
+        m_Name: SmokeColor
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 16, b: 12.709576, a: 1}
+          key1: {r: 0, g: 1, b: 0.34541988, a: 1}
+          key2: {r: 0, g: 1, b: 0.34541988, a: 0}
+          key3: {r: 0, g: 1, b: 0.34541988, a: 0}
+          key4: {r: 0.2071797, g: 0.30980393, b: 0, a: 0}
+          key5: {r: 0.31132078, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 65535
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 5.2164755, g: 3.2500553, b: 0.2731139, a: 1}
+          key1: {r: 6.0084367, g: 3.8156726, b: 0.46142435, a: 1}
+          key2: {r: 11.984314, g: 8.083635, b: 1.8823531, a: 0}
+          key3: {r: 1.5529412, g: 1.2707176, b: 0.97566986, a: 0}
+          key4: {r: 0.7490196, g: 0.6431373, b: 0.47058824, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 9830
+          ctime2: 18013
+          ctime3: 43882
+          ctime4: 65535
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: -1
+          m_NumColorKeys: 5
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife 1
+        m_Overridden: 1
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 55.715244, b: 25.677818, a: 1}
+          key1: {r: 0, g: 55.715244, b: 25.677818, a: 1}
+          key2: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 1}
+          key3: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 0}
+          key4: {r: 0.20754719, g: 0.054276943, b: 0.04013884, a: 0}
+          key5: {r: 1.4980392, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 58982
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 64224
+          atime2: 65535
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 3
+        m_Name: SecondaryGradient
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 3379776914346056625}
+        m_Name: SkinnedMesh
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 04f389ae0ac63ca4784402c348aa4521, type: 3}
+        m_Name: SymbolTexture
+        m_Overridden: 0
+    m_Bool:
+      m_Array:
+      - m_Value: 0
+        m_Name: EnablePentagramInLoopEvent
+        m_Overridden: 1
+--- !u!73398921 &441033474182053768
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &361655262850334712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 5898268885539006657}
+  - {fileID: 6109459615131410398}
+  m_VisualEffect: {fileID: 5079285644746454111}
+--- !u!114 &5898268885539006657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: SkinnedMeshTransform
+  Target: {fileID: 6936820717829371204}
+--- !u!114 &3688995380285325217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c780b64d7b0c941a7428ec7f33a80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6109459615131410398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176164863348532532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: GroundParentTransform
+  Target: {fileID: 6936820717829371204}
+--- !u!1 &6400163057190625951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3787276454449573909}
+  m_Layer: 0
+  m_Name: Eye Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3787276454449573909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6400163057190625951}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000007450579, y: -0.0000000055879585, z: -0.7324133,
+    w: 0.6808603}
+  m_LocalPosition: {x: 0, y: 0.006, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8824884331383179091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -94.178}
+--- !u!1 &6716352654663197295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8051052681043478626}
+  - component: {fileID: 2771650058794065776}
+  - component: {fileID: 1999125647066994594}
+  m_Layer: 0
+  m_Name: Skeleton Arise together
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8051052681043478626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716352654663197295}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 3176404963345847760}
+  - {fileID: 6845757429279757130}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &2771650058794065776
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716352654663197295}
+  m_Enabled: 1
+  m_Asset: {fileID: 0}
+  m_InitialEventName: create
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1
+        m_Name: VFXHeight
+        m_Overridden: 0
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: SkinnedMeshTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 8.580001}
+        m_Name: SkinnedMeshTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: SkinnedMeshTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.1, z: 0}
+        m_Name: VFXCenterOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: LeftEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 6.3102135e-17, y: 1.4188018, z: -0.0022168104}
+        m_Name: LeftEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: LeftEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: RightEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.040001586, y: 1.5107601, z: 0.07351604}
+        m_Name: RightEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: RightEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.088, y: -0.041, z: 0.12}
+        m_Name: LeftEyeOffset
+        m_Overridden: 0
+      - m_Value: {x: -0, y: 90, z: 265.8218}
+        m_Name: HeadTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.886155, y: 1.8296332, z: 8.580002}
+        m_Name: HeadTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: HeadTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXCenterTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXCenterTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXCenterTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: VFXRotation_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotation_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXRotation_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotationOffset
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXOffset
+        m_Overridden: 0
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0, y: 1.612169, z: 0.9453556, w: 1}
+        m_Name: SecondaryColor
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 2, b: 1.0892043, a: 1}
+          key1: {r: 1, g: 1, b: 1, a: 1}
+          key2: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key3: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key4: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 6769682452745805099}
+        m_Name: SkinnedMesh
+        m_Overridden: 1
+    m_Bool:
+      m_Array:
+      - m_Value: 1
+        m_Name: EnableEyes
+        m_Overridden: 1
+--- !u!73398921 &1999125647066994594
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716352654663197295}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &7304771247173698622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7318113067601233297}
+  m_Layer: 0
+  m_Name: Malediction Toxic Skinned Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7318113067601233297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304771247173698622}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23000059, y: 0.0079999715, z: 0.4200001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 6261386932529448445}
+  m_Father: {fileID: 3176404963345847760}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8085878689502584478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97064341128221759}
+  - component: {fileID: 4881914170520468186}
+  - component: {fileID: 5976931181888297651}
+  - component: {fileID: 7220217809801505825}
+  - component: {fileID: 4215716668428075992}
+  - component: {fileID: 2448392499377265659}
+  - component: {fileID: 4571548836797068487}
+  m_Layer: 0
+  m_Name: Rage Red VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &97064341128221759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6229580251989078340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &4881914170520468186
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: d7e3cad0d67a89649ac43a84c5f3b028, type: 3}
+  m_InitialEventName: create
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1
+        m_Name: VFXHeight
+        m_Overridden: 0
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: SkinnedMeshTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 12.260001}
+        m_Name: SkinnedMeshTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: SkinnedMeshTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.1, z: 0}
+        m_Name: VFXCenterOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: LeftEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 6.3102135e-17, y: 1.4188018, z: -0.0022168104}
+        m_Name: LeftEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: LeftEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: RightEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.040001586, y: 1.5107601, z: 0.07351604}
+        m_Name: RightEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: RightEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.088, y: -0.041, z: 0.12}
+        m_Name: LeftEyeOffset
+        m_Overridden: 0
+      - m_Value: {x: -0, y: 90, z: 265.8218}
+        m_Name: HeadTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.886155, y: 1.8296332, z: 12.260002}
+        m_Name: HeadTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: HeadTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXCenterTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXCenterTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXCenterTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: VFXRotation_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotation_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXRotation_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotationOffset
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXOffset
+        m_Overridden: 0
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0, y: 1.612169, z: 0.9453556, w: 1}
+        m_Name: SecondaryColor
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 2, b: 1.0892043, a: 1}
+          key1: {r: 1, g: 1, b: 1, a: 1}
+          key2: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key3: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key4: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 3379776914346056625}
+        m_Name: SkinnedMesh
+        m_Overridden: 1
+    m_Bool:
+      m_Array:
+      - m_Value: 1
+        m_Name: EnableEyes
+        m_Overridden: 1
+--- !u!73398921 &5976931181888297651
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7220217809801505825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 4215716668428075992}
+  - {fileID: 4571548836797068487}
+  m_VisualEffect: {fileID: 4881914170520468186}
+--- !u!114 &4215716668428075992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: SkinnedMeshTransform
+  Target: {fileID: 6936820717829371204}
+--- !u!114 &2448392499377265659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c780b64d7b0c941a7428ec7f33a80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4571548836797068487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085878689502584478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: HeadTransform
+  Target: {fileID: 3787276454449573909}
+--- !u!1 &8543407676740937985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 153421134219639636}
+  m_Layer: 0
+  m_Name: Malediction Toxic Skinned Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &153421134219639636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8543407676740937985}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23000059, y: 0.0079999715, z: 0.4200001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2757248729367056603}
+  m_Father: {fileID: 6845757429279757130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8865174815024221977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1500351846602551551}
+  - component: {fileID: 7418417044004041727}
+  - component: {fileID: 4130948891697222844}
+  - component: {fileID: 2375228120455516430}
+  - component: {fileID: 408134022367953478}
+  - component: {fileID: 799139878367309937}
+  - component: {fileID: 8489531676661215386}
+  m_Layer: 0
+  m_Name: Rage Red VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1500351846602551551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6377283606414180531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &7418417044004041727
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: d7e3cad0d67a89649ac43a84c5f3b028, type: 3}
+  m_InitialEventName: create
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array:
+      - m_Value: 1
+        m_Name: VFXHeight
+        m_Overridden: 0
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array:
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0.000015460057, y: 89.99998, z: 0.0010708051}
+        m_Name: SkinnedMeshTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.901752, y: 1.303019, z: 8.580001}
+        m_Name: SkinnedMeshTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: SkinnedMeshTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.1, z: 0}
+        m_Name: VFXCenterOffset
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: LeftEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 6.3102135e-17, y: 1.4188018, z: -0.0022168104}
+        m_Name: LeftEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: LeftEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.000000603709, y: 0, z: 270}
+        m_Name: RightEyeTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.040001586, y: 1.5107601, z: 0.07351604}
+        m_Name: RightEyeTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: RightEyeTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0.088, y: -0.041, z: 0.12}
+        m_Name: LeftEyeOffset
+        m_Overridden: 0
+      - m_Value: {x: -0, y: 90, z: 265.8218}
+        m_Name: HeadTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: 12.886155, y: 1.8296332, z: 8.580002}
+        m_Name: HeadTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: HeadTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: 356.61206, y: 0, z: 270}
+        m_Name: VFXCenterTransform_angles
+        m_Overridden: 1
+      - m_Value: {x: -1.7617678e-17, y: 1.0314258, z: 0.042659335}
+        m_Name: VFXCenterTransform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXCenterTransform_scale
+        m_Overridden: 1
+      - m_Value: {x: -0, y: 0, z: 0}
+        m_Name: VFXRotation_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotation_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: VFXRotation_scale
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXRotationOffset
+        m_Overridden: 0
+      - m_Value: {x: 0, y: 0, z: 0}
+        m_Name: VFXOffset
+        m_Overridden: 0
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 0, y: 1.612169, z: 0.9453556, w: 1}
+        m_Name: SecondaryColor
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array:
+      - m_Value:
+          serializedVersion: 2
+          key0: {r: 0, g: 2, b: 1.0892043, a: 1}
+          key1: {r: 1, g: 1, b: 1, a: 1}
+          key2: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key3: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key4: {r: 0.7490196, g: 0.011764706, b: 0, a: 0}
+          key5: {r: 0, g: 0, b: 0, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 0
+          ctime1: 65535
+          ctime2: 65535
+          ctime3: 65535
+          ctime4: 65535
+          ctime5: 0
+          ctime6: 0
+          ctime7: 0
+          atime0: 0
+          atime1: 65535
+          atime2: 0
+          atime3: 0
+          atime4: 0
+          atime5: 0
+          atime6: 0
+          atime7: 0
+          m_Mode: 0
+          m_ColorSpace: 1
+          m_NumColorKeys: 2
+          m_NumAlphaKeys: 2
+        m_Name: ColorOverLife
+        m_Overridden: 1
+    m_NamedObject:
+      m_Array:
+      - m_Value: {fileID: 6769682452745805099}
+        m_Name: SkinnedMesh
+        m_Overridden: 1
+    m_Bool:
+      m_Array:
+      - m_Value: 1
+        m_Name: EnableEyes
+        m_Overridden: 1
+--- !u!73398921 &4130948891697222844
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2375228120455516430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExecuteInEditor: 1
+  m_Bindings:
+  - {fileID: 408134022367953478}
+  - {fileID: 8489531676661215386}
+  m_VisualEffect: {fileID: 7418417044004041727}
+--- !u!114 &408134022367953478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: SkinnedMeshTransform
+  Target: {fileID: 1391989212084466654}
+--- !u!114 &799139878367309937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c780b64d7b0c941a7428ec7f33a80f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8489531676661215386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865174815024221977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: HeadTransform
+  Target: {fileID: 3299398846090961737}
+--- !u!1001 &1412914603253123345
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3615210497853541875}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.319
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6090643
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.009317486
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.066197686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.79029864
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.352
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -5.496
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 104.502
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3b6d07b9dbfee0499a97f06baabcdef, type: 3}
+--- !u!4 &1445962407311585018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1412914603253123345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3143057348025201211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8051052681043478626}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.909
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.26
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonEnemyRig Rigged (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: db3dfa8719567504797a159b245d7341, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7318113067601233297}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6229580251989078340}
+    - targetCorrespondingSourceObject: {fileID: -3321919801592875672, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3787276454449573909}
+    - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1445962407311585018}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66d33765178b94c4da709182152b8a5d, type: 3}
+--- !u!4 &3176404963345847760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3143057348025201211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &3379776914346056625 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 394349960991123850, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3143057348025201211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3615210497853541875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3143057348025201211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6936820717829371204 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3143057348025201211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8824884331383179091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3143057348025201211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4516245758408896147
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4701214490268568425}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.319
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.024
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6090643
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.009317486
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.066197686
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.79029864
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.352
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -5.496
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 104.502
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3b6d07b9dbfee0499a97f06baabcdef, type: 3}
+--- !u!4 &4118072280438720888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3b6d07b9dbfee0499a97f06baabcdef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4516245758408896147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6380401525437199521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8051052681043478626}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.909
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.58
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_Name
+      value: SkeletonEnemyRig Rigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: db3dfa8719567504797a159b245d7341, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 153421134219639636}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6377283606414180531}
+    - targetCorrespondingSourceObject: {fileID: -3321919801592875672, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3299398846090961737}
+    - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: 66d33765178b94c4da709182152b8a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4118072280438720888}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66d33765178b94c4da709182152b8a5d, type: 3}
+--- !u!4 &679365057510048201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6380401525437199521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1391989212084466654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6380401525437199521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4701214490268568425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6380401525437199521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &6769682452745805099 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 394349960991123850, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6380401525437199521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6845757429279757130 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d33765178b94c4da709182152b8a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6380401525437199521}
+  m_PrefabAsset: {fileID: 0}
