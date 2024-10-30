@@ -85,13 +85,7 @@ public class PlayerCompanions : MonoBehaviour
                 }
                 timer = maxTime;
             }
-            Debug.Log(agentCompanion.velocity.magnitude);
             animator.SetFloat("Speed", agentCompanion.velocity.magnitude);
-        }
-        else
-        {
-            animator.SetFloat("Speed", 0);
-            agentCompanion.ResetPath();
         }
       
     }

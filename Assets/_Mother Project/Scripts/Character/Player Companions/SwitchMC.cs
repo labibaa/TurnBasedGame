@@ -67,7 +67,7 @@ public class SwitchMC : MonoBehaviour
             characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
         }
 
-        StartCoroutine(ResetCharacter(currentMainPlayerIndex));
+       // StartCoroutine(ResetCharacter(currentMainPlayerIndex));
         currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
      
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
@@ -79,6 +79,7 @@ public class SwitchMC : MonoBehaviour
 
     void SetMainPlayer(int index)
     {
+        StartCoroutine(ResetCharacter(index));
         foreach (GameObject character in characters)
         {
             character.GetComponent<TemporaryStats>().isMainCharacter = false;
