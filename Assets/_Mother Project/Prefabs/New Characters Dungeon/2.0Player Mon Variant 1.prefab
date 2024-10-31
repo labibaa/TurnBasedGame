@@ -25466,7 +25466,6 @@ GameObject:
   - component: {fileID: 7098972356307413564}
   - component: {fileID: 3609341392930522688}
   - component: {fileID: 2131072764168326737}
-  - component: {fileID: 2144672540988836147}
   m_Layer: 8
   m_Name: PlayerFollowCameraIsometric
   m_TagString: GridCam
@@ -25610,20 +25609,6 @@ MonoBehaviour:
   minZoom: 5
   maxZoom: 20
   fixedHeight: 10
---- !u!114 &2144672540988836147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379623221603054671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512ee0c17606dcd4587a0d5a5f102ec1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridCam: {fileID: 6508460134386450635}
-  isGridCamera: 0
 --- !u!1 &1400131810522575098
 GameObject:
   m_ObjectHideFlags: 0
@@ -94198,6 +94183,7 @@ GameObject:
   - component: {fileID: 8535362714840479814}
   - component: {fileID: 6941666331630952526}
   - component: {fileID: 6689624603866758677}
+  - component: {fileID: 4309130437351866651}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -94940,6 +94926,21 @@ MonoBehaviour:
   maxDistance: 1
   maxTime: 0.5
   linkUp: 0
+--- !u!114 &4309130437351866651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975819462043251399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2b8d14aed101a4ba371d4dcda983bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isoCamera: {fileID: 6508460134386450635}
+  tpsCamera: {fileID: 5711889641533172970}
+  switchKey: 105
 --- !u!1 &7211352996370916545
 GameObject:
   m_ObjectHideFlags: 0
