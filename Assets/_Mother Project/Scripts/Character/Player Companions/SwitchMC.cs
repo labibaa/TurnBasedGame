@@ -7,9 +7,18 @@ using UnityEngine.InputSystem;
 
 public class SwitchMC : MonoBehaviour
 {
+    public static SwitchMC Instance;
+
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Instance = this;
+        }
+    }
     private void Start()
     {
         SetMainPlayer(0);

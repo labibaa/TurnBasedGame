@@ -16045,9 +16045,11 @@ GameObject:
   - component: {fileID: 1085710114131735090}
   - component: {fileID: 2770165714854209233}
   - component: {fileID: 7850532700434432299}
+  - component: {fileID: 1404492588203297933}
+  - component: {fileID: 1018015665715086535}
   m_Layer: 8
   m_Name: Roud Rigged
-  m_TagString: Ally
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16204,7 +16206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 533138062
+  GlobalObjectIdHash: 3009030614
   InScenePlacedSourceGlobalObjectIdHash: 662279835
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -16468,6 +16470,32 @@ MonoBehaviour:
   animationList: []
   animationIndex: 0
   isShieldUp: 0
+--- !u!114 &1404492588203297933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571700951601418023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdabf15b31cf72049b4c2152385db704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1018015665715086535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571700951601418023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d2690d8483efe489fe9c4446bc8c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FootStepAudioClips: []
+  FootstepAudioVolume: 0.5
 --- !u!1 &3666204126982843415
 GameObject:
   m_ObjectHideFlags: 0

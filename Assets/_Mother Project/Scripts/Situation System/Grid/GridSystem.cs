@@ -64,7 +64,7 @@ public class GridSystem : MonoBehaviour
 
         if (instance != null)
         {
-            Debug.LogWarning("Found more than one Dialogue Manager in the scene");
+            Debug.LogWarning("Found more than one GridSystem in the scene");
         }
         instance = this;
 
@@ -76,6 +76,7 @@ public class GridSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         
     }
 
@@ -128,6 +129,13 @@ public class GridSystem : MonoBehaviour
 
     public void GenerateGridOnButton()
     {
+       /* foreach (GameObject playerGo in SwitchMC.Instance.characters)
+        {
+            if (playerGo.GetComponent<TemporaryStats>().isMainCharacter == true)
+            {
+                player = playerGo;
+            }
+        }*/  //Grid mAIN CHARACTER NOT WORKING
         if (IsGridOn)
         {
             return;
@@ -140,7 +148,7 @@ public class GridSystem : MonoBehaviour
         InputManager.OnInteractionPressed -= GenerateGridOnButton;
         Cursor.lockState = CursorLockMode.None;
      
-        player.transform.position =    new Vector3(leftBottomLocation.x, leftBottomLocation.y+0.1f, leftBottomLocation.z);
+        //player.transform.position =    new Vector3(leftBottomLocation.x, leftBottomLocation.y+0.1f, leftBottomLocation.z);
         ExperienceManager.instance.AddExperiencePoints(expGain);
         expGain += 100;
 
