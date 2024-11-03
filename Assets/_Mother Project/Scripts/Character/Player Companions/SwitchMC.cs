@@ -8,47 +8,47 @@ using UnityEngine.InputSystem;
 public class SwitchMC : MonoBehaviour
 {
     public List<GameObject> characters = new List<GameObject>();
+    public List<GameObject> mainCameras = new List<GameObject>(); // Primary camera for each character
+    public List<GameObject> secondaryCameras = new List<GameObject>(); // Secondary camera for each character
+
     int currentMainPlayerIndex = -1;
 
     private void Start()
     {
         SetMainPlayer(0);
     }
+
     private void Update()
     {
         SwitchPlayer();
     }
+
     public void SwitchPlayer()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-          
             SwitchToNextCharacter();
-           
-
         }
-
     }
+
     public void CharacterSwitch()
     {
-        foreach (GameObject character in characters)
+        for (int i = 0; i < characters.Count; i++)
         {
-            if (character.GetComponent<TemporaryStats>().isMainCharacter)
-            {
-                character.GetComponent<ThirdPersonController>().enabled = true;
-                character.GetComponent<PlayerInput>().enabled = true;
-                character.GetComponent<NavMeshAgent>().enabled = false;
-                character.GetComponent<PlayerCompanions>().enabled = false;
-            }
-            else
-            {
-                character.GetComponent<ThirdPersonController>().enabled = false;
-                character.GetComponent<PlayerInput>().enabled = false;
-                character.GetComponent<NavMeshAgent>().enabled = true;
-                character.GetComponent<PlayerCompanions>().enabled = true;
-            }
+            GameObject character = characters[i];
+            bool isMainCharacter = character.GetComponent<TemporaryStats>().isMainCharacter;
+
+            character.GetComponent<ThirdPersonController>().enabled = isMainCharacter;
+            character.GetComponent<PlayerInput>().enabled = isMainCharacter;
+            character.GetComponent<NavMeshAgent>().enabled = !isMainCharacter;
+            character.GetComponent<PlayerCompanions>().enabled = !isMainCharacter;
+
+            // Enable/disable cameras based on main character status
+            mainCameras[i].SetActive(isMainCharacter);
+            secondaryCameras[i].SetActive(isMainCharacter);
         }
     }
+
     IEnumerator ResetCharacter(int index)
     {
         // Deactivate the GameObject
@@ -60,6 +60,7 @@ public class SwitchMC : MonoBehaviour
         // Reactivate the GameObject
         characters[index].SetActive(true);
     }
+
     void SwitchToNextCharacter()
     {
         if (currentMainPlayerIndex != -1)
@@ -69,7 +70,7 @@ public class SwitchMC : MonoBehaviour
 
         StartCoroutine(ResetCharacter(currentMainPlayerIndex));
         currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
-     
+
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
 
         SetMainPlayer(currentMainPlayerIndex);
@@ -85,7 +86,8 @@ public class SwitchMC : MonoBehaviour
         }
         currentMainPlayerIndex = index;
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
+
+        // Activate/deactivate cameras
         CharacterSwitch(); // Apply the switch
     }
-
 }
