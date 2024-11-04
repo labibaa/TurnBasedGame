@@ -1,6 +1,7 @@
 using StarterAssets;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GridActivation : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class GridActivation : MonoBehaviour
     List<GameObject> gameObjectsTobeEnabled = new List<GameObject>();
 
     [SerializeField]
-    public GameObject playableCharacter;
+    public  List<GameObject> playableCharacter = new List<GameObject>();
     [SerializeField]
     GameManager gameManager;
     [SerializeField]
@@ -30,7 +31,7 @@ public class GridActivation : MonoBehaviour
     [SerializeField]
     GameObject gridAudio;
 
-
+    public TeamName myTeam;
 
 
 
@@ -123,7 +124,11 @@ public class GridActivation : MonoBehaviour
 
     private void DisableSituationSystem()
     {
-        playableCharacter.SetActive(true);
+        foreach(GameObject character_Go in playableCharacter)
+        {
+            character_Go.SetActive(true);
+        }
+        
 
         foreach (Transform child in grid.transform)
         {
@@ -142,18 +147,21 @@ public class GridActivation : MonoBehaviour
 
 
 
+        foreach(GameObject Pc in playableCharacter)
+        {
 
+        }
         //playableCharacter.GetComponent<CharacterController>().enabled = true;
-        playableCharacter.GetComponent<ThirdPersonController>().enabled = true;
-        playableCharacter.GetComponent<ThirdPersonController>().DisableAnim();
-        
+        playableCharacter[0].GetComponent<ThirdPersonController>().enabled = true;
+        playableCharacter[0].GetComponent<ThirdPersonController>().DisableAnim();
+
         //player.GetComponent<PlayerMove>().enabled = true;
 
 
 
         //might need to refactor this part, putting them on  a funciton
         //player.GetComponent<GridInput>().enabled = true;
-        playableCharacter.GetComponent<GridPlayerAnimation>().enabled = false;
+        playableCharacter[0].GetComponent<GridPlayerAnimation>().enabled = false;
         gameManager.GetComponent<GridMovement>().enabled = false;
         gameManager.GetComponent<TurnManager>().enabled = false;
 
@@ -182,7 +190,15 @@ public class GridActivation : MonoBehaviour
     {
         foreach (GameObject p in players)
         {
-            p.SetActive(false);
+            if(p.GetComponent<TemporaryStats>().CharacterTeam != myTeam)
+            {
+                p.SetActive(false);
+            }
+            else
+            {
+                p.GetComponent<NavMeshAgent>().enabled= true;
+            }
+           
         }
 
         foreach (GameObject p in gameObjectsTobeEnabled)

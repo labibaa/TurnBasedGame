@@ -12,6 +12,14 @@ public class SwitchMC : MonoBehaviour
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
+  /*  private void OnEnable()
+    {
+        HealthManager.OnGridDisable += Reset;
+    }
+    private void OnDisable()
+    {
+        HealthManager.OnGridDisable -= Reset;
+    }*/
     private void Awake()
     {
         if (Instance != null)
@@ -56,6 +64,14 @@ public class SwitchMC : MonoBehaviour
                 character.GetComponent<NavMeshAgent>().enabled = true;
                 character.GetComponent<PlayerCompanions>().enabled = true;
             }
+        }
+    }
+
+    public void Reset()
+    {
+        for(int i = 0; i < characters.Count; i++)
+        {
+            SetMainPlayer(i);
         }
     }
     IEnumerator ResetCharacter(int index)
