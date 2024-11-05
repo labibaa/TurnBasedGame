@@ -13,7 +13,6 @@ public class WaveManager : MonoBehaviour
     public static event Action OnGridInit;
 
     public List<WaveWrapperClass> PlayerWaves;
-    public List<WaveWrapperClass> EnemyWaves;
     public List<GameObject> WaveTriggers;
     public List<PlayableDirector> WaveTimelines; // New: List of PlayableDirector for each wave
     public List<GameObject> gridWaveStartLocation;
@@ -132,20 +131,14 @@ public class WaveManager : MonoBehaviour
             {
                 TurnManager.instance.players.Add(players);
                 currentPlayers.Add(players.gameObject);
-               // foreach(GameObject PcGo in GridActivation.instance.playableCharacter)
-                //{
-                    if (players.gameObject != GridActivation.instance.playableCharacter[0])//playable character
-                    {
+
+                if (players.gameObject != GridActivation.instance.playableCharacter[0])//playable character
+                {
                        // Debug.Log(PcGo+ "=="+ players.gameObject);
                         //playableC.Add(players.gameObject);
-                         GridActivation.instance.players.Add(players.gameObject);
+                  GridActivation.instance.players.Add(players.gameObject);
 
                 }
-                   /* else
-                    {
-                        GridActivation.instance.players.Add(players.gameObject);
-                    }
-                }*/
                 
             }
             GridActivation.instance.HandleCharacterSpawn();

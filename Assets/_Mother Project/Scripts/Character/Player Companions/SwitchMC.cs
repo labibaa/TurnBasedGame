@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class SwitchMC : MonoBehaviour
     }*/
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -50,6 +51,7 @@ public class SwitchMC : MonoBehaviour
     {
         foreach (GameObject character in characters)
         {
+            StartCoroutine(ResetCharacter(character));
             if (character.GetComponent<TemporaryStats>().isMainCharacter)
             {
                 character.GetComponent<ThirdPersonController>().enabled = true;
@@ -67,44 +69,40 @@ public class SwitchMC : MonoBehaviour
         }
     }
 
-    public void Reset()
-    {
-        for(int i = 0; i < characters.Count; i++)
-        {
-            SetMainPlayer(i);
-        }
-    }
-    IEnumerator ResetCharacter(int index)
+    IEnumerator ResetCharacter(GameObject character)
     {
         // Deactivate the GameObject
-        characters[index].SetActive(false);
+        character.SetActive(false);
 
         // Wait for a short delay to ensure full reset
         yield return new WaitForSeconds(0.1f);
 
         // Reactivate the GameObject
-        characters[index].SetActive(true);
+        character.SetActive(true);
     }
     void SwitchToNextCharacter()
     {
-        if (currentMainPlayerIndex != -1)
-        {
-            characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
-        }
+       // if (!GridSystem.instance.IsGridOn)
+        //{
+            if (currentMainPlayerIndex != -1)
+            {
+                characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
+            }
 
-       // StartCoroutine(ResetCharacter(currentMainPlayerIndex));
-        currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
-     
-        characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
+            // StartCoroutine(ResetCharacter(currentMainPlayerIndex));
+            currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
 
-        SetMainPlayer(currentMainPlayerIndex);
+            characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
 
-        Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
+            SetMainPlayer(currentMainPlayerIndex);
+
+            Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
+       // }
+    
     }
 
     void SetMainPlayer(int index)
     {
-        StartCoroutine(ResetCharacter(index));
         foreach (GameObject character in characters)
         {
             character.GetComponent<TemporaryStats>().isMainCharacter = false;

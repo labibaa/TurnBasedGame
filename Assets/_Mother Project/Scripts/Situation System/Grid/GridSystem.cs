@@ -120,10 +120,18 @@ public class GridSystem : MonoBehaviour
                 GridVisualOn= true;
             }
         }
-       /* if (Input.GetKeyDown(KeyCode.F))
+        /* if (Input.GetKeyDown(KeyCode.F))
+         {
+             GenerateGridOnButton();
+         }*/
+        foreach (var pc in SwitchMC.Instance.characters)
         {
-            GenerateGridOnButton();
-        }*/
+            if (pc.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                player = pc;
+                break;
+            }
+        }
     }
 
 
