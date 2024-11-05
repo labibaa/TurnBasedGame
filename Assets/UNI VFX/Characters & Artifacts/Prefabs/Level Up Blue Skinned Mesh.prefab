@@ -350,7 +350,7 @@ VisualEffect:
       - m_Value: {x: 7, y: 0, z: 270}
         m_Name: SkinnedMeshTransform_angles
         m_Overridden: 1
-      - m_Value: {x: 1.1979284e-33, y: 0.8400196, z: 0.027500711}
+      - m_Value: {x: 1.1979284e-33, y: 0.8400196, z: -0.2214993}
         m_Name: SkinnedMeshTransform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1.000021, z: 1.000021}
@@ -422,7 +422,7 @@ VisualEffect:
       - m_Value: {x: -0, y: 0, z: 0}
         m_Name: GroundParentTransform_angles
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0, z: 0}
+      - m_Value: {x: 0, y: 0, z: -0.249}
         m_Name: GroundParentTransform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
