@@ -43,6 +43,7 @@ public class Dash : ICommand
         Agent.GetComponent<SpawnVFX>().SetVFXPrefab(dashScriptable.PlayerActionVFX);
         Agent.GetComponent<SpawnVFX>().SetOwnVFXPosition(Agent.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[dashScriptable.CharacterBodyLocation]);
         Agent.GetComponent<SpawnVFX>().PlayerVFX();
+        Agent.GetComponent<SpawnVFX>().HitVfx();
         Agent.gameObject.GetComponent<TemporaryStats>().AutoMove = Automove;
 
        // await CutsceneManager.instance.PlayAnimationForCharacter(Agent.gameObject,"Dash");

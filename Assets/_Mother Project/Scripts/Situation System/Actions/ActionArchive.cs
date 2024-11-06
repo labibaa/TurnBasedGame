@@ -11,7 +11,7 @@ public class ActionArchive : MonoBehaviour
     
     TemporaryStats playerInfo;
     TemporaryStats targetInfo;
-    [SerializeField] GridInput gridInput;
+    [SerializeField] List<GridInput> gridInput = new List<GridInput>();
     [SerializeField] PlayerStatUI playerStateUI;
 
     CharacterBaseClasses playerAttacker;
@@ -615,7 +615,11 @@ public class ActionArchive : MonoBehaviour
 
             ActionStat moveScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, "Move");
             ButtonStackManager.instance.OnButtonPressed(moveScriptable.actionIcon);
-            gridInput.enabled = true;
+            foreach(var gridIp in gridInput)
+            {
+                gridIp.enabled = true;
+            }
+           
            // GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex,Color.green);
             GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, moveScriptable.ActionRange,Color.green);
             GridMovement.instance.setMoveParam(moveScriptable, moveScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
@@ -655,7 +659,10 @@ public class ActionArchive : MonoBehaviour
           
                 currentStatPlayer.CurrentAP = ActionResolver.instance.APResolver(currentStatPlayer.CurrentAP, dashScriptable.APCost);//ap cost
                 ButtonStackManager.instance.OnButtonPressed(dashScriptable.actionIcon);
-                gridInput.enabled = true;
+                foreach (var gridIp in gridInput)
+                {
+                    gridIp.enabled = true;
+                }
                 GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, currentStatPlayer.CurrentDex, Color.green);
                 GridMovement.instance.setMoveParam(dashScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
@@ -693,7 +700,10 @@ public class ActionArchive : MonoBehaviour
 
             ActionStat moveScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, "WarpSurge");
             ButtonStackManager.instance.OnButtonPressed(moveScriptable.actionIcon);
-            gridInput.enabled = true;
+            foreach (var gridIp in gridInput)
+            {
+                gridIp.enabled = true;
+            }
             GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, currentStatPlayer.CurrentDex, Color.green);
             GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
@@ -725,7 +735,10 @@ public class ActionArchive : MonoBehaviour
 
             ActionStat moveScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, "GroundBlast");
             ButtonStackManager.instance.OnButtonPressed(moveScriptable.actionIcon);
-            gridInput.enabled = true;
+            foreach (var gridIp in gridInput)
+            {
+                gridIp.enabled = true;
+            }
             GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, currentStatPlayer.CurrentDex, Color.green);
             GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
