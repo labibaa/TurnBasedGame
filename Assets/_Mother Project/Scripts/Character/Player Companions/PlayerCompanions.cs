@@ -82,12 +82,12 @@ public class PlayerCompanions : MonoBehaviour
                 if ((mainPlayer.position - agentCompanion.destination).sqrMagnitude > maxDistance * maxDistance)
                 {
                     agentCompanion.SetDestination(mainPlayer.position);
+                    Debug.Log("follow " + mainPlayer);
                 }
                 timer = maxTime;
             }
             animator.SetFloat("Speed", agentCompanion.velocity.magnitude);
         }
-       
       
     }
 

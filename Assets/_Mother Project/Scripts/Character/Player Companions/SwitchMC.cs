@@ -1,4 +1,5 @@
 using StarterAssets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,75 +8,97 @@ using UnityEngine.InputSystem;
 
 public class SwitchMC : MonoBehaviour
 {
-    public List<GameObject> characters = new List<GameObject>();
-    public List<GameObject> mainCameras = new List<GameObject>(); // Primary camera for each character
-    public List<GameObject> secondaryCameras = new List<GameObject>(); // Secondary camera for each character
+    public static SwitchMC Instance;
 
+    public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
+  /*  private void OnEnable()
+    {
+        HealthManager.OnGridDisable += Reset;
+    }
+    private void OnDisable()
+    {
+        HealthManager.OnGridDisable -= Reset;
+    }*/
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     private void Start()
     {
         SetMainPlayer(0);
     }
-
     private void Update()
     {
         SwitchPlayer();
     }
-
     public void SwitchPlayer()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
+          
             SwitchToNextCharacter();
-        }
-    }
+           
 
+        }
+
+    }
     public void CharacterSwitch()
     {
-        for (int i = 0; i < characters.Count; i++)
+        foreach (GameObject character in characters)
         {
-            GameObject character = characters[i];
-            bool isMainCharacter = character.GetComponent<TemporaryStats>().isMainCharacter;
-
-            character.GetComponent<ThirdPersonController>().enabled = isMainCharacter;
-            character.GetComponent<PlayerInput>().enabled = isMainCharacter;
-            character.GetComponent<NavMeshAgent>().enabled = !isMainCharacter;
-            character.GetComponent<PlayerCompanions>().enabled = !isMainCharacter;
-
-            // Enable/disable cameras based on main character status
-            mainCameras[i].SetActive(isMainCharacter);
-            secondaryCameras[i].SetActive(isMainCharacter);
+            StartCoroutine(ResetCharacter(character));
+            if (character.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                character.GetComponent<ThirdPersonController>().enabled = true;
+                character.GetComponent<PlayerInput>().enabled = true;
+                character.GetComponent<NavMeshAgent>().enabled = false;
+                character.GetComponent<PlayerCompanions>().enabled = false;
+            }
+            else
+            {
+                character.GetComponent<ThirdPersonController>().enabled = false;
+                character.GetComponent<PlayerInput>().enabled = false;
+                character.GetComponent<NavMeshAgent>().enabled = true;
+                character.GetComponent<PlayerCompanions>().enabled = true;
+            }
         }
     }
 
-    IEnumerator ResetCharacter(int index)
+    IEnumerator ResetCharacter(GameObject character)
     {
         // Deactivate the GameObject
-        characters[index].SetActive(false);
+        character.SetActive(false);
 
         // Wait for a short delay to ensure full reset
         yield return new WaitForSeconds(0.1f);
 
         // Reactivate the GameObject
-        characters[index].SetActive(true);
+        character.SetActive(true);
     }
-
     void SwitchToNextCharacter()
     {
-        if (currentMainPlayerIndex != -1)
-        {
-            characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
-        }
+       // if (!GridSystem.instance.IsGridOn)
+        //{
+            if (currentMainPlayerIndex != -1)
+            {
+                characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
+            }
 
-        StartCoroutine(ResetCharacter(currentMainPlayerIndex));
-        currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
+            // StartCoroutine(ResetCharacter(currentMainPlayerIndex));
+            currentMainPlayerIndex = (currentMainPlayerIndex + 1) % characters.Count;
 
-        characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
+            characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
 
-        SetMainPlayer(currentMainPlayerIndex);
+            SetMainPlayer(currentMainPlayerIndex);
 
-        Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
+            Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
+       // }
+    
     }
 
     void SetMainPlayer(int index)
@@ -86,8 +109,7 @@ public class SwitchMC : MonoBehaviour
         }
         currentMainPlayerIndex = index;
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
-
-        // Activate/deactivate cameras
         CharacterSwitch(); // Apply the switch
     }
+
 }

@@ -121,6 +121,7 @@ public class WaveManager : MonoBehaviour
 
     void HandleWave()
     {
+       // List<GameObject> playableC = new List<GameObject>();
         TurnManager.instance.players.Clear();
         GridActivation.instance.players.Clear();
         if (TotalNumberOfWavesThisScene >= currentWaveCount)
@@ -130,10 +131,15 @@ public class WaveManager : MonoBehaviour
             {
                 TurnManager.instance.players.Add(players);
                 currentPlayers.Add(players.gameObject);
-                if (players.gameObject != GridActivation.instance.playableCharacter)
+
+                if (players.gameObject != GridActivation.instance.playableCharacter[0])//playable character
                 {
-                    GridActivation.instance.players.Add(players.gameObject);
+                       // Debug.Log(PcGo+ "=="+ players.gameObject);
+                        //playableC.Add(players.gameObject);
+                  GridActivation.instance.players.Add(players.gameObject);
+
                 }
+                
             }
             GridActivation.instance.HandleCharacterSpawn();
 

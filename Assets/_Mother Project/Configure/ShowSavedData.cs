@@ -78,6 +78,12 @@ public class ShowSavedData : MonoBehaviour
 
     }
 
+    public void LoadTemporaryStatsNextScene(GameObject character)
+    {
+        fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
+        ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
+    }
+
     public void PrintCharacterDataFromJson(GameObject character)
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
