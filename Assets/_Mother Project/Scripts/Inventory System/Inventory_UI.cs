@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class Inventory_UI : MonoBehaviour
 {
+    public static Inventory_UI instance;
+
     [SerializeField] Transform inventoryItem_panel;
     [SerializeField] Button inventoryItem_buttonPrefab;
     [SerializeField] Transform details_Panel;
@@ -14,6 +16,15 @@ public class Inventory_UI : MonoBehaviour
     [SerializeField] Transform StoreItem_panel;
     [SerializeField] Transform StoreItemDetails_Panel;
     [SerializeField] GameObject storeitemDetailPanel_Prefab;
+  
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public StoreObjects store;
     public void RefreshInventoryUI()
