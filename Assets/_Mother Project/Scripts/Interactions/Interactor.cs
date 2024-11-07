@@ -24,7 +24,7 @@ public class Interactor : MonoBehaviour
         {
             promptUI.SetInteractionPopUp();
         }
-        if(Input.GetKeyDown( KeyCode.P ) )
+        if(Input.GetKeyDown( KeyCode.I ) )
         {
             
             if( nearestInteractableGameObject != null )
@@ -66,7 +66,7 @@ public class Interactor : MonoBehaviour
             }
         }
 
-       // Debug.Log(closestInteractable);
+
         return closestInteractable;
 
     }
