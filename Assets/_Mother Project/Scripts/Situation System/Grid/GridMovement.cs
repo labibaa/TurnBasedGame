@@ -538,7 +538,7 @@ public class GridMovement : MonoBehaviour
 
 
 
-            if (agent.gameObject.name == "PlayerArmature")//have to change the hardcode later
+            if (agent.gameObject.CompareTag("Player") )//have to change the hardcode later
             {
                 if(actionName == "Dash")
                 {
@@ -582,13 +582,13 @@ public class GridMovement : MonoBehaviour
 
         }
 
-        agent.GetComponent<PlayerMove>().startMoving = false;//setting the rotation and movement to zero . as all the path has been traversed 
+        //agent.GetComponent<PlayerMove>().startMoving = false;//setting the rotation and movement to zero . as all the path has been traversed 
         agent.speed = defaultSpeedAttribute.x;
         agent.angularSpeed = defaultSpeedAttribute.y;
         agent.acceleration = defaultSpeedAttribute.z;
         
         ResetPathSelection();
-        if (agent.gameObject.name == "PlayerArmature")
+        if (agent.gameObject.CompareTag("Player"))
         {
             if (actionName == "Dash")
             {
