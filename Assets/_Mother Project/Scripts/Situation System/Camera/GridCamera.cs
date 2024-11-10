@@ -20,13 +20,13 @@ public class
 
     private void OnEnable()
     {
-        GridSystem.OnGridGeneration += setCamera;
+        //GridSystem.OnGridGeneration += setCamera;
         HealthManager.OnGridDisable += setCamera;
     }
 
     private void OnDisable()
     {
-        GridSystem.OnGridGeneration -= setCamera;
+       // GridSystem.OnGridGeneration -= setCamera;
         HealthManager.OnGridDisable -= setCamera;
     }
 
