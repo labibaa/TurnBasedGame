@@ -9,11 +9,36 @@ public class IsoMetricToTPS : MonoBehaviour
 
     private bool isIsometricActive = true;
 
-    void Start()
+    private void OnEnable()
     {
         if (isoCamera != null && tpsCamera != null)
         {
             isoCamera.Priority = 15;
+            tpsCamera.Priority = 5;
+        }
+        else
+        {
+            Debug.LogError("Please assign both the isometric and TPS cameras.");
+        }
+    }
+    private void OnDisable()
+    {
+        if (isoCamera != null && tpsCamera != null)
+        {
+            isoCamera.Priority = 5;
+            tpsCamera.Priority = 5;
+        }
+        else
+        {
+            Debug.LogError("Please assign both the isometric and TPS cameras.");
+        }
+
+    }
+    void Start()
+    {
+        if (isoCamera != null && tpsCamera != null)
+        {
+            isoCamera.Priority = 5;
             tpsCamera.Priority = 5;
         }
         else

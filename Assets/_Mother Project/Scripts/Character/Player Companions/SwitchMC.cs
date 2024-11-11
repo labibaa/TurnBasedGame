@@ -58,6 +58,7 @@ public class SwitchMC : MonoBehaviour
                 character.GetComponent<PlayerInput>().enabled = true;
                 character.GetComponent<NavMeshAgent>().enabled = false;
                 character.GetComponent<PlayerCompanions>().enabled = false;
+                character.GetComponent<IsoMetricToTPS>().enabled = true;
             }
             else
             {
@@ -65,6 +66,7 @@ public class SwitchMC : MonoBehaviour
                 character.GetComponent<PlayerInput>().enabled = false;
                 character.GetComponent<NavMeshAgent>().enabled = true;
                 character.GetComponent<PlayerCompanions>().enabled = true;
+                character.GetComponent<IsoMetricToTPS>().enabled = false;
             }
         }
     }
