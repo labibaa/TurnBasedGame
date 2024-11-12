@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ShowSavedData : MonoBehaviour
 {
+    public static ShowSavedData Instance;
+
     bool onSaveData = false;
 
     [SerializeField] GameObject savedDataText;
@@ -27,9 +29,12 @@ public class ShowSavedData : MonoBehaviour
     public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
     public List<PlayerDataSave> ReadCharacterStats = new List<PlayerDataSave>();
 
-    private void Start()
+    private void Awake()
     {
-       // fileName = fileName + ".json";
+       if(savedDataText == null)
+        {
+            Instance = this;
+        }
         
     }
 
@@ -53,7 +58,7 @@ public class ShowSavedData : MonoBehaviour
     }
 
   
-    public void AddCharacterData(GameObject character)
+    public void AddCharacterData(GameObject character) //call this to save player data when needed
     {
         SaveCharacterStats.Clear();
         PlayerDataSave playerdtate = new PlayerDataSave(
@@ -72,19 +77,32 @@ public class ShowSavedData : MonoBehaviour
         SaveTemporaryStatToJson();
 
     }
-    public void SaveTemporaryStatToJson() //call function to save data
+    public void SaveTemporaryStatToJson() // save data
     {
         FileHandler.SaveToJsonData<PlayerDataSave>(SaveCharacterStats, fileName);
 
     }
 
-    public void LoadTemporaryStatsNextScene(GameObject character)
+    public void LoadTemporaryStatsNextScene(GameObject character) // call this to load player data when needed
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
+        foreach (var item in ReadCharacterStats)
+        {
+            character.GetComponent<CharacterBaseClasses>().name = item.Name;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
+            character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
+            character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+            character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;
+            character.GetComponent<TemporaryStats>().CurrentStrength = item.CurrentStrength;
+            character.GetComponent<TemporaryStats>().CurrentArcana = item.CurrentArcana;
+            character.GetComponent<TemporaryStats>().CurrentIntelligence = item.CurrentIntelligence;
+            character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint = item.CurrentExp;
+            character.GetComponent<TemporaryStats>().CharacterTeam = item.CharacterTeam;
+        }
     }
 
-    public void PrintCharacterDataFromJson(GameObject character)
+    public void PrintCharacterDataFromJson(GameObject character) //print by loading json
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
@@ -115,7 +133,7 @@ public class ShowSavedData : MonoBehaviour
 
     }
 
-    public void LoadJsonToTemporaryStat(GameObject character)
+    public void LoadJsonToTemporaryStat(GameObject character) //load and edit
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
