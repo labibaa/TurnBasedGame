@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
-
+using System.Linq;
 public class LoadSceneManager : MonoBehaviour
 {
     public static LoadSceneManager instance;
 
-    [SerializeField]List<GameObject> gameObjects = new List<GameObject>();
-
+    private PlayerDataSave playerDataSave;
+   // public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
+    private List<IPersistableData> persistableDataList;
     private void Awake()
     {
         if(instance == null)
@@ -24,7 +24,7 @@ public class LoadSceneManager : MonoBehaviour
             //var d = new GameObject { name = "[LoadSceneManager]" };
             Destroy(gameObject);
         }
-
+       
     }
     private void OnEnable()
     {
@@ -37,7 +37,10 @@ public class LoadSceneManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
-
+    private void Start()
+    {
+       // persistableDataList = FindAllIPersitableDataObjects();
+    }
     public async void LoadScene(string sceneName)
     {
         var scene = SceneManager.LoadSceneAsync(sceneName);
@@ -51,20 +54,48 @@ public class LoadSceneManager : MonoBehaviour
     }*/
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        foreach (GameObject character in gameObjects)
-        {
-            ShowSavedData.Instance.LoadTemporaryStatsNextScene(character);
-            Debug.Log("load data");
-        }
+        persistableDataList = FindAllIPersitableDataObjects();
+
+        LoadGame();
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-        foreach (GameObject character in gameObjects)
+       
+        SaveGame();
+    }
+
+    void LoadGame()
+    {
+        foreach (IPersistableData player_GO in persistableDataList)
         {
-            ShowSavedData.Instance.AddCharacterData(character);
-            Debug.Log("Save data");
+            //ShowSavedData.Instance.LoadTemporaryStatsNextScene(character);
+           // player_GO.LoadData(playerDataSave);
+            Debug.Log(player_GO);
         }
     }
 
+    void SaveGame()
+    {
+        if (persistableDataList == null || persistableDataList.Count == 0)
+        {
+            Debug.LogError("Persistable data list is null or empty in SaveGame");
+            return;
+        }
+        foreach (IPersistableData player_GO in persistableDataList)
+        {
+           // player_GO.SaveData(playerDataSave);
+          //  SaveCharacterStats.Add(playerDataSave);
+            Debug.Log(player_GO + "save unload");
+            //ShowSavedData.Instance.AddCharacterData(saveData);
+        }
+
+    }
+
+    private List<IPersistableData> FindAllIPersitableDataObjects()
+    {
+        IEnumerable<IPersistableData> ipersistabledataObjects = FindObjectsOfType<MonoBehaviour>().OfType<IPersistableData>();
+        
+        return new List<IPersistableData>(ipersistabledataObjects);
+    }
 }

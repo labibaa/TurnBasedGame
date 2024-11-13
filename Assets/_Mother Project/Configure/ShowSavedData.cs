@@ -90,7 +90,7 @@ public class ShowSavedData : MonoBehaviour
         foreach (var item in ReadCharacterStats)
         {
             character.GetComponent<CharacterBaseClasses>().name = item.Name;
-            character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.CurrentPlayerHealth;
             character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
             character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
             character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;
@@ -119,7 +119,7 @@ public class ShowSavedData : MonoBehaviour
             inputField.text = item.ToString();*/
 
             CreateInputField(statInputField_txt.gameObject, "Player Name", item.Name, (value) => item.Name = value);
-            CreateInputField(statInputField_txt.gameObject, "Player HP", item.PlayerHealth.ToString(), (value) => item.PlayerHealth = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player HP", item.CurrentPlayerHealth.ToString(), (value) => item.CurrentPlayerHealth = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player AP", item.PlayerAP.ToString(), (value) => item.PlayerAP = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player Dexterity", item.CurrentDex.ToString(), (value) => item.CurrentDex = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player Endurance", item.CurrentEndurance.ToString(), (value) => item.CurrentEndurance = int.Parse(value));
@@ -140,7 +140,7 @@ public class ShowSavedData : MonoBehaviour
         foreach (var item in ReadCharacterStats)
         {
             character.GetComponent<CharacterBaseClasses>().name = item.Name;
-            character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.CurrentPlayerHealth;
               character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
               character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
               character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;
