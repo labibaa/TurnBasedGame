@@ -57,7 +57,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Two_Handed_Arise
+  m_Name: TwoHandedArise
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -315,7 +315,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Soul_Steal
+  m_Name: SoulSteal
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -428,7 +428,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bone_Shield
+  m_Name: BoneShield
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -455,7 +455,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton_Grab_Roud
+  m_Name: SkeletonGrabRoud
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
