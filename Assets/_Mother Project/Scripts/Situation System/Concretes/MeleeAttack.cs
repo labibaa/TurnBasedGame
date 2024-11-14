@@ -97,13 +97,13 @@ public class MeleeAttack : ICommand
     async UniTask HandleAnimation()
     {
         TempManager.instance.CharacterRotation(target, player, 2f);
-        player.GetComponent<PlayParticle>().target = target.gameObject;
+      /*  player.GetComponent<PlayParticle>().target = target.gameObject;
         player.GetComponent<PlayParticle>().actionSound = meleeAttack.actionSound;
         // player.GetComponent<PlayParticle>().InstantiateParticleEffect(meleeAttack.ParticleSystem);
 
         player.GetComponent<PlayParticle>().particlePrefab = meleeAttack.ParticleSystem;
         player.GetComponent<PlayParticle>().particlePrefabHit = meleeAttack.HitParticleSystem;
-        target.GetComponent<PlayParticle>().particlePrefabHurt = meleeAttack.HurtParticleSystem;
+        target.GetComponent<PlayParticle>().particlePrefabHurt = meleeAttack.HurtParticleSystem;*/
 
         //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;

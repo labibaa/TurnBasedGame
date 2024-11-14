@@ -132,6 +132,10 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         {
            _characterBaseClasses.SetAvailableActions( WeaponManager.instance.GetBowAndArrowAvailableActions());
         }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Talisman)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetTalismanAvailableActions());
+        }
     }
     public void SetCharacterStat()
     {

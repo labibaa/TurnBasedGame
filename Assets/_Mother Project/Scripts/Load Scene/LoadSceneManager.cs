@@ -9,7 +9,7 @@ public class LoadSceneManager : MonoBehaviour
     public static LoadSceneManager instance;
 
     private PlayerDataSave playerDataSave;
-   // public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
+    public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
     private List<IPersistableData> persistableDataList;
     private void Awake()
     {
@@ -39,10 +39,12 @@ public class LoadSceneManager : MonoBehaviour
     }
     private void Start()
     {
-       // persistableDataList = FindAllIPersitableDataObjects();
+         persistableDataList = FindAllIPersitableDataObjects();
+        //OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
     public async void LoadScene(string sceneName)
     {
+        SaveGame();
         var scene = SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -62,7 +64,7 @@ public class LoadSceneManager : MonoBehaviour
     public void OnSceneUnloaded(Scene scene)
     {
        
-        SaveGame();
+       // SaveGame();
     }
 
     void LoadGame()
@@ -70,7 +72,7 @@ public class LoadSceneManager : MonoBehaviour
         foreach (IPersistableData player_GO in persistableDataList)
         {
             //ShowSavedData.Instance.LoadTemporaryStatsNextScene(character);
-           // player_GO.LoadData(playerDataSave);
+            player_GO.LoadData(playerDataSave);
             Debug.Log(player_GO);
         }
     }
@@ -84,8 +86,8 @@ public class LoadSceneManager : MonoBehaviour
         }
         foreach (IPersistableData player_GO in persistableDataList)
         {
-           // player_GO.SaveData(playerDataSave);
-          //  SaveCharacterStats.Add(playerDataSave);
+            player_GO.SaveData(playerDataSave);
+            SaveCharacterStats.Add(playerDataSave);
             Debug.Log(player_GO + "save unload");
             //ShowSavedData.Instance.AddCharacterData(saveData);
         }

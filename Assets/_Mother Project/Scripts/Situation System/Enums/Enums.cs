@@ -277,6 +277,7 @@ public enum CurrentWeapon
 {
     Dagger,
     Sword,
+    Talisman,
     BowAndArrow
 }
 
