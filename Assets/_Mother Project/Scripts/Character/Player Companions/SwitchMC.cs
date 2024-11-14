@@ -30,7 +30,8 @@ public class SwitchMC : MonoBehaviour
     }
     private void Start()
     {
-        SetMainPlayer(0);
+        // SetMainPlayer(0);
+        CharacterSwitch();
     }
     private void Update()
     {

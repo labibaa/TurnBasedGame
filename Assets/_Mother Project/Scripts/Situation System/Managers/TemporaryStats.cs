@@ -51,6 +51,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
     public GameObject EnemyTargetSelectionParticle;
     public int playerVisiblity=1;
 
+
     //Animator animator;
 
     private void Awake()
@@ -101,7 +102,6 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         playerDataSave.CurrentArcana = _characterBaseClasses.Arcana;
         playerDataSave.CurrentIntelligence = _characterBaseClasses.Intelligence;
         playerDataSave.CharacterTeam = this.CharacterTeam;
-
     }
 
     public void LoadData(PlayerDataSave playerDataSave)

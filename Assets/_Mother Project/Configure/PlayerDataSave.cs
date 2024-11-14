@@ -16,8 +16,9 @@ public class PlayerDataSave
     public int CurrentIntelligence;
     public int CurrentExp;
     public TeamName CharacterTeam;
+    public bool IsMainCHaracter;
 
-    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName)
+    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName, bool isMain)
     {
         Name = name;
         CurrentPlayerHealth = playerHealth;
@@ -29,6 +30,7 @@ public class PlayerDataSave
         CurrentIntelligence = currentIntelligence;
         CurrentExp = exp;
         CharacterTeam = teamName;
+        IsMainCHaracter = isMain;
         
     }
 }

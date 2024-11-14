@@ -71,9 +71,9 @@ public class LoadSceneManager : MonoBehaviour
     {
         foreach (IPersistableData player_GO in persistableDataList)
         {
-            //ShowSavedData.Instance.LoadTemporaryStatsNextScene(character);
-            player_GO.LoadData(playerDataSave);
-            Debug.Log(player_GO);
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
+            // player_GO.LoadData(playerDataSave);
         }
     }
 
@@ -86,9 +86,11 @@ public class LoadSceneManager : MonoBehaviour
         }
         foreach (IPersistableData player_GO in persistableDataList)
         {
-            player_GO.SaveData(playerDataSave);
-            SaveCharacterStats.Add(playerDataSave);
-            Debug.Log(player_GO + "save unload");
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.AddCharacterData(Ch_obj);
+
+            // player_GO.SaveData(playerDataSave);
+            // SaveCharacterStats.Add(playerDataSave);
             //ShowSavedData.Instance.AddCharacterData(saveData);
         }
 

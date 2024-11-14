@@ -7,5 +7,5 @@ public interface IPersistableData
     void SaveData(PlayerDataSave playerDataSave);
 
     void LoadData(PlayerDataSave playerDataSave);
-   
+
 }
