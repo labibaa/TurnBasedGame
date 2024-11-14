@@ -209,6 +209,78 @@ public class ActionArchive : MonoBehaviour
             ActionTemplate(meleeScriptable, meleeAction);
         }
     }
+    public async void BoneShield()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void TwoHandedArise()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "TwoHandedArise");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SkeletonGrabRoud()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SoulSteal()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SoulSteal");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
 
     public async void Stab()
     {

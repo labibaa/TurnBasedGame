@@ -51,7 +51,7 @@ public class Dash : ICommand
         //Agent.gameObject.transform.position = Path[Path.Count-1].transform.position;
         await GridMovement.instance.MoveCharacterGrid(Path, Agent, SpeedAttributes, "Dash");
         Cursor.lockState = CursorLockMode.None;
-        //HandleAnimation();
+        HandleAnimation();
 
         //Agent.Stop();
 
