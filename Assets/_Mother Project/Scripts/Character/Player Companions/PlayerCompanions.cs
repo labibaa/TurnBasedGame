@@ -57,15 +57,17 @@ public class PlayerCompanions : MonoBehaviour
     }
     public void LinkUp()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !GridSystem.instance.IsGridOn)
         {
             if (!linkUp)
             {
                 linkUp = true;
+                this.GetComponent<TemporaryStats>().isLinkOn = true;
             }
             else
             {
                 linkUp = false;
+                this.GetComponent<TemporaryStats>().isLinkOn = false;
                 animator.SetFloat("Speed", 0);
                 agentCompanion.ResetPath();
             }

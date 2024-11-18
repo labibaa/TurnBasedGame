@@ -17,8 +17,9 @@ public class PlayerDataSave
     public int CurrentExp;
     public TeamName CharacterTeam;
     public bool IsMainCHaracter;
+    public bool IsLinkOn;
 
-    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName, bool isMain)
+    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName, bool isMain, bool isLinkOn)
     {
         Name = name;
         CurrentPlayerHealth = playerHealth;
@@ -31,6 +32,6 @@ public class PlayerDataSave
         CurrentExp = exp;
         CharacterTeam = teamName;
         IsMainCHaracter = isMain;
-        
+        IsLinkOn = isLinkOn;
     }
 }

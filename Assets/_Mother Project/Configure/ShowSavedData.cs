@@ -72,7 +72,8 @@ public class ShowSavedData : MonoBehaviour
               character.GetComponent<TemporaryStats>().CurrentIntelligence,
               character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint,
               character.GetComponent<TemporaryStats>().CharacterTeam,
-              character.GetComponent<TemporaryStats>().isMainCharacter);
+              character.GetComponent<TemporaryStats>().isMainCharacter,
+              character.GetComponent<TemporaryStats>().isLinkOn);
         SaveCharacterStats.Add(playerdtate);
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         SaveTemporaryStatToJson();
@@ -101,6 +102,7 @@ public class ShowSavedData : MonoBehaviour
             character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint = item.CurrentExp;
             character.GetComponent<TemporaryStats>().CharacterTeam = item.CharacterTeam;
             character.GetComponent<TemporaryStats>().isMainCharacter = item.IsMainCHaracter;
+            character.GetComponent<TemporaryStats>().isLinkOn = item.IsLinkOn;
         }
     }
 

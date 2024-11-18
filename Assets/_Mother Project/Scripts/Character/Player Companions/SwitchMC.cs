@@ -85,8 +85,8 @@ public class SwitchMC : MonoBehaviour
     }
     void SwitchToNextCharacter()
     {
-       // if (!GridSystem.instance.IsGridOn)
-        //{
+        if (!GridSystem.instance.IsGridOn)
+        {
             if (currentMainPlayerIndex != -1)
             {
                 characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
@@ -100,7 +100,7 @@ public class SwitchMC : MonoBehaviour
             SetMainPlayer(currentMainPlayerIndex);
 
             Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
-       // }
+        }
     
     }
 
@@ -115,4 +115,22 @@ public class SwitchMC : MonoBehaviour
         CharacterSwitch(); // Apply the switch
     }
 
+    public void RemoveUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (!character.GetComponent<TemporaryStats>().isLinkOn)
+            {
+                Debug.Log("nolinkkkkkkk "+character);
+                if (!character.GetComponent<TemporaryStats>().isMainCharacter)
+                {
+                    Debug.Log("yessssss removeeeeeee "+character);
+                    characters.Remove(character);
+                    character.SetActive(false);
+                    Debug.Log(character + " deactivate");
+                    break;
+                }
+            }
+        }
+    }
 }

@@ -75,6 +75,7 @@ public class LoadSceneManager : MonoBehaviour
             ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
             // player_GO.LoadData(playerDataSave);
         }
+        SwitchMC.Instance.RemoveUnlinkedCharacter();
     }
 
     void SaveGame()

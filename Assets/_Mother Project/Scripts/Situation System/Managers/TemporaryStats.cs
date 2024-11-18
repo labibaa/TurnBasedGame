@@ -29,6 +29,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
     public GameObject PlayerUltimateBar;
 
     public bool isMainCharacter;
+    public bool isLinkOn;
     public Mortality playerMortality;
     
     public Vector3 currentPlayerGridPosition;
