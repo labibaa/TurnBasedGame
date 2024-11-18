@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sword Slash
+  m_text: 'TwoHandedArise
 
     AP: 3'
   m_isRightToLeft: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af8fe657fe75ce4408fcd6305b532107, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83b25c24f1f0ccb4db9afcc3ce5035de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
