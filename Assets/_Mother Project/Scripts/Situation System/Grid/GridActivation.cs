@@ -17,8 +17,7 @@ public class GridActivation : MonoBehaviour
     [SerializeField]
     List<GameObject> gameObjectsTobeEnabled = new List<GameObject>();
 
-    [SerializeField]
-    public  List<GameObject> playableCharacter = new List<GameObject>();
+    public List<GameObject> playableCharacter = new List<GameObject>();
     [SerializeField]
     GameManager gameManager;
     [SerializeField]
@@ -73,6 +72,7 @@ public class GridActivation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        playableCharacter = SwitchMC.Instance.characters;
         if (other.CompareTag("Player") && !GridSystem.instance.IsGridOn)
         {
             

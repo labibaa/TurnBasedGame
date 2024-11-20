@@ -10,6 +10,8 @@ public class SwitchMC : MonoBehaviour
 {
     public static SwitchMC Instance;
 
+    public static event Action<GameObject> OnCharacterRemove;
+
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
@@ -127,10 +129,19 @@ public class SwitchMC : MonoBehaviour
                     Debug.Log("yessssss removeeeeeee "+character);
                     characters.Remove(character);
                     character.SetActive(false);
+                    SendGameObject(character); //remove from grid
                     Debug.Log(character + " deactivate");
                     break;
                 }
             }
+        }
+    }
+
+    public void SendGameObject(GameObject unlinkedcharacter)
+    {
+        if (OnCharacterRemove != null)
+        {
+            OnCharacterRemove?.Invoke(unlinkedcharacter); // Send the current GameObject
         }
     }
 }
