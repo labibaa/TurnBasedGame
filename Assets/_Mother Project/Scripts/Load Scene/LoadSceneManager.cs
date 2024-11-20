@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System;
 public class LoadSceneManager : MonoBehaviour
 {
     public static LoadSceneManager instance;
@@ -11,6 +12,8 @@ public class LoadSceneManager : MonoBehaviour
     private PlayerDataSave playerDataSave;
     public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
     private List<IPersistableData> persistableDataList;
+
+    public String prevScene;
     private void Awake()
     {
         if(instance == null)
@@ -63,8 +66,8 @@ public class LoadSceneManager : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene)
     {
-       
-       // SaveGame();
+       prevScene = scene.name;
+        // SaveGame();
     }
 
     void LoadGame()
