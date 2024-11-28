@@ -92,5 +92,11 @@ public class PlayerCompanions : MonoBehaviour
       
     }
 
+    //Ch_obj.GetComponent<PlayerCompanions>().NextSceneLink();
+    public void NextSceneLink()
+    {
+        linkUp = this.GetComponent<TemporaryStats>().isLinkOn;
+    }
+
  
 }

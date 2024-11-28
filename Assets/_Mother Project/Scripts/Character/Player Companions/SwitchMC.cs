@@ -115,7 +115,7 @@ public class SwitchMC : MonoBehaviour
         currentMainPlayerIndex = index;
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
         CharacterSwitch(); // Apply the switch
-        if(characters.Count < 2)
+        if(characters.Count < 2) //to the scene of other character
         {
             LoadSceneManager.instance.LoadScene(LoadSceneManager.instance.prevScene);
         }

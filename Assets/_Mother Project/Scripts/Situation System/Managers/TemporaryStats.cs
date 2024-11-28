@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class TemporaryStats : MonoBehaviour, IPersistableData
 {
@@ -30,6 +31,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
 
     public bool isMainCharacter;
     public bool isLinkOn;
+    public String currentScene;
     public Mortality playerMortality;
     
     public Vector3 currentPlayerGridPosition;
@@ -63,7 +65,6 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
 
     private void OnEnable()
     {
-       
 
         //GridSystem.OnGridGenerationSpawn += AssignSpawnPosition;
         HealthManager.OnGridDisable += onEndFunction;
@@ -88,7 +89,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         //s
         // Call the function MyFunction after one second
         //Invoke("AssignPosition", 1.0f);
-
+        currentScene = SceneManager.GetActiveScene().name;
     }
 
     public void SaveData(PlayerDataSave playerDataSave)
