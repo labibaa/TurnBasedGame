@@ -167,6 +167,12 @@ public class ButtonStackManager : MonoBehaviour
             groundBlastButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.GroundBlast());
             ActionActivator.instance.AddToActionButtons(groundBlastButton);
         }
+        if (player.GetMoveAction())
+        {
+            GameObject moveButton = Instantiate(player.GetMoveAction().actionButton, playerPanel.transform);
+            moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+            ActionActivator.instance.AddToActionButtons(moveButton);
+        }
 
         // Add the undo button
         //GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
@@ -180,9 +186,9 @@ public class ButtonStackManager : MonoBehaviour
 
 
         // Add the move action button
-        GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
-        moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
-        ActionActivator.instance.AddToActionButtons(moveButton);
+        //GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
+        //moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+        //ActionActivator.instance.AddToActionButtons(moveButton);
 
         return playerPanel;
     }
