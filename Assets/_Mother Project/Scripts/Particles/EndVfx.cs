@@ -9,12 +9,12 @@ public class EndVfx : MonoBehaviour
 
     public void EndVfxKey()
     {
-        Debug.Log("EndVFXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        
         if (effect != null)
         {
             foreach (VisualEffect vis in effect)
             {
-                Debug.Log("end");
+                
                 vis.SendEvent("end");
                 vis.SendEvent("stop");
                 StartCoroutine(DestroyVFX(vis));
@@ -29,6 +29,6 @@ public class EndVfx : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(desEffect.gameObject);
         //  Destroy(hiteffect.gameObject);
-        Debug.Log("destroyt");
+        
     }
 }
