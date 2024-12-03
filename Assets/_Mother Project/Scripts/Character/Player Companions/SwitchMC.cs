@@ -11,6 +11,7 @@ public class SwitchMC : MonoBehaviour
     public static SwitchMC Instance;
 
     public static event Action<GameObject> OnCharacterRemove;
+    public static event Action OnPrevScene;
 
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
@@ -117,7 +118,8 @@ public class SwitchMC : MonoBehaviour
         CharacterSwitch(); // Apply the switch
         if(characters.Count < 2) //to the scene of other character
         {
-            LoadSceneManager.instance.LoadScene(LoadSceneManager.instance.prevScene);
+            OnPrevScene?.Invoke();
+           // LoadSceneManager.instance.LoadScene(LoadSceneManager.instance.prevScene);
         }
     }
 
