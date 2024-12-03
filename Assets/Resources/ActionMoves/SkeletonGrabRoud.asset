@@ -40,14 +40,16 @@ MonoBehaviour:
   ParticleSystem: {fileID: 0}
   HurtParticleSystem: {fileID: 0}
   HitParticleSystem: {fileID: 0}
-  actionSound: {fileID: 8300000, guid: b4030d657aa74ee43bad6571b18f5006, type: 3}
+  actionSound: {fileID: 0}
   actionIcon: {fileID: 195040, guid: 94452706f9cab234a83db094573c38b9, type: 3}
   actionButton: {fileID: 8538063801286393506, guid: 475d3f1c35800db42a6e74acfb741a1f,
     type: 3}
   SoundReferences: []
-  PlayerActionVFX: {fileID: 0}
-  TargetHitVFX: {fileID: 0}
-  particle: {fileID: 19840850, guid: 9acec412cf3cb0b4ea6bd5b99ee797bc, type: 3}
+  PlayerActionVFX: {fileID: 8892289087410266028, guid: 0acde8f5fe7bf404da21f46f3e9cc1eb,
+    type: 3}
+  TargetHitVFX: {fileID: 8892289087410266028, guid: 0acde8f5fe7bf404da21f46f3e9cc1eb,
+    type: 3}
+  particle: {fileID: 558109723307241859, guid: 0acde8f5fe7bf404da21f46f3e9cc1eb, type: 3}
   CharacterBodyLocation: MidBody
   TargetCharacterBodyLocation: MidBody
   TargetHurtAnimation: Damage1
