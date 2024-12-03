@@ -14,6 +14,7 @@ public class LoadSceneManager : MonoBehaviour
     private List<IPersistableData> persistableDataList;
 
     public String prevScene;
+    bool isPrevScene;
     public List<GameObject> leftOutcharacters = new List<GameObject>();
     private void Awake()
     {
@@ -51,7 +52,11 @@ public class LoadSceneManager : MonoBehaviour
     }
     public async void LoadScene(string sceneName)
     {
-        SaveGame();
+        if(!isPrevScene)
+        {
+            SaveGame();
+        }
+       
         var scene = SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -64,8 +69,11 @@ public class LoadSceneManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         persistableDataList = FindAllIPersitableDataObjects();
-
-        LoadGame();
+        if (!isPrevScene)
+        {
+            LoadGame();
+        }
+        isPrevScene = false;
     }
 
     public void OnSceneUnloaded(Scene scene)
@@ -119,6 +127,7 @@ public class LoadSceneManager : MonoBehaviour
 
     public void LoadPrevScene()
     {
+        isPrevScene = true;
         LoadScene(prevScene);
         SwitchMC.Instance.characters = leftOutcharacters;
     }
