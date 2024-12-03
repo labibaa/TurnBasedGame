@@ -178,6 +178,12 @@ public class ButtonStackManager : MonoBehaviour
         //ultimateButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
         //ActionActivator.instance.AddToActionButtons(ultimateButton);
 
+
+        // Add the move action button
+        GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
+        moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+        ActionActivator.instance.AddToActionButtons(moveButton);
+
         return playerPanel;
     }
 
