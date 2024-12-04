@@ -213,18 +213,10 @@ public class ActionArchive : MonoBehaviour
     {
 
         GetPlayerStats();
-        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
-        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
-        if (isMoveAdded)
-        {
-            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
-            ActionTemplate(meleeScriptable, meleeAction);
-        }
-        else
-        {
-            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
-            ActionTemplate(meleeScriptable, meleeAction);
-        }
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+
+        ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
     }
 
     public async void TwoHandedArise()
