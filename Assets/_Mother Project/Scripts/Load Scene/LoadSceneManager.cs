@@ -16,6 +16,7 @@ public class LoadSceneManager : MonoBehaviour
     public String prevScene;
     bool isPrevScene;
     public List<GameObject> leftOutcharacters = new List<GameObject>();
+    public bool ToAddUnlinkedCharacter;
     private void Awake()
     {
         if(instance == null)
@@ -52,11 +53,12 @@ public class LoadSceneManager : MonoBehaviour
     }
     public async void LoadScene(string sceneName)
     {
-        if(!isPrevScene)
+        if (!isPrevScene)
         {
             SaveGame();
         }
-       
+     
+
         var scene = SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -69,16 +71,16 @@ public class LoadSceneManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         persistableDataList = FindAllIPersitableDataObjects();
-        if (!isPrevScene)
-        {
+       // if (!isPrevScene)
+       // {
             LoadGame();
-        }
+       // }
         isPrevScene = false;
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-       prevScene = scene.name;
+        prevScene = scene.name;
         // SaveGame();
     }
 
@@ -99,6 +101,11 @@ public class LoadSceneManager : MonoBehaviour
         {
             Debug.LogError("Persistable data list is null or empty in SaveGame");
             return;
+        }
+        if (ToAddUnlinkedCharacter)
+        {
+            SwitchMC.Instance.AddUnlinkedCharacter();
+            ToAddUnlinkedCharacter = false;
         }
         foreach (IPersistableData player_GO in persistableDataList)
         {
@@ -128,7 +135,9 @@ public class LoadSceneManager : MonoBehaviour
     public void LoadPrevScene()
     {
         isPrevScene = true;
+        ToAddUnlinkedCharacter = true;
+        SwitchMC.Instance.BackToUnlinkedCharacter();
         LoadScene(prevScene);
-        SwitchMC.Instance.characters = leftOutcharacters;
+       
     }
 }
