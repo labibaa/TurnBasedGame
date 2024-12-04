@@ -9998,7 +9998,6 @@ GameObject:
   - component: {fileID: 8095517829916959769}
   - component: {fileID: 854276386638060618}
   - component: {fileID: 5586005042872657464}
-  - component: {fileID: 5264478584051783814}
   m_Layer: 8
   m_Name: cm
   m_TagString: Untagged
@@ -10055,7 +10054,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 7.8
+  m_CameraDistance: 5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -10076,19 +10075,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &5264478584051783814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698599918893756031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c41ac9245b87c4192012080077d830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Damping: 0
 --- !u!1 &700990172983728391
 GameObject:
   m_ObjectHideFlags: 0
@@ -30712,6 +30698,7 @@ GameObject:
   - component: {fileID: 1404492588203297933}
   - component: {fileID: 1018015665715086535}
   - component: {fileID: 3546776056031728903}
+  - component: {fileID: 2121440794976532700}
   m_Layer: 8
   m_Name: Roud Rigged
   m_TagString: Player
@@ -30964,7 +30951,8 @@ MonoBehaviour:
     type: 2}
   warpSurge: {fileID: 0}
   groundBlast: {fileID: 0}
-  dash: {fileID: 11400000, guid: 278df4f6af6fc8c44bc05faf91532f9f, type: 2}
+  dash: {fileID: 0}
+  move: {fileID: 11400000, guid: 8465ec936a5ef5240a593153957a09c8, type: 2}
 --- !u!114 &8577163410989926013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31181,6 +31169,20 @@ MonoBehaviour:
   isoCamera: {fileID: 8499598896560366742}
   tpsCamera: {fileID: 8686788674797384124}
   switchKey: 105
+--- !u!114 &2121440794976532700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571700951601418023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5dcbd49f11c3343b26647387ffe7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButtons: []
+  temp: {fileID: 8577163410989926013}
 --- !u!1 &3666204126982843415
 GameObject:
   m_ObjectHideFlags: 0
@@ -36366,7 +36368,7 @@ Transform:
   m_GameObject: {fileID: 3954000481902417396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -2.3114565e-24, w: 1}
-  m_LocalPosition: {x: 1.4899979, y: 0.5, z: -7.800003}
+  m_LocalPosition: {x: 1.4899979, y: 0.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41681,6 +41683,7 @@ Transform:
   - {fileID: 7613178043694321707}
   - {fileID: 7972380756874183104}
   - {fileID: 7908242896745855290}
+  - {fileID: 4977924864586787820}
   m_Father: {fileID: 5143966603350509408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4722194349870653998
@@ -48191,6 +48194,37 @@ Transform:
   m_Children:
   - {fileID: 902362092978811762}
   m_Father: {fileID: 47449192565096972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7140502685895569700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4977924864586787820}
+  m_Layer: 8
+  m_Name: Midbodyposition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4977924864586787820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140502685895569700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2999788678797419707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7222791200847155509
 GameObject:
