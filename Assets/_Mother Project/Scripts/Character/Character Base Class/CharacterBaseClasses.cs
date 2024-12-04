@@ -31,6 +31,8 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     protected ActionStat groundBlast; 
     [SerializeField]
     protected ActionStat dash;
+    [SerializeField]
+    protected ActionStat move;
 
 
     //  [SerializeField] private int baseDamage;
@@ -98,6 +100,11 @@ public abstract class CharacterBaseClasses : MonoBehaviour
     public ActionStat GetDashAction()
     {
         return dash;
+    } 
+    
+    public ActionStat GetMoveAction()
+    {
+        return move;
     }
     public ActionStat GetGroundBlastAction()
     {
