@@ -10,16 +10,16 @@ public class BoneShield: ICommand
     CharacterBaseClasses target;
     TemporaryStats playerTempStats;
     TemporaryStats targetTempStats;
-    ImprovedActionStat rangedAttack;
+    ImprovedActionStat boneShield;
 
 
-    public BoneShield(CharacterBaseClasses playerAttacker, CharacterBaseClasses targetDefender, TemporaryStats currentStatPlayer, TemporaryStats currentStatTarget, ImprovedActionStat rangedScriptable)
+    public BoneShield(CharacterBaseClasses playerAttacker, CharacterBaseClasses targetDefender, TemporaryStats currentStatPlayer, TemporaryStats currentStatTarget, ImprovedActionStat boneShieldScriptable)
     {
         player = playerAttacker;
         target = targetDefender;
         playerTempStats = currentStatPlayer;
         targetTempStats = currentStatTarget;
-        rangedAttack = rangedScriptable;
+        boneShield = boneShieldScriptable;
 
     }
 
@@ -32,20 +32,13 @@ public class BoneShield: ICommand
     public async UniTask Execute()
     {
 
-        int attackOrder = checkOrder();
+       
 
-        float actionAccuracy = rangedAttack.ActionAccuracy;
-        
-        //if (targetTempStats.IsBlockActive)
-        //{
-        //    greaterStrike.BasePower = greaterStrike.BasePower - 30;
-        //}
-
-        if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
+        if (ActionResolver.instance.ActionAccuracyCalculation(boneShield.ActionAccuracy)&& player.gameObject.activeInHierarchy)
         {
-            int diceValue = DiceNumberGenerator.instance.GetDiceValue(rangedAttack.FirstPercentage, rangedAttack.SecondPercentage, rangedAttack.LastPercentage);
 
-            int healPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) ) *-1;
+
+            int healPoint = -10;
 
           
 
@@ -54,8 +47,7 @@ public class BoneShield: ICommand
                 targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
 
                 await HandleAnimation();
-                UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
-                await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
+               
             
 
 
@@ -80,14 +72,10 @@ public class BoneShield: ICommand
         //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.Priority = 15;
 
-        player.GetComponent<SpawnVFX>().SetTargetAnimator(target.gameObject);
-        player.GetComponent<SpawnVFX>().SetTargetVFXPosition(target.gameObject);
-        player.GetComponent<SpawnVFX>().SetOwnVFXPosition(player.gameObject.GetComponent<VFXSpawnPosition>().MidBody);
-        player.GetComponent<SpawnVFX>().SetVFXPrefab(rangedAttack.PlayerActionVFX);
-        player.GetComponent<SpawnVFX>().SetTargetHitVFXPrefab(rangedAttack.TargetHitVFX);
-        player.GetComponent<SpawnVFX>().SetParticle(rangedAttack.particle);
-        player.GetComponent<SpawnVFX>().SetVFXSound(rangedAttack.actionSound);
-        player.GetComponent<SpawnVFX>().SetTargetAnimation(rangedAttack.TargetHurtAnimation);
+        //player.GetComponent<SpawnVFX>().SetTargetAnimator(target.gameObject);
+        //player.GetComponent<SpawnVFX>().SetTargetVFXPosition(target.gameObject);
+        //player.GetComponent<SpawnVFX>().SetOwnVFXPosition(player.gameObject.GetComponent<VFXSpawnPosition>().MidBody);
+        
 
         await CutsceneManager.instance.PlayAnimationForCharacter(player.gameObject, GetActionName());
 
@@ -97,40 +85,36 @@ public class BoneShield: ICommand
 
     public string GetActionName()
     {
-        return rangedAttack.ActionName;
+        return "BoneShield";
     }
 
     public int GetPVValue()
     {
-        return rangedAttack.PriorityValue;
+        return boneShield.PriorityValue;
     }
 
     public CharacterBaseClasses GetTarget()
     {
-        return target;
+        return player;
     }
 
     public int GetAPValue()
     {
-        return rangedAttack.APCost;
+        return boneShield.APCost;
     }
 
     public NavMeshAgent GetAgent()
     {
-        return null;
+        throw new System.NotImplementedException();
     }
 
     public List<GameObject> GetPaths()
     {
-        return null;
+        throw new System.NotImplementedException();
     }
     public string GetActionType()
     {
         return "Ranged";
     }
-    int checkOrder()
-    {
-        return TurnManager.instance.players.IndexOf(target.GetComponent<PlayerTurn>()) - TurnManager.instance.players.IndexOf(player.GetComponent<PlayerTurn>());
-
-    }
+   
 }

@@ -136,6 +136,10 @@ public class ButtonStackManager : MonoBehaviour
             {
                 button.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.SmokeCloud());
             }
+            else if (scriptable.actionButton.name == "BoneShield")
+            {
+                button.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.BoneShield());
+            }
             else
             {
                 button.GetComponent<Button>().onClick.AddListener(() => TempManager.instance.ShowTargetList(scriptable.actionButton.name));
