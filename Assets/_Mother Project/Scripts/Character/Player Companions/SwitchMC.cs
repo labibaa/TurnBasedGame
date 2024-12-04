@@ -150,4 +150,37 @@ public class SwitchMC : MonoBehaviour
             OnCharacterRemove?.Invoke(unlinkedcharacter); // Send the current GameObject
         }
     }
+
+    public void BackToUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (character.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                Debug.Log("add linkkkkkkk " + character);
+                character.GetComponent<TemporaryStats>().isMainCharacter = false;
+                LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().isMainCharacter = true;
+                ShowSavedData.Instance.AddCharacterData(LoadSceneManager.instance.leftOutcharacters[0]);
+            }
+            ShowSavedData.Instance.AddCharacterData(character);
+
+        }
+    }
+
+    public void AddUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (character.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                Debug.Log("add linkkkkkkk " + character);
+                character.GetComponent<TemporaryStats>().isMainCharacter = false;
+                character.GetComponent<TemporaryStats>().isLinkOn = true;
+                LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().isMainCharacter = true;
+                ShowSavedData.Instance.AddCharacterData(LoadSceneManager.instance.leftOutcharacters[0]);
+            }
+            ShowSavedData.Instance.AddCharacterData(character);
+
+        }
+    }
 }
