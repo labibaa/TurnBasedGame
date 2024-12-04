@@ -212,11 +212,18 @@ public class ActionArchive : MonoBehaviour
     public async void BoneShield()
     {
 
+        
         GetPlayerStats();
-        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
 
-        ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
+        ImprovedActionStat boneShieldScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+        ICommand BoneShieldAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, boneShieldScriptable);
+        ActionTemplate(boneShieldScriptable, BoneShieldAction);
+
+        //GetPlayerStats();
+        //ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+
+        //ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        //ActionTemplate(rangedScriptable, rangedAction);
     }
 
     public async void TwoHandedArise()
