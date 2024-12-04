@@ -248,38 +248,15 @@ public class ActionArchive : MonoBehaviour
     {
 
         GetPlayerStats();
-        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
-        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
-        if (isMoveAdded)
-        {
-            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
-            ActionTemplate(meleeScriptable, meleeAction);
-        }
-        else
-        {
-            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
-            ActionTemplate(meleeScriptable, meleeAction);
-        }
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
     }
 
     public async void SoulSteal()
     {
 
-        //GetPlayerStats();
-        //ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SoulSteal");
-        //bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
-        //if (isMoveAdded)
-        //{
-        //    ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
-        //    ActionTemplate(meleeScriptable, meleeAction);
-        //}
-        //else
-        //{
-        //    ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
-        //    ActionTemplate(meleeScriptable, meleeAction);
-        //}
-
-
+     
         GetPlayerStats();
         ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SoulSteal");
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
