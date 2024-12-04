@@ -50,6 +50,6 @@ MonoBehaviour:
   particle: {fileID: 19840850, guid: 9acec412cf3cb0b4ea6bd5b99ee797bc, type: 3}
   CharacterBodyLocation: MidBody
   TargetCharacterBodyLocation: MidBody
-  TargetHurtAnimation: Damage1
+  TargetHurtAnimation: SkeletonGrab
   actionStance: 1
   actionType: 0
