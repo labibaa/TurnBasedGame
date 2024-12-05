@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: upper1
+  m_Name: Helmet
   m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 54f5826bdd7dd6f4c92368d73f04ba80, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dbc2b90d2b4a0146ab8223753892bf9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d08d3d7102118db44bb5f019188d5f8a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6417681cfa228de40a75573c89e42be2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -123,8 +123,8 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.662
-    - _FlatRimLightAlign: 0.686
-    - _FlatRimSize: 0.924
+    - _FlatRimLightAlign: 0.594
+    - _FlatRimSize: 0.967
     - _FlatSpecularEdgeSmoothness: 0.972
     - _FlatSpecularSize: 0.807
     - _GlossMapScale: 1
@@ -135,7 +135,7 @@ Material:
     - _GradientCenterY: 0
     - _GradientEnabled: 0
     - _GradientSize: 10
-    - _LightContribution: 0.01
+    - _LightContribution: 0.078
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
