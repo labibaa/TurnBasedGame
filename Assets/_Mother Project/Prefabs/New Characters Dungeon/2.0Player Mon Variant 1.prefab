@@ -25483,7 +25483,7 @@ Transform:
   m_GameObject: {fileID: 1379623221603054671}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18301274, y: 0.6830127, z: -0.18301274, w: -0.6830127}
-  m_LocalPosition: {x: 9.508545, y: 7.850006, z: -0.9999542}
+  m_LocalPosition: {x: 7.170288, y: 7.5300293, z: 0.000045776367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67221,7 +67221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 1.49, y: 1, z: 1}
+  m_TrackedObjectOffset: {x: 1.49, y: 2.03, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
@@ -67231,7 +67231,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 12.7
+  m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -94565,6 +94565,7 @@ MonoBehaviour:
   warpSurge: {fileID: 0}
   groundBlast: {fileID: 0}
   dash: {fileID: 11400000, guid: 278df4f6af6fc8c44bc05faf91532f9f, type: 2}
+  move: {fileID: 0}
 --- !u!114 &126548385611617497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94597,7 +94598,9 @@ MonoBehaviour:
   AutoMove: 0
   playerUltimateBarCount: 0
   PlayerUltimateBar: {fileID: 0}
-  isMainCharacter: 0
+  isMainCharacter: 1
+  isLinkOn: 0
+  currentScene: 
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
