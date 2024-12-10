@@ -22203,7 +22203,7 @@ MonoBehaviour:
   playerAPTextSummary: {fileID: 1557219354}
   playerHPTextSummary: {fileID: 1044579439}
   playerRPTextSummary: {fileID: 1843561425}
-  hoverDisplayStats: {fileID: 796107358}
+  hoverDisplayStats: {fileID: 0}
   SummaryStatParent: {fileID: 1833452331}
   SummaryStatParentEnemy: {fileID: 1604025287}
   AvatarSummaryPrefab: {fileID: 6825553691945787511, guid: 460d40ec606390449b1cb5141ae64b9c,
