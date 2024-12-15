@@ -83,7 +83,7 @@ public class PlayerCompanions : MonoBehaviour
             {
                 if ((mainPlayer.position - agentCompanion.destination).sqrMagnitude > maxDistance * maxDistance)
                 {
-                    agentCompanion.SetDestination(mainPlayer.position);
+                    agentCompanion.SetDestination(mainPlayer.position - (mainPlayer.position - agentCompanion.transform.position).normalized * 2f);
                 }
                 timer = maxTime;
             }
