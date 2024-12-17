@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using System;
+using UnityEngine.TextCore.Text;
 public class LoadSceneManager : MonoBehaviour
 {
     public static LoadSceneManager instance;
@@ -80,7 +81,6 @@ public class LoadSceneManager : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene)
     {
-        prevScene = scene.name;
         // SaveGame();
     }
 
@@ -137,6 +137,7 @@ public class LoadSceneManager : MonoBehaviour
         isPrevScene = true;
         ToAddUnlinkedCharacter = true;
         SwitchMC.Instance.BackToUnlinkedCharacter();
+        prevScene = leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene;
         LoadScene(prevScene);
        
     }

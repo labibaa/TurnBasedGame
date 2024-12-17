@@ -157,13 +157,12 @@ public class SwitchMC : MonoBehaviour
         {
             if (character.GetComponent<TemporaryStats>().isMainCharacter)
             {
-                Debug.Log("add linkkkkkkk " + character);
                 character.GetComponent<TemporaryStats>().isMainCharacter = false;
                 LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().isMainCharacter = true;
                 ShowSavedData.Instance.AddCharacterData(LoadSceneManager.instance.leftOutcharacters[0]);
             }
             ShowSavedData.Instance.AddCharacterData(character);
-
+            
         }
     }
 
