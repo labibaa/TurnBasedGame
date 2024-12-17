@@ -3,38 +3,43 @@ using UnityEngine;
 
 public class ConfinerSwitcher : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCamera;  // Assign your Cinemachine Virtual Camera here
-    public BoxCollider roomCollider;               // Assign the first BoxCollider for Room 1
+    public CinemachineVirtualCamera virtualCamera1;  // Assign the first Cinemachine Virtual Camera
+    public CinemachineVirtualCamera virtualCamera2;  // Assign the second Cinemachine Virtual Camera
+    public BoxCollider roomCollider;                // Assign the BoxCollider for Room
 
-   
-    private CinemachineConfiner confiner;
+    private CinemachineConfiner confiner1;
+    private CinemachineConfiner confiner2;
 
     void Start()
     {
-        // Get the CinemachineConfiner component from the virtual camera
-        confiner = virtualCamera.GetComponent<CinemachineConfiner>();
-        
+        // Get the CinemachineConfiner components from both virtual cameras
+        confiner1 = virtualCamera1.GetComponent<CinemachineConfiner>();
+        confiner2 = virtualCamera2.GetComponent<CinemachineConfiner>();
     }
 
-    // Function to change the confiner dynamically
-    public void SetConfiner(BoxCollider newCollider)
+    // Function to change the confiner for both cameras dynamically
+    public void SetConfinerForBothCameras(BoxCollider newCollider)
     {
-        // Update the confiner's bounding volume with the new collider
-        confiner.m_BoundingVolume = newCollider;
+        // Update the confiner's bounding volume for both cameras
+        if (confiner1 != null)
+        {
+            confiner1.m_BoundingVolume = newCollider;
+            confiner1.InvalidatePathCache();
+        }
 
-        // Invalidate the confiner's path cache to refresh the bounds
-        confiner.InvalidatePathCache();
+        if (confiner2 != null)
+        {
+            confiner2.m_BoundingVolume = newCollider;
+            confiner2.InvalidatePathCache();
+        }
     }
 
     // Use trigger enter to switch between the colliders
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")){
-            SetConfiner(roomCollider);
+        if (other.CompareTag("Player"))
+        {
+            SetConfinerForBothCameras(roomCollider);
         }
-            
-        
     }
-
-
 }
