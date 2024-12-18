@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerDataSave
 {
     public string Name;
-    public int PlayerHealth;
+    public int CurrentPlayerHealth;
     public int PlayerAP;
     public int CurrentDex;
     public int CurrentEndurance;
@@ -16,11 +16,14 @@ public class PlayerDataSave
     public int CurrentIntelligence;
     public int CurrentExp;
     public TeamName CharacterTeam;
+    public bool IsMainCHaracter;
+    public bool IsLinkOn;
+    public string CurrentScene;
 
-    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName)
+    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName, bool isMain, bool isLinkOn, string currentScene)
     {
         Name = name;
-        PlayerHealth = playerHealth;
+        CurrentPlayerHealth = playerHealth;
         PlayerAP = playerAP;
         CurrentDex = currentDex;
         CurrentEndurance = currentEndurance;
@@ -29,6 +32,8 @@ public class PlayerDataSave
         CurrentIntelligence = currentIntelligence;
         CurrentExp = exp;
         CharacterTeam = teamName;
-        
+        IsMainCHaracter = isMain;
+        IsLinkOn = isLinkOn;
+        CurrentScene = currentScene;
     }
 }

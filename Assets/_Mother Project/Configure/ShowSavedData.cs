@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ShowSavedData : MonoBehaviour
 {
+    public static ShowSavedData Instance;
+
     bool onSaveData = false;
 
     [SerializeField] GameObject savedDataText;
@@ -27,9 +29,12 @@ public class ShowSavedData : MonoBehaviour
     public List<PlayerDataSave> SaveCharacterStats = new List<PlayerDataSave>();
     public List<PlayerDataSave> ReadCharacterStats = new List<PlayerDataSave>();
 
-    private void Start()
+    private void Awake()
     {
-       // fileName = fileName + ".json";
+       if(savedDataText == null)
+        {
+            Instance = this;
+        }
         
     }
 
@@ -53,7 +58,7 @@ public class ShowSavedData : MonoBehaviour
     }
 
   
-    public void AddCharacterData(GameObject character)
+    public void AddCharacterData(GameObject character) //call this to save player data when needed
     {
         SaveCharacterStats.Clear();
         PlayerDataSave playerdtate = new PlayerDataSave(
@@ -66,25 +71,44 @@ public class ShowSavedData : MonoBehaviour
               character.GetComponent<TemporaryStats>().CurrentArcana,
               character.GetComponent<TemporaryStats>().CurrentIntelligence,
               character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint,
-              character.GetComponent<TemporaryStats>().CharacterTeam);
+              character.GetComponent<TemporaryStats>().CharacterTeam,
+              character.GetComponent<TemporaryStats>().isMainCharacter,
+              character.GetComponent<TemporaryStats>().isLinkOn,
+              character.GetComponent<TemporaryStats>().currentScene);
         SaveCharacterStats.Add(playerdtate);
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         SaveTemporaryStatToJson();
 
     }
-    public void SaveTemporaryStatToJson() //call function to save data
+    public void SaveTemporaryStatToJson() // save data
     {
         FileHandler.SaveToJsonData<PlayerDataSave>(SaveCharacterStats, fileName);
 
     }
 
-    public void LoadTemporaryStatsNextScene(GameObject character)
+    public void LoadTemporaryStatsNextScene(GameObject character) // call this to load player data when needed
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
+        foreach (var item in ReadCharacterStats)
+        {
+            character.GetComponent<CharacterBaseClasses>().name = item.Name;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.CurrentPlayerHealth;
+            character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
+            character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
+            character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;
+            character.GetComponent<TemporaryStats>().CurrentStrength = item.CurrentStrength;
+            character.GetComponent<TemporaryStats>().CurrentArcana = item.CurrentArcana;
+            character.GetComponent<TemporaryStats>().CurrentIntelligence = item.CurrentIntelligence;
+            character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint = item.CurrentExp;
+            character.GetComponent<TemporaryStats>().CharacterTeam = item.CharacterTeam;
+            character.GetComponent<TemporaryStats>().isMainCharacter = item.IsMainCHaracter;
+            character.GetComponent<TemporaryStats>().isLinkOn = item.IsLinkOn;
+            character.GetComponent<TemporaryStats>().currentScene = item.CurrentScene;
+        }
     }
 
-    public void PrintCharacterDataFromJson(GameObject character)
+    public void PrintCharacterDataFromJson(GameObject character) //print by loading json
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
@@ -101,7 +125,7 @@ public class ShowSavedData : MonoBehaviour
             inputField.text = item.ToString();*/
 
             CreateInputField(statInputField_txt.gameObject, "Player Name", item.Name, (value) => item.Name = value);
-            CreateInputField(statInputField_txt.gameObject, "Player HP", item.PlayerHealth.ToString(), (value) => item.PlayerHealth = int.Parse(value));
+            CreateInputField(statInputField_txt.gameObject, "Player HP", item.CurrentPlayerHealth.ToString(), (value) => item.CurrentPlayerHealth = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player AP", item.PlayerAP.ToString(), (value) => item.PlayerAP = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player Dexterity", item.CurrentDex.ToString(), (value) => item.CurrentDex = int.Parse(value));
             CreateInputField(statInputField_txt.gameObject, "Player Endurance", item.CurrentEndurance.ToString(), (value) => item.CurrentEndurance = int.Parse(value));
@@ -115,14 +139,14 @@ public class ShowSavedData : MonoBehaviour
 
     }
 
-    public void LoadJsonToTemporaryStat(GameObject character)
+    public void LoadJsonToTemporaryStat(GameObject character) //load and edit
     {
         fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
         ReadCharacterStats = FileHandler.LoadJsonData<PlayerDataSave>(fileName);
         foreach (var item in ReadCharacterStats)
         {
             character.GetComponent<CharacterBaseClasses>().name = item.Name;
-            character.GetComponent<TemporaryStats>().PlayerHealth = item.PlayerHealth;
+            character.GetComponent<TemporaryStats>().PlayerHealth = item.CurrentPlayerHealth;
               character.GetComponent<TemporaryStats>().PlayerAP = item.PlayerAP;
               character.GetComponent<TemporaryStats>().CurrentDex = item.CurrentDex;
               character.GetComponent<TemporaryStats>().CurrentEndurance = item.CurrentEndurance;

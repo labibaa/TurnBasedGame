@@ -27,13 +27,15 @@ Material:
   m_ValidKeywords:
   - DR_BAKED_GI
   - DR_ENABLE_LIGHTMAP_DIR
+  - DR_LIGHT_ATTENUATION
   - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _TEXTUREBLENDINGMODE_MULTIPLY
+  - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -132,10 +134,10 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0.302
-    - _FlatRimSize: 0.759
-    - _FlatSpecularEdgeSmoothness: 0.531
-    - _FlatSpecularSize: 0.704
+    - _FlatRimLightAlign: 0.594
+    - _FlatRimSize: 0.771
+    - _FlatSpecularEdgeSmoothness: 0.697
+    - _FlatSpecularSize: 0.753
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -148,19 +150,20 @@ Material:
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
+    - _NormalMapImpact: 0
     - _OcclusionStrength: 1
     - _OutlineDepthOffset: 0
     - _OutlineEnabled: 1
     - _OutlineScale: 1
     - _OutlineWidth: 1
     - _OverrideBakedGi: 1
-    - _OverrideLightAttenuation: 0
+    - _OverrideLightAttenuation: 1
     - _OverrideLightmapDir: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimEnabled: 1
-    - _SelfShadingSize: 0
+    - _SelfShadingSize: 0.453
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
@@ -170,7 +173,7 @@ Material:
     - _Surface: 0
     - _TextureBlendingMode: 0
     - _TextureImpact: 0
-    - _UnityShadowOcclusion: 0
+    - _UnityShadowOcclusion: 1
     - _VertexColorsEnabled: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -180,8 +183,8 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FlatSpecularColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+    - _FlatRimColor: {r: 4, g: 4, b: 4, a: 1}
+    - _FlatSpecularColor: {r: 2, g: 2, b: 2, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -194,7 +197,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":0.3607843220233917,"time":1.0}]}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -230,7 +233,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: fffffffffefffffffefffffffdfffffffcfffffffcfffffffbfffffffbfffffffafffffff9fffffff9fffffff8fffffff7fffffff7fffffff6fffffff5fffffff5fffffff4fffffff3fffffff3fffffff2fffffff2fffffff1fffffff0fffffff0ffffffefffffffeeffffffeeffffffedffffffecffffffecffffffebffffffebffffffeaffffffe9ffffffe9ffffffe8ffffffe7ffffffe7ffffffe6ffffffe5ffffffe5ffffffe4ffffffe4ffffffe3ffffffe2ffffffe2ffffffe1ffffffe0ffffffe0ffffffdfffffffdeffffffdeffffffddffffffdcffffffdcffffffdbffffffdbffffffdaffffffd9ffffffd9ffffffd8ffffffd7ffffffd7ffffffd6ffffffd5ffffffd5ffffffd4ffffffd4ffffffd3ffffffd2ffffffd2ffffffd1ffffffd0ffffffd0ffffffcfffffffceffffffceffffffcdffffffcdffffffccffffffcbffffffcbffffffcaffffffc9ffffffc9ffffffc8ffffffc7ffffffc7ffffffc6ffffffc5ffffffc5ffffffc4ffffffc4ffffffc3ffffffc2ffffffc2ffffffc1ffffffc0ffffffc0ffffffbfffffffbeffffffbeffffffbdffffffbdffffffbcffffffbbffffffbbffffffbaffffffb9ffffffb9ffffffb8ffffffb7ffffffb7ffffffb6ffffffb5ffffffb5ffffffb4ffffffb4ffffffb3ffffffb2ffffffb2ffffffb1ffffffb0ffffffb0ffffffafffffffaeffffffaeffffffadffffffadffffffacffffffabffffffabffffffaaffffffa9ffffffa9ffffffa8ffffffa7ffffffa7ffffffa6ffffffa6ffffffa5ffffffa4ffffffa4ffffffa3ffffffa2ffffffa2ffffffa1ffffffa0ffffffa0ffffff9fffffff9effffff9effffff9dffffff9dffffff9cffffff9bffffff9bffffff9affffff99ffffff99ffffff98ffffff97ffffff97ffffff96ffffff96ffffff95ffffff94ffffff94ffffff93ffffff92ffffff92ffffff91ffffff90ffffff90ffffff8fffffff8effffff8effffff8dffffff8dffffff8cffffff8bffffff8bffffff8affffff89ffffff89ffffff88ffffff87ffffff87ffffff86ffffff86ffffff85ffffff84ffffff84ffffff83ffffff82ffffff82ffffff81ffffff80ffffff80ffffff7fffffff7fffffff7effffff7dffffff7dffffff7cffffff7bffffff7bffffff7affffff79ffffff79ffffff78ffffff77ffffff77ffffff76ffffff76ffffff75ffffff74ffffff74ffffff73ffffff72ffffff72ffffff71ffffff70ffffff70ffffff6fffffff6fffffff6effffff6dffffff6dffffff6cffffff6bffffff6bffffff6affffff69ffffff69ffffff68ffffff68ffffff67ffffff66ffffff66ffffff65ffffff64ffffff64ffffff63ffffff62ffffff62ffffff61ffffff60ffffff60ffffff5fffffff5fffffff5effffff5dffffff5dffffff5cffffff
+  _typelessdata: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   m_StreamData:
     serializedVersion: 2
     offset: 0

@@ -45,9 +45,13 @@ public class DictionaryManager : MonoBehaviour
         {"PushBack",ActionArchive.instance.PushBack },
         {"DaggerThrow",ActionArchive.instance.DaggerThrow },
         {"SwordSlash",ActionArchive.instance.SwordSlash },
-         {"Punch",ActionArchive.instance.Punch },
-         {"Stab",ActionArchive.instance.Stab },
-         {"SmokeCloud",ActionArchive.instance.SmokeCloud }
+        {"Punch",ActionArchive.instance.Punch },
+        {"Stab",ActionArchive.instance.Stab },
+        {"SmokeCloud",ActionArchive.instance.SmokeCloud },
+        {"BoneShield",ActionArchive.instance.BoneShield },
+        {"TwoHandedArise",ActionArchive.instance.TwoHandedArise },
+        {"SkeletonGrabRoud",ActionArchive.instance.SkeletonGrabRoud },
+        {"SoulSteal",ActionArchive.instance.SoulSteal }
 
 
     };

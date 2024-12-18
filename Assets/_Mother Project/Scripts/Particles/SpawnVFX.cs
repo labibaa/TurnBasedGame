@@ -56,7 +56,6 @@ public class SpawnVFX : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
            // AnimationPlay(animationList, charAnimator,animationIndex);
-
         }
      
     }
