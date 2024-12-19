@@ -73,7 +73,7 @@ Material:
   - _TEXTUREBLENDINGMODE_ADD
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 6
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -173,10 +173,10 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.74
-    - _FlatRimLightAlign: 0.756
-    - _FlatRimSize: 0.975
+    - _FlatRimLightAlign: 0.651
+    - _FlatRimSize: 0.869
     - _FlatSpecularEdgeSmoothness: 1
-    - _FlatSpecularSize: 0.685
+    - _FlatSpecularSize: 0.745
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -222,8 +222,8 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 0.27167144, g: 0.29440373, b: 0.31132078, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.02429691, g: 0.03759974, b: 0.05660379, a: 1}
-    - _FlatSpecularColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+    - _FlatRimColor: {r: 0.034754366, g: 0.062873304, b: 0.103773594, a: 1}
+    - _FlatSpecularColor: {r: 0.42933428, g: 0.44108224, b: 0.4528302, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
