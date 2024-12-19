@@ -67,12 +67,13 @@ Material:
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - DR_VERTEX_COLORS_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _NORMALMAP
   - _TEXTUREBLENDINGMODE_ADD
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 6
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -155,6 +156,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -171,10 +173,10 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.74
-    - _FlatRimLightAlign: 0.651
-    - _FlatRimSize: 0.869
+    - _FlatRimLightAlign: 0.756
+    - _FlatRimSize: 0.975
     - _FlatSpecularEdgeSmoothness: 1
-    - _FlatSpecularSize: 0.745
+    - _FlatSpecularSize: 0.747
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
