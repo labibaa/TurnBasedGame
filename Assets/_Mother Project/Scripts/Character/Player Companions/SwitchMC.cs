@@ -10,6 +10,9 @@ public class SwitchMC : MonoBehaviour
 {
     public static SwitchMC Instance;
 
+    public static event Action<GameObject> OnCharacterRemove;
+    public static event Action OnPrevScene;
+
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
@@ -30,7 +33,8 @@ public class SwitchMC : MonoBehaviour
     }
     private void Start()
     {
-        SetMainPlayer(0);
+        // SetMainPlayer(0);
+        CharacterSwitch();
     }
     private void Update()
     {
@@ -58,6 +62,7 @@ public class SwitchMC : MonoBehaviour
                 character.GetComponent<PlayerInput>().enabled = true;
                 character.GetComponent<NavMeshAgent>().enabled = false;
                 character.GetComponent<PlayerCompanions>().enabled = false;
+                character.GetComponent<IsoMetricToTPS>().enabled = true;
             }
             else
             {
@@ -65,6 +70,7 @@ public class SwitchMC : MonoBehaviour
                 character.GetComponent<PlayerInput>().enabled = false;
                 character.GetComponent<NavMeshAgent>().enabled = true;
                 character.GetComponent<PlayerCompanions>().enabled = true;
+                character.GetComponent<IsoMetricToTPS>().enabled = false;
             }
         }
     }
@@ -82,8 +88,8 @@ public class SwitchMC : MonoBehaviour
     }
     void SwitchToNextCharacter()
     {
-       // if (!GridSystem.instance.IsGridOn)
-        //{
+        if (!GridSystem.instance.IsGridOn)
+        {
             if (currentMainPlayerIndex != -1)
             {
                 characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = false;
@@ -97,7 +103,7 @@ public class SwitchMC : MonoBehaviour
             SetMainPlayer(currentMainPlayerIndex);
 
             Debug.Log($"Character {currentMainPlayerIndex} is now the main player.");
-       // }
+        }
     
     }
 
@@ -110,6 +116,70 @@ public class SwitchMC : MonoBehaviour
         currentMainPlayerIndex = index;
         characters[currentMainPlayerIndex].GetComponent<TemporaryStats>().isMainCharacter = true;
         CharacterSwitch(); // Apply the switch
+        if(characters.Count < 2) //to the scene of other character
+        {
+            OnPrevScene?.Invoke();
+           // LoadSceneManager.instance.LoadScene(LoadSceneManager.instance.prevScene);
+        }
     }
 
+    public void RemoveUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (!character.GetComponent<TemporaryStats>().isLinkOn)
+            {
+                Debug.Log("nolinkkkkkkk "+character);
+                if (!character.GetComponent<TemporaryStats>().isMainCharacter)
+                {
+                    Debug.Log("yessssss removeeeeeee "+character);
+                    characters.Remove(character);
+                    character.SetActive(false);
+                    SendGameObject(character); //remove from grid
+                    Debug.Log(character + " deactivate");
+                    break;
+                }
+            }
+        }
+    }
+
+    public void SendGameObject(GameObject unlinkedcharacter)
+    {
+        if (OnCharacterRemove != null)
+        {
+            OnCharacterRemove?.Invoke(unlinkedcharacter); // Send the current GameObject
+        }
+    }
+
+    public void BackToUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (character.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                character.GetComponent<TemporaryStats>().isMainCharacter = false;
+                LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().isMainCharacter = true;
+                ShowSavedData.Instance.AddCharacterData(LoadSceneManager.instance.leftOutcharacters[0]);
+            }
+            ShowSavedData.Instance.AddCharacterData(character);
+            
+        }
+    }
+
+    public void AddUnlinkedCharacter()
+    {
+        foreach (GameObject character in characters)
+        {
+            if (character.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                Debug.Log("add linkkkkkkk " + character);
+                character.GetComponent<TemporaryStats>().isMainCharacter = false;
+                character.GetComponent<TemporaryStats>().isLinkOn = true;
+                LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().isMainCharacter = true;
+                ShowSavedData.Instance.AddCharacterData(LoadSceneManager.instance.leftOutcharacters[0]);
+            }
+            ShowSavedData.Instance.AddCharacterData(character);
+
+        }
+    }
 }

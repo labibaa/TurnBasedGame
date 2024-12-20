@@ -90,14 +90,14 @@ public class RangedAttack : ICommand
    {
         TempManager.instance.CharacterRotation(target,player,2f);
 
-        player.GetComponent<PlayParticle>().target = target.gameObject;
+      /*  player.GetComponent<PlayParticle>().target = target.gameObject;
         player.GetComponent<PlayParticle>().actionSound = rangedAttack.actionSound;
         //player.GetComponent<PlayParticle>().InstantiateParticleEffect(rangedAttack.ParticleSystem);
         player.GetComponent<PlayParticle>().particlePrefab = rangedAttack.ParticleSystem;
         player.GetComponent<PlayParticle>().particlePrefabHit = rangedAttack.HitParticleSystem;
         target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
         Debug.Log("RangedD");
-
+*/
         //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
 

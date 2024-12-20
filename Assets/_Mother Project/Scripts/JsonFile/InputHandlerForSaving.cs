@@ -34,14 +34,7 @@ public class InputHandlerForSaving : MonoBehaviour
 
     public void LoadDataFromJson()
     {
-        SavedData = FileHandler.LoadJsonData<SaveTurnInformation>(fileName);
-
-        foreach (var item in SavedData)
-        {
-          
-        }
-
-       
+        SavedData = FileHandler.LoadJsonData<SaveTurnInformation>(fileName);       
     }
 
     public void setUserName()

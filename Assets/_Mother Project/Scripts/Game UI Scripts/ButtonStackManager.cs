@@ -136,6 +136,10 @@ public class ButtonStackManager : MonoBehaviour
             {
                 button.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.SmokeCloud());
             }
+            else if (scriptable.actionButton.name == "BoneShield")
+            {
+                button.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.BoneShield());
+            }
             else
             {
                 button.GetComponent<Button>().onClick.AddListener(() => TempManager.instance.ShowTargetList(scriptable.actionButton.name));
@@ -167,6 +171,12 @@ public class ButtonStackManager : MonoBehaviour
             groundBlastButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.GroundBlast());
             ActionActivator.instance.AddToActionButtons(groundBlastButton);
         }
+        if (player.GetMoveAction())
+        {
+            GameObject moveButton = Instantiate(player.GetMoveAction().actionButton, playerPanel.transform);
+            moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+            ActionActivator.instance.AddToActionButtons(moveButton);
+        }
 
         // Add the undo button
         //GameObject undoButton = Instantiate(undoButtonPrefab, playerPanel.transform);
@@ -177,6 +187,12 @@ public class ButtonStackManager : MonoBehaviour
         //GameObject ultimateButton = Instantiate(player.GetUltimateScripitable().ultimateButton, playerPanel.transform);
         //ultimateButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Ultimate());
         //ActionActivator.instance.AddToActionButtons(ultimateButton);
+
+
+        // Add the move action button
+        //GameObject moveButton = Instantiate(moveButtonPrefab, playerPanel.transform);
+        //moveButton.GetComponent<Button>().onClick.AddListener(() => ActionArchive.instance.Move());
+        //ActionActivator.instance.AddToActionButtons(moveButton);
 
         return playerPanel;
     }

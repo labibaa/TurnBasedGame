@@ -20,6 +20,7 @@ Material:
   - DR_SPECULAR_ON
   - DR_VERTEX_COLORS_ON
   - _DETAILMAPBLENDINGMODE_MULTIPLY
+  - _NORMALMAP
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords: []
@@ -40,10 +41,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 9d15950e6914d4a97ae06a93e0731413, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3a382b7045a2584498baf080d1004795, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -121,11 +122,11 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0.661
-    - _FlatRimSize: 0.3
-    - _FlatSpecularEdgeSmoothness: 0.581
-    - _FlatSpecularSize: 0.754
+    - _FlatRimEdgeSmoothness: 0.704
+    - _FlatRimLightAlign: 0.77
+    - _FlatRimSize: 0.886
+    - _FlatSpecularEdgeSmoothness: 0.882
+    - _FlatSpecularSize: 0.827
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -138,7 +139,7 @@ Material:
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
-    - _NormalMapImpact: 0
+    - _NormalMapImpact: 0.26
     - _OcclusionStrength: 1
     - _OutlineDepthOffset: 0
     - _OutlineEnabled: 1
@@ -171,8 +172,8 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 0.495372, g: 0.66471404, b: 0.8679245, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.03604485, g: 0.049131423, b: 0.09433961, a: 1}
-    - _FlatSpecularColor: {r: 1.6226416, g: 1.0222217, b: 0.5587398, a: 1}
+    - _FlatRimColor: {r: 0.07450981, g: 0.07450981, b: 0.07450981, a: 1}
+    - _FlatSpecularColor: {r: 0.011764706, g: 0.023529412, b: 0.02745098, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0.01886791, g: 0.01860091, b: 0.01860091, a: 1}
@@ -188,7 +189,7 @@ Texture2D:
   m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.6603773832321167,"g":0.632342517375946,"b":0.632342517375946,"a":1.0},"time":0.2382391095161438},{"color":{"r":0.1248219832777977,"g":0.1348344385623932,"b":0.14150941371917725,"a":1.0},"time":0.4588235318660736},{"color":{"r":0.7295072078704834,"g":0.7262749671936035,"b":0.7262749671936035,"a":1.0},"time":0.6823529601097107},{"color":{"r":0.7470391392707825,"g":0.7440164089202881,"b":0.7440164089202881,"a":1.0},"time":0.7029373645782471},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.2382391095161438},{"alpha":1.0,"time":0.4590066373348236},{"alpha":1.0,"time":0.6647135019302368},{"alpha":0.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 705a93ba574e45d96bf344fe5be0ba69
   m_ForcedFallbackFormat: 4
   m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0

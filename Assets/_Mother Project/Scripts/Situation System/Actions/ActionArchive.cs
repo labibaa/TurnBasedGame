@@ -209,6 +209,61 @@ public class ActionArchive : MonoBehaviour
             ActionTemplate(meleeScriptable, meleeAction);
         }
     }
+    public async void BoneShield()
+    {
+
+        
+        GetPlayerStats();
+
+        ImprovedActionStat boneShieldScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+        ICommand BoneShieldAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, boneShieldScriptable);
+        ActionTemplate(boneShieldScriptable, BoneShieldAction);
+
+        //GetPlayerStats();
+        //ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
+
+        //ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        //ActionTemplate(rangedScriptable, rangedAction);
+    }
+
+    public async void TwoHandedArise()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "TwoHandedArise");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SkeletonGrabRoud()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
+    }
+
+    public async void SoulSteal()
+    {
+
+     
+        GetPlayerStats();
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SoulSteal");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
+
+    }
+
 
     public async void Stab()
     {

@@ -57,15 +57,17 @@ public class PlayerCompanions : MonoBehaviour
     }
     public void LinkUp()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !GridSystem.instance.IsGridOn)
         {
             if (!linkUp)
             {
                 linkUp = true;
+                this.GetComponent<TemporaryStats>().isLinkOn = true;
             }
             else
             {
                 linkUp = false;
+                this.GetComponent<TemporaryStats>().isLinkOn = false;
                 animator.SetFloat("Speed", 0);
                 agentCompanion.ResetPath();
             }
@@ -74,21 +76,26 @@ public class PlayerCompanions : MonoBehaviour
 
     public void FollowPlayer()
     {
-        if (linkUp)
+        if ((linkUp || this.GetComponent<TemporaryStats>().isLinkOn) && !GridSystem.instance.IsGridOn)
         {
             timer -= Time.deltaTime;
             if (timer < 0f)
             {
                 if ((mainPlayer.position - agentCompanion.destination).sqrMagnitude > maxDistance * maxDistance)
                 {
-                    agentCompanion.SetDestination(mainPlayer.position);
-                    Debug.Log("follow " + mainPlayer);
+                    agentCompanion.SetDestination(mainPlayer.position - (mainPlayer.position - agentCompanion.transform.position).normalized * 2f);
                 }
                 timer = maxTime;
             }
             animator.SetFloat("Speed", agentCompanion.velocity.magnitude);
         }
       
+    }
+
+    //Ch_obj.GetComponent<PlayerCompanions>().NextSceneLink();
+    public void NextSceneLink()
+    {
+        linkUp = this.GetComponent<TemporaryStats>().isLinkOn;
     }
 
  

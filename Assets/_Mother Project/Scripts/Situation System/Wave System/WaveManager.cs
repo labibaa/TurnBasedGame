@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.TextCore.Text;
 
 public class WaveManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> WaveTriggers;
     public List<PlayableDirector> WaveTimelines; // New: List of PlayableDirector for each wave
     public List<GameObject> gridWaveStartLocation;
+    GameObject UnLinkedCharacter;
 
     int TotalNumberOfWavesThisScene;
     int currentWaveCount = 0;
@@ -26,6 +29,8 @@ public class WaveManager : MonoBehaviour
         GridSystem.OnGridPositionInitialization += GridWaveStartLocation;
         HealthManager.OnGridDisable += EnableNewTrigger;
         // GridSystem.OnGridGeneration += ActivateWaveCharacters;
+        SwitchMC.OnCharacterRemove += UnlikedRemove;
+
     }
 
     private void OnDisable()
@@ -34,6 +39,7 @@ public class WaveManager : MonoBehaviour
         GridSystem.OnGridPositionInitialization -= GridWaveStartLocation;
         HealthManager.OnGridDisable -= EnableNewTrigger;
         // GridSystem.OnGridGeneration -= ActivateWaveCharacters;
+        SwitchMC.OnCharacterRemove -= UnlikedRemove;
     }
 
     private void Awake()
@@ -121,11 +127,20 @@ public class WaveManager : MonoBehaviour
 
     void HandleWave()
     {
-       // List<GameObject> playableC = new List<GameObject>();
+      
+        // List<GameObject> playableC = new List<GameObject>();
         TurnManager.instance.players.Clear();
         GridActivation.instance.players.Clear();
         if (TotalNumberOfWavesThisScene >= currentWaveCount)
         {
+            foreach (var waveCharacter in PlayerWaves[currentWaveCount - 1].CharactersOfTheWave.ToList())
+            {
+                if (UnLinkedCharacter != null && waveCharacter == UnLinkedCharacter.GetComponent<PlayerTurn>())
+                {
+                    Debug.Log(waveCharacter);
+                    PlayerWaves[currentWaveCount - 1].CharactersOfTheWave.Remove(waveCharacter);
+                }
+            }
             HashSet<GameObject> currentPlayers = new HashSet<GameObject>();
             foreach (PlayerTurn players in PlayerWaves[currentWaveCount - 1].CharactersOfTheWave)
             {
@@ -149,4 +164,10 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
+
+    public void UnlikedRemove(GameObject gameObject)
+    {
+        UnLinkedCharacter = gameObject;
+    }
+ 
 }

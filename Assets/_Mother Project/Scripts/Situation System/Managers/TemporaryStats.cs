@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
-public class TemporaryStats : MonoBehaviour
+public class TemporaryStats : MonoBehaviour, IPersistableData
 {
     public int CurrentHealth;
     public int PlayerHealth;
@@ -29,6 +30,8 @@ public class TemporaryStats : MonoBehaviour
     public GameObject PlayerUltimateBar;
 
     public bool isMainCharacter;
+    public bool isLinkOn;
+    public String currentScene;
     public Mortality playerMortality;
     
     public Vector3 currentPlayerGridPosition;
@@ -51,11 +54,17 @@ public class TemporaryStats : MonoBehaviour
     public GameObject EnemyTargetSelectionParticle;
     public int playerVisiblity=1;
 
+
     //Animator animator;
+
+    private void Awake()
+    {
+        _characterBaseClasses = GetComponent<CharacterBaseClasses>();
+        // animator = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
-       
 
         //GridSystem.OnGridGenerationSpawn += AssignSpawnPosition;
         HealthManager.OnGridDisable += onEndFunction;
@@ -80,9 +89,37 @@ public class TemporaryStats : MonoBehaviour
         //s
         // Call the function MyFunction after one second
         //Invoke("AssignPosition", 1.0f);
-
+        currentScene = SceneManager.GetActiveScene().name;
     }
 
+    public void SaveData(PlayerDataSave playerDataSave)
+    {
+        playerDataSave.Name = _characterBaseClasses.name;
+        playerDataSave.CurrentPlayerHealth = this.CurrentHealth;
+        playerDataSave.CurrentExp = this.CurrentExp;
+        playerDataSave.PlayerAP = this.PlayerAP;
+        playerDataSave.CurrentDex = _characterBaseClasses.Dexterity;
+        playerDataSave.CurrentStrength = _characterBaseClasses.Strength;
+        playerDataSave.CurrentEndurance = _characterBaseClasses.Endurance;
+        playerDataSave.CurrentArcana = _characterBaseClasses.Arcana;
+        playerDataSave.CurrentIntelligence = _characterBaseClasses.Intelligence;
+        playerDataSave.CharacterTeam = this.CharacterTeam;
+    }
+
+    public void LoadData(PlayerDataSave playerDataSave)
+    {
+        _characterBaseClasses.name = playerDataSave.Name ;
+         this.CurrentHealth = playerDataSave.CurrentPlayerHealth ;
+         this.CurrentExp = playerDataSave.CurrentExp ;
+        this.PlayerAP = playerDataSave.PlayerAP;
+        _characterBaseClasses.Dexterity = playerDataSave.CurrentDex ;
+        _characterBaseClasses.Strength = playerDataSave.CurrentStrength;
+        _characterBaseClasses.Endurance = playerDataSave.CurrentEndurance;
+        _characterBaseClasses.Arcana = playerDataSave.CurrentArcana;
+        _characterBaseClasses.Intelligence = playerDataSave.CurrentIntelligence;
+        this.CharacterTeam = playerDataSave.CharacterTeam;
+
+    }
     public void SetWeaponActions()
     {
        if(_characterBaseClasses.EquipedWeapon == CurrentWeapon.Dagger)
@@ -96,6 +133,10 @@ public class TemporaryStats : MonoBehaviour
         if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.BowAndArrow)
         {
            _characterBaseClasses.SetAvailableActions( WeaponManager.instance.GetBowAndArrowAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Talisman)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetTalismanAvailableActions());
         }
     }
     public void SetCharacterStat()
@@ -121,19 +162,6 @@ public class TemporaryStats : MonoBehaviour
         PlayerUltimateBar.SetActive(false);
     }
 
-
-    private void Awake()
-    {
-        _characterBaseClasses = GetComponent<CharacterBaseClasses>();
-       // animator = GetComponent<Animator>();
-    }
-
-    public TemporaryStats(int health,int ap,int Dex)
-    {
-        CurrentHealth = health;
-        CurrentAP = ap;
-        CurrentDex = Dex;
-    }
    
     private void HandleExperienceChange(int newExp)
     {
@@ -217,4 +245,6 @@ public class TemporaryStats : MonoBehaviour
             //PlayerStatUI.instance.GetPlayerStatDetails(GetComponent<CharacterBaseClasses>());
         }
     }
+
+ 
 }
