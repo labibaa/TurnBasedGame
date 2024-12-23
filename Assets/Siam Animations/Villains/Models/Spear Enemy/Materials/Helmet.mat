@@ -182,9 +182,9 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.605
+    - _FlatRimEdgeSmoothness: 0.913
     - _FlatRimLightAlign: 0.471
-    - _FlatRimSize: 0.877
+    - _FlatRimSize: 0.809
     - _FlatSpecularEdgeSmoothness: 0.892
     - _FlatSpecularSize: 0.703
     - _GlossMapScale: 1

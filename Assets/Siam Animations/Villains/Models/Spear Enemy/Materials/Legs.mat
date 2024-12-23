@@ -100,11 +100,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 43daa4ac1112ffb4b960190c00b6c9ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7f1a2953e42109b42922eac3097bc09e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: ceb9401b3b22d874987a549f2607e57b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6d74385e753cfeb4e85cf2726071c805, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -182,7 +182,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.605
+    - _FlatRimEdgeSmoothness: 0.59
     - _FlatRimLightAlign: 0.471
     - _FlatRimSize: 0.877
     - _FlatSpecularEdgeSmoothness: 0.892
