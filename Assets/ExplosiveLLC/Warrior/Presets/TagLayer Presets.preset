@@ -13,7 +13,139 @@ Preset:
     m_ManagedTypeFallback: 
   m_Properties:
   - target: {fileID: 0}
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Presets/TagLayer Presets.preset
     propertyPath: tags.Array.size
+=======
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: carrierMesh
+    value: 
+    objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - target: {fileID: 0}
+    propertyPath: particleMesh
+    value: 
+    objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  - target: {fileID: 0}
+    propertyPath: carrierScale.x
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: carrierScale.y
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: carrierScale.z
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleScale.x
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleScale.y
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleScale.z
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleScaleVariance
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: numParticles
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: offsetAlongNormal
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: oneNormalPerParticle
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleRotationRange
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: particleRotationBias
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: biasTowardRotation.x
+    value: -90
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: biasTowardRotation.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: biasTowardRotation.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseEnabled
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseFrequency
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseAmplitude
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseOctaves
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseScale.x
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseScale.y
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseScale.z
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseSeed
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: folderPath
+    value: Quibli/Common Resources/Common Models
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: fileNamePrefix
+    value: BillboardBush
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: appendMeshName
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: appendTakeNumber
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: takeNumber
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/[Common]/Foliage Generator Presets/BillboardBush_02.preset
     value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -172,3 +304,11 @@ Preset:
     propertyPath: m_SortingLayers.Array.data[0].locked
     value: 0
     objectReference: {fileID: 0}
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Presets/TagLayer Presets.preset
+=======
+  - target: {fileID: 0}
+    propertyPath: exportDebugMesh
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/[Common]/Foliage Generator Presets/BillboardBush_02.preset

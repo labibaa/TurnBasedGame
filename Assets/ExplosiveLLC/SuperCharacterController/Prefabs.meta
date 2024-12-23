@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ExplosiveLLC/SuperCharacterController/Prefabs.meta
 guid: a8b0236d5d4afab4988619cbc58cda84
+=======
+guid: a85220005c6b644c98cb9fbe7b7e219c
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/Nature/Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

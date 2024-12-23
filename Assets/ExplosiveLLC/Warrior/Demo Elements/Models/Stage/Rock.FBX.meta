@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: f0446dd73f1f0fc459b686f749aefcc6
 ModelImporter:
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Demo Elements/Models/Stage/Rock.FBX.meta
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
@@ -30,6 +31,10 @@ ModelImporter:
   - first:
       95: 9500000
     second: //RootNode
+=======
+  serializedVersion: 21100
+  internalIDToNameTable: []
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/City/Models/Gutter_part_1.fbx.meta
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -66,11 +71,19 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Demo Elements/Models/Stage/Rock.FBX.meta
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
     fileIdsGeneration: 1
+=======
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 2
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/City/Models/Gutter_part_1.fbx.meta
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -80,7 +93,11 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Demo Elements/Models/Stage/Rock.FBX.meta
     meshOptimizationFlags: 0
+=======
+    meshOptimizationFlags: -1
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/City/Models/Gutter_part_1.fbx.meta
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -118,6 +135,10 @@ ModelImporter:
   animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
+<<<<<<< HEAD:Assets/ExplosiveLLC/Warrior/Demo Elements/Models/Stage/Rock.FBX.meta
+=======
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Demos/City/Models/Gutter_part_1.fbx.meta
   additionalBone: 0
   userData: 
   assetBundleName: 

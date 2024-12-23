@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Core.meta
 guid: c99dd2b3298945c48ad6fe8c5a83efd8
+=======
+guid: 5c48513cdaf134adaa64f87318c4027e
+>>>>>>> origin/ShaderReplace:Assets/_DownloadedAssets/Quibli/Utils/EditorAttributes/Core.meta
 folderAsset: yes
 timeCreated: 1426876577
 licenseType: Store
