@@ -178,13 +178,13 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 0
-    - _DetailMapImpact: 0.539
+    - _DetailMapImpact: 0.459
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0.317
+    - _FlatRimEdgeSmoothness: 0.852
+    - _FlatRimLightAlign: 0.625
     - _FlatRimSize: 0.795
     - _FlatSpecularEdgeSmoothness: 0.935
     - _FlatSpecularSize: 0.809
@@ -203,10 +203,10 @@ Material:
     - _Mode: 0
     - _NormalMapImpact: 0
     - _OcclusionStrength: 1
-    - _OutlineDepthOffset: 0
+    - _OutlineDepthOffset: 0.16
     - _OutlineEnabled: 1
     - _OutlineScale: 1
-    - _OutlineWidth: 0.08
+    - _OutlineWidth: 0.02
     - _OverrideBakedGi: 0
     - _OverrideLightAttenuation: 1
     - _OverrideLightmapDir: 0
@@ -235,7 +235,7 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
-    - _FlatRimColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0.85056}
+    - _FlatRimColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0.85056}
     - _FlatSpecularColor: {r: 0.8207547, g: 0.63554287, b: 0.5536223, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}

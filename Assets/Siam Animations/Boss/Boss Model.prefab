@@ -26895,7 +26895,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d73eb4091d6a2404ea508dd483400b04, type: 2}
+  - {fileID: 2100000, guid: 3b44d6aaeb735ff4ca71db68548d84b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98590,7 +98590,7 @@ VisualEffect:
       - m_Value: {x: -0.000004423731, y: 90.00001, z: -1.1989418e-10}
         m_Name: SkinnedMeshTransform_angles
         m_Overridden: 1
-      - m_Value: {x: 13.764413, y: 3.4868822, z: 10.260975}
+      - m_Value: {x: 77.68953, y: 3.2266932, z: 150.26599}
         m_Name: SkinnedMeshTransform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
@@ -98623,7 +98623,7 @@ VisualEffect:
       - m_Value: {x: -0.0000068301892, y: 90.00001, z: 90}
         m_Name: HeadTransform_angles
         m_Overridden: 1
-      - m_Value: {x: 13.824412, y: 3.706882, z: 10.260975}
+      - m_Value: {x: 77.749535, y: 3.4466932, z: 150.26599}
         m_Name: HeadTransform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
@@ -98934,6 +98934,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -125.909
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b424bc1f8ff7511499d577d82efc280b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a5f02a2120d1b934ea261ab74387b7db, type: 2}
     - target: {fileID: 919132149155446097, guid: b424bc1f8ff7511499d577d82efc280b,
         type: 3}
       propertyPath: m_Name
