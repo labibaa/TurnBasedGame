@@ -30,6 +30,7 @@ Material:
   - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
@@ -117,6 +118,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -132,11 +134,11 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0.311
-    - _FlatRimSize: 0.712
-    - _FlatSpecularEdgeSmoothness: 0.266
-    - _FlatSpecularSize: 0.608
+    - _FlatRimEdgeSmoothness: 1
+    - _FlatRimLightAlign: 0.791
+    - _FlatRimSize: 0.884
+    - _FlatSpecularEdgeSmoothness: 0.918
+    - _FlatSpecularSize: 0.59
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
