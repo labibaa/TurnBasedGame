@@ -1,9 +1,7 @@
-﻿using System;
-using UnityEngine.Experimental.Rendering;
+﻿#pragma warning disable 618
 
-// TODO: Remove for URP 13.
-// https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@13.1/manual/upgrade-guide-2022-1.html
-#pragma warning disable CS0618
+using System;
+using UnityEngine.Experimental.Rendering;
 
 namespace UnityEngine.Rendering.Universal.PostProcessing {
 /// <summary>
@@ -92,7 +90,7 @@ public abstract class CompoundRenderer : IDisposable {
     /// <param name="destination">Destination Render Target</param>
     /// <param name="renderingData">Current Rendering Data</param>
     /// <param name="injectionPoint">The injection point from which the renderer is being called</param>
-    public abstract void Render(CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination,
+    public abstract void Render(CommandBuffer cmd, RTHandle source, RTHandle destination,
                                 ref RenderingData renderingData, InjectionPoint injectionPoint);
 
     /// <summary>
@@ -152,7 +150,7 @@ public abstract class CompoundRenderer : IDisposable {
 /// Use this attribute to mark classes that can be used as a custom post-processing renderer
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-public sealed class CompoundRendererFeatureAttribute : Attribute {
+public sealed class CompoundRendererFeatureAttribute : System.Attribute {
     // Name of the effect in the custom post-processing render feature editor
     readonly string name;
 

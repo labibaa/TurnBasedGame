@@ -48,11 +48,12 @@ public class MaterialGradientDrawer : MaterialPropertyDrawer {
                 currentGradient = Decode(prop, textureAsset.name);
             }
 
-            if (currentGradient == null) {
+            bool materialReset = target.GetTexture(prop.name) == null;
+            if (currentGradient == null || materialReset) {
                 // Create the default gradient.
                 var colorKeys = new GradientColorKey[2];
                 var alphaKeys = new GradientAlphaKey[2];
-                colorKeys[0] = new GradientColorKey(Color.black, 0f);
+                colorKeys[0] = new GradientColorKey(Color.white, 0f);
                 alphaKeys[0] = new GradientAlphaKey(1, 0f);
                 colorKeys[1] = new GradientColorKey(Color.white, 1f);
                 alphaKeys[1] = new GradientAlphaKey(1, 1f);
@@ -117,8 +118,7 @@ public class MaterialGradientDrawer : MaterialPropertyDrawer {
     }
 
     private Texture2D CreateTexture(string path, string name, FilterMode filterMode) {
-        var textureAsset = new Texture2D(_resolution, 1, TextureFormat.ARGB32, false)
-        {
+        var textureAsset = new Texture2D(_resolution, 1, TextureFormat.ARGB32, false) {
             name = name, wrapMode = TextureWrapMode.Clamp, filterMode = filterMode
         };
         AssetDatabase.AddObjectToAsset(textureAsset, path);
@@ -148,8 +148,14 @@ public class MaterialGradientDrawer : MaterialPropertyDrawer {
     }
 
     private Texture2D LoadTexture(string path, string name) {
-        return AssetDatabase.LoadAllAssetsAtPath(path)
-            .FirstOrDefault(asset => asset.name.StartsWith(name)) as Texture2D;
+        var assets = AssetDatabase.LoadAllAssetsAtPath(path);
+        if (assets == null) {
+            Debug.Log($"<b>[Quibli]</b> Failed to load assets at path \"{path}\".");
+            return null;
+        }
+
+        var first = assets.FirstOrDefault(asset => asset.name.StartsWith(name)) as Texture2D;
+        return first;
     }
 
     private void BakeGradient(Gradient gradient, Texture2D texture) {

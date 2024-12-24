@@ -66,27 +66,15 @@ Preset:
     value: 40
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: carrierSampling
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
     propertyPath: offsetAlongNormal
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
-    propertyPath: offsetAlongNormalFraction
-    value: 1
+    propertyPath: oneNormalPerParticle
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: particleRotationRange
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: geometryBasedNormals
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: oneNormalPerParticle
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -163,6 +151,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: exportOnEdit
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: exportDebugMesh
     value: 0
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

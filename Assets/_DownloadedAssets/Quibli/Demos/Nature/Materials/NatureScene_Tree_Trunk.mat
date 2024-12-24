@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.20754718780517579,"g":0.18081562221050263,"b":0.03230687603354454,"a":1.0},"time":0.04118410125374794},{"color":{"r":0.41960787773132326,"g":0.38823533058166506,"b":0.11764706671237946,"a":1.0},"time":0.07647822052240372},{"color":{"r":0.20784315466880799,"g":0.18039216101169587,"b":0.0313725508749485,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.13333334028720857,"g":0.1764705926179886,"b":0.24705883860588075,"a":1.0},"time":0.03823911026120186},{"color":{"r":0.5606977939605713,"g":0.6100925803184509,"b":0.6792452931404114,"a":1.0},"time":0.08529793471097946},{"color":{"r":0.5524653196334839,"g":0.5925050377845764,"b":0.6132075786590576,"a":1.0},"time":0.9676508903503418}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -42,7 +42,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff352e08ff383109ff3e370cff443d0eff4a4311ff504913ff564e16ff5c5418ff625a1aff68601dff6b631eff6b631eff6a621eff6a621eff6a621eff6a621dff6a621dff69611dff69611dff69611dff69611dff68601dff68601dff68601dff68601dff67601dff675f1cff675f1cff675f1cff675f1cff665e1cff665e1cff665e1cff665e1cff655d1cff655d1cff655d1cff655d1bff645d1bff645c1bff645c1bff645c1bff645c1bff635b1bff635b1bff635b1bff635b1bff625b1aff625a1aff625a1aff625a1aff615a1aff61591aff61591aff61591aff61591aff60591aff60581aff605819ff605819ff5f5819ff5f5719ff5f5719ff5f5719ff5f5719ff5e5719ff5e5619ff5e5619ff5e5619ff5d5618ff5d5518ff5d5518ff5d5518ff5c5518ff5c5418ff5c5418ff5c5418ff5c5418ff5b5418ff5b5318ff5b5317ff5b5317ff5a5317ff5a5217ff5a5217ff5a5217ff595217ff595217ff595117ff595117ff595116ff585116ff585016ff585016ff585016ff575016ff575016ff574f16ff574f16ff564f16ff564f16ff564e15ff564e15ff564e15ff554e15ff554e15ff554d15ff554d15ff544d15ff544d15ff544c15ff544c15ff534c14ff534c14ff534b14ff534b14ff534b14ff524b14ff524b14ff524a14ff524a14ff514a14ff514a13ff514913ff514913ff514913ff504913ff504913ff504813ff504813ff4f4813ff4f4813ff4f4713ff4f4712ff4e4712ff4e4712ff4e4712ff4e4612ff4e4612ff4d4612ff4d4612ff4d4512ff4d4512ff4c4512ff4c4511ff4c4511ff4c4411ff4b4411ff4b4411ff4b4411ff4b4311ff4b4311ff4a4311ff4a4311ff4a4211ff4a4210ff494210ff494210ff494210ff494110ff484110ff484110ff484110ff484010ff484010ff47400fff47400fff47400fff473f0fff463f0fff463f0fff463f0fff463e0fff463e0fff453e0fff453e0fff453e0eff453d0eff443d0eff443d0eff443d0eff443c0eff433c0eff433c0eff433c0eff433c0eff433b0eff423b0dff423b0dff423b0dff423a0dff413a0dff413a0dff413a0dff41390dff40390dff40390dff40390cff40390cff40380cff3f380cff3f380cff3f380cff3f370cff3e370cff3e370cff3e370cff3e370cff3d360bff3d360bff3d360bff3d360bff3d350bff3c350bff3c350bff3c350bff3c350bff3b340bff3b340bff3b340aff3b340aff3b330aff3a330aff3a330aff3a330aff3a330aff39320aff39320aff39320aff393209ff383109ff383109ff383109ff383109ff383009ff373009ff373009ff373009ff373009ff362f09ff362f08ff362f08ff362f08ff352e08ff352e08ff352e08
+  _typelessdata: ff222d3fff222d3fff222d3fff222d3fff222d3fff222d3fff222d3fff222d3fff222d3fff222d3fff242f41ff2d394aff364254ff404b5dff495466ff525d6fff5b6778ff647082ff6d798bff768294ff7f8b9dff8895a6ff8f9cadff8f9cadff8f9cadff8f9cadff8f9badff8f9badff8f9badff8f9badff8f9badff8f9badff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9bacff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9babff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9baaff8f9ba9ff8e9ba9ff8e9ba9ff8e9ba9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa9ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa8ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa7ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa6ff8e9aa5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a5ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a4ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a3ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e99a2ff8e98a2ff8e98a2ff8e98a2ff8e98a1ff8e98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a1ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d98a0ff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989fff8d989eff8d989eff8d989eff8d989eff8d989eff8d989eff8d989eff8d989eff8d979eff8d979eff8d979eff8d979eff8d979eff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979dff8d979cff8d979cff8d979cff8d979cff8d979cff8d979cff8d979cff8d979cff8d979cff8d979cff8d979c
   m_StreamData:
     serializedVersion: 2
     offset: 0
@@ -60,19 +60,15 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - DR_GRADIENT_ON
-  - DR_RIM_ON
-  - DR_SPECULAR_ON
-  - _ALPHATEST_ON
   - _DETAILMAPBLENDINGMODE_ADD
   - _TEXTUREBLENDINGMODE_MULTIPLY
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 2450
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
   stringTagMap:
-    RenderType: TransparentCutout
+    RenderType: Opaque
   disabledShaderPasses:
   - SRPDEFAULTUNLIT
   m_LockedProperties: 
@@ -161,7 +157,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 1
+    - _AlphaClip: 0
+    - _BaseMapPremultiply: 0
     - _Blend: 0
     - _BumpScale: 1
     - _CameraDistanceImpact: 0.5
@@ -170,7 +167,7 @@ Material:
     - _CelPrimaryMode: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 0
+    - _Cull: 2
     - _Cutoff: 0.106
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 1
@@ -191,7 +188,7 @@ Material:
     - _GradientAngle: 0
     - _GradientCenterX: 0
     - _GradientCenterY: 0
-    - _GradientEnabled: 1
+    - _GradientEnabled: 0
     - _GradientSize: 10
     - _LightContribution: 0
     - _LightFalloffSize: 0.0001
@@ -209,14 +206,14 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimEnabled: 1
-    - _SelfShadingSize: 0.553
+    - _RimEnabled: 0
+    - _SelfShadingSize: 0.339
     - _SelfShadingSizeExtra: 0.116
     - _ShadowEdgeSize: 0.67
     - _ShadowEdgeSizeExtra: 0.038
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularEnabled: 1
+    - _SpecularEnabled: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -246,7 +243,7 @@ Material:
     - _DetailMapColor: {r: 0.8090947, g: 0.9056604, b: 0.10679956, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 0.5741103, g: 0.8018868, b: 0.33664113, a: 1}
-    - _FlatSpecularColor: {r: 0.08529412, g: 0.06278908, b: 0.015686275, a: 1}
+    - _FlatSpecularColor: {r: 0.11988711, g: 0.33962262, b: 0.062477753, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}

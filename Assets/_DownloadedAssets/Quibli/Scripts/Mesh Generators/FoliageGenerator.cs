@@ -146,14 +146,15 @@ public class FoliageGenerator : MonoBehaviour {
         if (exportOnEdit) ExportMesh();
     }
 
-    [Button]
-    private void ExportMesh() {
+    public void ExportMesh() {
         // Validate input.
         if (carrierMesh == null || particleMesh == null) {
             return;
         }
 
+        // ReSharper disable once UnusedVariable
         GenerateMesh(out Mesh mesh, out Mesh meshDebug);
+        mesh.name = Path.GetFileNameWithoutExtension(GetFullFilename());
 
         // Export asset.
         {
@@ -237,13 +238,13 @@ public class FoliageGenerator : MonoBehaviour {
 
         // Calculate normals.
         {
-            mesh.RecalculateNormals();  // Needed if geometryBasedNormals == true.
+            mesh.RecalculateNormals(); // Needed if geometryBasedNormals == true.
 
             var normals = new Vector3[mesh.vertexCount];
 
             for (int i = 0; i < normals.Length; i++) {
                 int vertexIndex = oneNormalPerParticle ? i - i % particleMesh.vertexCount : i;
-                var v = geometryBasedNormals? mesh.normals[vertexIndex] : mesh.vertices[vertexIndex].normalized;
+                var v = geometryBasedNormals ? mesh.normals[vertexIndex] : mesh.vertices[vertexIndex].normalized;
 
                 Vector3 noise = Vector3.zero;
                 if (noiseEnabled) {

@@ -20,6 +20,7 @@ Material:
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - DR_VERTEX_COLORS_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
@@ -107,6 +108,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -117,16 +119,16 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 0
-    - _DetailMapImpact: 0.639
+    - _DetailMapImpact: 0.491
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.396
-    - _FlatRimLightAlign: 0.264
-    - _FlatRimSize: 0.494
-    - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.854
+    - _FlatRimEdgeSmoothness: 0.599
+    - _FlatRimLightAlign: 0.719
+    - _FlatRimSize: 0.791
+    - _FlatSpecularEdgeSmoothness: 1
+    - _FlatSpecularSize: 0.786
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -151,7 +153,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimEnabled: 1
-    - _SelfShadingSize: 0
+    - _SelfShadingSize: 0.453
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
@@ -169,10 +171,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
-    - _DetailMapColor: {r: 0.8018868, g: 0.71218526, b: 0.28368637, a: 1}
+    - _DetailMapColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.33962262, g: 0.20786947, b: 0.05286579, a: 1}
-    - _FlatSpecularColor: {r: 0.8962264, g: 0.63300997, b: 0.18178178, a: 1}
+    - _FlatRimColor: {r: 0.2830189, g: 0.27136475, b: 0.25765398, a: 1}
+    - _FlatSpecularColor: {r: 0.5471698, g: 0.5404564, b: 0.52910286, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -185,7 +187,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.9214133620262146,"g":0.9622641801834106,"b":0.93162602186203,"a":1.0},"time":0.0},{"color":{"r":0.8207547068595886,"g":0.6292183995246887,"b":0.15873084962368012,"a":1.0},"time":0.2823529541492462},{"color":{"r":0.801886796951294,"g":0.44411373138427737,"b":0.16264685988426209,"a":1.0},"time":0.4911726415157318},{"color":{"r":0.8207547068595886,"g":0.6292183995246887,"b":0.1587308645248413,"a":1.0},"time":0.6735332012176514},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.9911803007125855}],"alphaKeys":[{"alpha":0.5176470875740051,"time":0.0},{"alpha":1.0,"time":0.29117265343666079},{"alpha":1.0,"time":0.6941176652908325},{"alpha":0.49803921580314639,"time":1.0}]}
+  m_Name: z__GradientRampTex{"mode":0,"colorKeys":[{"color":{"r":0.9214133620262146,"g":0.9622641801834106,"b":0.93162602186203,"a":1.0},"time":0.0},{"color":{"r":0.7641509771347046,"g":0.7641509771347046,"b":0.7641509771347046,"a":1.0},"time":0.2823529541492462},{"color":{"r":0.7358490228652954,"g":0.7145333290100098,"b":0.697668194770813,"a":1.0},"time":0.4911726415157318},{"color":{"r":0.7641509771347046,"g":0.7641509771347046,"b":0.7641509771347046,"a":1.0},"time":0.6735332012176514},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.9911803007125855}],"alphaKeys":[{"alpha":0.5176470875740051,"time":0.0},{"alpha":1.0,"time":0.29117265343666079},{"alpha":1.0,"time":0.6941176652908325},{"alpha":0.49803921580314639,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -221,7 +223,7 @@ Texture2D:
   m_ColorSpace: 1
   m_PlatformBlob: 
   image data: 1024
-  _typelessdata: 84ebf5ee86ebf4eb87eaf3e889eaf2e58beaf1e38ce9efe08ee9eedd90e8edda91e8ecd893e8ebd595e7ead296e7e8cf98e7e7cd9ae6e6ca9be6e5c79de6e4c59fe5e3c2a0e5e1bfa2e5e0bca3e4dfbaa5e4deb7a7e3ddb4a8e3dbb1aae3daaface2d9acade2d8a9afe2d7a6b1e1d6a4b2e1d4a1b4e1d39eb6e0d29bb7e0d199b9e0d096bbdfce93bcdfcd90bedecc8ec0decb8bc1deca88c3ddc986c5ddc783c6ddc680c8dcc57dcadcc47bcbdcc378cddbc175cfdbc072d0dbbf70d2dabe6dd4dabd6ad5d9bc67d7d9ba65d8d9b962dad8b85fdcd8b75cddd8b65adfd7b557e1d7b354e2d7b252e4d6b14fe6d6b04ce7d6af49e9d5ad47ebd5ac44ecd5ab41eed4aa3ef0d4a93cf1d3a839f3d3a636f5d3a533f6d2a431f8d2a32efad2a22bfbd1a028fdd1a028ffd19f29ffd19e29ffd19d29ffd19c29ffd19b29ffd19a29ffd19929ffd09829ffd09829ffd09729ffd09629ffd09529ffd09429ffd09329ffd09229ffd09129ffd09029ffd09029ffcf8f29ffcf8e29ffcf8d29ffcf8c29ffcf8b29ffcf8a29ffcf8929ffcf8929ffcf8829ffcf8729ffcf8629ffce8529ffce8429ffce8329ffce8229ffce8129ffce8129ffce8029ffce7f29ffce7e29ffce7d29ffce7c29ffcd7b29ffcd7a29ffcd7929ffcd7929ffcd7829ffcd7729ffcd7629ffcd7529ffcd7429ffcd7329ffcd7229ffcd7129ffcd7229ffcd7329ffcd7429ffcd7529ffcd7629ffcd7729ffcd7829ffcd7929ffcd7a29ffcd7b29ffce7c29ffce7d29ffce7e29ffce7f29ffce8029ffce8129ffce8229ffce8329ffce8429ffcf8529ffcf8629ffcf8729ffcf8829ffcf8929ffcf8a29ffcf8b29ffcf8c29ffcf8d29ffcf8e29ffd08f29ffd09029ffd09129ffd09229ffd09429ffd09529ffd09629ffd09729ffd09829ffd09929ffd19a29ffd19b29ffd19c29ffd19d29ffd19e29ffd19f29ffd1a028ffd1a129ffd2a22cffd3a32effd3a431ffd4a534ffd4a736fdd5a839fcd5a93cfad6aa3ef8d7ab41f7d7ac44f5d8ae46f4d8af49f2d9b04cf0d9b14eefdab251eddab354ebdbb556eadcb659e8dcb75be6ddb85ee5ddb961e3deba63e1debc66e0dfbd69dee0be6bdde0bf6edbe1c071d9e1c173d8e2c376d6e2c479d4e3c57bd3e3c67ed1e4c781cfe5c883cee5ca86cce6cb88cae6cc8bc9e7cd8ec7e7ce90c6e8cf93c4e9d196c2e9d298c1ead39bbfead49ebdebd5a0bcebd6a3baecd8a6b8edd9a8b7eddaabb5eedbaeb4eedcb0b2efddb3b0efdfb6aff0e0b8adf0e1bbabf1e2bdaaf2e3c0a8f2e4c3a6f3e6c5a5f3e7c8a3f4e8cba1f4e9cda0f5ead09ef6ebd39df6edd59bf7eed899f7efdb98f8f0dd96f8f1e094f9f2e393f9f4e591faf5e88ffbf6ea8efbf7ed8cfcf8f08afcf9f289fdfbf587fdfcf886fefdfa84fffefd82ffffff81ffffff7fffffff
+  _typelessdata: 84ebf5ee86eaf5ed87eaf4ec89e9f3ec8be9f3eb8ce8f2eb8ee8f1ea90e7f0e991e7f0e993e6efe895e5eee896e5eee798e4ede69ae4ece69be3ece59de3ebe59fe2eae4a0e1e9e3a2e1e9e3a3e0e8e2a5e0e7e2a7dfe7e1a8dfe6e1aadee5e0acdee5dfaddde4dfafdce3deb1dce2deb2dbe2ddb4dbe1dcb6dae0dcb7dae0dbb9d9dfdbbbd9dedabcd8ded9bed7ddd9c0d7dcd8c1d6dbd8c3d6dbd7c5d5dad6c6d5d9d6c8d4d9d5cad4d8d5cbd3d7d4cdd2d7d3cfd2d6d3d0d1d5d2d2d1d4d2d4d0d4d1d5d0d3d1d7cfd2d0d8cfd2cfdaced1cfdccdd0ceddcdcfcedfcccfcde1cccecce2cbcdcce4cbcdcbe6cacccbe7cacbcae9c9cbc9ebc8cac9ecc8c9c8eec7c8c8f0c7c8c7f1c6c7c6f3c6c6c6f5c5c6c5f6c5c5c5f8c4c4c4fac3c4c3fbc3c3c3fdc3c3c3ffc3c2c2ffc2c2c2ffc2c2c2ffc2c2c1ffc2c1c1ffc2c1c1ffc2c1c0ffc2c1c0ffc2c0c0ffc1c0bfffc1c0bfffc1c0bfffc1c0beffc1bfbeffc1bfbeffc1bfbdffc0bfbdffc0bebdffc0bebcffc0bebcffc0bebcffc0bdbcffc0bdbbffbfbdbbffbfbdbbffbfbcbaffbfbcbaffbfbcbaffbfbcb9ffbfbbb9ffbfbbb9ffbebbb8ffbebbb8ffbebbb8ffbebab7ffbebab7ffbebab7ffbebab6ffbdb9b6ffbdb9b6ffbdb9b5ffbdb9b5ffbdb8b5ffbdb8b5ffbdb8b4ffbcb8b4ffbcb7b4ffbcb7b3ffbcb7b3ffbcb7b3ffbcb7b2ffbcb6b2ffbcb6b2ffbcb7b3ffbcb7b3ffbcb7b3ffbcb7b4ffbdb8b4ffbdb8b4ffbdb8b5ffbdb9b5ffbdb9b5ffbdb9b6ffbdb9b6ffbebab7ffbebab7ffbebab7ffbebab8ffbebbb8ffbebbb8ffbfbbb9ffbfbcb9ffbfbcb9ffbfbcbaffbfbcbaffbfbdbbffbfbdbbffc0bdbbffc0bdbcffc0bebcffc0bebcffc0bebdffc0bfbdffc1bfbdffc1bfbeffc1bfbeffc1c0bfffc1c0bfffc1c0bfffc2c0c0ffc2c1c0ffc2c1c0ffc2c1c1ffc2c2c1ffc2c2c1ffc2c2c2ffc3c2c2ffc3c3c3ffc3c3c3ffc4c4c4ffc5c5c5ffc5c5c5ffc6c6c6ffc7c7c7fdc7c7c7fcc8c8c8fac9c9c9f8cacacaf7cacacaf5cbcbcbf4ccccccf2cdcdcdf0cdcdcdefcececeedcfcfcfebd0d0d0ead0d0d0e8d1d1d1e6d2d2d2e5d3d3d3e3d3d3d3e1d4d4d4e0d5d5d5ded6d6d6ddd6d6d6dbd7d7d7d9d8d8d8d8d9d9d9d6d9d9d9d4dadadad3dbdbdbd1dcdcdccfdcdcdcceddddddccdededecadfdfdfc9dfdfdfc7e0e0e0c6e1e1e1c4e1e1e1c2e2e2e2c1e3e3e3bfe4e4e4bde4e4e4bce5e5e5bae6e6e6b8e7e7e7b7e7e7e7b5e8e8e8b4e9e9e9b2eaeaeab0eaeaeaafebebebadecececabedededaaedededa8eeeeeea6efefefa5f0f0f0a3f0f0f0a1f1f1f1a0f2f2f29ef3f3f39df3f3f39bf4f4f499f5f5f598f6f6f696f6f6f694f7f7f793f8f8f891f9f9f98ff9f9f98efafafa8cfbfbfb8afbfbfb89fcfcfc87fdfdfd86fefefe84fefefe82ffffff81ffffff7fffffff
   m_StreamData:
     serializedVersion: 2
     offset: 0
