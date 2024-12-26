@@ -30,6 +30,7 @@ Material:
   - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _EMISSION
   - _TEXTUREBLENDINGMODE_MULTIPLY
@@ -119,6 +120,7 @@ Material:
     - _AlphaClip: 0
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BumpScale: 1
     - _CameraDistanceImpact: 0.5
@@ -180,7 +182,7 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission2: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
+    - _EmissionColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
     - _FlatRimColor: {r: 0.44624203, g: 2.0128365, b: 1.8499874, a: 0.85056}
     - _FlatSpecularColor: {r: 16.502302, g: 1.6737958, b: 16.897367, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
