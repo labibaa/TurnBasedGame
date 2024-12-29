@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hand
+  m_Name: hand
   m_Shader: {fileID: 4800000, guid: 2a230514c860643f69b6a4d1871d3825, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,14 +30,16 @@ Material:
   - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
+  - _EMISSION
   - _NORMALMAP
   - _RECEIVE_SHADOWS_OFF
   - _TEXTUREBLENDINGMODE_MULTIPLY
   - _UNITYSHADOW_OCCLUSION
   m_InvalidKeywords:
   - _RECEIVESHADOWS_OFF
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -77,7 +79,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 83202f262ef2a1b4382008d48d85f833, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradientRamp:
@@ -120,6 +122,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -135,9 +138,9 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FlatRimEdgeSmoothness: 0.617
-    - _FlatRimLightAlign: 0.738
-    - _FlatRimSize: 0.974
+    - _FlatRimEdgeSmoothness: 0.697
+    - _FlatRimLightAlign: 0.726
+    - _FlatRimSize: 0.949
     - _FlatSpecularEdgeSmoothness: 1
     - _FlatSpecularSize: 0.825
     - _GlossMapScale: 1
@@ -186,9 +189,9 @@ Material:
     - _Color: {r: 0.7353569, g: 0.7353569, b: 0.7353569, a: 1}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 0.80256283, g: 0.35590956, b: 0.8113208, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
     - _FlatRimColor: {r: 0.3301887, g: 0.32551622, b: 0.32777458, a: 0.85056}
-    - _FlatSpecularColor: {r: 0.5377358, g: 0.5199804, b: 0.5267956, a: 0.85056}
+    - _FlatSpecularColor: {r: 0.5471698, g: 0.53942686, b: 0.5413626, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
