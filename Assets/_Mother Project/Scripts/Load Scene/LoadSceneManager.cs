@@ -52,6 +52,7 @@ public class LoadSceneManager : MonoBehaviour
          persistableDataList = FindAllIPersitableDataObjects();
         //OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
+
     public async void LoadScene(string sceneName)
     {
         if (!isPrevScene)
@@ -83,7 +84,15 @@ public class LoadSceneManager : MonoBehaviour
     {
         // SaveGame();
     }
-
+    public void StartNewGame()
+    {
+        foreach (IPersistableData player_GO in persistableDataList)
+        {
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.DefaultCharacterData(Ch_obj);
+            Debug.Log("default");
+        }
+    }
     void LoadGame()
     {
         foreach (IPersistableData player_GO in persistableDataList)
