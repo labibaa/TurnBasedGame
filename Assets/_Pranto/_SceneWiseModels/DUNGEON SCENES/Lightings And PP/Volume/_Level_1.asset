@@ -404,10 +404,10 @@ MonoBehaviour:
     m_Value: 1.97
   blur:
     m_OverrideState: 1
-    m_Value: 0.71
+    m_Value: 0.18
   edgePreserve:
     m_OverrideState: 1
-    m_Value: 1.19
+    m_Value: 0.95
   rangeStart:
     m_OverrideState: 1
     m_Value: 10
