@@ -173,9 +173,9 @@ Material:
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.74
     - _FlatRimLightAlign: 0.717
-    - _FlatRimSize: 0.82
+    - _FlatRimSize: 0.838
     - _FlatSpecularEdgeSmoothness: 1
-    - _FlatSpecularSize: 0.834
+    - _FlatSpecularSize: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
