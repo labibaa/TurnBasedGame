@@ -401,10 +401,10 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 1.97
+    m_Value: 1.2
   blur:
     m_OverrideState: 1
-    m_Value: 0.71
+    m_Value: 0.22
   edgePreserve:
     m_OverrideState: 1
     m_Value: 1.19
