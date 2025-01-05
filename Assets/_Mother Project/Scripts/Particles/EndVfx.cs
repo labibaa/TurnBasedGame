@@ -26,7 +26,7 @@ public class EndVfx : MonoBehaviour
 
     public IEnumerator DestroyVFX(VisualEffect desEffect)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
         Destroy(desEffect.gameObject);
         //  Destroy(hiteffect.gameObject);
         
