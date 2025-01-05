@@ -209,6 +209,61 @@ public class ActionArchive : MonoBehaviour
             ActionTemplate(meleeScriptable, meleeAction);
         }
     }
+
+    public async void HammerGroundAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "HammerGroundAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SpinningAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SpinningAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SideAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SideAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
     public async void BoneShield()
     {
 

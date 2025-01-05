@@ -768,7 +768,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Side Attack
+  m_Name: SideAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1010,7 +1010,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spinning Attack
+  m_Name: SpinningAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1681,7 +1681,7 @@ AnimatorStateMachine:
     m_Position: {x: 1160, y: 670, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3777701635686996912}
-    m_Position: {x: 680, y: 740, z: 0}
+    m_Position: {x: 980, y: 730, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1766,7 +1766,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hammer Ground attack
+  m_Name: HammerGroundAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
