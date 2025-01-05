@@ -77,6 +77,7 @@ Material:
   - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
+  - _BASEMAP_PREMULTIPLY
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _EMISSION
   - _TEXTUREBLENDINGMODE_MULTIPLY
@@ -165,6 +166,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _BaseMapPremultiply: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -231,7 +233,7 @@ Material:
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 34.29675, g: 34.29675, b: 34.29675, a: 1}
     - _FlatRimColor: {r: 3.018868, g: 2.8052688, b: 2.8052688, a: 0.85056}
-    - _FlatSpecularColor: {r: 13.60368, g: 13.60544, b: 13.6072, a: 0.85056}
+    - _FlatSpecularColor: {r: 14.2248535, g: 10.738945, b: 5.4349675, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
