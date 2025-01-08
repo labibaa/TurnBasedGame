@@ -547,6 +547,11 @@ PrefabInstance:
       propertyPath: mainPlayer
       value: 
       objectReference: {fileID: 1568704876}
+    - target: {fileID: 6878960195950656178, guid: 31c9dd2abad151c47975107e9bafd8dc,
+        type: 3}
+      propertyPath: m_CameraDistance
+      value: 15.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6941666331630952526, guid: 31c9dd2abad151c47975107e9bafd8dc,
         type: 3}
       propertyPath: m_Enabled
@@ -926,6 +931,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 188232744671334158, guid: 97fdadf338be8c642920470650ed1a7d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 188232744671334158, guid: 97fdadf338be8c642920470650ed1a7d,
+        type: 3}
       propertyPath: mainPlayer
       value: 
       objectReference: {fileID: 1384971496}
@@ -967,7 +977,7 @@ PrefabInstance:
     - target: {fileID: 5586005042872657464, guid: 97fdadf338be8c642920470650ed1a7d,
         type: 3}
       propertyPath: m_CameraDistance
-      value: 5.599999
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5898849072327619388, guid: 97fdadf338be8c642920470650ed1a7d,
         type: 3}
@@ -1027,7 +1037,7 @@ PrefabInstance:
     - target: {fileID: 8577163410989926013, guid: 97fdadf338be8c642920470650ed1a7d,
         type: 3}
       propertyPath: isLinkOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1069312005643551855, guid: 97fdadf338be8c642920470650ed1a7d, type: 3}
@@ -1622,6 +1632,7 @@ MonoBehaviour:
   prevScene: 
   leftOutcharacters: []
   ToAddUnlinkedCharacter: 0
+  IsnewGame: 0
 --- !u!114 &1300978615
 MonoBehaviour:
   m_ObjectHideFlags: 0

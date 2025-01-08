@@ -18,6 +18,7 @@ public class LoadSceneManager : MonoBehaviour
     bool isPrevScene;
     public List<GameObject> leftOutcharacters = new List<GameObject>();
     public bool ToAddUnlinkedCharacter;
+    public bool IsnewGame;
     private void Awake()
     {
         if(instance == null)
@@ -92,6 +93,7 @@ public class LoadSceneManager : MonoBehaviour
             ShowSavedData.Instance.DefaultCharacterData(Ch_obj);
             Debug.Log("default");
         }
+        IsnewGame = true;
     }
     void LoadGame()
     {
@@ -101,7 +103,12 @@ public class LoadSceneManager : MonoBehaviour
             ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
             // player_GO.LoadData(playerDataSave);
         }
-        SwitchMC.Instance.RemoveUnlinkedCharacter();
+        if (!IsnewGame)
+        {
+            SwitchMC.Instance.RemoveUnlinkedCharacter();
+        }
+        IsnewGame = false;
+
     }
 
     void SaveGame()
