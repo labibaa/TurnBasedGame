@@ -74,10 +74,9 @@ public class LoadSceneManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         persistableDataList = FindAllIPersitableDataObjects();
-       // if (!isPrevScene)
-       // {
+       
             LoadGame();
-       // }
+
         isPrevScene = false;
     }
 
@@ -106,6 +105,10 @@ public class LoadSceneManager : MonoBehaviour
         if (!IsnewGame)
         {
             SwitchMC.Instance.RemoveUnlinkedCharacter();
+        }
+        else
+        {
+          //  SwitchMC.Instance.SwitchToNextCharacter();
         }
         IsnewGame = false;
 
@@ -148,10 +151,19 @@ public class LoadSceneManager : MonoBehaviour
         leftOutcharacters.Add(leftOutCharacter);
     }
 
+    public void CharacterMeetUp() //not working
+    {
+        if (leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene == SwitchMC.Instance.characters[0].GetComponent<TemporaryStats>().currentScene)
+        {
+            ToAddUnlinkedCharacter = true;
+        }
+    }
+
     public void LoadPrevScene()
     {
         isPrevScene = true;
-        ToAddUnlinkedCharacter = true;
+        //ToAddUnlinkedCharacter = true;
+        CharacterMeetUp();
         SwitchMC.Instance.BackToUnlinkedCharacter();
         prevScene = leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene;
         LoadScene(prevScene);

@@ -33,7 +33,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Mother Project/Scenes/LongHallWay.unity
     guid: 8869557066e25d74da7f94e816162dde
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Mother Project/Scenes/LHallWay.unity
     guid: 732fadec3bae72344b63a84bd162b1b5
   - enabled: 0
