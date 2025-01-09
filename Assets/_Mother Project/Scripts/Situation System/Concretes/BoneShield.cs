@@ -23,34 +23,15 @@ public class BoneShield: ICommand
 
     }
 
-
-
-
-
-
-
     public async UniTask Execute()
-    {
-
-       
+    { 
 
         if (ActionResolver.instance.ActionAccuracyCalculation(boneShield.ActionAccuracy)&& player.gameObject.activeInHierarchy)
         {
-
-
             int healPoint = -10;
-
-          
-
-            
-            
-                targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
-
-                await HandleAnimation();
-               
-            
-
-
+            playerTempStats.CurrentHealth =  HealthManager.instance.HealthCalculation(healPoint, playerTempStats.CurrentHealth);
+            await HandleAnimation();
+    
         }
     }
 
@@ -60,12 +41,6 @@ public class BoneShield: ICommand
         Transform closestTarget = TurnManager.instance.FindClosestTarget(TurnManager.instance.target, player.GetComponent<CharacterBaseClasses>());
         TempManager.instance.CharacterRotation(closestTarget.GetComponent<CharacterBaseClasses>(), player, 2f);
 
-        //player.GetComponent<PlayParticle>().target = target.gameObject;
-        //player.GetComponent<PlayParticle>().actionSound = rangedAttack.actionSound;
-        ////player.GetComponent<PlayParticle>().InstantiateParticleEffect(rangedAttack.ParticleSystem);
-        //player.GetComponent<PlayParticle>().particlePrefab = rangedAttack.ParticleSystem;
-        //player.GetComponent<PlayParticle>().particlePrefabHit = rangedAttack.HitParticleSystem;
-        //target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
         Debug.Log("RangedD");
 
         //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;

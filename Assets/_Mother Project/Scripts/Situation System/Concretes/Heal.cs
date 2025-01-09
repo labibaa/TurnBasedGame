@@ -25,10 +25,6 @@ public class Heal : ICommand
 
 
 
-
-
-
-
     public async UniTask Execute()
     {
 
@@ -47,15 +43,11 @@ public class Heal : ICommand
 
             int healPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) ) *-1;
 
-          
+            targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
 
-            
-            
-                targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
-
-                await HandleAnimation();
-                UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
-                await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
+            await HandleAnimation();
+            UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
+            await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
             
 
 
