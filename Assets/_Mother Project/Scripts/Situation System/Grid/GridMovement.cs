@@ -179,6 +179,13 @@ public class GridMovement : MonoBehaviour
     }
     private void Update()
     {
+        if (TempManager.instance.attacker.CompareTag("Player"))
+        {
+            agent = TempManager.instance.attacker.GetComponent<NavMeshAgent>();
+            player = TempManager.instance.attacker;
+
+        }
+
 
         if (Input.GetMouseButton(1) && inPathSelection)
         {
