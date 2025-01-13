@@ -68,14 +68,14 @@ public class TurnManager : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentPlayer.CompareTag("Player"))
-            {
+            //if (currentPlayer.CompareTag("Player"))
+            //{
                 EndTurn();
-            }
-            else
-            {
-                EnemyAIAttack();
-            }
+            //}
+            //else
+            //{
+            //    EnemyAIAttack();
+            //}
 
         }
 

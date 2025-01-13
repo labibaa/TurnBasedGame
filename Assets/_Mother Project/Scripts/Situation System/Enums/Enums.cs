@@ -278,7 +278,8 @@ public enum CurrentWeapon
     Dagger,
     Sword,
     Talisman,
-    BowAndArrow
+    BowAndArrow,
+    Hammer
 }
 
 public enum HexOrientation

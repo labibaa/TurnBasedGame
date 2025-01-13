@@ -30,7 +30,7 @@ MonoBehaviour:
     MappedValue: 5
   ActionRange: 2
   ActionAccuracy: 100
-  ActionName: Sword Slash
+  ActionName: SpinningAttack
   Description: 
   PriorityValue: 20
   FirstPercentage: 20

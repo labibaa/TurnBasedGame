@@ -138,6 +138,10 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         {
             _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetTalismanAvailableActions());
         }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Hammer)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetHammerAvailableActions());
+        }
     }
     public void SetCharacterStat()
     {

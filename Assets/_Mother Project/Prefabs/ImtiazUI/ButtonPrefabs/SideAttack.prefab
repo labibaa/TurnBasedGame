@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da19bc0cbc3c70408560eb834f3f89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: TwoHandedArise
+  actionName: SideAttack
 --- !u!225 &-7759454180938545997
 CanvasGroup:
   m_ObjectHideFlags: 0
