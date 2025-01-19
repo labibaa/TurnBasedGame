@@ -162,8 +162,7 @@ public class LoadSceneManager : MonoBehaviour
     public void LoadPrevScene()
     {
         isPrevScene = true;
-        //ToAddUnlinkedCharacter = true;
-        CharacterMeetUp();
+        ToAddUnlinkedCharacter = true;
         SwitchMC.Instance.BackToUnlinkedCharacter();
         prevScene = leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene;
         LoadScene(prevScene);
