@@ -23,12 +23,14 @@ public class ConfinerSwitcher : MonoBehaviour
         // Update the confiner's bounding volume for both cameras
         if (confiner1 != null)
         {
+            
             confiner1.m_BoundingVolume = newCollider;
             confiner1.InvalidatePathCache();
         }
 
         if (confiner2 != null)
         {
+            
             confiner2.m_BoundingVolume = newCollider;
             confiner2.InvalidatePathCache();
         }
@@ -37,9 +39,19 @@ public class ConfinerSwitcher : MonoBehaviour
     // Use trigger enter to switch between the colliders
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
             SetConfinerForBothCameras(roomCollider);
         }
     }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+        
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        SetConfinerForBothCameras(roomCollider);
+    //    }
+    //}
 }
