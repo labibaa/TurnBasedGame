@@ -179,13 +179,6 @@ public class GridMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (TempManager.instance.attacker.CompareTag("Player"))
-        {
-            agent = TempManager.instance.attacker.GetComponent<NavMeshAgent>();
-            player = TempManager.instance.attacker;
-
-        }
-
 
         if (Input.GetMouseButton(1) && inPathSelection)
         {
@@ -551,10 +544,10 @@ public class GridMovement : MonoBehaviour
                 {
                     agent.gameObject.GetComponent<Animator>().SetBool("dash", true);
                 }
-            
-                    gridPlayerAnim.SetMoveAnimation(10, 1);
-                
-               
+
+                // gridPlayerAnim.SetMoveAnimation(10, 1);
+                agent.GetComponent<GridPlayerAnimation>().SetMoveAnimation(10, 1);
+
             }
             else
             {
@@ -601,8 +594,8 @@ public class GridMovement : MonoBehaviour
             {
                 agent.gameObject.GetComponent<Animator>().SetBool("dash", false);
             }
-           
-                gridPlayerAnim.SetMoveAnimation(0, 1);//setting the idle animation
+
+            agent.GetComponent<GridPlayerAnimation>().SetMoveAnimation(0, 1);//setting the idle animation
            
            
         }
