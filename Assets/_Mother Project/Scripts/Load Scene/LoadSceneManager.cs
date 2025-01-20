@@ -19,6 +19,7 @@ public class LoadSceneManager : MonoBehaviour
     public List<GameObject> leftOutcharacters = new List<GameObject>();
     public bool ToAddUnlinkedCharacter;
     public bool IsnewGame;
+    GameObject gameObjectMC;
     private void Awake()
     {
         if(instance == null)
@@ -61,7 +62,6 @@ public class LoadSceneManager : MonoBehaviour
             SaveGame();
         }
      
-
         var scene = SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -75,7 +75,7 @@ public class LoadSceneManager : MonoBehaviour
     {
         persistableDataList = FindAllIPersitableDataObjects();
        
-            LoadGame();
+        LoadGame();
 
         isPrevScene = false;
     }
@@ -94,6 +94,21 @@ public class LoadSceneManager : MonoBehaviour
         }
         IsnewGame = true;
     }
+
+    public void ContinueGame()
+    {
+        foreach (IPersistableData player_GO in persistableDataList)
+        {
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
+            if (Ch_obj.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                gameObjectMC = Ch_obj;
+            }
+        }
+        LoadScene(gameObjectMC.GetComponent<TemporaryStats>().currentScene);
+    }
+
     void LoadGame()
     {
         foreach (IPersistableData player_GO in persistableDataList)
@@ -138,7 +153,7 @@ public class LoadSceneManager : MonoBehaviour
 
     }
 
-    private List<IPersistableData> FindAllIPersitableDataObjects()
+    public List<IPersistableData> FindAllIPersitableDataObjects()
     {
         IEnumerable<IPersistableData> ipersistabledataObjects = FindObjectsOfType<MonoBehaviour>().OfType<IPersistableData>();
         
@@ -149,14 +164,6 @@ public class LoadSceneManager : MonoBehaviour
     {
         leftOutcharacters.Clear();
         leftOutcharacters.Add(leftOutCharacter);
-    }
-
-    public void CharacterMeetUp() //not working
-    {
-        if (leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene == SwitchMC.Instance.characters[0].GetComponent<TemporaryStats>().currentScene)
-        {
-            ToAddUnlinkedCharacter = true;
-        }
     }
 
     public void LoadPrevScene()
