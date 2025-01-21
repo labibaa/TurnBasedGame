@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] protected List<ImprovedActionStat> BowAndArrowAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> TalismanAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> HammerAvailableActions = new List<ImprovedActionStat>();
+    [SerializeField] protected List<ImprovedActionStat> AxeAvailableActions = new List<ImprovedActionStat>();
 
     private void Awake()
     {
@@ -39,5 +40,9 @@ public class WeaponManager : MonoBehaviour
     public List<ImprovedActionStat> GetHammerAvailableActions()
     {
         return HammerAvailableActions;
+    }
+    public List<ImprovedActionStat> GetAxeAvailableActions()
+    {
+        return AxeAvailableActions;
     }
 }
