@@ -60,7 +60,11 @@ public class DictionaryManager : MonoBehaviour
         {"FrontSlash",ActionArchive.instance.FrontSlash },
         {"ThreeHitComboOverhead",ActionArchive.instance.ThreeHitComboOverhead },
         {"ThreeHitComboSpinning",ActionArchive.instance.ThreeHitComboSpinning },
-        {"AxeAttackOverhead",ActionArchive.instance.AxeAttackOverhead }
+        {"AxeAttackOverhead",ActionArchive.instance.AxeAttackOverhead },
+        {"DeathWheel",ActionArchive.instance.DeathWheel },
+        {"FourStabCombo",ActionArchive.instance.FourStabCombo },
+        {"SingleAttack",ActionArchive.instance.SingleAttack },
+        {"SpearAttackPlace4High",ActionArchive.instance.SpearAttackPlace4High }
 
 
     };
