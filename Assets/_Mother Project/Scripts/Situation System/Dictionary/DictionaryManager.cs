@@ -54,7 +54,13 @@ public class DictionaryManager : MonoBehaviour
         {"SoulSteal",ActionArchive.instance.SoulSteal },
         {"SpinningAttack",ActionArchive.instance.SpinningAttack },
         {"SideAttack",ActionArchive.instance.SideAttack },
-        {"HammerGroundAttack",ActionArchive.instance.HammerGroundAttack }
+        {"HammerGroundAttack",ActionArchive.instance.HammerGroundAttack },
+        {"TwoHitCombo",ActionArchive.instance.TwoHitCombo },
+        {"BossSpinningAttack",ActionArchive.instance.BossSpinningAttack },
+        {"FrontSlash",ActionArchive.instance.FrontSlash },
+        {"ThreeHitComboOverhead",ActionArchive.instance.ThreeHitComboOverhead },
+        {"ThreeHitComboSpinning",ActionArchive.instance.ThreeHitComboSpinning },
+        {"AxeAttackOverhead",ActionArchive.instance.AxeAttackOverhead }
 
 
     };
