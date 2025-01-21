@@ -32,7 +32,7 @@ MonoBehaviour:
   ActionAccuracy: 100
   ActionName: SkeletonGrabRoud
   Description: 
-  PriorityValue: 20
+  PriorityValue: 2
   FirstPercentage: 20
   SecondPercentage: 50
   LastPercentage: 30
