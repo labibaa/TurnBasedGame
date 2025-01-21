@@ -302,10 +302,17 @@ public class ActionArchive : MonoBehaviour
     public async void SkeletonGrabRoud()
     {
 
-        GetPlayerStats();
+        /*GetPlayerStats();
         ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
+        ActionTemplate(rangedScriptable, rangedAction);*/
+        GetPlayerStats();
+        ImprovedActionStat skeletonGrabScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
+
+        ICommand SkeletonGrab = new SkeletonGrab(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, skeletonGrabScriptable);
+        ActionTemplate(skeletonGrabScriptable, SkeletonGrab);
+        GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, skeletonGrabScriptable.ActionRange, Color.red);
+
     }
 
     public async void SoulSteal()

@@ -28,29 +28,22 @@ public class SkeletonGrab : ICommand
     public async UniTask Execute()
     {
         Debug.Log("SkeletonGrabExecuted");
-        Vector2 playerCoordinate = GridSystem.instance.WorldToGrid(player.transform.position);
-        List<Vector2> TilesToDeployGas = GridMovement.instance.GetAdjacentNeighbors(playerCoordinate, skeletonGrab.ActionRange);
-        Debug.Log("SkeletonGrab Count" + TilesToDeployGas.Count);
-        for (int i = 0; i < TilesToDeployGas.Count; i++)
-        {
-
-            if ((TilesToDeployGas[i].x >= 0 && TilesToDeployGas[i].x < gridSizeX) && (TilesToDeployGas[i].y >= 0 && TilesToDeployGas[i].y < gridSizeY))
-            {
-                Debug.Log("Executed");
-                GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().HasEffect = true;
-                GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().EffectOwner = playerTempStats;
-                GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().SkeletonGrab_IAS = skeletonGrab;
-                GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().TurnCount = skeletonGrab.PriorityValue;//(actually DOT round)
-                GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().GridPosition = TilesToDeployGas[i];
-               // GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].GetComponent<EffectorSkeletonjGrab>().SmokeObject = OrbSpawner.instance.SpawnSmoke(GridSystem.instance._gridArray[(int)TilesToDeployGas[i].x, (int)TilesToDeployGas[i].y].transform);
-            }
-        }
+        EffectorSkeletonjGrab.Instance.grabbedTarget = targetTempStats;
+        EffectorSkeletonjGrab.Instance.HasEffect = true;
+        EffectorSkeletonjGrab.Instance.EffectOwner = playerTempStats;
+        EffectorSkeletonjGrab.Instance.SkeletonGrab_IAS = skeletonGrab;
+        EffectorSkeletonjGrab.Instance.TurnCount = skeletonGrab.PriorityValue;
+        EffectorSkeletonjGrab.Instance.SkeletonObject = OrbSpawner.instance.SpawnSmoke(target.transform); ;
+        
         await HandleAnimation();
 
     }
     public async UniTask HandleAnimation()
     {
+
+        player.GetComponent<SpawnVFX>().SetTargetAnimator(target.gameObject);
         player.GetComponent<SpawnVFX>().SetOwnVFXPosition(player.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[skeletonGrab.CharacterBodyLocation]);
+        player.GetComponent<SpawnVFX>().SetTargetVFXPosition(target.GetComponent<VFXSpawnPosition>().CharacterBodyPosition[skeletonGrab.TargetCharacterBodyLocation]);
         player.GetComponent<SpawnVFX>().SetVFXPrefab(skeletonGrab.PlayerActionVFX);
         player.GetComponent<SpawnVFX>().SetTargetHitVFXPrefab(skeletonGrab.TargetHitVFX);
         player.GetComponent<SpawnVFX>().SetParticle(skeletonGrab.particle);
