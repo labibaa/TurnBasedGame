@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.VFX;
+using System;
 
 public class EffectorSkeletonjGrab : MonoBehaviour
 {
     public static EffectorSkeletonjGrab Instance;
+
+    public static event Action OnFinishSkeletonGrab;
 
     public bool HasEffect = false;
     public TemporaryStats EffectOwner;
@@ -82,6 +86,7 @@ public class EffectorSkeletonjGrab : MonoBehaviour
         grabbedTarget = null;
         TurnCount = 0;
         SkeletonGrab_IAS = null;
+        OnFinishSkeletonGrab?.Invoke();
         Destroy(SkeletonObject);
         foreach (PlayerTurn pturn in TurnManager.instance.players)
         {
