@@ -47,9 +47,10 @@ MonoBehaviour:
   SoundReferences: []
   PlayerActionVFX: {fileID: 0}
   TargetHitVFX: {fileID: 0}
-  particle: {fileID: 19840850, guid: 9acec412cf3cb0b4ea6bd5b99ee797bc, type: 3}
+  particle: {fileID: 1683674288760616915, guid: 53ea89a303ed9a0408ab1292fc282042,
+    type: 3}
   CharacterBodyLocation: MidBody
-  TargetCharacterBodyLocation: MidBody
+  TargetCharacterBodyLocation: LowerBody
   TargetHurtAnimation: SoulStealPulled
   actionStance: 1
   actionType: 0
