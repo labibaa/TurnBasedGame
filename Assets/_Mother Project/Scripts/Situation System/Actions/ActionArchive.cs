@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class ActionArchive : MonoBehaviour
 {
 
-
+    //have to implement all playable actions here
 
     public static ActionArchive instance;
     
