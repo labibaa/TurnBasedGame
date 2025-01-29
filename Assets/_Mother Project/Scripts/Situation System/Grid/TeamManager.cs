@@ -124,7 +124,7 @@ public class TeamManager : MonoBehaviour
         }
     }
 
-    public void TeamMemberList(TeamName teamToCheck)
+    public void TeamMemberList(TeamName teamToCheck) //checks team list of all players
     {
 
         foreach (var kvp in teamPlayerLists)
