@@ -100,8 +100,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 37a9061ff756e7743b864bd28511d603, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 37a3c4010d6575645acc04f0e7f57500, type: 3}
+        m_Scale: {x: 0.04, y: 0.01}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
@@ -124,11 +124,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 37a9061ff756e7743b864bd28511d603, type: 3}
+        m_Texture: {fileID: 2800000, guid: 37a3c4010d6575645acc04f0e7f57500, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradientRamp:
-        m_Texture: {fileID: -495767859311042499}
+        m_Texture: {fileID: -495767859311042499, guid: 838eec30401a68b4cb2029d05f0df7c7,
+          type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -178,16 +179,16 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailMapBlendingMode: 0
-    - _DetailMapImpact: 0.615
+    - _DetailMapImpact: 0.625
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _FlatRimEdgeSmoothness: 0.764
-    - _FlatRimLightAlign: 0.615
-    - _FlatRimSize: 0.777
-    - _FlatSpecularEdgeSmoothness: 0.945
-    - _FlatSpecularSize: 0.776
+    - _FlatRimLightAlign: 0.692
+    - _FlatRimSize: 0.918
+    - _FlatSpecularEdgeSmoothness: 1
+    - _FlatSpecularSize: 0.856
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -212,7 +213,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimEnabled: 1
-    - _SelfShadingSize: 0
+    - _SelfShadingSize: 0.594
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
@@ -221,7 +222,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TextureBlendingMode: 0
-    - _TextureImpact: 0.508
+    - _TextureImpact: 0.465
     - _UnityShadowOcclusion: 1
     - _VertexColorsEnabled: 0
     - _WorkflowMode: 1
@@ -230,10 +231,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
-    - _DetailMapColor: {r: 0, g: 0.4058263, b: 0.6320754, a: 1}
-    - _EmissionColor: {r: 0, g: 0.2512444, b: 0.5471698, a: 1}
-    - _FlatRimColor: {r: 0.00303527, g: 0.035601325, b: 0.07036011, a: 0.85056}
-    - _FlatSpecularColor: {r: 0.006512091, g: 0.005181517, b: 0.004024717, a: 0.85056}
+    - _DetailMapColor: {r: 0.2520915, g: 0.42485818, b: 0.5188679, a: 1}
+    - _EmissionColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
+    - _FlatRimColor: {r: 0.5382699, g: 0.56909513, b: 0.6037736, a: 0.85056}
+    - _FlatSpecularColor: {r: 0.2735849, g: 0.25938946, b: 0.25938946, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
