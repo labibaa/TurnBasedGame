@@ -15,19 +15,19 @@ MonoBehaviour:
   RangeMappings:
   - MinRangeValue: 1
     MaxRangeValue: 2
-    MappedValue: 1
+    MappedValue: 7
   - MinRangeValue: 3
     MaxRangeValue: 4
-    MappedValue: 2
+    MappedValue: 7
   - MinRangeValue: 5
     MaxRangeValue: 14
-    MappedValue: 3
+    MappedValue: 8
   - MinRangeValue: 15
     MaxRangeValue: 17
-    MappedValue: 4
+    MappedValue: 9
   - MinRangeValue: 18
     MaxRangeValue: 20
-    MappedValue: 5
+    MappedValue: 10
   ActionRange: 10
   ActionAccuracy: 100
   ActionName: SoulSteal
