@@ -191,7 +191,7 @@ Material:
     - _LightContribution: 1
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
-    - _Metallic: 0.496
+    - _Metallic: 0.899
     - _OcclusionStrength: 1
     - _OutlineDepthOffset: 0
     - _OutlineEnabled: 1
@@ -205,7 +205,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimEnabled: 1
     - _SelfShadingSize: 0.594
-    - _Smoothness: 0.653
+    - _Smoothness: 0.506
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
     - _SpecularHighlights: 1
