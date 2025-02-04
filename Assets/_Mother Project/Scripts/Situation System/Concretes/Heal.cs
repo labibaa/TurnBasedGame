@@ -40,7 +40,7 @@ public class Heal : ICommand
         if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
         {
             int diceValue = DiceNumberGenerator.instance.GetDiceValue(rangedAttack.FirstPercentage, rangedAttack.SecondPercentage, rangedAttack.LastPercentage);
-
+            UI.instance.SendNotification(diceValue.ToString());
             int healPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) ) *-1;
 
             targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));

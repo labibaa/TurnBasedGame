@@ -59,6 +59,7 @@ public class EffectorSkeletonjGrab : MonoBehaviour
                     //int damage = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, Smoke) * EffectOwner.GetComponent<CharacterBaseClasses>().damageMultiplier);
                     //targetTempStatsComponent.CurrentHealth = HealthManager.instance.HealthCalculation(damage, targetTempStatsComponent.CurrentHealth);
                     //await HealthManager.instance.PlayerMortality(targetTempStatsComponent, 1);
+                    grabbedTarget.gameObject.GetComponent<PlayerTurn>().isMoveOn = false;
                     CutsceneManager.instance.PlayAnimationForCharacter(grabbedTarget.gameObject, SkeletonGrab_IAS.TargetHurtAnimation);
                 }
             }
@@ -91,6 +92,7 @@ public class EffectorSkeletonjGrab : MonoBehaviour
         foreach (PlayerTurn pturn in TurnManager.instance.players)
         {
             pturn.GetComponent<TemporaryStats>().playerVisiblity = 1;
+            pturn.isMoveOn = true;
         }
 
 

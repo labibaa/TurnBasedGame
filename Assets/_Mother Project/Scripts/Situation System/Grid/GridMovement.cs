@@ -204,7 +204,7 @@ public class GridMovement : MonoBehaviour
 
         UnityEngine.Cursor.lockState = CursorLockMode.None;
         #region Mouse Pointer Mapping
-        if (Input.GetMouseButtonDown(0) && inPathSelection)
+        if (Input.GetMouseButtonDown(0) && inPathSelection)  // grid move mouse code
         {
             // Cast a ray from the mouse cursor into the scene with the specified layer mask
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -257,7 +257,7 @@ public class GridMovement : MonoBehaviour
         clickIcon.gameObject.SetActive(false);
     }
 
-    void AssignMovement()
+    void AssignMovement() //actions that include movement on grid are implemented here
     {
         ICommand MovementConrete;
         if (moveScriptable.moveName=="WarpSurge")
@@ -289,7 +289,7 @@ public class GridMovement : MonoBehaviour
 
         //int previousPV = HandleTurn.instance.GetLatestTurnWithCharacter(agent.gameObject.GetComponent<CharacterBaseClasses>())?.PriorityValue ?? 0;
         int previousPV = 20;
-        Turn turn = new Turn(agent.gameObject.GetComponent<CharacterBaseClasses>(), MovementConrete, previousPV + moveScriptable.PriorityValue);
+        Turn turn = new Turn(agent.gameObject.GetComponent<CharacterBaseClasses>(), MovementConrete, previousPV + moveScriptable.PriorityValue); //action adding to turn list
         HandleTurnNew.instance.AddTurn(turn);
         ResetPathSelection();
         ResetHighlightedPath();
@@ -304,7 +304,7 @@ public class GridMovement : MonoBehaviour
         
         UnityEngine.Cursor.lockState = CursorLockMode.None;
 
-        PlayerStatUI.instance.GetPlayerStatSummary(agent.gameObject.GetComponent<CharacterBaseClasses>());
+        PlayerStatUI.instance.GetPlayerStatSummary(agent.gameObject.GetComponent<CharacterBaseClasses>()); //character ui
         PlayerStatUI.instance.GetPlayerStatDetails(agent.gameObject.GetComponent<CharacterBaseClasses>());
     }
 

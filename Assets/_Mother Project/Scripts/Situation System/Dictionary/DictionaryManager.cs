@@ -16,6 +16,8 @@ public class DictionaryManager : MonoBehaviour
     private void Start()
     {
 
+        //need to add all playable actions in the dictionary to excute them when called, actions can't have same names
+
         ActionMapper = new Dictionary<string, ActionDelegate>() {
 
         //{"GreaterStrike",ActionArchive.instance.GreaterStrike },

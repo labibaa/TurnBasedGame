@@ -27,7 +27,7 @@ public class HealthManager : MonoBehaviour
        
     }
 
-    public int HealthCalculation(float damage,int health)
+    public int HealthCalculation(float damage,int health) // health calculation
     {
         //do some health stuff
         health = health-(int)damage;

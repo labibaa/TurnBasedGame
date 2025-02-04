@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class ActionArchive : MonoBehaviour
 {
 
-
+    //have to implement all playable actions here
 
     public static ActionArchive instance;
     
@@ -918,8 +918,8 @@ public class ActionArchive : MonoBehaviour
             }
            
            // GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex,Color.green);
-            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, moveScriptable.ActionRange,Color.green);
-            GridMovement.instance.setMoveParam(moveScriptable, moveScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
+            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex ,Color.green);
+            GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
            // GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
             TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
@@ -960,8 +960,8 @@ public class ActionArchive : MonoBehaviour
                 {
                     gridIp.enabled = true;
                 }
-                GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, currentStatPlayer.CurrentDex, Color.green);
-                GridMovement.instance.setMoveParam(dashScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
+                GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, dashScriptable.ActionRange, Color.green);
+                GridMovement.instance.setMoveParam(dashScriptable, dashScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
                 TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
             }

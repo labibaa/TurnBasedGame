@@ -6,6 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
 
+    //list of weapons to assign to each character according to type
     [SerializeField] protected List<ImprovedActionStat> DaggerAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> SwordAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> BowAndArrowAvailableActions = new List<ImprovedActionStat>();

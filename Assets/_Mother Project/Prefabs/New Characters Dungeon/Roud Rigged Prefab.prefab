@@ -5899,7 +5899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 136796456
+  GlobalObjectIdHash: 1297478232
   InScenePlacedSourceGlobalObjectIdHash: 3565951234
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5973,7 +5973,7 @@ MonoBehaviour:
   description: 
   level: 1
   strength: 8
-  dexterity: 16
+  dexterity: 2
   intelligence: 6
   arcana: 3
   endurance: 5
