@@ -505,6 +505,7 @@ public class ActionArchive : MonoBehaviour
         ActionTemplate(rangedScriptable, rangedAction);
 
     }
+    
 
 
     public async void Stab()
@@ -620,6 +621,27 @@ public class ActionArchive : MonoBehaviour
         
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
         ActionTemplate(rangedScriptable, rangedAction);
+    }
+
+    public async void Buff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Buff");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
+
+    }
+    public async void Debuff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
+
     }
 
     public async void VenomCloud()

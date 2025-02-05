@@ -66,7 +66,9 @@ public class DictionaryManager : MonoBehaviour
         {"DeathWheel",ActionArchive.instance.DeathWheel },
         {"FourStabCombo",ActionArchive.instance.FourStabCombo },
         {"SingleAttack",ActionArchive.instance.SingleAttack },
-        {"SpearAttackPlace4High",ActionArchive.instance.SpearAttackPlace4High }
+        {"SpearAttackPlace4High",ActionArchive.instance.SpearAttackPlace4High },
+        {"Buff",ActionArchive.instance.Buff },
+        {"Debuff",ActionArchive.instance.Debuff }
 
 
     };

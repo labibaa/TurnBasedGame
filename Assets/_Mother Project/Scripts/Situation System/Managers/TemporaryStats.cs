@@ -150,6 +150,10 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         {
             _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetSpearAvailableActions());
         }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Staff)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetStaffAvailableActions());
+        }
     }
     public void SetCharacterStat()
     {

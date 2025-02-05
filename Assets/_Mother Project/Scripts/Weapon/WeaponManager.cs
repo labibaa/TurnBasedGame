@@ -14,6 +14,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] protected List<ImprovedActionStat> HammerAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> AxeAvailableActions = new List<ImprovedActionStat>();
     [SerializeField] protected List<ImprovedActionStat> SpearAvailableActions = new List<ImprovedActionStat>();
+    [SerializeField] protected List<ImprovedActionStat> StaffAvailableActions = new List<ImprovedActionStat>();
 
     private void Awake()
     {
@@ -50,5 +51,9 @@ public class WeaponManager : MonoBehaviour
     public List<ImprovedActionStat> GetSpearAvailableActions()
     {
         return SpearAvailableActions;
+    }
+    public List<ImprovedActionStat> GetStaffAvailableActions()
+    {
+        return StaffAvailableActions;
     }
 }
