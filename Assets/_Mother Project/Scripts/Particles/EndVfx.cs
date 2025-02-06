@@ -15,6 +15,7 @@ public class EndVfx : MonoBehaviour
     private void OnDisable()
     {
         EffectorSkeletonjGrab.OnFinishSkeletonGrab -= EndVfxKey;
+        EndVfxKey();
     }
 
     public void EndVfxKey()
