@@ -24,12 +24,6 @@ public class RangedAttack : ICommand
 
     }
 
-
-
-
-
-
-
     public async UniTask Execute()
     {
 

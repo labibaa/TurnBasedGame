@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Heal : ICommand
+public class Buff : ICommand
 {
     CharacterBaseClasses player;
     CharacterBaseClasses target;
     TemporaryStats playerTempStats;
     TemporaryStats targetTempStats;
-    ImprovedActionStat rangedAttack;
+    ImprovedActionStat buffAttack;
 
 
-    public Heal(CharacterBaseClasses playerAttacker, CharacterBaseClasses targetDefender, TemporaryStats currentStatPlayer, TemporaryStats currentStatTarget, ImprovedActionStat rangedScriptable)
+    public Buff(CharacterBaseClasses playerAttacker, CharacterBaseClasses targetDefender, TemporaryStats currentStatPlayer, TemporaryStats currentStatTarget, ImprovedActionStat BuffScriptable)
     {
         player = playerAttacker;
         target = targetDefender;
         playerTempStats = currentStatPlayer;
         targetTempStats = currentStatTarget;
-        rangedAttack = rangedScriptable;
+        buffAttack = BuffScriptable;
 
     }
 
@@ -30,8 +30,8 @@ public class Heal : ICommand
 
         int attackOrder = checkOrder();
 
-        float actionAccuracy = rangedAttack.ActionAccuracy;
-        
+        float actionAccuracy = buffAttack.ActionAccuracy;
+
         //if (targetTempStats.IsBlockActive)
         //{
         //    greaterStrike.BasePower = greaterStrike.BasePower - 30;
@@ -39,16 +39,16 @@ public class Heal : ICommand
 
         if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
         {
-            int diceValue = DiceNumberGenerator.instance.GetDiceValue(rangedAttack.FirstPercentage, rangedAttack.SecondPercentage, rangedAttack.LastPercentage);
+            int diceValue = DiceNumberGenerator.instance.GetDiceValue(buffAttack.FirstPercentage, buffAttack.SecondPercentage, buffAttack.LastPercentage);
             UI.instance.SendNotification(diceValue.ToString());
-            int healPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) ) *-1;
 
-            targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
+            int buffPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, buffAttack)) * -1;
+            target.DamageMultiplier = player.DamageMultiplier * 2;
 
             await HandleAnimation();
-            UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
+            UI.instance.ShowFlyingText((buffPoint * -1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
             await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
-            
+
 
 
         }
@@ -60,13 +60,13 @@ public class Heal : ICommand
         Transform closestTarget = TurnManager.instance.FindClosestTarget(TurnManager.instance.target, player.GetComponent<CharacterBaseClasses>());
         TempManager.instance.CharacterRotation(closestTarget.GetComponent<CharacterBaseClasses>(), player, 2f);
 
-     /*   player.GetComponent<PlayParticle>().target = target.gameObject;
-        player.GetComponent<PlayParticle>().actionSound = rangedAttack.actionSound;
-        //player.GetComponent<PlayParticle>().InstantiateParticleEffect(rangedAttack.ParticleSystem);
-        player.GetComponent<PlayParticle>().particlePrefab = rangedAttack.ParticleSystem;
-        player.GetComponent<PlayParticle>().particlePrefabHit = rangedAttack.HitParticleSystem;
-        target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
-        Debug.Log("RangedD");*/
+        /*   player.GetComponent<PlayParticle>().target = target.gameObject;
+           player.GetComponent<PlayParticle>().actionSound = rangedAttack.actionSound;
+           //player.GetComponent<PlayParticle>().InstantiateParticleEffect(rangedAttack.ParticleSystem);
+           player.GetComponent<PlayParticle>().particlePrefab = rangedAttack.ParticleSystem;
+           player.GetComponent<PlayParticle>().particlePrefabHit = rangedAttack.HitParticleSystem;
+           target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
+           Debug.Log("RangedD");*/
 
         //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;
@@ -75,11 +75,11 @@ public class Heal : ICommand
         player.GetComponent<SpawnVFX>().SetTargetAnimator(target.gameObject);
         player.GetComponent<SpawnVFX>().SetTargetVFXPosition(target.gameObject);
         player.GetComponent<SpawnVFX>().SetOwnVFXPosition(player.gameObject.GetComponent<VFXSpawnPosition>().MidBody);
-        player.GetComponent<SpawnVFX>().SetVFXPrefab(rangedAttack.PlayerActionVFX);
-        player.GetComponent<SpawnVFX>().SetTargetHitVFXPrefab(rangedAttack.TargetHitVFX);
-        player.GetComponent<SpawnVFX>().SetParticle(rangedAttack.particle);
-        player.GetComponent<SpawnVFX>().SetVFXSound(rangedAttack.actionSound);
-        player.GetComponent<SpawnVFX>().SetTargetAnimation(rangedAttack.TargetHurtAnimation);
+        player.GetComponent<SpawnVFX>().SetVFXPrefab(buffAttack.PlayerActionVFX);
+        player.GetComponent<SpawnVFX>().SetTargetHitVFXPrefab(buffAttack.TargetHitVFX);
+        player.GetComponent<SpawnVFX>().SetParticle(buffAttack.particle);
+        player.GetComponent<SpawnVFX>().SetVFXSound(buffAttack.actionSound);
+        player.GetComponent<SpawnVFX>().SetTargetAnimation(buffAttack.TargetHurtAnimation);
 
         await CutsceneManager.instance.PlayAnimationForCharacter(player.gameObject, GetActionName());
 
@@ -89,12 +89,12 @@ public class Heal : ICommand
 
     public string GetActionName()
     {
-        return rangedAttack.ActionName;
+        return buffAttack.ActionName;
     }
 
     public int GetPVValue()
     {
-        return rangedAttack.PriorityValue;
+        return buffAttack.PriorityValue;
     }
 
     public CharacterBaseClasses GetTarget()
@@ -104,7 +104,7 @@ public class Heal : ICommand
 
     public int GetAPValue()
     {
-        return rangedAttack.APCost;
+        return buffAttack.APCost;
     }
 
     public NavMeshAgent GetAgent()

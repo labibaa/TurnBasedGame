@@ -446,19 +446,12 @@ public class ActionArchive : MonoBehaviour
 
     public async void BoneShield()
     {
-
-        
+  
         GetPlayerStats();
 
         ImprovedActionStat boneShieldScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
         ICommand BoneShieldAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, boneShieldScriptable);
         ActionTemplate(boneShieldScriptable, BoneShieldAction);
-
-        //GetPlayerStats();
-        //ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
-
-        //ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        //ActionTemplate(rangedScriptable, rangedAction);
     }
 
     public async void TwoHandedArise()
@@ -570,6 +563,26 @@ public class ActionArchive : MonoBehaviour
         ActionTemplate(rangedScriptable, rangedAction);
     }
 
+    public async void Buff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat buffScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Buff");
+        ICommand buffAction = new Buff(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, buffScriptable);
+        ActionTemplate(buffScriptable, buffAction);
+
+    }
+    public async void Debuff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
+        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
+        ActionTemplate(rangedScriptable, rangedAction);
+
+    }
 
     public bool MeleeMoveTemplate(ImprovedActionStat actionScriptable)
     {
@@ -623,26 +636,6 @@ public class ActionArchive : MonoBehaviour
         ActionTemplate(rangedScriptable, rangedAction);
     }
 
-    public async void Buff()
-    {
-
-
-        GetPlayerStats();
-        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Buff");
-        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
-
-    }
-    public async void Debuff()
-    {
-
-
-        GetPlayerStats();
-        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
-        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
-
-    }
 
     public async void VenomCloud()
     {

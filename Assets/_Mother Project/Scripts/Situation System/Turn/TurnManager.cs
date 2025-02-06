@@ -235,7 +235,7 @@ public class TurnManager : MonoBehaviour
 
     public void PopulateTargetList(string actionName)
     {
-        /*        Gets action data from DAO
+        /*Gets action data from DAO
 
         Finds valid targets in range
 
@@ -264,7 +264,7 @@ public class TurnManager : MonoBehaviour
 
 
 
-            if (actionName == "Heal")
+            if (actionName == "Heal" || actionName == "Buff")
             {
                 targetsInRange = GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition, players[currentPlayerIndex].GetComponent<TemporaryStats>().CharacterTeam, 10, Color.white);
                 GridMovement.instance.ResetHighlightedPath();
