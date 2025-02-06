@@ -206,7 +206,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         transform.position = currentPlayerGridPosition;
 
 
-        Debug.Log("hh: "+ currentPlayerGridPosition + "hh222" + transform.position);
+        Debug.Log(this.name + " hh: "+ currentPlayerGridPosition + " hh222 " + transform.position);
         playerMortality = Mortality.Alive;
         OrbSpawner.instance.PlayerReadyCounter();
         ResetStatForGrid();
