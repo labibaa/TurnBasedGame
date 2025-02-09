@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using TrailsFX.Demos;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,14 +40,9 @@ public class Buff : ICommand
 
         if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
         {
-            int diceValue = DiceNumberGenerator.instance.GetDiceValue(buffAttack.FirstPercentage, buffAttack.SecondPercentage, buffAttack.LastPercentage);
-            UI.instance.SendNotification(diceValue.ToString());
-
-            int buffPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, buffAttack)) * -1;
-            target.DamageMultiplier = player.DamageMultiplier * 2;
+            target.DamageMultiplier = target.DamageMultiplier * 2;
 
             await HandleAnimation();
-            UI.instance.ShowFlyingText((buffPoint * -1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
             await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
 
 
@@ -54,6 +50,61 @@ public class Buff : ICommand
         }
     }
 
+    /*    private void OnEnable()
+        {
+            HandleTurnNew.OnTurnEnd += DamageCurrentTarget;
+        }
+        private void OnDisable()
+        {
+            HandleTurnNew.OnTurnEnd -= DamageCurrentTarget;
+        }
+
+
+        void DamageCurrentTarget()
+        {
+            ExecuteDamageCurrentTarget();
+        }
+
+        async UniTask ExecuteDamageCurrentTarget()
+        {
+            if (buffAttack.PriorityValue > 0)
+            {
+                if (target != null)
+                {
+                    target.DamageMultiplier = target.DamageMultiplier * 2;
+                    CutsceneManager.instance.PlayAnimationForCharacter(target.gameObject, buffAttack.TargetHurtAnimation);
+
+                    buffAttack.PriorityValue--;
+                }
+                else
+                {
+                    if (HasEffect)
+                    {
+                        ResetEffectState();
+                    }
+
+                }
+
+
+            }
+        }
+
+        private void ResetEffectState()
+        {
+            //target.playerVisiblity = 1;
+            HasEffect = false;
+            EffectOwner = null;
+            GridPosition = Vector2.zero;
+            buffAttack.PriorityValue = 0;
+            Smoke = null;
+            Destroy(SmokeObject);
+            foreach (PlayerTurn pturn in TurnManager.instance.players)
+            {
+                pturn.GetComponent<TemporaryStats>().playerVisiblity = 1;
+            }
+
+
+        }*/
 
     async UniTask HandleAnimation()
     {

@@ -101853,6 +101853,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comet Indigo
       objectReference: {fileID: 0}
+    - target: {fileID: 5573615332990749711, guid: 632839e8952da5548bdd44cc9239f310,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595905715358234511, guid: 632839e8952da5548bdd44cc9239f310,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
