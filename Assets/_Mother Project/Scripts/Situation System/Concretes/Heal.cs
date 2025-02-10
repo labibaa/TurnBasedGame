@@ -25,10 +25,6 @@ public class Heal : ICommand
 
 
 
-
-
-
-
     public async UniTask Execute()
     {
 
@@ -44,18 +40,14 @@ public class Heal : ICommand
         if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
         {
             int diceValue = DiceNumberGenerator.instance.GetDiceValue(rangedAttack.FirstPercentage, rangedAttack.SecondPercentage, rangedAttack.LastPercentage);
-
+            UI.instance.SendNotification(diceValue.ToString());
             int healPoint = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) ) *-1;
 
-          
+            targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
 
-            
-            
-                targetTempStats.CurrentHealth = HealthManager.instance.HealthCap(targetTempStats.PlayerHealth, HealthManager.instance.HealthCalculation(healPoint, targetTempStats.CurrentHealth));
-
-                await HandleAnimation();
-                UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
-                await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
+            await HandleAnimation();
+            UI.instance.ShowFlyingText((healPoint*-1).ToString(), target.GetComponent<TemporaryStats>().FlyingTextParent, Color.green);
+            await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
             
 
 
@@ -68,13 +60,13 @@ public class Heal : ICommand
         Transform closestTarget = TurnManager.instance.FindClosestTarget(TurnManager.instance.target, player.GetComponent<CharacterBaseClasses>());
         TempManager.instance.CharacterRotation(closestTarget.GetComponent<CharacterBaseClasses>(), player, 2f);
 
-        player.GetComponent<PlayParticle>().target = target.gameObject;
+     /*   player.GetComponent<PlayParticle>().target = target.gameObject;
         player.GetComponent<PlayParticle>().actionSound = rangedAttack.actionSound;
         //player.GetComponent<PlayParticle>().InstantiateParticleEffect(rangedAttack.ParticleSystem);
         player.GetComponent<PlayParticle>().particlePrefab = rangedAttack.ParticleSystem;
         player.GetComponent<PlayParticle>().particlePrefabHit = rangedAttack.HitParticleSystem;
         target.GetComponent<PlayParticle>().particlePrefabHurt = rangedAttack.HurtParticleSystem;
-        Debug.Log("RangedD");
+        Debug.Log("RangedD");*/
 
         //CutsceneManager.instance.virtualCamera.LookAt = player.gameObject.transform;
         //CutsceneManager.instance.virtualCamera.Follow = player.gameObject.transform;

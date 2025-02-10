@@ -115,7 +115,7 @@ public class DamageCalculation : MonoBehaviour
 
     //add functions for modifier
 
-    public float CalculateKillDamage(Character attacker, Character defender, AttackType attack,AttackType defense)
+    public float CalculateKillDamage(Character attacker, Character defender, AttackType attack,AttackType defense) // damage calculation of actions
     {
         healthDamage = (((attacker.BaseDamge + bonusDamage) * (attacker.AttackSelection[attack] * 0.04f) ) / (Mathf.Pow(2,(defender.AttackSelection[defense] / attacker.AttackSelection[attack]))) * critModifier * weaknessModifier);
 

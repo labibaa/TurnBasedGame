@@ -32,11 +32,9 @@ public class GridActivation : MonoBehaviour
     GameObject gridAudio;
 
     public TeamName myTeam;
-
-
-
-
     int count =0;
+
+    //Enable and disable Grid system and corresponding UI with necessary components with it
     private void OnEnable()
     {
         WaveManager.OnGridReady += EnableSituaionUI;

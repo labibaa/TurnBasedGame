@@ -16,6 +16,8 @@ public class DictionaryManager : MonoBehaviour
     private void Start()
     {
 
+        //need to add all playable actions in the dictionary to excute them when called, actions can't have same names
+
         ActionMapper = new Dictionary<string, ActionDelegate>() {
 
         //{"GreaterStrike",ActionArchive.instance.GreaterStrike },
@@ -51,7 +53,22 @@ public class DictionaryManager : MonoBehaviour
         {"BoneShield",ActionArchive.instance.BoneShield },
         {"TwoHandedArise",ActionArchive.instance.TwoHandedArise },
         {"SkeletonGrabRoud",ActionArchive.instance.SkeletonGrabRoud },
-        {"SoulSteal",ActionArchive.instance.SoulSteal }
+        {"SoulSteal",ActionArchive.instance.SoulSteal },
+        {"SpinningAttack",ActionArchive.instance.SpinningAttack },
+        {"SideAttack",ActionArchive.instance.SideAttack },
+        {"HammerGroundAttack",ActionArchive.instance.HammerGroundAttack },
+        {"TwoHitCombo",ActionArchive.instance.TwoHitCombo },
+        {"BossSpinningAttack",ActionArchive.instance.BossSpinningAttack },
+        {"FrontSlash",ActionArchive.instance.FrontSlash },
+        {"ThreeHitComboOverhead",ActionArchive.instance.ThreeHitComboOverhead },
+        {"ThreeHitComboSpinning",ActionArchive.instance.ThreeHitComboSpinning },
+        {"AxeAttackOverhead",ActionArchive.instance.AxeAttackOverhead },
+        {"DeathWheel",ActionArchive.instance.DeathWheel },
+        {"FourStabCombo",ActionArchive.instance.FourStabCombo },
+        {"SingleAttack",ActionArchive.instance.SingleAttack },
+        {"SpearAttackPlace4High",ActionArchive.instance.SpearAttackPlace4High },
+        {"Buff",ActionArchive.instance.Buff },
+        {"Debuff",ActionArchive.instance.Debuff }
 
 
     };

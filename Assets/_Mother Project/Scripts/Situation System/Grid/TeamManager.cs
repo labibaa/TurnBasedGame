@@ -124,7 +124,7 @@ public class TeamManager : MonoBehaviour
         }
     }
 
-    public void TeamMemberList(TeamName teamToCheck)
+    public void TeamMemberList(TeamName teamToCheck) //checks team list of all players
     {
 
         foreach (var kvp in teamPlayerLists)
@@ -132,13 +132,13 @@ public class TeamManager : MonoBehaviour
             // Print the key (TeamName)
             //Debug.Log($"Team Name:   {kvp.Key}");
 
-            if (kvp.Key == teamToCheck)
+            /*if (kvp.Key == teamToCheck)
             {
                 foreach (var stats in kvp.Value)
                 {
                     Debug.Log("Players in " + kvp.Key + ":" + stats);
                 }
-            }
+            }*/
             foreach (var stats in kvp.Value)
             {
                // Debug.Log("Player Stats:" + stats); // Assuming TemporaryStats has a meaningful ToString() implementation

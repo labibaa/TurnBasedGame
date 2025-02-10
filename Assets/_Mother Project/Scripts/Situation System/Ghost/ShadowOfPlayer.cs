@@ -68,7 +68,7 @@ public class ShadowOfPlayer : MonoBehaviour
         }
     }
 
-    public async void ActionGhostRepeat()
+    public async void ActionGhostRepeat() //repeat preview of action using player shadow
     {
   
             if (IsSpawned == null)
@@ -102,7 +102,7 @@ public class ShadowOfPlayer : MonoBehaviour
 
     }
 
-    public async void ActionGhostSingular()
+    public async void ActionGhostSingular()  // preview of action using player shadow
     {
 
         if (IsSpawned == null)

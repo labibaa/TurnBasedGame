@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class ActionArchive : MonoBehaviour
 {
 
-
+    //have to implement all playable actions here
 
     public static ActionArchive instance;
     
@@ -209,21 +209,249 @@ public class ActionArchive : MonoBehaviour
             ActionTemplate(meleeScriptable, meleeAction);
         }
     }
-    public async void BoneShield()
+
+    public async void HammerGroundAttack()
     {
 
-        
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "HammerGroundAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void TwoHitCombo()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "TwoHitCombo");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void BossSpinningAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BossSpinningAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void FrontSlash()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "FrontSlash");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void ThreeHitComboOverhead()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "ThreeHitComboOverhead");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+    
+    public async void ThreeHitComboSpinning()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "ThreeHitComboSpinning");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+    
+    public async void AxeAttackOverhead()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "AxeAttackOverhead");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void DeathWheel()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "DeathWheel");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void FourStabCombo()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "FourStabCombo");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SingleAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SingleAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SpearAttackPlace4High()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SpearAttackPlace4High");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SpinningAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SpinningAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void SideAttack()
+    {
+
+        GetPlayerStats();
+        ImprovedActionStat meleeScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SideAttack");
+        bool isMoveAdded = MeleeMoveTemplate(meleeScriptable);
+        if (isMoveAdded)
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "Melee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+        else
+        {
+            ICommand meleeAction = new MeleeAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, meleeScriptable, "SingleMelee");
+            ActionTemplate(meleeScriptable, meleeAction);
+        }
+    }
+
+    public async void BoneShield()
+    {
+  
         GetPlayerStats();
 
         ImprovedActionStat boneShieldScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
         ICommand BoneShieldAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, boneShieldScriptable);
         ActionTemplate(boneShieldScriptable, BoneShieldAction);
-
-        //GetPlayerStats();
-        //ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "BoneShield");
-
-        //ICommand rangedAction = new BoneShield(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        //ActionTemplate(rangedScriptable, rangedAction);
     }
 
     public async void TwoHandedArise()
@@ -247,10 +475,17 @@ public class ActionArchive : MonoBehaviour
     public async void SkeletonGrabRoud()
     {
 
-        GetPlayerStats();
+        /*GetPlayerStats();
         ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
+        ActionTemplate(rangedScriptable, rangedAction);*/
+        GetPlayerStats();
+        ImprovedActionStat skeletonGrabScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "SkeletonGrabRoud");
+
+        ICommand SkeletonGrab = new SkeletonGrab(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, skeletonGrabScriptable);
+        ActionTemplate(skeletonGrabScriptable, SkeletonGrab);
+        GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, skeletonGrabScriptable.ActionRange, Color.red);
+
     }
 
     public async void SoulSteal()
@@ -263,6 +498,7 @@ public class ActionArchive : MonoBehaviour
         ActionTemplate(rangedScriptable, rangedAction);
 
     }
+    
 
 
     public async void Stab()
@@ -327,6 +563,26 @@ public class ActionArchive : MonoBehaviour
         ActionTemplate(rangedScriptable, rangedAction);
     }
 
+    public async void Buff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat buffScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Buff");
+        ICommand buffAction = new Buff(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, buffScriptable);
+        ActionTemplate(buffScriptable, buffAction);
+
+    }
+    public async void Debuff()
+    {
+
+
+        GetPlayerStats();
+        ImprovedActionStat debuffScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
+        ICommand debuffAction = new Debuff(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, debuffScriptable);
+        ActionTemplate(debuffScriptable, debuffAction);
+
+    }
 
     public bool MeleeMoveTemplate(ImprovedActionStat actionScriptable)
     {
@@ -379,6 +635,7 @@ public class ActionArchive : MonoBehaviour
         ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
         ActionTemplate(rangedScriptable, rangedAction);
     }
+
 
     public async void VenomCloud()
     {
@@ -676,8 +933,8 @@ public class ActionArchive : MonoBehaviour
             }
            
            // GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex,Color.green);
-            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, moveScriptable.ActionRange,Color.green);
-            GridMovement.instance.setMoveParam(moveScriptable, moveScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
+            GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition,TeamName.NullTeam, currentStatPlayer.CurrentDex ,Color.green);
+            GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
            // GridMovement.instance.setMoveParam(moveScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
             TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
@@ -718,8 +975,8 @@ public class ActionArchive : MonoBehaviour
                 {
                     gridIp.enabled = true;
                 }
-                GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, currentStatPlayer.CurrentDex, Color.green);
-                GridMovement.instance.setMoveParam(dashScriptable, currentStatPlayer.CurrentDex, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
+                GridMovement.instance.InAdjacentMatrix(currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, TeamName.NullTeam, dashScriptable.ActionRange, Color.green);
+                GridMovement.instance.setMoveParam(dashScriptable, dashScriptable.ActionRange, currentStatPlayer.gameObject.GetComponent<TemporaryStats>().currentPlayerGridPosition, playerAttacker.gameObject.GetComponent<NavMeshAgent>());
 
                 TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
             }

@@ -26,7 +26,15 @@ public class LoadScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            LoadSceneManager.instance.LoadScene(SceneName);
+            if (LoadSceneManager.instance.ToAddUnlinkedCharacter)
+            {
+                LoadSceneManager.instance.LoadScene(LoadSceneManager.instance.leftOutcharacters[0].GetComponent<TemporaryStats>().currentScene);
+            }
+            else
+            {
+                LoadSceneManager.instance.LoadScene(SceneName);
+            }
+          
         }
         
     }

@@ -18,6 +18,8 @@ public class LoadSceneManager : MonoBehaviour
     bool isPrevScene;
     public List<GameObject> leftOutcharacters = new List<GameObject>();
     public bool ToAddUnlinkedCharacter;
+    public bool IsnewGame;
+    GameObject gameObjectMC;
     private void Awake()
     {
         if(instance == null)
@@ -52,14 +54,14 @@ public class LoadSceneManager : MonoBehaviour
          persistableDataList = FindAllIPersitableDataObjects();
         //OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
-    public async void LoadScene(string sceneName)
+
+    public async void LoadScene(string sceneName) //new scene load async
     {
-        if (!isPrevScene)
+        if (!isPrevScene) // check if scene is already visited
         {
             SaveGame();
         }
      
-
         var scene = SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -69,13 +71,12 @@ public class LoadSceneManager : MonoBehaviour
         string json = JsonUtility.ToJson(playerState);
         File.WriteAllText(Application.persistentDataPath + "/playerState.json", json);
     }*/
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode) // load save game data after new scene is loaded
     {
         persistableDataList = FindAllIPersitableDataObjects();
-       // if (!isPrevScene)
-       // {
-            LoadGame();
-       // }
+       
+        LoadGame();
+
         isPrevScene = false;
     }
 
@@ -83,16 +84,49 @@ public class LoadSceneManager : MonoBehaviour
     {
         // SaveGame();
     }
+    public void StartNewGame() //save default data when new game is started
+    {
+        foreach (IPersistableData player_GO in persistableDataList)
+        {
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.DefaultCharacterData(Ch_obj);
+            Debug.Log("default");
+        }
+        IsnewGame = true;
+    }
+
+    public void ContinueGame()  //load previously saved data when continue game is pressed
+    {
+        foreach (IPersistableData player_GO in persistableDataList)
+        {
+            GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
+            ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
+            if (Ch_obj.GetComponent<TemporaryStats>().isMainCharacter)
+            {
+                gameObjectMC = Ch_obj;
+            }
+        }
+        LoadScene(gameObjectMC.GetComponent<TemporaryStats>().currentScene);
+    }
 
     void LoadGame()
     {
         foreach (IPersistableData player_GO in persistableDataList)
         {
             GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
-            ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj);
+            ShowSavedData.Instance.LoadTemporaryStatsNextScene(Ch_obj); //load from json
             // player_GO.LoadData(playerDataSave);
         }
-        SwitchMC.Instance.RemoveUnlinkedCharacter();
+        if (!IsnewGame)
+        {
+            SwitchMC.Instance.RemoveUnlinkedCharacter();
+        }
+        else
+        {
+          //  SwitchMC.Instance.SwitchToNextCharacter();
+        }
+        IsnewGame = false;
+
     }
 
     void SaveGame()
@@ -107,10 +141,10 @@ public class LoadSceneManager : MonoBehaviour
             SwitchMC.Instance.AddUnlinkedCharacter();
             ToAddUnlinkedCharacter = false;
         }
-        foreach (IPersistableData player_GO in persistableDataList)
+        foreach (IPersistableData player_GO in persistableDataList) 
         {
             GameObject Ch_obj = ((MonoBehaviour)player_GO).gameObject;
-            ShowSavedData.Instance.AddCharacterData(Ch_obj);
+            ShowSavedData.Instance.AddCharacterData(Ch_obj);//save data to json
 
             // player_GO.SaveData(playerDataSave);
             // SaveCharacterStats.Add(playerDataSave);
@@ -119,7 +153,7 @@ public class LoadSceneManager : MonoBehaviour
 
     }
 
-    private List<IPersistableData> FindAllIPersitableDataObjects()
+    public List<IPersistableData> FindAllIPersitableDataObjects() //all active characters that needs data saving has IPersistable interface implimented
     {
         IEnumerable<IPersistableData> ipersistabledataObjects = FindObjectsOfType<MonoBehaviour>().OfType<IPersistableData>();
         
@@ -132,7 +166,7 @@ public class LoadSceneManager : MonoBehaviour
         leftOutcharacters.Add(leftOutCharacter);
     }
 
-    public void LoadPrevScene()
+    public void LoadPrevScene() //to load the scene of left ou character
     {
         isPrevScene = true;
         ToAddUnlinkedCharacter = true;

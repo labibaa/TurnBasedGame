@@ -3,8 +3,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
+using static Unity.Burst.Intrinsics.Arm;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEngine.ParticleSystem;
+using static UnityEngine.Rendering.DebugUI;
 //using static UnityEditorInternal.ReorderableList;
 
 public class TurnManager : MonoBehaviour
@@ -68,14 +75,14 @@ public class TurnManager : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentPlayer.CompareTag("Player"))
-            {
+            //if (currentPlayer.CompareTag("Player"))
+            //{
                 EndTurn();
-            }
-            else
-            {
-                EnemyAIAttack();
-            }
+            //}
+            //else
+            //{
+            //    EnemyAIAttack();
+            //}
 
         }
 
@@ -104,7 +111,19 @@ public class TurnManager : MonoBehaviour
     public async void EndTurn()
     {
 
+        /* Stops turn timer
 
+        Clears grid visuals
+
+        Resets target highlights
+
+        Triggers simulation state
+
+        Executes queued actions
+
+        Saves turn data
+
+        Clears UI text*/
         TurnTimer.Instance.StopTImer();
         _gridHover.RestoreColor();
         if (GridSystem.instance.IsGridOn)
@@ -135,6 +154,17 @@ public class TurnManager : MonoBehaviour
 
     public void StartTurn()
     {
+        /*Starts turn timer
+
+        Updates round UI
+
+        Activates current player's components
+
+        Sets up UI panels
+
+        Populates target lists
+
+        Updates action UI*/
         TurnTimer.Instance.StartTimer();
 
         TeamManager.instance.PrintDictionary();
@@ -205,6 +235,15 @@ public class TurnManager : MonoBehaviour
 
     public void PopulateTargetList(string actionName)
     {
+        /*Gets action data from DAO
+
+        Finds valid targets in range
+
+        Handles special cases(e.g., Heal)
+
+        Updates target UI buttons
+
+        Manages target particles*/
 
         ActionStat temporaryScriptable = DAOScriptableObject.instance.GetActionData(StringData.directory, actionName);
         ImprovedActionStat temporaryImprovedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, actionName);
@@ -225,7 +264,7 @@ public class TurnManager : MonoBehaviour
 
 
 
-            if (actionName == "Heal")
+            if (actionName == "Heal" || actionName == "Buff")
             {
                 targetsInRange = GridMovement.instance.InAdjacentMatrix(players[currentPlayerIndex].GetComponent<TemporaryStats>().currentPlayerGridPosition, players[currentPlayerIndex].GetComponent<TemporaryStats>().CharacterTeam, 10, Color.white);
                 GridMovement.instance.ResetHighlightedPath();
@@ -280,6 +319,11 @@ public class TurnManager : MonoBehaviour
     }
     public void TargetList()
     {
+        /*        Clears previous targets
+
+        Rebuilds from players list
+
+        Disables non - active player navigation*/
         target.Clear();
         TargetHashset.Clear();
         int j = 0;
@@ -303,6 +347,13 @@ public class TurnManager : MonoBehaviour
 
     public void AutoRandomAttack()
     {
+        /*        Selects random target
+
+        Picks random action
+
+        Triggers attack resolution
+
+        Ends turn*/
         if (GridSystem.instance.IsGridOn)
         {
 
@@ -328,6 +379,9 @@ public class TurnManager : MonoBehaviour
 
     public Transform FindClosestTarget(List<PlayerTurn> allTargets, CharacterBaseClasses player)
     {
+        /*Distance - based target selection
+
+        Returns nearest active enemy*/
         Transform closestTarget = null;
         float shortestDistance = Mathf.Infinity; // Initialize with a large value
 
@@ -347,6 +401,11 @@ public class TurnManager : MonoBehaviour
 
     public void EnemyAIAttack()
     {
+         /*Gets target from EnemyAI component
+
+        Selects AI - determined action
+
+        Delays action with Invoke*/
         if (GridSystem.instance.IsGridOn && currentPlayer.tag != "Player")
         {
 
@@ -388,6 +447,13 @@ public class TurnManager : MonoBehaviour
 
     public async void ResetTurn()
     {
+         /*Increments round counter
+
+        Resets player stats/ abilities
+
+        Updates UI elements
+
+        Restarts turn cycle*/
         TurnTimer.Instance.StopTImer();
         round++;
         roundNumber.text = "Round: " + round.ToString();
@@ -410,6 +476,7 @@ public class TurnManager : MonoBehaviour
             playerTempStat.IsDodgeActive = false;
             playerTempStat.IsThirdRatePerformanceActive = false;
             playerTempStat.IsCounterActive = false;
+            playerTempStat.CurrentDamageMultiplier = players[i].GetComponent<CharacterBaseClasses>().DamageMultiplier;
             if (playerTempStat.CompareTag("Player"))
             {
                 playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP, 2);
@@ -441,6 +508,9 @@ public class TurnManager : MonoBehaviour
     {
         if (gameType == GameType.OneVOne)
         {
+            /*Activates current player's UI elements
+
+            Updates HUD display*/
 
             if (firstTurn)
             {

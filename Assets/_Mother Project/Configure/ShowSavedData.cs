@@ -57,7 +57,29 @@ public class ShowSavedData : MonoBehaviour
         }
     }
 
-  
+    public void DefaultCharacterData(GameObject character) //call this to save player data when needed
+    {
+        SaveCharacterStats.Clear();
+        PlayerDataSave playerdata = new PlayerDataSave(
+              character.GetComponent<CharacterBaseClasses>().CharacterName,
+              character.GetComponent<TemporaryStats>().PlayerHealth,
+              character.GetComponent<TemporaryStats>().PlayerAP,
+              character.GetComponent<TemporaryStats>().CurrentDex,
+              character.GetComponent<TemporaryStats>().CurrentEndurance,
+              character.GetComponent<TemporaryStats>().CurrentStrength,
+              character.GetComponent<TemporaryStats>().CurrentArcana,
+              character.GetComponent<TemporaryStats>().CurrentIntelligence,
+              character.GetComponent<TemporaryStats>().CurrentDamageMultiplier,
+              character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint,
+              character.GetComponent<TemporaryStats>().CharacterTeam,
+              character.GetComponent<TemporaryStats>().isMainCharacter,
+              character.GetComponent<TemporaryStats>().isLinkOn,
+              character.GetComponent<TemporaryStats>().currentScene);
+        SaveCharacterStats.Add(playerdata);
+        fileName = character.GetComponent<CharacterBaseClasses>().CharacterName + ".json";
+        SaveTemporaryStatToJson();
+
+    }
     public void AddCharacterData(GameObject character) //call this to save player data when needed
     {
         SaveCharacterStats.Clear();
@@ -70,6 +92,7 @@ public class ShowSavedData : MonoBehaviour
               character.GetComponent<TemporaryStats>().CurrentStrength,
               character.GetComponent<TemporaryStats>().CurrentArcana,
               character.GetComponent<TemporaryStats>().CurrentIntelligence,
+              character.GetComponent<TemporaryStats>().CurrentDamageMultiplier,
               character.GetComponent<CharacterBaseClasses>().MaxExperiencePoint,
               character.GetComponent<TemporaryStats>().CharacterTeam,
               character.GetComponent<TemporaryStats>().isMainCharacter,

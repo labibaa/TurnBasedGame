@@ -7,6 +7,17 @@ public class EndVfx : MonoBehaviour
 {
     public List<VisualEffect> effect;
 
+    private void OnEnable()
+    {
+        EffectorSkeletonjGrab.OnFinishSkeletonGrab += EndVfxKey;
+    }
+
+    private void OnDisable()
+    {
+        EffectorSkeletonjGrab.OnFinishSkeletonGrab -= EndVfxKey;
+       // EndVfxKey();
+    }
+
     public void EndVfxKey()
     {
         
@@ -26,7 +37,7 @@ public class EndVfx : MonoBehaviour
 
     public IEnumerator DestroyVFX(VisualEffect desEffect)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
         Destroy(desEffect.gameObject);
         //  Destroy(hiteffect.gameObject);
         

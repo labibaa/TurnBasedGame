@@ -10,6 +10,7 @@ public class OrbSpawner : MonoBehaviour
     [SerializeField] GameObject orb;
     [SerializeField] GameObject spawnedOrb;
     [SerializeField] GameObject smokeGameObject;
+    [SerializeField] GameObject SkeletonGrabGameObject;
     int readyPlayer=0;
 
     // Start is called before the first frame update`````
@@ -78,7 +79,7 @@ public class OrbSpawner : MonoBehaviour
 
     public GameObject SpawnSmoke(Transform transform)
     {
-        return Instantiate(smokeGameObject,transform.position + new Vector3(0f,1f,0f),Quaternion.identity);
+        return Instantiate(SkeletonGrabGameObject,transform.position + new Vector3(0f,1f,0f),Quaternion.identity);
     }
 
     void ResetReadyCounter()

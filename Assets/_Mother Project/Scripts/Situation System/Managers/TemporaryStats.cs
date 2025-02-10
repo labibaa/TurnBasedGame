@@ -21,6 +21,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
     public int CurrentIntelligence;
     public int CurrentExp;
     public int CurrentResolve;
+    public float CurrentDamageMultiplier;
     public bool IsBlockActive;
     public bool IsDodgeActive; 
     public bool IsThirdRatePerformanceActive;
@@ -138,6 +139,22 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         {
             _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetTalismanAvailableActions());
         }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Hammer)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetHammerAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Axe)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetAxeAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Spear)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetSpearAvailableActions());
+        }
+        if (_characterBaseClasses.EquipedWeapon == CurrentWeapon.Staff)
+        {
+            _characterBaseClasses.SetAvailableActions(WeaponManager.instance.GetStaffAvailableActions());
+        }
     }
     public void SetCharacterStat()
     {
@@ -147,7 +164,9 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         CurrentIntelligence = _characterBaseClasses.Intelligence;
         CurrentEndurance = _characterBaseClasses.Endurance;
         CurrentArcana = _characterBaseClasses.Arcana;
-        
+        CurrentDamageMultiplier = _characterBaseClasses.DamageMultiplier;
+
+
     }
 
     void onEndFunction()
@@ -190,7 +209,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         transform.position = currentPlayerGridPosition;
 
 
-        Debug.Log("hh: "+ currentPlayerGridPosition + "hh222" + transform.position);
+        Debug.Log(this.name + " hh: "+ currentPlayerGridPosition + " hh222 " + transform.position);
         playerMortality = Mortality.Alive;
         OrbSpawner.instance.PlayerReadyCounter();
         ResetStatForGrid();

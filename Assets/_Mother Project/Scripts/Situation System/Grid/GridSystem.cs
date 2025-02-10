@@ -137,13 +137,6 @@ public class GridSystem : MonoBehaviour
 
     public void GenerateGridOnButton()
     {
-       /* foreach (GameObject playerGo in SwitchMC.Instance.characters)
-        {
-            if (playerGo.GetComponent<TemporaryStats>().isMainCharacter == true)
-            {
-                player = playerGo;
-            }
-        }*/  //Grid mAIN CHARACTER NOT WORKING
         if (IsGridOn)
         {
             return;
@@ -162,7 +155,7 @@ public class GridSystem : MonoBehaviour
 
     }
 
-    async UniTask InitializeGrid()
+    async UniTask InitializeGrid() // initializes the grid when conditions are met
     {
 
         if (gridPrefab)
