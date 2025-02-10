@@ -28,7 +28,7 @@ MonoBehaviour:
   - MinRangeValue: 18
     MaxRangeValue: 20
     MappedValue: 5
-  ActionRange: 2
+  ActionRange: 5
   ActionAccuracy: 100
   ActionName: Buff
   Description: 
@@ -46,10 +46,11 @@ MonoBehaviour:
     type: 3}
   SoundReferences: []
   PlayerActionVFX: {fileID: 0}
-  TargetHitVFX: {fileID: 0}
+  TargetHitVFX: {fileID: 6062886414262641147, guid: d5ea96ecbceb95c4792f20d26dc4ecdd,
+    type: 3}
   particle: {fileID: 0}
   CharacterBodyLocation: MidBody
-  TargetCharacterBodyLocation: MidBody
+  TargetCharacterBodyLocation: UpperHeadBody
   TargetHurtAnimation: Battlecry
   actionStance: 1
   actionType: 0

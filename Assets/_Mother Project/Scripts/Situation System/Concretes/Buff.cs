@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TrailsFX.Demos;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class Buff : ICommand
 {
@@ -40,8 +41,8 @@ public class Buff : ICommand
 
         if (ActionResolver.instance.ActionAccuracyCalculation(actionAccuracy))
         {
-            target.DamageMultiplier = target.DamageMultiplier * 2;
-
+            targetTempStats.CurrentDamageMultiplier = targetTempStats.CurrentDamageMultiplier * 2;
+            UI.instance.SendNotification(target.name +"'s Attack Buffed by " + targetTempStats.CurrentDamageMultiplier.ToString());
             await HandleAnimation();
             await HealthManager.instance.PlayerMortality(targetTempStats, attackOrder);
 

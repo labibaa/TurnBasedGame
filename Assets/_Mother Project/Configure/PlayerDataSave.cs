@@ -14,13 +14,14 @@ public class PlayerDataSave
     public int CurrentStrength;
     public int CurrentArcana;
     public int CurrentIntelligence;
+    public float CurrentDamageMultiplier;
     public int CurrentExp;
     public TeamName CharacterTeam;
     public bool IsMainCHaracter;
     public bool IsLinkOn;
     public string CurrentScene;
 
-    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence, int exp ,TeamName teamName, bool isMain, bool isLinkOn, string currentScene)
+    public PlayerDataSave(string name,int playerHealth, int playerAP, int currentDex, int currentEndurance, int currentStrength, int currentArcana, int currentIntelligence,float currentDamageMultiplier, int exp ,TeamName teamName, bool isMain, bool isLinkOn, string currentScene)
     {
         Name = name;
         CurrentPlayerHealth = playerHealth;
@@ -30,6 +31,7 @@ public class PlayerDataSave
         CurrentStrength = currentStrength;
         CurrentArcana = currentArcana;
         CurrentIntelligence = currentIntelligence;
+        CurrentDamageMultiplier = currentDamageMultiplier;
         CurrentExp = exp;
         CharacterTeam = teamName;
         IsMainCHaracter = isMain;

@@ -41,7 +41,7 @@ public class VenomEffector : MonoBehaviour
                 {
                     int diceValue = DiceNumberGenerator.instance.GetDiceValue(Venom.FirstPercentage, Venom.SecondPercentage, Venom.LastPercentage);
                     UI.instance.SendNotification(diceValue.ToString());
-                    int damage = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, Venom) * EffectOwner.GetComponent<CharacterBaseClasses>().DamageMultiplier);
+                    int damage = Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, Venom) * EffectOwner.GetComponent<TemporaryStats>().CurrentDamageMultiplier);
 
                    /* if (targetTempStatsComponent.IsBlockActive)
                     {

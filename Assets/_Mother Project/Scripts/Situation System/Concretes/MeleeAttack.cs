@@ -55,7 +55,7 @@ public class MeleeAttack : ICommand
         {
             int diceValue = DiceNumberGenerator.instance.GetDiceValue(meleeAttack.FirstPercentage, meleeAttack.SecondPercentage, meleeAttack.LastPercentage);
             UI.instance.SendNotification(diceValue.ToString());
-            int damage =Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, meleeAttack) * player.DamageMultiplier);
+            int damage =Mathf.RoundToInt(ActionResolver.instance.CalculateNewDamage(diceValue, meleeAttack) * playerTempStats.CurrentDamageMultiplier);
             Debug.Log("Dice: " + diceValue + " Damage: " + damage);
             if (targetTempStats.IsBlockActive)
             {

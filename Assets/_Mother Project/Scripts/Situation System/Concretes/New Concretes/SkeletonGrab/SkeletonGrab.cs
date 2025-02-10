@@ -33,7 +33,7 @@ public class SkeletonGrab : ICommand
         EffectorSkeletonjGrab.Instance.EffectOwner = playerTempStats;
         EffectorSkeletonjGrab.Instance.SkeletonGrab_IAS = skeletonGrab;
         EffectorSkeletonjGrab.Instance.TurnCount = skeletonGrab.PriorityValue;
-        EffectorSkeletonjGrab.Instance.SkeletonObject = OrbSpawner.instance.SpawnSmoke(target.transform); ;
+        EffectorSkeletonjGrab.Instance.SkeletonObject = OrbSpawner.instance.SpawnSmoke(target.transform); 
         
         await HandleAnimation();
 

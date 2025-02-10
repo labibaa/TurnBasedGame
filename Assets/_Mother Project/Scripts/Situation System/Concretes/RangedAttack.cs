@@ -43,7 +43,7 @@ public class RangedAttack : ICommand
         {
             int diceValue = DiceNumberGenerator.instance.GetDiceValue(rangedAttack.FirstPercentage, rangedAttack.SecondPercentage, rangedAttack.LastPercentage);
 
-            int damage = Mathf.RoundToInt( ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) * player.DamageMultiplier);
+            int damage = Mathf.RoundToInt( ActionResolver.instance.CalculateNewDamage(diceValue, rangedAttack) * playerTempStats.CurrentDamageMultiplier);
             UI.instance.SendNotification(diceValue.ToString());
             if (targetTempStats.IsBlockActive)
             {

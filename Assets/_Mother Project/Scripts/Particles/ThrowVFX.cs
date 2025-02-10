@@ -60,7 +60,7 @@ public class ThrowVFX : MonoBehaviour
                 hitTrigger?.Invoke();
                 if(targetAnimator!= null)
                 {
-                    targetAnimator.GetComponent<Animator>().Play("Damage1");
+                    targetAnimator.GetComponent<Animator>().Play("Damage1"); //change the hard coded animation
                 }
                
             }

@@ -21,6 +21,7 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
     public int CurrentIntelligence;
     public int CurrentExp;
     public int CurrentResolve;
+    public float CurrentDamageMultiplier;
     public bool IsBlockActive;
     public bool IsDodgeActive; 
     public bool IsThirdRatePerformanceActive;
@@ -163,7 +164,9 @@ public class TemporaryStats : MonoBehaviour, IPersistableData
         CurrentIntelligence = _characterBaseClasses.Intelligence;
         CurrentEndurance = _characterBaseClasses.Endurance;
         CurrentArcana = _characterBaseClasses.Arcana;
-        
+        CurrentDamageMultiplier = _characterBaseClasses.DamageMultiplier;
+
+
     }
 
     void onEndFunction()

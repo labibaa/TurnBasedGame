@@ -476,6 +476,7 @@ public class TurnManager : MonoBehaviour
             playerTempStat.IsDodgeActive = false;
             playerTempStat.IsThirdRatePerformanceActive = false;
             playerTempStat.IsCounterActive = false;
+            playerTempStat.CurrentDamageMultiplier = players[i].GetComponent<CharacterBaseClasses>().DamageMultiplier;
             if (playerTempStat.CompareTag("Player"))
             {
                 playerTempStat.CurrentAP = ActionResolver.instance.APCarryOver(playerTempStat.CurrentAP, 2);
