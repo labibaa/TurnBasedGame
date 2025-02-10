@@ -815,10 +815,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
+      propertyPath: move
+      value: 
+      objectReference: {fileID: 11400000, guid: 8465ec936a5ef5240a593153957a09c8,
+        type: 2}
+    - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      propertyPath: dexterity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
       propertyPath: avatarHead
       value: 
       objectReference: {fileID: 21300000, guid: fca9383c463fba448b911e210f1e96f6,
         type: 3}
+    - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      propertyPath: healthPoints
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      propertyPath: EquipedWeapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6096284849864344783, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
       propertyPath: characterAvailableActions.Array.size
@@ -1016,13 +1042,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6989233371547789642, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
+      propertyPath: CurrentDex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989233371547789642, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
       propertyPath: PlayerHealth
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6989233371547789642, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
       propertyPath: CurrentHealth
-      value: 13
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7323827198925912516, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
@@ -1128,6 +1159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CrusaderVillain Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391802493050568205, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8483394990206739096, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
@@ -1291,6 +1327,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6759882011766554740}
+    - targetCorrespondingSourceObject: {fileID: 8391802493050568205, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223429841177257019}
     - targetCorrespondingSourceObject: {fileID: 8849402247834178436, guid: e3e2ad3d65461ab4f9464a4b106a693e,
         type: 3}
       insertIndex: -1
@@ -1354,6 +1394,32 @@ MonoBehaviour:
   minHealthToAttack: 3
   maxHealthToDefense: 10
   target: {fileID: 0}
+--- !u!114 &1223429841177257019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742723348792202031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5dcbd49f11c3343b26647387ffe7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButtons: []
+  temp: {fileID: 6573378774110602344}
+--- !u!114 &6573378774110602344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6989233371547789642, guid: e3e2ad3d65461ab4f9464a4b106a693e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4307670583041977634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742723348792202031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2f7550129e6804f9263440288077a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8804958044967677324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4753150432331284654, guid: e3e2ad3d65461ab4f9464a4b106a693e,
