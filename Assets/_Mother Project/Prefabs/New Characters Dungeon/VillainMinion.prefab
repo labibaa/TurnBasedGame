@@ -22298,13 +22298,14 @@ GameObject:
   - component: {fileID: 4571901535689206959}
   - component: {fileID: 7679889445635648131}
   - component: {fileID: 8933773828350446642}
+  - component: {fileID: 6922381754137338465}
   m_Layer: 8
   m_Name: VillainMinion
   m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6317786268032159531
 Transform:
   m_ObjectHideFlags: 0
@@ -22313,7 +22314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6309810652555908849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -14.20433, y: 0.00000011920929, z: -1.052058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22400,21 +22401,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 1
-  PlayerHealth: 13
+  PlayerHealth: 20
   Pathmark: {fileID: 2772190151137415937, guid: ca07928fa503827408c66ef4b24eeb64,
     type: 3}
   CurrentAP: 6
   PlayerAP: 7
+  CurrentDex: 3
+  CurrentEndurance: 10
+  CurrentStrength: 0
+  CurrentArcana: 0
+  CurrentIntelligence: 0
+  CurrentExp: 0
   CurrentResolve: 20
+  CurrentDamageMultiplier: 0
   IsBlockActive: 0
   IsDodgeActive: 0
   IsThirdRatePerformanceActive: 0
   IsCounterActive: 0
-  CurrentEndurance: 10
-  CurrentDex: 3
   AutoMove: 0
   playerUltimateBarCount: 0
   PlayerUltimateBar: {fileID: 0}
+  isMainCharacter: 0
+  isLinkOn: 0
+  currentScene: 
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
@@ -22576,14 +22585,16 @@ MonoBehaviour:
   level: 5
   strength: 5
   dexterity: 5
-  charisma: 5
+  intelligence: 0
   arcana: 5
-  skill: 5
   endurance: 5
-  mind: 5
   healthPoints: 50
   resolvePoints: 25
+  skill: 5
+  mind: 5
   damageMultiplier: 1
+  MaxExp: 0
+  EquipedWeapon: 0
   characterAvailableActions:
   - {fileID: 11400000, guid: 853e9c58f3d88ee4dbe34e4153324edd, type: 2}
   - {fileID: 11400000, guid: 115dd138f5c68e747acbc0a771e6ea86, type: 2}
@@ -22593,6 +22604,7 @@ MonoBehaviour:
   warpSurge: {fileID: 0}
   groundBlast: {fileID: 0}
   dash: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &3754418836914419529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22740,6 +22752,20 @@ MonoBehaviour:
   minHealthToAttack: 3
   maxHealthToDefense: 10
   target: {fileID: 0}
+--- !u!114 &6922381754137338465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309810652555908849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5dcbd49f11c3343b26647387ffe7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButtons: []
+  temp: {fileID: 6719925476913469258}
 --- !u!1 &6386472375871397170
 GameObject:
   m_ObjectHideFlags: 0

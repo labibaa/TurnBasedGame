@@ -27297,13 +27297,14 @@ GameObject:
   - component: {fileID: 2237778128761334228}
   - component: {fileID: 4435768965759098230}
   - component: {fileID: 855501872799115597}
+  - component: {fileID: 4892687689277223847}
   m_Layer: 8
   m_Name: MagePrefab
   m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &903878909125060697
 Transform:
   m_ObjectHideFlags: 0
@@ -27413,6 +27414,7 @@ MonoBehaviour:
   CurrentIntelligence: 0
   CurrentExp: 0
   CurrentResolve: 20
+  CurrentDamageMultiplier: 0
   IsBlockActive: 0
   IsDodgeActive: 0
   IsThirdRatePerformanceActive: 0
@@ -27426,7 +27428,7 @@ MonoBehaviour:
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
-  gridCoordinateSpawn: {x: 4, y: 5}
+  gridCoordinateSpawn: {x: 6, y: 5}
   lastPosition: {fileID: 0}
   playerStatPanel: {fileID: 0}
   PlayerActionListPanel: {fileID: 0}
@@ -27587,7 +27589,7 @@ MonoBehaviour:
   intelligence: 0
   arcana: 5
   endurance: 5
-  healthPoints: 50
+  healthPoints: 15
   resolvePoints: 25
   skill: 5
   mind: 5
@@ -27751,6 +27753,20 @@ MonoBehaviour:
   minHealthToAttack: 3
   maxHealthToDefense: 10
   target: {fileID: 0}
+--- !u!114 &4892687689277223847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080342246157646114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5dcbd49f11c3343b26647387ffe7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionButtons: []
+  temp: {fileID: 8835962698016897830}
 --- !u!1 &3183845838036448250
 GameObject:
   m_ObjectHideFlags: 0
