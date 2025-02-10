@@ -578,9 +578,9 @@ public class ActionArchive : MonoBehaviour
 
 
         GetPlayerStats();
-        ImprovedActionStat rangedScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
-        ICommand rangedAction = new RangedAttack(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, rangedScriptable);
-        ActionTemplate(rangedScriptable, rangedAction);
+        ImprovedActionStat debuffScriptable = DAOScriptableObject.instance.GetImprovedActionData(StringData.directory, "Debuff");
+        ICommand debuffAction = new Debuff(playerAttacker, targetDefender, currentStatPlayer, currentStatTarget, debuffScriptable);
+        ActionTemplate(debuffScriptable, debuffAction);
 
     }
 
