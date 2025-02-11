@@ -186,7 +186,7 @@ Material:
     - _FlatRimLightAlign: 0.654
     - _FlatRimSize: 0.846
     - _FlatSpecularEdgeSmoothness: 1
-    - _FlatSpecularSize: 0.797
+    - _FlatSpecularSize: 0.625
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -232,8 +232,8 @@ Material:
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.764151, g: 0.6285322, b: 0.53706837, a: 0.85056}
-    - _FlatSpecularColor: {r: 1, g: 0.9799661, b: 0.9575472, a: 0.85056}
+    - _FlatRimColor: {r: 0.3018868, g: 0.16650186, b: 0.086863644, a: 0.85056}
+    - _FlatSpecularColor: {r: 0.509434, g: 0.33969548, b: 0.24270204, a: 0.85056}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
