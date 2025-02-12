@@ -42,8 +42,7 @@ public class PlayableCharacterUI : MonoBehaviour
 
         for (int i = 0; i < APImages.Length; i++)
         {
-            int indexFromRight = APImages.Length - 1 - i; // Reverse index
-            APImages[indexFromRight].SetActive(i < currentAP);
+            APImages[i].SetActive(i < currentAP);
         }
     }
 
