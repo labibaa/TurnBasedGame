@@ -19,8 +19,8 @@ public class BarHoverDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExit
     // This function is triggered when the pointer enters the bar area
     public void OnPointerEnter(PointerEventData eventData)
     {
-        hoverText.gameObject.SetActive(true); // Show the text
-        UpdateHoverText(); // Update the text with current values
+        //hoverText.gameObject.SetActive(true); // Show the text
+        //UpdateHoverText(); // Update the text with current values
     }
 
     // This function is triggered when the pointer exits the bar area
@@ -30,17 +30,17 @@ public class BarHoverDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
 
     // Update the hover text with the current value of HP or AP
-    private void UpdateHoverText()
-    {
-        if (bar == characterUI.hpBar)
-        {
-            float currentHP = characterUI.myCharacter.GetComponent<TemporaryStats>().CurrentHealth;
-            hoverText.text = "HP: " + currentHP.ToString("0");
-        }
-        else if (bar == characterUI.apBar)
-        {
-            float currentAP = characterUI.myCharacter.GetComponent<TemporaryStats>().CurrentAP;
-            hoverText.text = "AP: " + currentAP.ToString("0");
-        }
-    }
+    //private void UpdateHoverText()
+    //{
+    //    if (bar == characterUI.hpBar)
+    //    {
+    //        float currentHP = characterUI.myCharacter.GetComponent<TemporaryStats>().CurrentHealth;
+    //        hoverText.text = "HP: " + currentHP.ToString("0");
+    //    }
+    //    else if (bar == characterUI.apBar)
+    //    {
+    //        float currentAP = characterUI.myCharacter.GetComponent<TemporaryStats>().CurrentAP;
+    //        hoverText.text = "AP: " + currentAP.ToString("0");
+    //    }
+    //}
 }
