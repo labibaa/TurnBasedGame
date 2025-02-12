@@ -165,6 +165,7 @@ public class TurnManager : MonoBehaviour
         Populates target lists
 
         Updates action UI*/
+        
         TurnTimer.Instance.StartTimer();
 
         TeamManager.instance.PrintDictionary();
@@ -181,7 +182,7 @@ public class TurnManager : MonoBehaviour
 
             ResetTurn();
         }
-
+        
 
         UpdateTurnUI();//enabling current Turn Ui
 
@@ -214,13 +215,13 @@ public class TurnManager : MonoBehaviour
         //currentPlayer.playerActionListPanel.SetActive(true);
 
         //players[currentPlayerIndex].GetComponent<NavMeshObstacle>().enabled = false;
-
+        
         ActionActivator.instance.UpdateAvailableAction(currentPlayerBaseClass, currentPlayer);
 
         UI.instance.GetPlayerStats(players[currentPlayerIndex].GetComponent<CharacterBaseClasses>());
 
         TargetList();
-
+        
         //if (players[currentPlayerIndex].GetComponent<TemporaryStats>().CharacterTeam == TeamName.TeamD)
         //{
         //    Debug.Log("aw");
