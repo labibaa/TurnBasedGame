@@ -10,11 +10,14 @@ public class PlayerStatUI : MonoBehaviour
     #region summary HUD
     [SerializeField] private Image playerStatSummaryPanel;
     [SerializeField] private Image playerAvatarSummary;
+    [SerializeField] private GameObject PlayerBackground;
+    [SerializeField] private GameObject PlayerTagBackground;
     [SerializeField] private TMP_Text playerNameTextSummary;
     [SerializeField] private TMP_Text playerAPTextSummary;
     [SerializeField] private TMP_Text playerHPTextSummary;
     [SerializeField] private TMP_Text playerRPTextSummary;
     public HoverDisplayStats hoverDisplayStats;
+    private int numberOfAllies = 0;
 
     #endregion
 
@@ -113,12 +116,24 @@ public class PlayerStatUI : MonoBehaviour
                     tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
                     CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
                 }
+                numberOfAllies++;
             }
             else
             {
                 tempAvatarUI = Instantiate(AvatarSummaryPrefabEnemy.transform, SummaryStatParentEnemy.transform);
                 tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
                 CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+            }
+
+            if(numberOfAllies >= 2)
+            {
+                PlayerBackground.SetActive(true);
+                PlayerTagBackground.SetActive(true);
+            }
+            else
+            {
+                PlayerBackground.SetActive(true);
+                PlayerTagBackground.SetActive(false);
             }
 
 
@@ -134,6 +149,7 @@ public class PlayerStatUI : MonoBehaviour
         {
             summaryHUD.UpdateHUD();
         }
+
     }
 
     public void GetPlayerStatDetails(CharacterBaseClasses currentPlayer)
