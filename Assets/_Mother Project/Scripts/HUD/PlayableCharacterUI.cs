@@ -44,6 +44,7 @@ public class PlayableCharacterUI : MonoBehaviour
 
         // Show if it's the current player's turn
         //CurrentPlayerHUD();
+        
     }
 
     public void CurrentPlayerHUD()

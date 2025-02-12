@@ -91,9 +91,10 @@ public class GridActivation : MonoBehaviour
         {
             ui.SetActive(true);
         }
+        
+        TurnManager.instance.StartTurn();
         PlayerStatUI.instance.CreateSummaryList();
         DisableUIObjects();
-        TurnManager.instance.StartTurn();
         gridAudio.GetComponent<AudioSource>().enabled = true;
         gridAudio.GetComponent<AudioSource>().Play();
         this.GetComponent<BoxCollider>().enabled = false;

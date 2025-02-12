@@ -25483,7 +25483,7 @@ Transform:
   m_GameObject: {fileID: 1379623221603054671}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18301274, y: 0.6830127, z: -0.18301274, w: -0.6830127}
-  m_LocalPosition: {x: 9.768372, y: 9.030029, z: -0.9999542}
+  m_LocalPosition: {x: 8.902344, y: 8.530029, z: -0.9999542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67231,7 +67231,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 13
+  m_CameraDistance: 12
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -82933,7 +82933,7 @@ Transform:
   m_GameObject: {fileID: 5315822825133747682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.5000267, y: 1.6099854, z: 3.4000058}
+  m_LocalPosition: {x: -0.5, y: 1.6099854, z: 3.399994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -94524,7 +94524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Mon
-  avatarHead: {fileID: 21300000, guid: 8f3c8ced0c672bd489681ecdb1960a10, type: 3}
+  avatarHead: {fileID: 21300000, guid: 2ddc34bb94d78db4ba430ed17c6c9c51, type: 3}
   characterClass: Hunter
   description: 
   level: 1
@@ -94572,6 +94572,7 @@ MonoBehaviour:
   CurrentIntelligence: 0
   CurrentExp: 100
   CurrentResolve: 20
+  CurrentDamageMultiplier: 0
   IsBlockActive: 0
   IsDodgeActive: 0
   IsThirdRatePerformanceActive: 0
@@ -94585,7 +94586,7 @@ MonoBehaviour:
   playerMortality: 0
   currentPlayerGridPosition: {x: 0, y: 0, z: 0}
   _spawnPosition: {x: 0, y: 0, z: 0}
-  gridCoordinateSpawn: {x: 9, y: 9}
+  gridCoordinateSpawn: {x: 6, y: 2}
   lastPosition: {fileID: 0}
   playerStatPanel: {fileID: 0}
   PlayerActionListPanel: {fileID: 0}
