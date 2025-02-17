@@ -10,8 +10,6 @@ public class PlayerStatUI : MonoBehaviour
     #region summary HUD
     [SerializeField] private Image playerStatSummaryPanel;
     [SerializeField] private Image playerAvatarSummary;
-    [SerializeField] private GameObject PlayerBackground;
-    [SerializeField] private GameObject PlayerTagBackground;
     [SerializeField] private TMP_Text playerNameTextSummary;
     [SerializeField] private TMP_Text playerAPTextSummary;
     [SerializeField] private TMP_Text playerHPTextSummary;
@@ -125,16 +123,7 @@ public class PlayerStatUI : MonoBehaviour
                 CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
             }
 
-            if(numberOfAllies >= 2)
-            {
-                PlayerBackground.SetActive(true);
-                PlayerTagBackground.SetActive(true);
-            }
-            else
-            {
-                PlayerBackground.SetActive(true);
-                PlayerTagBackground.SetActive(false);
-            }
+           
 
 
 
@@ -162,7 +151,7 @@ public class PlayerStatUI : MonoBehaviour
 
         playerAPTextDetails.text = "AP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentAP.ToString();
         playerHPTextDetails.text = "HP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentHealth.ToString();
-        hoverDisplayStats.SetCharacter(currentPlayer.gameObject);
+        
         //playerRPTextDetails.text = "RP: " + currentPlayer.GetComponent<TemporaryStats>().CurrentResolve.ToString();
 
         //playerArcanaTextDetails.text = "Arcana: " + currentPlayer.Arcana.ToString();

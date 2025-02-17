@@ -5899,7 +5899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2775873647
+  GlobalObjectIdHash: 1297478232
   InScenePlacedSourceGlobalObjectIdHash: 3565951234
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5968,7 +5968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Roud
-  avatarHead: {fileID: 21300000, guid: 0c44da93f6fcaaa44bb986b5f731df5d, type: 3}
+  avatarHead: {fileID: 21300000, guid: 8bf4e430c1ca5ae48a3305551cfd975d, type: 3}
   characterClass: Hunter
   description: 
   level: 1
