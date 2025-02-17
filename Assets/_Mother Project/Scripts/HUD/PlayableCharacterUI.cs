@@ -5,12 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using UnityEditorInternal.Profiling.Memory.Experimental;
+using DG.Tweening;
 
 public class PlayableCharacterUI : MonoBehaviour
 {
     public TMP_Text classText;
     public Image avatarImage;
     public GameObject CurrentPlayerPanel;
+    public RectTransform thisRectTransform;
 
     public Image hpBar; // HP bar using fillAmount
     public GameObject[] APImages; // Array to hold AP images
@@ -34,6 +37,7 @@ public class PlayableCharacterUI : MonoBehaviour
 
         // Update avatar image
         avatarImage.sprite = myCharacter.avatarHead;
+        CurrentPlayerHUD();
     }
 
     private void UpdateAPImages()
@@ -49,6 +53,34 @@ public class PlayableCharacterUI : MonoBehaviour
 
     public void CurrentPlayerHUD()
     {
-        CurrentPlayerPanel.SetActive(myCharacter.GetComponent<PlayerTurn>().myTurn);
+        //CurrentPlayerPanel.SetActive(myCharacter.GetComponent<PlayerTurn>().myTurn);
+        if (myCharacter.GetComponent<PlayerTurn>().myTurn)
+        {
+            ScaleItem(thisRectTransform);
+        }
+        else
+        {
+            DescaleItem();
+        }
+       
+    }
+
+    public void ScaleItem(RectTransform item)
+    {
+        if (item == null) return;
+
+        thisRectTransform = item;
+
+        // Scale up the item
+        thisRectTransform.DOScale(Vector3.one * 1f, 0.5f)
+            .SetEase(Ease.OutBack);
+    }
+    private void DescaleItem()
+    {
+        if (thisRectTransform == null) return;
+
+        // Scale down the item back to normal
+        thisRectTransform.DOScale(Vector3.one * .65f, 0.5f)
+            .SetEase(Ease.InBack);
     }
 }
