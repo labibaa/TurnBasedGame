@@ -15,14 +15,12 @@ public class PlayerStatUI : MonoBehaviour
     [SerializeField] private TMP_Text playerHPTextSummary;
     [SerializeField] private TMP_Text playerRPTextSummary;
     public HoverDisplayStats hoverDisplayStats;
-    private int numberOfAllies = 0;
 
     #endregion
 
     #region new Summary Stat
 
     public Image SummaryStatParent;
-    public Image SummaryStatParentTagPartner;
     public Image SummaryStatParentEnemy;
     public Image AvatarSummaryPrefab;
     public Image AvatarSummaryPrefabEnemy;
@@ -76,10 +74,7 @@ public class PlayerStatUI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (Transform child in SummaryStatParentTagPartner.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        
         foreach (Transform child in SummaryStatParentEnemy.transform)
         {
             Destroy(child.gameObject);
@@ -102,19 +97,12 @@ public class PlayerStatUI : MonoBehaviour
                 Transform tempAvatarUI;
             if (player.GetComponent<TemporaryStats>().CharacterTeam == TeamName.TeamA)
             {
-                if (player  == TempManager.instance.attacker.GetComponent<CharacterBaseClasses>())
-                {
+                
+                
                     tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
                     tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
                     CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
-                }
-                else
-                {
-                    tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParentTagPartner.transform);
-                    tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
-                    CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
-                }
-                numberOfAllies++;
+                
             }
             else
             {
