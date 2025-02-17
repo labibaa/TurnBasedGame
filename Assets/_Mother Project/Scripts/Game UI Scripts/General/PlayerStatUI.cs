@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,9 +23,10 @@ public class PlayerStatUI : MonoBehaviour
 
     public Image SummaryStatParent;
     public Image SummaryStatParentEnemy;
-    public Image AvatarSummaryPrefab;
+    public RectTransform AvatarSummaryPrefab;
     public Image AvatarSummaryPrefabEnemy;
     public List<PlayableCharacterUI> CharacterUIList;
+    List<RectTransform> AvatarSummaryPrefabList;
 
     #endregion
 
@@ -99,9 +101,11 @@ public class PlayerStatUI : MonoBehaviour
             {
                 
                 
-                    tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
-                    tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
-                    CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+                tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
+                tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
+                CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
+                AvatarSummaryPrefabList.Add(tempAvatarUI.GetComponent<RectTransform>());
+                    
                 
             }
             else
@@ -125,7 +129,24 @@ public class PlayerStatUI : MonoBehaviour
         foreach (PlayableCharacterUI summaryHUD in CharacterUIList)
         {
             summaryHUD.UpdateHUD();
+
         }
+
+        
+    }
+    private void SwapItemsInLayout(RectTransform item1, RectTransform item2)
+    {
+        if (item1 == null || item2 == null) return;
+
+        Vector3 pos1 = item1.anchoredPosition;
+        Vector3 pos2 = item2.anchoredPosition;
+
+        // Animate positions
+        item1.DOAnchorPos(pos2, .1f).SetEase(Ease.InOutQuad);
+        item2.DOAnchorPos(pos1, .1f).SetEase(Ease.InOutQuad);
+
+        // Rebuild layout after the swap
+        LayoutRebuilder.ForceRebuildLayoutImmediate(AvatarSummaryPrefab);
 
     }
 

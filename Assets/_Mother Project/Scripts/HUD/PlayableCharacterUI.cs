@@ -15,6 +15,8 @@ public class PlayableCharacterUI : MonoBehaviour
     public GameObject CurrentPlayerPanel;
     public RectTransform thisRectTransform;
 
+    RectTransform currentItem;
+    RectTransform PrevItem;
     public Image hpBar; // HP bar using fillAmount
     public GameObject[] APImages; // Array to hold AP images
 
@@ -62,7 +64,7 @@ public class PlayableCharacterUI : MonoBehaviour
         {
             DescaleItem();
         }
-       
+       SwapItemsInLayout(currentItem,PrevItem);
     }
 
     public void ScaleItem(RectTransform item)
@@ -70,17 +72,30 @@ public class PlayableCharacterUI : MonoBehaviour
         if (item == null) return;
 
         thisRectTransform = item;
-
+        currentItem = item;
         // Scale up the item
-        thisRectTransform.DOScale(Vector3.one * 1f, 0.5f)
+        thisRectTransform.DOScale(Vector3.one * 1f, 0.2f)
             .SetEase(Ease.OutBack);
     }
     private void DescaleItem()
     {
         if (thisRectTransform == null) return;
-
+        PrevItem = thisRectTransform;
         // Scale down the item back to normal
-        thisRectTransform.DOScale(Vector3.one * .65f, 0.5f)
+        thisRectTransform.DOScale(Vector3.one * .65f, 0.2f)
             .SetEase(Ease.InBack);
+    }
+
+    private void SwapItemsInLayout(RectTransform item1, RectTransform item2)
+    {
+        if (item1 == null || item2 == null) return;
+
+        Vector3 pos1 = item1.anchoredPosition;
+        Vector3 pos2 = item2.anchoredPosition;
+
+        // Animate positions
+        item1.DOAnchorPos(pos2, .1f).SetEase(Ease.InOutQuad);
+        item2.DOAnchorPos(pos1, .1f).SetEase(Ease.InOutQuad);
+
     }
 }
