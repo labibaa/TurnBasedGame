@@ -24,7 +24,7 @@ public class PlayerStatUI : MonoBehaviour
     public Image SummaryStatParent;
     public Image SummaryStatParentEnemy;
     public RectTransform AvatarSummaryPrefab;
-    public Image AvatarSummaryPrefabEnemy;
+    public RectTransform AvatarSummaryPrefabEnemy;
     public List<PlayableCharacterUI> CharacterUIList;
     List<RectTransform> AvatarSummaryPrefabList;
 
