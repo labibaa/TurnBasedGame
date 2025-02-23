@@ -104,7 +104,7 @@ public class PlayerStatUI : MonoBehaviour
                 tempAvatarUI = Instantiate(AvatarSummaryPrefab.transform, SummaryStatParent.transform);
                 tempAvatarUI.GetComponent<PlayableCharacterUI>().myCharacter = player;
                 CharacterUIList.Add(tempAvatarUI.GetComponent<PlayableCharacterUI>());
-                AvatarSummaryPrefabList.Add(tempAvatarUI.GetComponent<RectTransform>());
+               // AvatarSummaryPrefabList.Add(tempAvatarUI.GetComponent<RectTransform>());
                     
                 
             }
