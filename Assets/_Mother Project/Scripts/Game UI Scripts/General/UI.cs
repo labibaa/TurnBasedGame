@@ -72,7 +72,7 @@ public class UI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+           // PauseGame();
         }
     }
 
