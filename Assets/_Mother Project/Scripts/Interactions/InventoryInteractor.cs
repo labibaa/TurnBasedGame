@@ -13,12 +13,13 @@ public class InventoryInteractor : MonoBehaviour, IInteractable
 
     public void ActivateInventory()
     {
-        foreach (var player in SwitchMC.Instance.characters)
+        /*foreach (var player in SwitchMC.Instance.characters)
         {
             player.GetComponent<ThirdPersonController>().enabled = false;
-        }
+        }*/
         Cursor.lockState = CursorLockMode.None;
         InventoryHolder.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 }

@@ -97,4 +97,11 @@ public class Inventory_UI : MonoBehaviour
         });
 
     }
+
+    public void CloseInventory()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        //InventoryHolder.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }
