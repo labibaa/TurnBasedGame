@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
-  - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -145,7 +144,7 @@ Material:
     - _ReceiveShadows: 1
     - _RimEnabled: 1
     - _SelfShadingSize: 0.178
-    - _Smoothness: 0.501
+    - _Smoothness: 0.704
     - _SmoothnessTextureChannel: 0
     - _SpecularEnabled: 1
     - _SpecularHighlights: 1
@@ -156,14 +155,14 @@ Material:
     - _TextureImpact: 0.471
     - _UnityShadowOcclusion: 1
     - _VertexColorsEnabled: 1
-    - _WorkflowMode: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.31132078, g: 0.29516736, b: 0.29516736, a: 1}
     - _Color: {r: 0.31132075, g: 0.29516733, b: 0.29516733, a: 1}
     - _ColorGradient: {r: 1, g: 1, b: 1, a: 0.85056}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
+    - _EmissionColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
     - _FlatRimColor: {r: 0.051269468, g: 0.051269468, b: 0.051269468, a: 1}
     - _FlatSpecularColor: {r: 0.30946895, g: 0.30946895, b: 0.30946895, a: 1}
     - _LightAttenuation: {r: 0, g: 1, b: 0, a: 0}
