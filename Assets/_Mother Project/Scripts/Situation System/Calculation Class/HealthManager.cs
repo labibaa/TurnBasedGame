@@ -11,6 +11,7 @@ public class HealthManager : MonoBehaviour
 
 
     public static event Action OnGridDisable;
+    public static event Action OnCharacterDeath;
 
     public static HealthManager instance;
 
@@ -60,6 +61,7 @@ public class HealthManager : MonoBehaviour
         {
             deadPlayerTurn = playerStat.gameObject.GetComponent<PlayerTurn>();
             playerStat.playerMortality = Mortality.Dead;
+            OnCharacterDeath?.Invoke();
             Debug.Log(deadPlayerTurn.name + "dead");
             TurnManager.instance.players.Remove(deadPlayerTurn);
             Debug.Log(deadPlayerTurn.name + "dead20");

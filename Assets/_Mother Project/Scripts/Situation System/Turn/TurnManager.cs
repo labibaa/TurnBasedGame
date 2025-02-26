@@ -86,26 +86,6 @@ public class TurnManager : MonoBehaviour
 
         }
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    TempManager.instance.ChangeGameState(GameStates.StartTurn);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    TempManager.instance.ChangeGameState(GameStates.MidTurn);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    TempManager.instance.ChangeGameState(GameStates.TargetSelectionTurn);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //    TempManager.instance.ChangeGameState(GameStates.MovementGridSelectionTurn);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha5))
-        //{
-        //    TempManager.instance.ChangeGameState(GameStates.Simulation);
-        //}
     }
 
     public async void EndTurn()
@@ -205,6 +185,10 @@ public class TurnManager : MonoBehaviour
         currentPlayer.SelectionParticle.SetActive(true);
         currentPlayer.PlayerActionListPanel.SetActive(true);
         currentPlayer.PlayerUltimateBar.SetActive(true);
+        if(currentPlayer.CharacterTeam == TeamName.TeamA)
+        {
+            currentPlayer.GetComponent<IsoMetricToTPS>().enabled = true;
+        }
 
         TeamManager.instance.TeamMemberList(currentPlayer.CharacterTeam);
 
