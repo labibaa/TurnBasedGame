@@ -18,7 +18,7 @@ public class IsoMetricToTPS : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Please assign both the isometric and TPS cameras.");
+            Debug.LogWarning("Please assign both the isometric and TPS cameras.");
         }
     }
     private void OnDisable()
@@ -30,7 +30,7 @@ public class IsoMetricToTPS : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Please assign both the isometric and TPS cameras.");
+            Debug.LogWarning("Please assign both the isometric and TPS cameras.");
         }
 
     }

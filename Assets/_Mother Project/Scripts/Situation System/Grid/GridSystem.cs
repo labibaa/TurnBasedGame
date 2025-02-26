@@ -7,6 +7,7 @@ using System;
 using StarterAssets;
 using Unity.AI.Navigation;
 using UnityEditor;
+using UnityEditor.ShaderGraph.Internal;
 
 public class GridSystem : MonoBehaviour
 {
@@ -124,7 +125,7 @@ public class GridSystem : MonoBehaviour
          {
              GenerateGridOnButton();
          }*/
-        foreach (var pc in SwitchMC.Instance.characters)
+        foreach (var pc in SwitchMC.Instance.characters) //Needed to refactor using Event when switching mc rather than calling in update
         {
             if (pc.GetComponent<TemporaryStats>().isMainCharacter)
             {

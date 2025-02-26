@@ -16,14 +16,16 @@ public class SwitchMC : MonoBehaviour
     public List<GameObject> characters = new List<GameObject>();
     int currentMainPlayerIndex = -1;
 
-  /*  private void OnEnable()
+    private void OnEnable()
     {
-        HealthManager.OnGridDisable += Reset;
+        //HealthManager.OnGridDisable += Reset;
+        WaveManager.OnGridReady += DisableCameraOnGridStart;
     }
     private void OnDisable()
     {
-        HealthManager.OnGridDisable -= Reset;
-    }*/
+        // HealthManager.OnGridDisable -= Reset;
+        WaveManager.OnGridReady -= DisableCameraOnGridStart;
+    }
     private void Awake()
     {
         if (Instance == null)
@@ -180,6 +182,14 @@ public class SwitchMC : MonoBehaviour
             }
             ShowSavedData.Instance.AddCharacterData(character);
 
+        }
+    }
+
+    void DisableCameraOnGridStart()
+    {
+        foreach(GameObject character in characters)
+        {
+            character.GetComponent<IsoMetricToTPS>().enabled = false;
         }
     }
 }
